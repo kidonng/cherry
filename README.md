@@ -1,6 +1,6 @@
 # Userscript [![](https://img.shields.io/badge/Enjoy%20with-Tampermonkey%20(Chrome)-blue.svg)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) [![](https://img.shields.io/badge/Enjoy%20with-Tampermonkey%20(Firefox)-blue.svg)](https://addons.mozilla.org/firefox/addon/tampermonkey/)
 
-## [NCU Net](ncu-net.user.js)
+## [NCU Net](../../raw/master/ncu-net.user.js)
 
 NCU Campus Network Access Authentication System Helper. Works on `NCU-5G/NCU-2.4G` & `NCUWLAN`.
 
