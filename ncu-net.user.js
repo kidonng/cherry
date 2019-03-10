@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.0.0
+// @version      1.1.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -77,7 +77,7 @@
             res => {
               if (res.res === 'ok') {
                 log(1, '连接成功')
-                timer = setInterval(status, 1000)
+                timer = setInterval(status, 3000)
               } else {
                 log(3, '连接失败，10 秒后自动重连')
                 timer = setTimeout(connect, 10000)
@@ -137,7 +137,7 @@
         res => {
           if (res.indexOf('login_ok') === 0) {
             log(1, '连接成功')
-            timer = setInterval(status, 1000)
+            timer = setInterval(status, 3000)
           } else {
             log(3, '连接失败，10 秒后自动重连')
             timer = setTimeout(connect, 10000)
