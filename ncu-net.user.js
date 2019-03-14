@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.3.0
+// @version      1.4.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -18,7 +18,8 @@
     loaded: '加载完成',
     connecting: '正在连接',
     connectSuccess: '连接成功',
-    connectFailed: `连接失败，${timeout.retry / 1000} 秒后重试`,
+    connectFailed: `连接失败，${timeout.retry /
+      1000} 秒后重试，点击注销按钮取消`,
     connectError: '连接异常，正在重新连接',
     logouting: '正在注销',
     logoutSuccess: '注销成功',
@@ -139,16 +140,19 @@
 
     $('.dl').click(e => {
       e.preventDefault()
-      if (!timer) connect()
+      clearInterval(timer)
+      $('.dl').attr('disabled', true)
+      $('.zx').removeAttr('disabled')
+      connect()
     })
     $('.zx')
+      .attr('disabled', true)
       .attr('onclick', null)
-      .click(e => {
-        e.preventDefault()
-        if (timer) {
-          clearInterval(timer)
-          logout()
-        }
+      .click(() => {
+        clearInterval(timer)
+        $('.zx').attr('disabled', true)
+        $('.dl').removeAttr('disabled')
+        logout()
       })
   } else {
     const api = '/include/auth_action.php'
@@ -215,15 +219,19 @@
 
     $('[type="submit"]').click(e => {
       e.preventDefault()
-      if (!timer) connect()
+      clearInterval(timer)
+      $('[type="submit"]').attr('disabled', true)
+      $('#duankai').removeAttr('disabled')
+      connect()
     })
     $('#duankai')
+      .attr('disabled', true)
       .attr('onclick', null)
       .click(() => {
-        if (timer) {
-          clearInterval(timer)
-          logout()
-        }
+        clearInterval(timer)
+        $('#duankai').attr('disabled', true)
+        $('[type="submit"]').removeAttr('disabled')
+        logout()
       })
   }
   log(0, msg.loaded)
