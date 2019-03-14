@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.1.0
+// @version      1.2.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -34,7 +34,8 @@
     const connect = (
       username = `${$('[name="username"]').val()}${$('[name="domain"]').val()}`,
       password = $('[name="password"]').val()
-    ) =>
+    ) => {
+      log(0, '正在连接')
       $.get(
         '/cgi-bin/get_challenge',
         {
@@ -88,6 +89,7 @@
         },
         'jsonp'
       )
+    }
     const status = () =>
       $.get('/cgi-bin/rad_user_info', res => {
         if (res.indexOf('not_online') === 0) {
@@ -116,7 +118,7 @@
             ip,
             ac_id
           })
-          log(2, '注销成功')
+          log(2, '注销完成')
         }
       })
   } else {
@@ -124,7 +126,8 @@
     const ac_id = $('[name="ac_id"]').val()
     let timer = null
 
-    const connect = () =>
+    const connect = () => {
+      log(0, '正在连接')
       $.post(
         api,
         {
@@ -144,6 +147,7 @@
           }
         }
       )
+    }
     const status = () =>
       $.post(
         api,
@@ -175,9 +179,9 @@
             password: $('#password').val(),
             ajax: 1
           })
-          log(2, '注销成功')
+          log(2, '注销完成')
         }
       })
   }
-  log(0, '加载成功')
+  log(0, '加载完成')
 })()
