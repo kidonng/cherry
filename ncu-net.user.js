@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.2.0
+// @version      1.3.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -10,6 +10,21 @@
 // ==/UserScript==
 
 ;(() => {
+  const timeout = {
+    check: 3000,
+    retry: 10000
+  }
+  const msg = {
+    loaded: '加载完成',
+    connecting: '正在连接',
+    connectSuccess: '连接成功',
+    connectFailed: `连接失败，${timeout.retry / 1000} 秒后重试`,
+    connectError: '连接异常，正在重新连接',
+    logouting: '正在注销',
+    logoutSuccess: '注销成功',
+    logoutFailed: `注销失败，${timeout.retry / 1000} 秒后重试`
+  }
+
   const ncuxg = location.host === '222.204.3.154'
   const logBox = (ncuxg ? $('#notice') : $('.safety-tips')).empty().css({
     height: '300px',
@@ -35,7 +50,7 @@
       username = `${$('[name="username"]').val()}${$('[name="domain"]').val()}`,
       password = $('[name="password"]').val()
     ) => {
-      log(0, '正在连接')
+      log(0, msg.connecting)
       $.get(
         '/cgi-bin/get_challenge',
         {
@@ -77,11 +92,11 @@
             },
             res => {
               if (res.res === 'ok') {
-                log(1, '连接成功')
-                timer = setInterval(status, 3000)
+                log(1, msg.connectSuccess)
+                timer = setInterval(checkStatus, timeout.check)
               } else {
-                log(3, '连接失败，10 秒后自动重连')
-                timer = setTimeout(connect, 10000)
+                log(3, msg.connectFailed)
+                timer = setTimeout(connect, timeout.retry)
               }
             },
             'jsonp'
@@ -90,14 +105,37 @@
         'jsonp'
       )
     }
-    const status = () =>
+    const checkStatus = () =>
       $.get('/cgi-bin/rad_user_info', res => {
         if (res.indexOf('not_online') === 0) {
-          log(3, '连接异常，正在重新连接')
+          log(3, msg.connectError)
           clearInterval(timer)
           connect()
         }
       })
+    const logout = () => {
+      log(0, msg.logouting)
+      $.getJSON(
+        '/cgi-bin/srun_portal',
+        {
+          action: 'logout',
+          username: `${$('[name="username"]').val()}${$(
+            '[name="domain"]'
+          ).val()}`,
+          ip,
+          ac_id
+        },
+        res => {
+          if (res.res === 'ok') {
+            log(1, msg.logoutSuccess)
+            timer = null
+          } else {
+            log(3, msg.logoutFailed)
+            timer = setTimeout(logout, timeout.retry)
+          }
+        }
+      )
+    }
 
     $('.dl').click(e => {
       e.preventDefault()
@@ -109,16 +147,7 @@
         e.preventDefault()
         if (timer) {
           clearInterval(timer)
-          timer = null
-          $.getJSON('/cgi-bin/srun_portal', {
-            action: 'logout',
-            username: `${$('[name="username"]').val()}${$(
-              '[name="domain"]'
-            ).val()}`,
-            ip,
-            ac_id
-          })
-          log(2, '注销完成')
+          logout()
         }
       })
   } else {
@@ -127,7 +156,7 @@
     let timer = null
 
     const connect = () => {
-      log(0, '正在连接')
+      log(0, msg.connecting)
       $.post(
         api,
         {
@@ -139,16 +168,16 @@
         },
         res => {
           if (res.indexOf('login_ok') === 0) {
-            log(1, '连接成功')
-            timer = setInterval(status, 3000)
+            log(1, msg.connectSuccess)
+            timer = setInterval(checkStatus, timeout.check)
           } else {
-            log(3, '连接失败，10 秒后自动重连')
-            timer = setTimeout(connect, 10000)
+            log(3, msg.connectFailed)
+            timer = setTimeout(connect, timeout.retry)
           }
         }
       )
     }
-    const status = () =>
+    const checkStatus = () =>
       $.post(
         api,
         {
@@ -156,12 +185,33 @@
         },
         res => {
           if (res.indexOf('not_online') === 0) {
-            log(3, '连接异常，正在重新连接')
+            log(3, msg.connectError)
             clearInterval(timer)
             connect()
           }
         }
       )
+    const logout = () => {
+      log(0, msg.logouting)
+      $.post(
+        api,
+        {
+          action: 'logout',
+          username: $('#loginname').val(),
+          password: $('#password').val(),
+          ajax: 1
+        },
+        res => {
+          if (res === '网络已断开') {
+            log(1, msg.logoutSuccess)
+            timer = null
+          } else {
+            log(3, msg.logoutFailed)
+            timer = setTimeout(logout, timeout.retry)
+          }
+        }
+      )
+    }
 
     $('[type="submit"]').click(e => {
       e.preventDefault()
@@ -172,16 +222,9 @@
       .click(() => {
         if (timer) {
           clearInterval(timer)
-          timer = null
-          $.post(api, {
-            action: 'logout',
-            username: $('#loginname').val(),
-            password: $('#password').val(),
-            ajax: 1
-          })
-          log(2, '注销完成')
+          logout()
         }
       })
   }
-  log(0, '加载完成')
+  log(0, msg.loaded)
 })()
