@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.4.0
+// @version      1.5.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -14,6 +14,7 @@
     check: 3000,
     retry: 10000
   }
+  const maxLogs = 100
   const msg = {
     loaded: '加载完成',
     connecting: '正在连接',
@@ -32,7 +33,7 @@
     overflow: 'auto'
   })
   const log = (color, msg) => {
-    if (logBox.children().length > 50) logBox.children(':last').remove()
+    if (logBox.children().length > maxLogs) logBox.children(':last').remove()
     logBox.prepend(
       `<div>${new Date().toTimeString().slice(0, 8)} <span style="color: ${
         ['#000', '#4caf50', '#2196f3', '#f44336'][color]
@@ -48,7 +49,7 @@
     let timer = null
 
     const connect = (
-      username = `${$('[name="username"]').val()}${$('[name="domain"]').val()}`,
+      username = $('[name="username"]').val() + $('[name="domain"]').val(),
       password = $('[name="password"]').val()
     ) => {
       log(0, msg.connecting)
@@ -84,9 +85,7 @@
               ac_id,
               info,
               chksum: new Hashes.SHA1().hex(
-                `${token}${[username, md5, ac_id, ip, n, type, info].join(
-                  token
-                )}`
+                [null, username, md5, ac_id, ip, n, type, info].join(token)
               ),
               n,
               type
@@ -114,33 +113,9 @@
           connect()
         }
       })
-    const logout = () => {
-      log(0, msg.logouting)
-      $.getJSON(
-        '/cgi-bin/srun_portal',
-        {
-          action: 'logout',
-          username: `${$('[name="username"]').val()}${$(
-            '[name="domain"]'
-          ).val()}`,
-          ip,
-          ac_id
-        },
-        res => {
-          if (res.res === 'ok') {
-            log(1, msg.logoutSuccess)
-            timer = null
-          } else {
-            log(3, msg.logoutFailed)
-            timer = setTimeout(logout, timeout.retry)
-          }
-        }
-      )
-    }
 
     $('.dl').click(e => {
       e.preventDefault()
-      clearInterval(timer)
       $('.dl').attr('disabled', true)
       $('.zx').removeAttr('disabled')
       connect()
@@ -149,12 +124,31 @@
       .attr('disabled', true)
       .attr('onclick', null)
       .click(() => {
+        log(0, msg.logouting)
         clearInterval(timer)
         $('.zx').attr('disabled', true)
         $('.dl').removeAttr('disabled')
-        logout()
+
+        $.getJSON(
+          '/cgi-bin/srun_portal',
+          {
+            action: 'logout',
+            username: `${$('[name="username"]').val()}${$(
+              '[name="domain"]'
+            ).val()}`,
+            ip,
+            ac_id
+          },
+          res =>
+            res.res === 'ok'
+              ? log(1, msg.logoutSuccess)
+              : log(3, msg.logoutFailed)
+        )
       })
   } else {
+    $(document.head).append(
+      '<style>[disabled]{ background:none !important }</style>'
+    )
     const api = '/include/auth_action.php'
     const ac_id = $('[name="ac_id"]').val()
     let timer = null
@@ -171,7 +165,7 @@
           ajax: 1
         },
         res => {
-          if (res.indexOf('login_ok') === 0) {
+          if (res.startsWith('login_ok')) {
             log(1, msg.connectSuccess)
             timer = setInterval(checkStatus, timeout.check)
           } else {
@@ -188,38 +182,16 @@
           action: 'get_online_info'
         },
         res => {
-          if (res.indexOf('not_online') === 0) {
+          if (res.startsWith('not_online')) {
             log(3, msg.connectError)
             clearInterval(timer)
             connect()
           }
         }
       )
-    const logout = () => {
-      log(0, msg.logouting)
-      $.post(
-        api,
-        {
-          action: 'logout',
-          username: $('#loginname').val(),
-          password: $('#password').val(),
-          ajax: 1
-        },
-        res => {
-          if (res === '网络已断开') {
-            log(1, msg.logoutSuccess)
-            timer = null
-          } else {
-            log(3, msg.logoutFailed)
-            timer = setTimeout(logout, timeout.retry)
-          }
-        }
-      )
-    }
 
     $('[type="submit"]').click(e => {
       e.preventDefault()
-      clearInterval(timer)
       $('[type="submit"]').attr('disabled', true)
       $('#duankai').removeAttr('disabled')
       connect()
@@ -228,10 +200,24 @@
       .attr('disabled', true)
       .attr('onclick', null)
       .click(() => {
+        log(0, msg.logouting)
         clearInterval(timer)
         $('#duankai').attr('disabled', true)
         $('[type="submit"]').removeAttr('disabled')
-        logout()
+
+        $.post(
+          api,
+          {
+            action: 'logout',
+            username: $('#loginname').val(),
+            password: $('#password').val(),
+            ajax: 1
+          },
+          res =>
+            res === '网络已断开'
+              ? log(1, msg.logoutSuccess)
+              : log(3, msg.logoutFailed)
+        )
       })
   }
   log(0, msg.loaded)
