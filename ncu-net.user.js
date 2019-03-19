@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.5.0
+// @version      1.5.1
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -24,7 +24,7 @@
     connectError: '连接异常，正在重新连接',
     logouting: '正在注销',
     logoutSuccess: '注销成功',
-    logoutFailed: `注销失败，${timeout.retry / 1000} 秒后重试`
+    logoutFailed: '注销失败'
   }
 
   const ncuxg = location.host === '222.204.3.154'
