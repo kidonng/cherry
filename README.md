@@ -1,4 +1,6 @@
-# Userscript [![](https://img.shields.io/badge/Enjoy%20with-Tampermonkey%20(Chrome)-blue.svg)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) [![](https://img.shields.io/badge/Enjoy%20with-Tampermonkey%20(Firefox)-blue.svg)](https://addons.mozilla.org/firefox/addon/tampermonkey/)
+# 🌸 Cherry
+
+Homebrewed user scripts. Enjoy with [Tampermonkey (Chrome)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) / [Greasemonkey (Firefox)](https://addons.mozilla.org/firefox/addon/greasemonkey/).
 
 ## [NCU Net](../../raw/master/ncu-net.user.js)
 
