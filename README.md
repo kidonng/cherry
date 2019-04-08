@@ -1,4 +1,6 @@
-# Userscript [![](https://img.shields.io/badge/Enjoy%20with-Tampermonkey%20(Chrome)-blue.svg)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) [![](https://img.shields.io/badge/Enjoy%20with-Tampermonkey%20(Firefox)-blue.svg)](https://addons.mozilla.org/firefox/addon/tampermonkey/)
+# 🌸 Cherry
+
+Handmade user scripts. Enjoy with [Tampermonkey (Chrome)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) / [Greasemonkey (Firefox)](https://addons.mozilla.org/firefox/addon/greasemonkey/).
 
 ## [NCU Net](../../raw/master/ncu-net.user.js)
 
@@ -19,3 +21,7 @@ NCU Campus Network Access Authentication System Helper. Works on `NCU-5G/NCU-2.4
 ### Related project
 
 - [ncuwlan](https://github.com/maoyuqing/ncuwlan)
+
+## [Smooth Scroll](../../raw/master/smoothscroll.user.js)
+
+Alternative to the [Smooth Scroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj) Chrome extension.
