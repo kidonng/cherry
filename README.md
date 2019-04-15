@@ -1,6 +1,6 @@
 # 🌸 Cherry
 
-Homebrewed user scripts. Enjoy with [Tampermonkey (Chrome)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) / [Greasemonkey (Firefox)](https://addons.mozilla.org/firefox/addon/greasemonkey/).
+Handmade user scripts. Enjoy with [Tampermonkey (Chrome)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) / [Greasemonkey (Firefox)](https://addons.mozilla.org/firefox/addon/greasemonkey/).
 
 ## [NCU Net](../../raw/master/ncu-net.user.js)
 
