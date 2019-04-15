@@ -6,7 +6,6 @@
 // @match        http://222.204.3.154/*
 // @match        http://222.204.3.221/*
 // @match        http://aaa.ncu.edu.cn/*
-// @grant        none
 // ==/UserScript==
 
 ;(() => {
