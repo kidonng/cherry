@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.5.1
+// @version      1.6.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -8,23 +8,38 @@
 // @match        http://aaa.ncu.edu.cn/*
 // ==/UserScript==
 
-;(() => {
-  const timeout = {
-    check: 3000,
-    retry: 10000
+(() => {
+  const config = {
+    lang: 'zh',
+    checkInterval: 3000,
+    retryInterval: 10000,
+    maxLog: 50
   }
-  const maxLogs = 100
-  const msg = {
-    loaded: '加载完成',
-    connecting: '正在连接',
-    connectSuccess: '连接成功',
-    connectFailed: `连接失败，${timeout.retry /
-      1000} 秒后重试，点击注销按钮取消`,
-    connectError: '连接异常，正在重新连接',
-    logouting: '正在注销',
-    logoutSuccess: '注销成功',
-    logoutFailed: '注销失败'
-  }
+
+  const msg =
+    config.lang === 'zh'
+      ? {
+        loaded: '加载成功。',
+        connecting: '正在连接……',
+        connectSuccess: '连接成功。',
+        connectFailed: `连接失败！${config.retryInterval /
+        1000} 秒后重试，点击注销按钮取消。`,
+        connectError: '连接异常！正在重新连接……',
+        logouting: '正在注销……',
+        logoutSuccess: '注销成功。',
+        logoutFailed: '注销失败！'
+      }
+      : {
+        loaded: 'Load success.',
+        connecting: 'Connecting...',
+        connectSuccess: 'Connect success.',
+        connectFailed: `Connect failed! Retry in ${config.retryInterval /
+        1000} sec(s), click logout button to cancel.`,
+        connectError: 'Connect error! Reconnecting...',
+        logouting: 'Logouting...',
+        logoutSuccess: 'Logout success.',
+        logoutFailed: 'Logout failed!'
+      }
 
   const ncuxg = location.host === '222.204.3.154'
   const logBox = (ncuxg ? $('#notice') : $('.safety-tips')).empty().css({
@@ -32,7 +47,8 @@
     overflow: 'auto'
   })
   const log = (color, msg) => {
-    if (logBox.children().length > maxLogs) logBox.children(':last').remove()
+    if (logBox.children().length > config.maxLog)
+      logBox.children(':last').remove()
     logBox.prepend(
       `<div>${new Date().toTimeString().slice(0, 8)} <span style="color: ${
         ['#000', '#4caf50', '#2196f3', '#f44336'][color]
@@ -92,10 +108,10 @@
             res => {
               if (res.res === 'ok') {
                 log(1, msg.connectSuccess)
-                timer = setInterval(checkStatus, timeout.check)
+                timer = setInterval(check, config.checkInterval)
               } else {
                 log(3, msg.connectFailed)
-                timer = setTimeout(connect, timeout.retry)
+                timer = setTimeout(connect, config.retryInterval)
               }
             },
             'jsonp'
@@ -104,7 +120,8 @@
         'jsonp'
       )
     }
-    const checkStatus = () =>
+
+    const check = () =>
       $.get('/cgi-bin/rad_user_info', res => {
         if (res.indexOf('not_online') === 0) {
           log(3, msg.connectError)
@@ -166,15 +183,16 @@
         res => {
           if (res.startsWith('login_ok')) {
             log(1, msg.connectSuccess)
-            timer = setInterval(checkStatus, timeout.check)
+            timer = setInterval(check, config.checkInterval)
           } else {
             log(3, msg.connectFailed)
-            timer = setTimeout(connect, timeout.retry)
+            timer = setTimeout(connect, config.retryInterval)
           }
         }
       )
     }
-    const checkStatus = () =>
+
+    const check = () =>
       $.post(
         api,
         {
