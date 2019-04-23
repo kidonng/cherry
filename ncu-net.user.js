@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.6.0
+// @version      1.6.1
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -50,9 +50,9 @@
     if (logBox.children().length > config.maxLog)
       logBox.children(':last').remove()
     logBox.prepend(
-      `<div>${new Date().toTimeString().slice(0, 8)} <span style="color: ${
-        ['#000', '#4caf50', '#2196f3', '#f44336'][color]
-      }">${msg}</span></div>`
+      `<div style="color: ${
+        [null, '#4caf50', '#2196f3', '#f44336'][color]
+      }">${new Date().toTimeString().slice(0, 8)} ${msg}</span></div>`
     )
   }
 
