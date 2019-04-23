@@ -17,6 +17,7 @@ NCU Campus Network Access Authentication System Helper. Works on `NCU-5G/NCU-2.4
 1. Connect to the network.
 2. Open the auth page ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) and enter your username & password.
 3. Hit the login/logout button and watch the magic happen!
+4. Additionally, you can config message language and more in the script.
 
 ### Related project
 
