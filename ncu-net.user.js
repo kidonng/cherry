@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.6.1
+// @version      1.6.2
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -106,7 +106,8 @@
               type
             },
             res => {
-              if (res.res === 'ok') {
+              // E2620: Already connected
+              if (res.res === 'ok' || res.ecode === 'E2620') {
                 log(1, msg.connectSuccess)
                 timer = setInterval(check, config.checkInterval)
               } else {
@@ -181,7 +182,7 @@
           ajax: 1
         },
         res => {
-          if (res.startsWith('login_ok')) {
+          if (res.startsWith('login_ok') || res.ecode === 'E2620') {
             log(1, msg.connectSuccess)
             timer = setInterval(check, config.checkInterval)
           } else {
