@@ -2,7 +2,7 @@
 
 Handmade user scripts. Enjoy with [Tampermonkey (Chrome)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) / [Greasemonkey (Firefox)](https://addons.mozilla.org/firefox/addon/greasemonkey/).
 
-## [NCU Net](../../raw/master/ncu-net.user.js)
+## [NCU Net](../../raw/master/ncu-net.user.js) [![](https://img.shields.io/badge/User%20Script-blue.svg)](https://github.com/kidonng/ncu-net)
 
 NCU Campus Network Access Authentication System Helper. Works on `NCU-5G/NCU-2.4G` & `NCUWLAN`.
 
