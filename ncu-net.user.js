@@ -47,12 +47,13 @@
     overflow: 'auto'
   })
   const log = (color, msg) => {
+    const now = new Date()
     if (logBox.children().length > config.maxLog)
       logBox.children(':last').remove()
     logBox.prepend(
       `<div style="color: ${
         [null, '#4caf50', '#2196f3', '#f44336'][color]
-      }">${new Date().toTimeString().slice(0, 8)} ${msg}</span></div>`
+      }">${now.toLocaleDateString()} ${now.toLocaleTimeString()} ${msg}</span></div>`
     )
   }
 
