@@ -132,23 +132,18 @@
           connect()
         } else if (res.includes('Status Internal Server Error')) {
           clearInterval(timer)
-          alternativeCheck()
+          timer = setInterval(alternativeCheck, config.checkInterval)
         }
       })
 
-    const alternativeCheck = () => {
-      let isOnline = false
-      let img = new Image()
-      img.onload = () => (isOnline = true)
-      img.src = `https://i.loli.net/2019/04/28/5cc55262e0b92.png?${Math.random()}`
-      setTimeout(() => {
-        if (!isOnline) {
-          log(3, msg.connectError)
-          clearInterval(timer)
-          connect()
-        }
-      }, config.alternativeCheckTimeout)
-    }
+    const alternativeCheck = () =>
+      $.get(
+        `https://i.loli.net/2019/04/28/5cc55262e0b92.png?${Math.random()}`
+      ).fail(() => {
+        log(3, msg.connectError)
+        clearInterval(timer)
+        connect()
+      })
 
     $('.dl').click(e => {
       e.preventDefault()
