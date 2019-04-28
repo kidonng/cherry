@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.6.2
+// @version      1.7.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -8,41 +8,42 @@
 // @match        http://aaa.ncu.edu.cn/*
 // ==/UserScript==
 
-(() => {
+;(() => {
   const config = {
     lang: 'zh',
     checkInterval: 3000,
     retryInterval: 10000,
+    alternativeCheckTimeout: 300,
     maxLog: 50
   }
 
   const msg =
     config.lang === 'zh'
       ? {
-        loaded: '加载成功。',
-        connecting: '正在连接……',
-        connectSuccess: '连接成功。',
-        connectFailed: `连接失败！${config.retryInterval /
-        1000} 秒后重试，点击注销按钮取消。`,
-        connectError: '连接异常！正在重新连接……',
-        logouting: '正在注销……',
-        logoutSuccess: '注销成功。',
-        logoutFailed: '注销失败！'
-      }
+          loaded: '加载成功。',
+          connecting: '正在连接……',
+          connectSuccess: '连接成功。',
+          connectFailed: `连接失败！${config.retryInterval /
+            1000} 秒后重试，点击注销按钮取消。`,
+          connectError: '连接异常！正在重新连接……',
+          logouting: '正在注销……',
+          logoutSuccess: '注销成功。',
+          logoutFailed: '注销失败！'
+        }
       : {
-        loaded: 'Load success.',
-        connecting: 'Connecting...',
-        connectSuccess: 'Connect success.',
-        connectFailed: `Connect failed! Retry in ${config.retryInterval /
-        1000} sec(s), click logout button to cancel.`,
-        connectError: 'Connect error! Reconnecting...',
-        logouting: 'Logouting...',
-        logoutSuccess: 'Logout success.',
-        logoutFailed: 'Logout failed!'
-      }
+          loaded: 'Load success.',
+          connecting: 'Connecting...',
+          connectSuccess: 'Connect success.',
+          connectFailed: `Connect failed! Retry in ${config.retryInterval /
+            1000} sec(s), click logout button to cancel.`,
+          connectError: 'Connect error! Reconnecting...',
+          logouting: 'Logouting...',
+          logoutSuccess: 'Logout success.',
+          logoutFailed: 'Logout failed!'
+        }
 
-  const ncuxg = location.host === '222.204.3.154'
-  const logBox = (ncuxg ? $('#notice') : $('.safety-tips')).empty().css({
+  const isNCUxG = location.host === '222.204.3.154'
+  const logBox = (isNCUxG ? $('#notice') : $('.safety-tips')).empty().css({
     height: '300px',
     overflow: 'auto'
   })
@@ -56,13 +57,13 @@
       }">${now.toLocaleDateString()} ${now.toLocaleTimeString()} ${msg}</span></div>`
     )
   }
+  let timer = null
 
-  if (ncuxg) {
+  if (isNCUxG) {
     const ip = $('[name="user_ip"]').val()
     const ac_id = $('[name="ac_id"]').val()
     const n = 200
     const type = 1
-    let timer = null
 
     const connect = (
       username = $('[name="username"]').val() + $('[name="domain"]').val(),
@@ -125,12 +126,29 @@
 
     const check = () =>
       $.get('/cgi-bin/rad_user_info', res => {
-        if (res.indexOf('not_online') === 0) {
+        if (res.includes('not_online')) {
+          log(3, msg.connectError)
+          clearInterval(timer)
+          connect()
+        } else if (res.includes('Status Internal Server Error')) {
+          clearInterval(timer)
+          alternativeCheck()
+        }
+      })
+
+    const alternativeCheck = () => {
+      let isOnline = false
+      let img = new Image()
+      img.onload = () => (isOnline = true)
+      img.src = `https://i.loli.net/2019/04/28/5cc55262e0b92.png?${Math.random()}`
+      setTimeout(() => {
+        if (!isOnline) {
           log(3, msg.connectError)
           clearInterval(timer)
           connect()
         }
-      })
+      }, config.alternativeCheckTimeout)
+    }
 
     $('.dl').click(e => {
       e.preventDefault()
@@ -169,7 +187,6 @@
     )
     const api = '/include/auth_action.php'
     const ac_id = $('[name="ac_id"]').val()
-    let timer = null
 
     const connect = () => {
       log(0, msg.connecting)
@@ -183,7 +200,7 @@
           ajax: 1
         },
         res => {
-          if (res.startsWith('login_ok') || res.ecode === 'E2620') {
+          if (res.includes('login_ok') || res.ecode === 'E2620') {
             log(1, msg.connectSuccess)
             timer = setInterval(check, config.checkInterval)
           } else {
@@ -201,7 +218,7 @@
           action: 'get_online_info'
         },
         res => {
-          if (res.startsWith('not_online')) {
+          if (res.includes('not_online')) {
             log(3, msg.connectError)
             clearInterval(timer)
             connect()
