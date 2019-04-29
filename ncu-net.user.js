@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.7.0
+// @version      1.7.1
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -130,10 +130,10 @@
           log(3, msg.connectError)
           clearInterval(timer)
           connect()
-        } else if (res.includes('Status Internal Server Error')) {
-          clearInterval(timer)
-          timer = setInterval(alternativeCheck, config.checkInterval)
         }
+      }).fail(() => {
+        clearInterval(timer)
+        timer = setInterval(alternativeCheck, config.checkInterval)
       })
 
     const alternativeCheck = () =>
