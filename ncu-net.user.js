@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.7.1
+// @version      1.7.2
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -11,8 +11,8 @@
 ;(() => {
   const config = {
     lang: 'zh',
-    checkInterval: 3000,
-    retryInterval: 10000,
+    checkInterval: 5000,
+    retryInterval: 10000, // Recommend >= 10s
     alternativeCheckTimeout: 300,
     maxLog: 50
   }
