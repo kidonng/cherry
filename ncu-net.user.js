@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.7.2
+// @version      1.7.3
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -10,10 +10,19 @@
 
 ;(() => {
   const config = {
+    /* Available language
+     * en - English
+     * zh - Simplified Chinese
+     */
     lang: 'zh',
+
+    // Recommend not too low, or mysterious Status Internal Server Error will trigger dirty alternative check
     checkInterval: 5000,
-    retryInterval: 10000, // Recommend >= 10s
-    alternativeCheckTimeout: 300,
+
+    // Recommend >= 10s (NCUWLAN needs a 10s break between two logins)
+    retryInterval: 10000,
+
+    // Recommend not too high or the page can consume too much memory
     maxLog: 50
   }
 
