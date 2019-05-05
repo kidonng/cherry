@@ -10,14 +10,14 @@ NCU Campus Network Access Authentication System Helper. Works on `NCU-5G/NCU-2.4
 
 - Jump- & popup-free login/logout
 - Auto reconnect
-- Network logs
+- Connect logs
 
 ### Usage
 
 1. Connect to the network.
 2. Open the auth page ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) and enter your username & password.
 3. Hit the login/logout button and watch the magic happen!
-4. Additionally, you can [config language & more](ncu-net.user.js#L12-L17) in the script.
+4. You can [config language & more](ncu-net.user.js#L12-L24) in the script.
 
 ### Related project
 
@@ -26,3 +26,7 @@ NCU Campus Network Access Authentication System Helper. Works on `NCU-5G/NCU-2.4
 ## [Smooth Scroll](../../raw/master/smoothscroll.user.js)
 
 Alternative to the [Smooth Scroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj) Chrome extension.
+
+## [Tieba Redirect](../../raw/master/tieba-redirect.user.js)
+
+Redirect all variants of Tieba site to tieba.baidu.com. Also enable you to see reply's reply without login.
