@@ -1,8 +1,9 @@
 // ==UserScript==
 // @name         Tieba Redirect
-// @version      1.0.0
+// @version      1.0.1
 // @description  Redirect all variants of Tieba site to tieba.baidu.com
 // @author       kidonng
+// @match        http://tieba.baidu.com/*
 // @match        https://tieba.baidu.com/*
 // @match        http://wapp.baidu.com/*
 // @match        https://wapp.baidu.com/*
@@ -32,7 +33,7 @@
     location.host === 'c.tieba.baidu.com'
   )
     location.host = 'tieba.baidu.com'
-  else if (location.host === 'wapp.baidu.com')
+  else if (location.href.includes('wapp.baidu.com/mo/q/m'))
     location.href = location.href.replace(
       'wapp.baidu.com/mo/q/m',
       'tieba.baidu.com/f'
