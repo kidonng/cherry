@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.7.3
+// @version      1.7.4
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @match        http://222.204.3.154/*
@@ -10,17 +10,16 @@
 
 ;(() => {
   const config = {
-    /* Available language
-     * en - English
-     * zh - Simplified Chinese
-     */
+    // Available languages: en - English, zh - Simplified Chinese
     lang: 'zh',
 
-    // Recommend not too low, or mysterious Status Internal Server Error will trigger dirty alternative check
-    checkInterval: 5000,
+    interval: {
+      // Recommend not too low, or mysterious Status Internal Server Error will trigger dirty alternative check
+      check: 5000,
 
-    // Recommend >= 10s (NCUWLAN needs a 10s break between two logins)
-    retryInterval: 10000,
+      // Recommend >= 10s (NCUWLAN needs a 10s break between two logins)
+      retry: 10000
+    },
 
     // Recommend not too high or the page can consume too much memory
     maxLog: 50
@@ -32,7 +31,7 @@
           loaded: '加载成功。',
           connecting: '正在连接……',
           connectSuccess: '连接成功。',
-          connectFailed: `连接失败！${config.retryInterval /
+          connectFailed: `连接失败！${config.interval.retry /
             1000} 秒后重试，点击注销按钮取消。`,
           connectError: '连接异常！正在重新连接……',
           logouting: '正在注销……',
@@ -43,7 +42,7 @@
           loaded: 'Load success.',
           connecting: 'Connecting...',
           connectSuccess: 'Connect success.',
-          connectFailed: `Connect failed! Retry in ${config.retryInterval /
+          connectFailed: `Connect failed! Retry in ${config.interval.retry /
             1000} sec(s), click logout button to cancel.`,
           connectError: 'Connect error! Reconnecting...',
           logouting: 'Logouting...',
@@ -120,10 +119,10 @@
               // E2620: Already connected
               if (res.res === 'ok' || res.ecode === 'E2620') {
                 log(1, msg.connectSuccess)
-                timer = setInterval(check, config.checkInterval)
+                timer = setInterval(check, config.interval.check)
               } else {
                 log(3, msg.connectFailed)
-                timer = setTimeout(connect, config.retryInterval)
+                timer = setTimeout(connect, config.interval.retry)
               }
             },
             'jsonp'
@@ -142,7 +141,7 @@
         }
       }).fail(() => {
         clearInterval(timer)
-        timer = setInterval(alternativeCheck, config.checkInterval)
+        timer = setInterval(alternativeCheck, config.interval.check)
       })
 
     const alternativeCheck = () =>
@@ -206,10 +205,10 @@
         res => {
           if (res.includes('login_ok') || res.ecode === 'E2620') {
             log(1, msg.connectSuccess)
-            timer = setInterval(check, config.checkInterval)
+            timer = setInterval(check, config.interval.check)
           } else {
             log(3, msg.connectFailed)
-            timer = setTimeout(connect, config.retryInterval)
+            timer = setTimeout(connect, config.interval.retry)
           }
         }
       )
