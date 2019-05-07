@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tieba Redirect
-// @version      1.1.0
+// @version      1.0.0
 // @description  Redirect all variants of Tieba site to tieba.baidu.com
 // @author       kidonng
 // @include      http*://tieba.baidu.com/*

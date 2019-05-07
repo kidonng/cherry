@@ -27,7 +27,7 @@ Related: [ncuwlan](https://github.com/maoyuqing/ncuwlan)
 
 ### [Smooth Scroll](../../raw/master/scripts/smoothscroll.user.js)
 
-Alternative to [Smooth Scroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj) Chrome extension.
+Use [Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-websites) to replace [Smooth Scroll Chrome extension](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj).
 
 ### [Tieba Redirect](../../raw/master/scripts/tieba-redirect.user.js)
 
