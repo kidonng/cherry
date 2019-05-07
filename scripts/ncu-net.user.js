@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.8.0
+// @version      1.8.1
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @include      http://222.204.3.154/*
@@ -35,7 +35,7 @@
           logoutting: '正在注销',
           logoutSuccess: '注销成功',
           logoutFailed: '注销失败',
-          statusError: '在线状态服务器出错！使用备用检查方式'
+          statusError: '连接状态服务器失败！使用备用检测方式'
         }
       : {
           loaded: 'Load success',
@@ -50,8 +50,8 @@
           statusError: 'Status server error! Use alternative check method'
         }
 
-  const NCUxG = location.host === '222.204.3.154'
-  const logBox = (NCUxG ? $('#notice') : $('.safety-tips'))
+  const NCUXG = location.host === '222.204.3.154'
+  const logBox = (NCUXG ? $('#notice') : $('.safety-tips'))
     .empty()
     .css({ height: '20rem', overflow: 'auto' })
   let timer = null
@@ -65,7 +65,7 @@
     )
   }
 
-  if (NCUxG) {
+  if (NCUXG) {
     const ip = $('[name="user_ip"]').val()
     const ac_id = $('[name="ac_id"]').val()
     const enc_ver = 'srun_bx1'
