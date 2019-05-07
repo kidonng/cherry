@@ -1,0 +1,19 @@
+/* ==UserStyle==
+@name         Global
+@version      1.0.0
+@description  Opinionated Global Style
+@author       kidonng
+@namespace    https://github.com/kidonng/choco
+==/UserStyle== */
+
+@-moz-document url-prefix("") {
+  body {
+    font-family: Segoe UI, Microsoft YaHei UI;
+  }
+
+  code,
+  pre,
+  kbd {
+    font-family: Consolas;
+  }
+}
