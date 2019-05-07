@@ -1,0 +1,36 @@
+/* ==UserStyle==
+@name         Bilibili
+@version      1.0.0
+@description  Opinionated Bilibili Style
+@author       kidonng
+@namespace    https://github.com/kidonng/choco
+==/UserStyle== */
+
+@-moz-document domain("www.bilibili.com") {
+  #bili_live,
+  [sortindex='0'],
+  .side-nav,
+  .gif-menu,
+  #reco_list,
+  #live_recommand_report,
+  .message,
+  .u-link,
+  #entryOld,
+  .charge-btn,
+  .nameplate,
+  .help.item,
+  .hot-follow > .follow-btn,
+  .bilibili-player-video-top,
+  .bilibili-player-video-inputbar {
+    display: none;
+  }
+}
+
+@-moz-document domain("space.bilibili.com") {
+  .i-live.section,
+  .h-message.h-f-btn,
+  .m-level.h-level,
+  .h-fans-icon {
+    display: none;
+  }
+}

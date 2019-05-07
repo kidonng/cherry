@@ -1,0 +1,37 @@
+/* ==UserStyle==
+@name         Tieba
+@version      1.0.0
+@description  Opinionated Tieba Style
+@author       kidonng
+@namespace    https://github.com/kidonng/choco
+==/UserStyle== */
+
+@-moz-document domain("tieba.baidu.com") {
+  .right_section,
+  .tbui_aside_float_bar,
+  .save_face_bg,
+  .icon_tbworld,
+  .celebrity,
+  .card_top_right,
+  .app_download_box,
+  .post_bubble_top,
+  .post_bubble_bottom,
+  .share_btn_wrapper {
+    display: none;
+  }
+
+  .vip_red {
+    color: initial !important;
+  }
+
+  .post_bubble_top,
+  .post_bubble_middle,
+  .post_bubble_bottom {
+    background: none !important;
+  }
+
+  .post_bubble_middle {
+    padding: initial;
+    width: initial;
+  }
+}
