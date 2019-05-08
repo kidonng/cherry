@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.8.1
+// @version      1.9.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @include      http://222.204.3.154/*
@@ -18,9 +18,14 @@
 
     // Recommend >= 10s (NCUWLAN needs a 10s break between two logins)
     retryTimeout: 10000,
-
-    // Recommend not too high or the page can consume too much memory
-    maxLog: 50
+    log: {
+      // Recommend not too high or the page can consume too much memory
+      max: 50,
+      info: '#000',
+      processing: 'blue',
+      success: 'green',
+      error: 'red'
+    }
   }
 
   const msg =
@@ -35,7 +40,10 @@
           logoutting: '正在注销',
           logoutSuccess: '注销成功',
           logoutFailed: '注销失败',
-          statusError: '连接状态服务器失败！使用备用检测方式'
+          statusError: '连接状态服务器失败！使用备用检测方式',
+          offline: '网络已断开',
+          online: '网络已连接',
+          emptyField: '请输入帐号和密码'
         }
       : {
           loaded: 'Load success',
@@ -47,7 +55,10 @@
           logoutting: 'Logoutting',
           logoutSuccess: 'Logout success',
           logoutFailed: 'Logout failed',
-          statusError: 'Status server error! Use alternative check method'
+          statusError: 'Status server error! Use alternative check method',
+          offline: 'Network is offline',
+          online: 'Network is online',
+          emptyField: 'Please enter your username and password'
         }
 
   const NCUXG = location.host === '222.204.3.154'
@@ -58,7 +69,7 @@
 
   const log = (color, msg) => {
     const now = new Date()
-    if (logBox.children().length > config.maxLog)
+    if (logBox.children().length > config.log.max)
       logBox.children(':last').remove()
     logBox.prepend(
       `<div style="color: ${color}">${now.toLocaleDateString()} ${now.toLocaleTimeString()} ${msg}</div>`
@@ -75,7 +86,7 @@
     let username = null
 
     const connect = () => {
-      log('#2196f3', msg.connecting)
+      log(config.log.processing, msg.connecting)
 
       username = `${$('[name="username"]').val()}${$('[name="domain"]').val()}`
       const password = $('[name="password"]').val()
@@ -111,11 +122,11 @@
             res => {
               // E2620: Already connected
               if (res.res === 'ok' || res.ecode === 'E2620') {
-                log('#4caf50', msg.connectSuccess)
+                log(config.log.success, msg.connectSuccess)
 
                 timer = setInterval(check, config.checkInterval)
               } else {
-                log('#f44336', msg.connectFailed)
+                log(config.log.error, msg.connectFailed)
 
                 timer = setTimeout(connect, config.retryTimeout)
               }
@@ -130,13 +141,13 @@
     const check = () =>
       $.get('/cgi-bin/rad_user_info', res => {
         if (res.includes('not_online')) {
-          log('#f44336', msg.connectError)
+          log(config.log.error, msg.connectError)
 
           clearInterval(timer)
           connect()
         }
       }).fail(() => {
-        log('#f44336', msg.statusError)
+        log(config.log.error, msg.statusError)
 
         clearInterval(timer)
         timer = setInterval(alternativeCheck, config.checkInterval)
@@ -146,7 +157,7 @@
       $.get(
         `http://wx4.sinaimg.cn/large/0060lm7Tly1fz2yx9quplj300100107g?${Math.random()}`
       ).fail(() => {
-        log('#f44336', msg.connectError)
+        log(config.log.error, msg.connectError)
 
         clearInterval(timer)
         connect()
@@ -155,17 +166,19 @@
     $('.dl').click(e => {
       e.preventDefault()
 
-      $('.dl').attr('disabled', true)
-      $('.zx').removeAttr('disabled')
+      if ($('[name="username"]').val() && $('[name="password"]').val()) {
+        $('.dl').attr('disabled', true)
+        $('.zx').removeAttr('disabled')
 
-      connect()
+        connect()
+      } else log(config.log.error, msg.emptyField)
     })
 
     $('.zx')
       .attr('onclick', null)
       .attr('disabled', true)
       .click(() => {
-        log('#2196f3', msg.logoutting)
+        log(config.log.processing, msg.logoutting)
 
         $('.zx').attr('disabled', true)
 
@@ -175,17 +188,23 @@
           { action: 'logout', username, ip, ac_id },
           res => {
             if (res.res === 'ok') {
-              log('#4caf50', msg.logoutSuccess)
+              log(config.log.success, msg.logoutSuccess)
 
               $('.dl').removeAttr('disabled')
             } else {
-              log('#f44336', msg.logoutFailed)
+              log(config.log.error, msg.logoutFailed)
 
               $('.zx').removeAttr('disabled')
             }
           }
         )
       })
+
+    ononline = () => {
+      log(config.log.success, msg.online)
+
+      connect()
+    }
   } else {
     $(document.head).append(`
       <style>
@@ -203,7 +222,7 @@
     let password = null
 
     const connect = () => {
-      log('#2196f3', msg.connecting)
+      log(config.log.processing, msg.connecting)
 
       username = $('#loginname').val()
       password = $('#password').val()
@@ -220,11 +239,11 @@
         res => {
           // E2620: Already connected
           if (res.includes('login_ok') || res.ecode === 'E2620') {
-            log('#4caf50', msg.connectSuccess)
+            log(config.log.success, msg.connectSuccess)
 
             timer = setInterval(check, config.checkInterval)
           } else {
-            log('#f44336', msg.connectFailed)
+            log(config.log.error, msg.connectFailed)
 
             timer = setTimeout(connect, config.retryTimeout)
           }
@@ -235,7 +254,7 @@
     const check = () =>
       $.post(api, { action: 'get_online_info' }, res => {
         if (res.includes('not_online')) {
-          log('#f44336', msg.connectError)
+          log(config.log.error, msg.connectError)
 
           clearInterval(timer)
           connect()
@@ -245,34 +264,48 @@
     $('[type="submit"]').click(e => {
       e.preventDefault()
 
-      $('[type="submit"]').attr('disabled', true)
-      $('#duankai').removeAttr('disabled')
+      if ($('#loginname').val() && $('#password').val()) {
+        $('[type="submit"]').attr('disabled', true)
+        $('#duankai').removeAttr('disabled')
 
-      connect()
+        connect()
+      } else log(config.log.error, msg.emptyField)
     })
 
     $('#duankai')
       .attr('onclick', null)
       .attr('disabled', true)
       .click(() => {
-        log('#2196f3', msg.logoutting)
+        log(config.log.processing, msg.logoutting)
 
         $('#duankai').attr('disabled', true)
 
         clearInterval(timer)
         $.post(api, { action: 'logout', username, password, ajax }, res => {
           if (res === '网络已断开') {
-            log('#4caf50', msg.logoutSuccess)
+            log(config.log.success, msg.logoutSuccess)
 
             $('[type="submit"]').removeAttr('disabled')
           } else {
-            log('#f44336', msg.logoutFailed)
+            log(config.log.error, msg.logoutFailed)
 
             $('#duankai').removeAttr('disabled')
           }
         })
       })
+
+    ononline = () => {
+      log(config.log.success, msg.online)
+
+      connect()
+    }
   }
 
-  log('#000', msg.loaded)
+  onoffline = () => {
+    log(config.log.error, msg.offline)
+
+    clearInterval(timer)
+  }
+
+  log(config.log.info, msg.loaded)
 })()
