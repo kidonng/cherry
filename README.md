@@ -4,7 +4,7 @@ Handmade user scripts & opinionated user styles.
 
 ## User Scripts
 
-You need to install [Tampermonkey (Chrome)](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)/[Greasemonkey (Firefox)](https://addons.mozilla.org/firefox/addon/greasemonkey/) first.
+You need to install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)/[Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)) first.
 
 ### [NCU Net](https://github.com/kidonng/cherry/raw/master/scripts/ncu-net.user.js) [![](https://img.shields.io/badge/User%20Script-blue.svg)](https://github.com/kidonng/ncu-net)
 
@@ -15,13 +15,14 @@ Related: [ncuwlan](https://github.com/maoyuqing/ncuwlan)
 #### Features
 
 - Jump- & popup-free login/logout
-- Auto reconnect
-- Connect logs
+- Remember username and password
+- Auto (re)connect
+- Network logs
 
 #### Usage
 
 1. Connect to the network.
-2. Open the auth page ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) and enter your username & password.
+2. Open the authentication page ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) and enter your username & password.
 3. Hit the login/logout button and watch the magic happen!
 4. You can [config language & more](scripts/ncu-net.user.js#L12-L31) in the script.
 
