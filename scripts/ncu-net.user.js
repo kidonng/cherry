@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.9.0
+// @version      1.10.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @include      http://222.204.3.154/*
@@ -10,13 +10,29 @@
 
 ;(() => {
   const config = {
+    // Configured account(s) will be used if given
+    // NCU-5G/NCU-2.4G account
+    NCUXG: {
+      username: '',
+
+      // ISPs: cmcc - 移动, unicom - 联通, ndcard - 电信, ncu - 校园网
+      ISP: '',
+      password: ''
+    },
+
+    // NCUWLAN account
+    NCUWLAN: {
+      username: '',
+      password: ''
+    },
+
     // Available languages: en - English, zh - Simplified Chinese
     lang: 'zh',
 
     // Recommend not too low, or mysterious Status Internal Server Error will trigger dirty alternative check
     checkInterval: 5000,
 
-    // Recommend >= 10s (NCUWLAN needs a 10s break between two logins)
+    // Recommend >= 10s (NCUWLAN needs a 10s break between two login)
     retryTimeout: 10000,
     log: {
       // Recommend not too high or the page can consume too much memory
@@ -88,8 +104,11 @@
     const connect = () => {
       log(config.log.processing, msg.connecting)
 
-      username = `${$('[name="username"]').val()}${$('[name="domain"]').val()}`
-      const password = $('[name="password"]').val()
+      username =
+        config.NCUXG.username && config.NCUXG.ISP
+          ? `${config.NCUXG.username}@${config.NCUXG.ISP}`
+          : `${$('[name="username"]').val()}${$('[name="domain"]').val()}`
+      const password = config.NCUXG.password || $('[name="password"]').val()
 
       $.get(
         '/cgi-bin/get_challenge',
@@ -166,7 +185,10 @@
     $('.dl').click(e => {
       e.preventDefault()
 
-      if ($('[name="username"]').val() && $('[name="password"]').val()) {
+      if (
+        (config.NCUXG.username && config.NCUXG.ISP && config.NCUXG.password) ||
+        ($('[name="username"]').val() && $('[name="password"]').val())
+      ) {
         $('.dl').attr('disabled', true)
         $('.zx').removeAttr('disabled')
 
@@ -224,8 +246,8 @@
     const connect = () => {
       log(config.log.processing, msg.connecting)
 
-      username = $('#loginname').val()
-      password = $('#password').val()
+      username = config.NCUWLAN.username || $('#loginname').val()
+      password = config.NCUWLAN.password || $('#password').val()
 
       $.post(
         api,
@@ -264,7 +286,10 @@
     $('[type="submit"]').click(e => {
       e.preventDefault()
 
-      if ($('#loginname').val() && $('#password').val()) {
+      if (
+        (config.NCUWLAN.username && config.NCUWLAN.password) ||
+        ($('#loginname').val() && $('#password').val())
+      ) {
         $('[type="submit"]').attr('disabled', true)
         $('#duankai').removeAttr('disabled')
 
