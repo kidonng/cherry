@@ -23,7 +23,7 @@ Related: [ncuwlan](https://github.com/maoyuqing/ncuwlan)
 1. Connect to the network.
 2. Open the auth page ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) and enter your username & password.
 3. Hit the login/logout button and watch the magic happen!
-4. You can [config language & more](scripts/ncu-net.user.js#L12-L45) in the script.
+4. You can [config language & more](scripts/ncu-net.user.js#L12-L31) in the script.
 
 ### [Smooth Scroll](https://github.com/kidonng/cherry/raw/master/scripts/smoothscroll.user.js)
 
