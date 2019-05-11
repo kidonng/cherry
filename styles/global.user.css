@@ -3,17 +3,17 @@
 @version      1.0.0
 @description  Opinionated Global Style
 @author       kidonng
-@namespace    https://github.com/kidonng/choco
+@namespace    https://github.com/kidonng/cherry
 ==/UserStyle== */
 
 @-moz-document url-prefix("") {
   body {
-    font-family: Segoe UI, Microsoft YaHei UI;
+    font-family: Segoe UI, Microsoft YaHei UI, sans-serif;
   }
 
   code,
   pre,
   kbd {
-    font-family: Consolas;
+    font-family: Consolas, Microsoft YaHei UI monospace;
   }
 }
