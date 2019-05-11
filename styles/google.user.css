@@ -3,7 +3,7 @@
 @version      1.0.0
 @description  Opinionated Google Style
 @author       kidonng
-@namespace    https://github.com/kidonng/choco
+@namespace    https://github.com/kidonng/cherry
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.google.co") {
@@ -13,6 +13,6 @@
   input,
   .std,
   h1 {
-    font-family: Segoe UI, Microsoft YaHei UI;
+    font-family: Segoe UI, Microsoft YaHei UI, sans-serif;
   }
 }
