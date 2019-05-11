@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      1.10.0
+// @version      2.0.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @include      http://222.204.3.154/*
@@ -10,30 +10,16 @@
 
 ;(() => {
   const config = {
-    // Configured account(s) will be used if given
-    // NCU-5G/NCU-2.4G account
-    NCUXG: {
-      username: '',
-
-      // ISPs: cmcc - 移动, unicom - 联通, ndcard - 电信, ncu - 校园网
-      ISP: '',
-      password: ''
-    },
-
-    // NCUWLAN account
-    NCUWLAN: {
-      username: '',
-      password: ''
-    },
-
     // Available languages: en - English, zh - Simplified Chinese
     lang: 'zh',
+    time: {
+      // Recommend not too low, or mysterious Status Internal Server Error will trigger dirty alternative check
+      checkInterval: 5000,
 
-    // Recommend not too low, or mysterious Status Internal Server Error will trigger dirty alternative check
-    checkInterval: 5000,
-
-    // Recommend >= 10s (NCUWLAN needs a 10s break between two login)
-    retryTimeout: 10000,
+      // Recommend >= 10s (NCUWLAN needs a 10s break between two login)
+      retryTimeout: 10000,
+      autoLoginTimeout: 3000
+    },
     log: {
       // Recommend not too high or the page can consume too much memory
       max: 50,
@@ -50,7 +36,7 @@
           loaded: '加载成功',
           connecting: '正在连接',
           connectSuccess: '连接成功',
-          connectFailed: `连接失败！${config.retryTimeout /
+          connectFailed: `连接失败！${config.time.retryTimeout /
             1000} 秒后重试，点击注销按钮取消`,
           connectError: '连接异常！正在重新连接',
           logoutting: '正在注销',
@@ -65,7 +51,7 @@
           loaded: 'Load success',
           connecting: 'Connecting',
           connectSuccess: 'Connect success',
-          connectFailed: `Connect failed! Retry in ${config.retryTimeout /
+          connectFailed: `Connect failed! Retry in ${config.time.retryTimeout /
             1000} sec(s), click logout button to cancel`,
           connectError: 'Connect error! Reconnecting',
           logoutting: 'Logoutting',
@@ -99,16 +85,11 @@
     const n = 200
     const type = 1
 
-    let username = null
-
     const connect = () => {
       log(config.log.processing, msg.connecting)
 
-      username =
-        config.NCUXG.username && config.NCUXG.ISP
-          ? `${config.NCUXG.username}@${config.NCUXG.ISP}`
-          : `${$('[name="username"]').val()}${$('[name="domain"]').val()}`
-      const password = config.NCUXG.password || $('[name="password"]').val()
+      const username = localStorage.username
+      const password = localStorage.password
 
       $.get(
         '/cgi-bin/get_challenge',
@@ -143,11 +124,11 @@
               if (res.res === 'ok' || res.ecode === 'E2620') {
                 log(config.log.success, msg.connectSuccess)
 
-                timer = setInterval(check, config.checkInterval)
+                timer = setInterval(check, config.time.checkInterval)
               } else {
                 log(config.log.error, msg.connectFailed)
 
-                timer = setTimeout(connect, config.retryTimeout)
+                timer = setTimeout(connect, config.time.retryTimeout)
               }
             },
             'jsonp'
@@ -169,7 +150,7 @@
         log(config.log.error, msg.statusError)
 
         clearInterval(timer)
-        timer = setInterval(alternativeCheck, config.checkInterval)
+        timer = setInterval(alternativeCheck, config.time.checkInterval)
       })
 
     const alternativeCheck = () =>
@@ -185,12 +166,11 @@
     $('.dl').click(e => {
       e.preventDefault()
 
-      if (
-        (config.NCUXG.username && config.NCUXG.ISP && config.NCUXG.password) ||
-        ($('[name="username"]').val() && $('[name="password"]').val())
-      ) {
-        $('.dl').attr('disabled', true)
-        $('.zx').removeAttr('disabled')
+      if ($('[name="username"]').val() && $('[name="password"]').val()) {
+        localStorage.username = `${$('[name="username"]').val()}${$(
+          '[name="domain"]'
+        ).val()}`
+        localStorage.password = $('[name="password"]').val()
 
         connect()
       } else log(config.log.error, msg.emptyField)
@@ -198,26 +178,16 @@
 
     $('.zx')
       .attr('onclick', null)
-      .attr('disabled', true)
       .click(() => {
         log(config.log.processing, msg.logoutting)
-
-        $('.zx').attr('disabled', true)
 
         clearInterval(timer)
         $.getJSON(
           '/cgi-bin/srun_portal',
-          { action: 'logout', username, ip, ac_id },
+          { action: 'logout', username: localStorage.username, ip, ac_id },
           res => {
-            if (res.res === 'ok') {
-              log(config.log.success, msg.logoutSuccess)
-
-              $('.dl').removeAttr('disabled')
-            } else {
-              log(config.log.error, msg.logoutFailed)
-
-              $('.zx').removeAttr('disabled')
-            }
+            if (res.res === 'ok') log(config.log.success, msg.logoutSuccess)
+            else log(config.log.error, msg.logoutFailed)
           }
         )
       })
@@ -227,27 +197,19 @@
 
       connect()
     }
-  } else {
-    $(document.head).append(`
-      <style>
-        [disabled] {
-          background:none !important;
-        }
-      </style>
-    `)
 
+    if (localStorage.username && localStorage.password)
+      timer = setTimeout(connect, config.time.autoLoginTimeout)
+  } else {
     const api = '/include/auth_action.php'
     const ac_id = $('[name="ac_id"]').val()
     const ajax = 1
 
-    let username = null
-    let password = null
-
     const connect = () => {
       log(config.log.processing, msg.connecting)
 
-      username = config.NCUWLAN.username || $('#loginname').val()
-      password = config.NCUWLAN.password || $('#password').val()
+      const username = localStorage.username
+      const password = localStorage.password
 
       $.post(
         api,
@@ -263,11 +225,11 @@
           if (res.includes('login_ok') || res.ecode === 'E2620') {
             log(config.log.success, msg.connectSuccess)
 
-            timer = setInterval(check, config.checkInterval)
+            timer = setInterval(check, config.time.checkInterval)
           } else {
             log(config.log.error, msg.connectFailed)
 
-            timer = setTimeout(connect, config.retryTimeout)
+            timer = setTimeout(connect, config.time.retryTimeout)
           }
         }
       )
@@ -286,12 +248,9 @@
     $('[type="submit"]').click(e => {
       e.preventDefault()
 
-      if (
-        (config.NCUWLAN.username && config.NCUWLAN.password) ||
-        ($('#loginname').val() && $('#password').val())
-      ) {
-        $('[type="submit"]').attr('disabled', true)
-        $('#duankai').removeAttr('disabled')
+      if ($('#loginname').val() && $('#password').val()) {
+        localStorage.username = $('#loginname').val()
+        localStorage.password = $('#password').val()
 
         connect()
       } else log(config.log.error, msg.emptyField)
@@ -299,24 +258,24 @@
 
     $('#duankai')
       .attr('onclick', null)
-      .attr('disabled', true)
       .click(() => {
         log(config.log.processing, msg.logoutting)
 
-        $('#duankai').attr('disabled', true)
-
         clearInterval(timer)
-        $.post(api, { action: 'logout', username, password, ajax }, res => {
-          if (res === '网络已断开') {
-            log(config.log.success, msg.logoutSuccess)
-
-            $('[type="submit"]').removeAttr('disabled')
-          } else {
-            log(config.log.error, msg.logoutFailed)
-
-            $('#duankai').removeAttr('disabled')
+        $.post(
+          api,
+          {
+            action: 'logout',
+            username: localStorage.username,
+            password: localStorage.password,
+            ajax
+          },
+          res => {
+            if (res === ' 网络已断开')
+              log(config.log.success, msg.logoutSuccess)
+            else log(config.log.error, msg.logoutFailed)
           }
-        })
+        )
       })
 
     ononline = () => {
@@ -324,6 +283,9 @@
 
       connect()
     }
+
+    if (localStorage.username && localStorage.password)
+      timer = setTimeout(connect, config.time.autoLoginTimeout)
   }
 
   onoffline = () => {
