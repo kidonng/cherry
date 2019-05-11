@@ -3,10 +3,12 @@
 @version      1.0.0
 @description  Wikipedia Material + Wikipedia New Light
 @author       kidonng
-@namespace    https://github.com/kidonng/choco
+@namespace    https://github.com/kidonng/cherry
 ==/UserStyle== */
 
 @-moz-document domain("wikipedia.org"), domain("wikimedia.org") {
+  /* Modification Start */
+
   #mw-panel {
     padding-top: 9rem;
   }
@@ -33,6 +35,8 @@
     color: #fff;
     font-size: 1.5rem;
   }
+
+  /* Modification End */
 
   #mw-head {
     background: #2196f3 !important;
