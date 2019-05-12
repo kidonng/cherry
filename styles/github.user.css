@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.0.0
+@version      1.0.1
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -19,14 +19,15 @@
     color: var(--primary);
   }
 
-  /* Progress Bar */
+  /* Progress bar */
   .pjax-loader-bar .progress {
     background: var(--primary);
     box-shadow: 0 0 10px var(--primary-70pct);
   }
 
   /* Avatar */
-  .avatar {
+  .avatar,
+  [data-octo-click='hovercard-link-click'] img {
     border-radius: 100% !important;
   }
 
@@ -42,7 +43,6 @@
     background: #f1f3f4;
   }
 
-  /* Button - Primary */
   .btn-primary,
   .btn-primary:hover,
   .btn-primary:focus,
@@ -63,7 +63,6 @@
     background: var(--primary-hover-70pct);
   }
 
-  /* Button - Outline */
   .btn-outline:hover {
     background: var(--primary);
     border-right: 0;
@@ -71,36 +70,30 @@
     border-left: 0;
   }
 
+  .BtnGroup-item {
+    border-right-width: 0;
+  }
+
   /* Dashboard */
-  .team-left-column {
-    border-right: 0 !important;
+  .team-left-column,
+  .col-12.col-md-8.col-lg-6.p-responsive.mt-3.border-bottom.d-flex.flex-auto {
+    border: 0 !important;
   }
 
   .bg-gray {
     background: initial !important;
   }
 
-  /* [Optional] Hide Discovery Projects */
-  .team-left-column:last-child {
-    visibility: hidden;
-  }
-
-  /* Repo - Header */
+  /* Repo header */
   .repohead.experiment-repo-nav,
   .select-menu-header,
   .Counter {
     background-color: initial;
   }
 
-  .pagehead,
   .social-count,
   .btn-with-count.btn {
     border: 0;
-  }
-
-  .reponav-item {
-    border-left: 0;
-    border-right: 0;
   }
 
   .pagehead-actions li {
@@ -112,7 +105,7 @@
     border-color: var(--primary) #e1e4e8 transparent;
   }
 
-  /* Repo - Files & Commits */
+  /* Files & Commits */
   .commit-tease {
     border: 1px solid #dfe2e5;
   }
@@ -140,20 +133,9 @@
     border-top: 0;
   }
 
-  /* [Optional] Hide Contributors */
-  .Box-body.d-flex.flex-items-center.flex-auto.f6.border-bottom-0.flex-wrap {
-    display: none !important;
-  }
-
-  /* Repo - Issues & Pull requests  */
+  /* Issues & Pull requests  */
   .timeline-comment-header {
     background-color: initial;
-  }
-
-  /* [Optional] Hide Reactions */
-  .add-reaction-btn,
-  .js-comment-header-reaction-button {
-    display: none !important;
   }
 
   /* Settings */
@@ -180,7 +162,8 @@
 
   /* Profile */
   .avatar-before-user-status,
-  .js-user-status-container {
+  .js-user-status-container,
+  .user-status-container {
     border: 0 !important;
   }
 
@@ -188,25 +171,53 @@
     border-bottom-color: var(--primary);
   }
 
-  /* [Optional] Hide Trending, Explore & Footer */
-  .Header-link:nth-of-type(4),
-  .Header-link:nth-of-type(5),
-  .footer {
+  .js-profile-editable-area + .pb-3,
+  .contrib-footer {
+    display: none;
+  }
+
+  /* Optional Styles*/
+
+  /* Hide PRO badge */
+  .js-pro-badge,
+  [data-octo-click='hovercard-link-click'] + div {
+    display: none;
+  }
+
+  /*  Issues & Pull requests - Hide reaction button */
+  .add-reaction-btn,
+  .js-comment-header-reaction-button {
     display: none !important;
   }
 
-  body {
-    margin-bottom: 64px;
+  /* Dashboard - Hide right column */
+  .team-left-column:last-child {
+    visibility: hidden;
   }
 
-  .team-left-column,
-  .col-12.col-md-8.col-lg-6.p-responsive.mt-3.border-bottom.d-flex.flex-auto {
-    border: 0 !important;
+  /* Files & Commits - Hide contributors */
+  .Box-body.d-flex.flex-items-center.flex-auto.f6.border-bottom-0.flex-wrap {
+    display: none !important;
   }
 
-  /* [Refined GitHub] */
+  /* Profile - Fix scaled width */
+  .min-width-xl {
+    min-width: initial;
+  }
+
+  /* Chrome extensions - Refined GitHub */
   .commit-build-statuses {
-    top: 0;
-    left: 2px;
+    left: 4px;
+  }
+
+  /* Chrome extensions - Octotree */
+  .octotree-toggle {
+    height: 40px !important;
+  }
+
+  .octotree-ad-small,
+  .octotree-ad-big,
+  .octotree-toggle span {
+    display: none !important;
   }
 }
