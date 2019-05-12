@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.0.1
+@version      1.0.2
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -180,7 +180,7 @@
 
   /* Hide PRO badge */
   .js-pro-badge,
-  [data-octo-click='hovercard-link-click'] + div {
+  .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
     display: none;
   }
 
