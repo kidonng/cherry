@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.0.3
+@version      1.0.4
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -81,14 +81,14 @@
   }
 
   .bg-gray {
-    background: initial !important;
+    background: unset !important;
   }
 
   /* Repo header */
   .repohead.experiment-repo-nav,
   .select-menu-header,
   .Counter {
-    background-color: initial;
+    background-color: unset;
   }
 
   .social-count,
@@ -118,7 +118,7 @@
   .commit-tease,
   .bg-blue-light,
   .Box-header {
-    background-color: initial !important;
+    background-color: unset !important;
   }
 
   .Box.Box--condensed.d-flex.flex-column.flex-shrink-0,
@@ -135,14 +135,14 @@
 
   /* Issues & Pull requests  */
   .timeline-comment-header {
-    background-color: initial;
+    background-color: unset;
   }
 
   /* Settings */
   .form-group .form-control,
   .input-contrast,
   .menu-heading {
-    background-color: initial;
+    background-color: unset;
   }
 
   .menu-item.selected:before,
@@ -202,7 +202,7 @@
 
   /* Profile - Fix scaled width */
   .min-width-xl {
-    min-width: initial;
+    min-width: unset;
   }
 
   /* Chrome extensions - Refined GitHub */
