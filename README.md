@@ -42,7 +42,6 @@ You need to install Stylus ([Chrome](https://chrome.google.com/webstore/detail/t
 
 - [Bilibili](https://github.com/kidonng/cherry/raw/master/styles/bilibili.user.css)
 - [GitHub](https://github.com/kidonng/cherry/raw/master/styles/github.user.css)
-- [Global](https://github.com/kidonng/cherry/raw/master/styles/global.user.css)
 - [Google](https://github.com/kidonng/cherry/raw/master/styles/google.user.css)
 - [Tieba](https://github.com/kidonng/cherry/raw/master/styles/tieba.user.css)
 
