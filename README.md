@@ -34,6 +34,10 @@ Use [Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-web
 
 Redirect all variants of Tieba site (including mobile version) to tieba.baidu.com. Also enable you to see reply's reply without login.
 
+### [Pages Source](https://github.com/kidonng/cherry/raw/master/scripts/pages-source.user.js)
+
+Easily go to GitHub Pages' source repository. e.g. [1](https://edwardtufte.github.io/) [2](https://edwardtufte.github.io/tufte-css/)
+
 ## User Styles
 
 You need to install Stylus ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/clngdbkpkpeebahjckkjfobafhncgmne)/[Firefox](https://addons.mozilla.org/firefox/addon/styl-us/)) first.
