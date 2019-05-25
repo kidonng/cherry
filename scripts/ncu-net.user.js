@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      2.0.0
+// @version      2.0.1
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @include      http://222.204.3.154/*
-// @include      http://222.204.3.221/*
-// @include      http://aaa.ncu.edu.cn/*
+// @include      http://222.204.3.221:*/*
+// @include      http://aaa.ncu.edu.cn:*/*
 // ==/UserScript==
 
 ;(() => {
