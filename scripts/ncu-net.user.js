@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      2.0.1
+// @version      2.1.0
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @include      http://222.204.3.154/*
@@ -201,6 +201,9 @@
     if (localStorage.username && localStorage.password)
       timer = setTimeout(connect, config.time.autoLoginTimeout)
   } else {
+    if (location.port !== '801')
+      location.href = location.href.replace(/80[2-4]/, '801')
+    
     const api = '/include/auth_action.php'
     const ac_id = $('[name="ac_id"]').val()
     const ajax = 1
