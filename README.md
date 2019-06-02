@@ -4,7 +4,7 @@ Handmade user scripts & opinionated user styles.
 
 ## User Scripts
 
-You need to install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)/[Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)) first.
+A user script manager (e.g. [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)/[Greasemonkey for Firefox](https://addons.mozilla.org/firefox/addon/greasemonkey/)) must be installed on your browser.
 
 ### [NCU Net](https://github.com/kidonng/cherry/raw/master/scripts/ncu-net.user.js) [![](https://img.shields.io/badge/User%20Script-blue.svg)](https://github.com/kidonng/ncu-net)
 
