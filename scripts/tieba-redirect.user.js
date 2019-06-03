@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tieba Redirect
-// @version      1.0.0
+// @version      1.1.0
 // @description  Redirect all variants of Tieba site to tieba.baidu.com
 // @author       kidonng
 // @include      http*://tieba.baidu.com/*
@@ -8,6 +8,7 @@
 // @include      http*://dq.tieba.com/*
 // @include      http*://jump2.bdimg.com/*
 // @include      http*://c.tieba.baidu.com/*
+// @include      http*://wefan.baidu.com/*
 // ==/UserScript==
 
 ;(() => {
@@ -25,7 +26,8 @@
   } else if (
     location.host === 'dq.tieba.com' ||
     location.host === 'jump2.bdimg.com' ||
-    location.host === 'c.tieba.baidu.com'
+    location.host === 'c.tieba.baidu.com' ||
+    location.host === 'wefan.baidu.com'
   )
     location.host = 'tieba.baidu.com'
   else if (location.href.includes('wapp.baidu.com/mo/q/m'))
