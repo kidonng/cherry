@@ -52,7 +52,7 @@ Based on Userscript Version 2.0.1 (https://gist.github.com/bijij/58cc8cfc859331e
 
 ## User Styles
 
-You need to install Stylus ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/clngdbkpkpeebahjckkjfobafhncgmne)/[Firefox](https://addons.mozilla.org/firefox/addon/styl-us/)) first.
+Stylus ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/clngdbkpkpeebahjckkjfobafhncgmne)/[Firefox](https://addons.mozilla.org/firefox/addon/styl-us/))  must be installed on your browser.
 
 ### Original
 
