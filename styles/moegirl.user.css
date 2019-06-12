@@ -1,0 +1,380 @@
+/* ==UserStyle==
+@name         Moegirlpedia
+@version      1.0.0
+@description  Moegirlpedia Improved
+@license      CC-BY-NC-SA-4.0
+@author       LamentationsOfInnocence, Nibiruuu & kidonng
+@namespace    https://github.com/kidonng/cherry
+==/UserStyle== */
+
+@-moz-document domain("zh.moegirl.org") {
+  /*主体*/
+  .ns-0 div#content,
+  .ns-0 div#content div.thumb,
+  div#content,
+  div#content div.thumb {
+    background: white;
+  }
+
+  #content {
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 70%;
+    border: none;
+    border-radius: 3px;
+  }
+  span.subpages {
+    margin-left: 10px;
+  }
+  .mw-body-content {
+    color: rgba(0, 0, 0, 0.7) !important;
+  }
+  body {
+    font-size: inherit;
+    background: #F3F3F2;
+    color: rgba(0, 0, 0, 0.7) !important;
+  }
+  a,
+  .mw-body-content a.extiw,
+  .mw-body-content a.extiw:active,
+  .mw-body-content a.external {
+    color: #1976D2;
+    text-decoration: none !important;
+  }
+  a:visited,
+  .mw-body-content a.external:visited,
+  .mw-body-content a.extiw:visited {
+    color: #5E35B1;
+  }
+  .comment-user a {
+    color: #777 !important;
+  }
+  #catlinks {
+    border: 0 !important;
+    background: none;
+  }
+  #wpSave,
+  #wpPreview,
+  #wpDiff {
+    font-family: inherit;
+    font-size: 1em;
+    display: inline-block;
+    min-width: 4em;
+    max-width: 28.75em;
+    padding: 0.546875em 1em;
+    line-height: 1.286;
+    margin: 0;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    zoom: 1;
+    vertical-align: middle;
+    background-color: #f8f9fa;
+    color: #222222;
+    border: 1px solid #a2a9b1;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /*表格相关*/
+  table.wikitable > tr > th,
+  table.wikitable > tr > td,
+  table.wikitable > * > tr > th,
+  table.wikitable > * > tr > td {
+    border: none;
+  }
+  table.wikitable {
+    border: none;
+    box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  table.wikitable > tr > th,
+  table.wikitable > * > tr > th {
+    background-color: #eaecf0;
+  }
+
+
+  /*navbox*/
+  table.navbox {
+    border: none;
+    font-size: smaller;
+    box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  /*infobox*/
+  .infotemplatebox,
+  .acg-works-information {
+    border: none !important;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Normal Links 一般超链接样式 */
+  a:link {
+    color: #274787;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #36c;
+  }
+
+  a:active {
+    color: #40BCFF;
+    outline: none;
+  }
+
+  a.new {
+    color: #BA0000;
+  }
+
+
+  /* Heimu Links 黑幕超链接样式 */
+  .heimu a:link {
+    color: #252525;
+    text-decoration: none;
+  }
+
+  .heimu:hover {
+    color: #FFFFFF;
+  }
+
+  .heimu:hover a:link {
+    color: #93b7ff !important;
+  }
+
+  .heimu:hover a {
+    color: #93b7ff !important;
+  }
+
+  .heimu:hover a:hover {
+    color: #69b2fa !important;
+  }
+
+  .heimu a:link:hover {
+    color: #69b2fa !important;
+  }
+
+  .heimu:hover a:link:visited {
+    color: #3a5b9e;
+  }
+
+  .heimu a.new {
+    color: #252525 !important;
+  }
+
+  .heimu:hover a.new {
+    color: #BA0000 !important;
+  }
+
+  /* Categories Optimization 分类优化 */
+  #mw-normal-catlinks {
+    font-size: 0.8em;
+  }
+
+  span[lang=ja] {
+    font-family: Yu Gothic;
+  }
+
+  /* Body Background Rendering 正文背景渲染 */
+  #content.mw-body {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: calc(200px + 1em);
+    max-width: calc(100% - 315px);
+    margin: 0;
+    border: none !important;
+    border-radius: 2px !important;
+    padding: 0px 1.6em 2em 1em !important;
+    background: none;
+    color: #555;
+  }
+  #content ul,
+  #content ol {
+    color: #666 !important;
+    list-style-image: none;
+    margin-bottom: 1em;
+    margin-top: 0em;
+  }
+  #content table.wikitable {
+    color: #666 !important;
+    border: 1px solid #EEE !important;
+  }
+  table.wikitable > tr > th,
+  table.wikitable > tr > td,
+  table.wikitable > * > tr > th,
+  table.wikitable > * > tr > td {
+    border: 1px solid #CCC !important;
+  }
+
+  /* Title 题目 */
+  #firstHeading {
+    font-size: 40px !important;
+    padding-left: 0;
+  }
+
+
+  /* Section Headers 小结题目 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.5em 0;
+    color: #444;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  h5 {
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+  /*隐藏内容*/
+  #localNotice,
+  .mw-editTools,
+  #p-personal,
+  #p-logo,
+  .please-donate,
+  #mw-page-base,
+  #left-navigation,
+  #mw-data-after-content,
+  #right-navigation,
+  #footer-info-copyright,
+  #footer-places,
+  #footer-icons,
+  #mw-panel {
+    display: none !important;
+  }
+
+  /* Sidebar Generation 侧边栏生成 */
+  #toc {
+    /*border: 1px solid #EEE !important;*/
+    border: none;
+    /*border-radius: 2px !important;*/
+    font-size: 12px;
+    font-weight: 400;
+    /*     background: url(http://i.imgur.com/anSVcTO.png); */
+    /* make sidebar  */
+    position: fixed !important;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    padding: 0.2em 0;
+    margin: 0 .5em;
+    overflow: auto;
+  }
+  #toc > ul {
+    overflow-y: auto !important;
+    /*word-break: break-all !important;*/
+    /*height: 100% !important;*/
+    overflow-x: hidden !important;
+    padding: 1em 0 5em;
+    margin: auto 0 !important;
+  }
+
+  .toc ul ul {
+    margin-left: 1em !important;
+  }
+
+  .toc a {
+    display: block;
+    padding: 0.25em 1em;
+    border-radius: 2px;
+    line-height: 1.25 !important;
+  }
+
+  /* toc headers */
+  .toclevel-1 > a > .toctext {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-top: 0.25em;
+    display: inline-block;
+  }
+
+  .tocnumber {
+    display: none;
+  }
+
+  .toc h2 {
+    font-size: 1.5em !important;
+  }
+
+  .toccolours,
+  .thumb {
+    border: 1px solid #EEE !important;
+    /*    box-shadow: 0px 0px 3px 0 #999 !important; */
+    border-radius: 2px !important;
+  }
+
+  div.toctitle {
+    margin-top: 15px;
+  }
+
+  span.toctoggle {
+    display: none !important;
+  }
+
+  /* Sidebar Font 侧边栏字体 */
+  #toc a:link {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  #toc a:visited {
+    color: #000 !important;
+  }
+
+  #toc a:hover {
+    color: #6B238E !important;
+    text-decoration: none !important;
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  #toc a:active {
+    color: #000 !important;
+    outline: none;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .read-more-container,
+  #footer {
+    position: relative;
+    left: 35px
+  }
+
+  body.skin-vector {
+    background: none;
+  }
+
+  #mw-content-text > div > table.mw-collapsible.wikitable.tochide.nomobile > tbody > tr:nth-child(1) > td {
+    width: 68px;
+    text-align: left !important;
+  }
+}

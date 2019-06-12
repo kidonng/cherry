@@ -30,7 +30,7 @@ Related: [ncuwlan](https://github.com/maoyuqing/ncuwlan)
 
 #### [Tieba Redirect](https://github.com/kidonng/cherry/raw/master/scripts/tieba-redirect.user.js)
 
-Redirect all variants of Tieba site (including mobile version) to tieba.baidu.com. Also enable you to see reply's reply without login.
+Redirect all variants of Tieba site (including mobile version) to tieba.baidu.com. Also enable you to see sub-replies without login.
 
 #### [Pages Source](https://github.com/kidonng/cherry/raw/master/scripts/pages-source.user.js)
 
@@ -66,3 +66,6 @@ Stylus ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/clngdbkp
 - [Wikipedia](https://github.com/kidonng/cherry/raw/master/styles/wikipedia.user.css)
   - [Wikipedia Material](https://userstyles.org/styles/140009/wikipedia-material)
   - [Wikipedia New Light](https://userstyles.org/styles/139227/wikipedia-new-light)
+- [Moegirlpedia](https://github.com/kidonng/cherry/raw/master/styles/moegirl.user.css)
+  - [Remastered Moegirl Paper - Sidebar Edition 萌百重设更新](https://userstyles.org/styles/163374/remastered-moegirl-paper-sidebar-edition)
+  - [Anti-Moe Pedia](https://userstyles.org/styles/145419/anti-moe-pedia)
