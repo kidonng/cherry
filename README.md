@@ -30,7 +30,7 @@ Related: [ncuwlan](https://github.com/maoyuqing/ncuwlan)
 
 #### [Tieba Redirect](https://github.com/kidonng/cherry/raw/master/scripts/tieba-redirect.user.js)
 
-Redirect all variants of Tieba site (including mobile version) to tieba.baidu.com. Also enable you to see reply's reply without login.
+Redirect all variants of Tieba site (including mobile version) to tieba.baidu.com. Also enable you to see sub-replies without login.
 
 #### [Pages Source](https://github.com/kidonng/cherry/raw/master/scripts/pages-source.user.js)
 
