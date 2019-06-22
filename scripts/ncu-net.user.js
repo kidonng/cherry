@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         NCU Net
-// @version      2.1.0
+// @version      2.1.1
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
 // @include      http://222.204.3.154/*
@@ -274,7 +274,7 @@
             ajax
           },
           res => {
-            if (res === ' 网络已断开')
+            if (res === '网络已断开')
               log(config.log.success, msg.logoutSuccess)
             else log(config.log.error, msg.logoutFailed)
           }
