@@ -25,7 +25,7 @@ There is a [standalone version](https://github.com/kidonng/ncu-net) as well.
 1. Connect to the network.
 2. Open the authentication page ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) and enter your username & password.
 3. Hit the login/logout button and watch the magic happen!
-4. You can [config language & more](scripts/ncu-net.user.js#L12-L31) in the script.
+4. You can [config language & more](./ncu-net.user.js#L12-L31) in the script.
 
 ### Related
 
