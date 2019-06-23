@@ -11,6 +11,6 @@
 
 Cherry 是一个收藏集，包括精心制作的：
 
-- [用户脚本](./scripts)
-- [用户样式](./styles)
-- [书签小程序](./Bookmarklets-zh-CN.md)
+- [用户脚本](scripts/README-zh-CN.md)
+- [用户样式](styles/README-zh-CN.md)
+- [书签小程序](Bookmarklets-zh-CN.md)
