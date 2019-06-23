@@ -3,6 +3,8 @@
 ![](https://img.shields.io/badge/ORIGINAL-4-blue.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/MODIFIED-2-orange.svg?style=for-the-badge)
 
+English | [简体中文](README-zh-CN.md)
+
 A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Firefox](https://addons.mozilla.org/firefox/addon/styl-us/)) must be installed on your browser.
 
 ## Original
