@@ -15,7 +15,7 @@
 
 **南昌大学校园网络接入认证系统**助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
 
-> 同时也有[独立版本](https://github.com/kidonng/ncu-net)。
+> 同时也有[独立版本](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md)。
 
 #### 特点
 
