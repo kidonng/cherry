@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Google
-@version      1.0.0
+@version      1.1.0
 @description  Opinionated Google Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -12,7 +12,17 @@
   html,
   input,
   .std,
-  h1 {
+  h1,
+  .kno-ecr-pt {
     font-family: Segoe UI, Microsoft YaHei UI, sans-serif;
+  }
+  
+  #fbar {
+    background: #fff;
+  }
+  
+  .b2hzT,
+  #swml {
+    border: 0;
   }
 }
