@@ -1,28 +1,29 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.0.4
+@version      1.1.0
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
+@preprocessor stylus
+
+@var          checkbox hideFollowBtn       "Hide follow button"        1
+@var          checkbox hideDevBadge        "Hide developer badge"      1
+@var          checkbox hideProBadge        "Hide PRO badge"            1
+@var          checkbox hideProfileEditBtn  "Hide profile edit button"  1
+@var          checkbox hideDiscovery       "Hide discovery"            1
+@var          checkbox hideReactionBtn     "Hide reaction button"      1
+@var          checkbox hideContributors    "Hide contributors"         1
 ==/UserStyle== */
-
-@-moz-document domain("github.com") {
-  :root {
-    --primary: #1a73e8;
-    --primary-70pct: rgba(26, 115, 232, 0.7);
-    --primary-hover: #3a7af6;
-    --primary-hover-70pct: rgba(58, 122, 246, 0.7);
-  }
-
+@-moz-document url-prefix("https://github.com/") {
   /* Link */
   a {
-    color: var(--primary);
+    color: #1a73e8;
   }
 
   /* Progress bar */
   .pjax-loader-bar .progress {
-    background: var(--primary);
-    box-shadow: 0 0 10px var(--primary-70pct);
+    background: #1a73e8;
+    box-shadow: 0 0 10px rgba(26, 115, 232, 0.7);
   }
 
   /* Avatar */
@@ -47,12 +48,12 @@
   .btn-primary:hover,
   .btn-primary:focus,
   [open] > .btn-primary {
-    background: var(--primary);
+    background: #1a73e8;
     border: 0;
   }
 
   .btn-primary:hover {
-    background: var(--primary-hover);
+    background: #3a7af6;
   }
 
   .btn-primary:focus {
@@ -60,14 +61,22 @@
   }
 
   .btn-primary:disabled {
-    background: var(--primary-hover-70pct);
+    background: rgba(58, 122, 246, 0.7);
   }
 
   .btn-outline:hover {
-    background: var(--primary);
+    background: #1a73e8;
     border-right: 0;
     border-bottom: 0;
     border-left: 0;
+  }
+
+  .btn-danger:hover:not(:disabled) {
+    background-color: #b5202c;
+  }
+
+  .btn:disabled {
+    border-color: #dadce0;
   }
 
   .BtnGroup-item {
@@ -96,13 +105,17 @@
     border: 0;
   }
 
+  #sponsor-button-repo {
+    border: 0;
+  }
+
   .pagehead-actions li {
     border: 1px solid #dadce0;
     border-radius: 0.25em;
   }
 
   .reponav-item.selected {
-    border-color: var(--primary) #e1e4e8 transparent;
+    border-color: #1a73e8 #e1e4e8 transparent;
   }
 
   /* Files & Commits */
@@ -111,7 +124,7 @@
   }
 
   table.files td.icon .octicon-file-directory {
-    color: var(--primary);
+    color: #1a73e8;
   }
 
   .full-commit,
@@ -133,6 +146,11 @@
     border-top: 0;
   }
 
+  .flash-notice {
+    background-color: unset;
+    margin-top: 0 !important;
+  }
+
   /* Issues & Pull requests  */
   .timeline-comment-header {
     background-color: unset;
@@ -147,7 +165,7 @@
 
   .menu-item.selected:before,
   .session-device .session-state-indicator.recent {
-    background-color: var(--primary);
+    background-color: #1a73e8;
   }
 
   .session-device .session-state-indicator.recent,
@@ -157,7 +175,7 @@
 
   .recent-user-key,
   .recent-user-key-access {
-    color: var(--primary);
+    color: #1a73e8;
   }
 
   /* Profile */
@@ -168,7 +186,7 @@
   }
 
   .UnderlineNav-item.selected {
-    border-bottom-color: var(--primary);
+    border-bottom-color: #1a73e8;
   }
 
   .js-profile-editable-area + .pb-3,
@@ -176,41 +194,90 @@
     display: none !important;
   }
 
-  /* Optional Styles*/
+  /* Light header */
+  .Header {
+    background: #fff;
+  }
 
-  /* Hide PRO badge */
-  .js-pro-badge,
-  .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
-    display: none !important;
+  .Header-link {
+    color: #000 !important;
+  }
+
+  .Header-link:hover {
+    color: rgba(0, 0, 0, .7) !important;
+  }
+
+
+  .header-search-wrapper,
+  .jump-to-field-active {
+    background-color: rgba(0, 0, 0, .125) !important;
+  }
+
+  .header-search-input::placeholder {
+    color: #000;
+  }
+
+  /* Remove README border */
+  #readme {
+    border: 0;
+  }
+
+  /* Optional Styles */
+  if hideFollowBtn {
+    .user-profile-following-container {
+      display: none;
+    }
+  }
+
+  if hideDevBadge {
+    .border-top.border-gray-light.py-3 {
+      display: none;
+    }
+  }
+
+  /* Profile - Hide PRO badge */
+  if hideProBadge {
+    .js-pro-badge,
+    .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
+      display: none !important;
+    }
+  }
+
+  /* Profile - Hide edit button */
+  if hideProfileEditBtn {
+    .js-profile-editable-edit-button {
+      display: none;
+    }
   }
 
   /*  Issues & Pull requests - Hide reaction button */
-  .add-reaction-btn,
-  .js-comment-header-reaction-button {
-    display: none !important;
+  if hideReactionBtn {
+    .add-reaction-btn,
+    .js-comment-header-reaction-button {
+      display: none !important;
+    }
   }
 
-  /* Dashboard - Hide right column */
-  .team-left-column:last-child {
-    visibility: hidden;
+  /* Dashboard - Hide discovery */
+  if hideDiscovery {
+    .team-left-column:last-child {
+      visibility: hidden;
+    }
   }
 
   /* Files & Commits - Hide contributors */
-  .Box-body.d-flex.flex-items-center.flex-auto.f6.border-bottom-0.flex-wrap {
-    display: none !important;
+  if hideContributors {
+    .Box-body.d-flex.flex-items-center.flex-auto.f6.border-bottom-0.flex-wrap {
+      display: none !important;
+    }
   }
 
-  /* Profile - Fix scaled width */
-  .min-width-xl {
-    min-width: unset;
-  }
-
-  /* Chrome extensions - Refined GitHub */
+  /* Extension - Refined GitHub */
   .commit-build-statuses {
     left: 4px;
   }
 
-  /* Chrome extensions - Octotree */
+  /* Extension - Octotree */
   .octotree-toggle {
     height: 40px !important;
   }
