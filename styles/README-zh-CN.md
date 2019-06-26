@@ -10,19 +10,25 @@
 ## 原创
 
 - [哔哩哔哩](https://github.com/kidonng/cherry/raw/master/styles/bilibili.user.css)
+  ![](screenshots/bilibili.png)
 - [GitHub](https://github.com/kidonng/cherry/raw/master/styles/github.user.css)
+  ![](screenshots/github.png)
 - [Google](https://github.com/kidonng/cherry/raw/master/styles/google.user.css)
+  ![](screenshots/google.png)
 - [贴吧](https://github.com/kidonng/cherry/raw/master/styles/tieba.user.css)
+  ![](screenshots/tieba.png)
 
 ## 改版
 
 - [维基百科](https://github.com/kidonng/cherry/raw/master/styles/wikipedia.user.css)
+  ![](screenshots/wikipedia.png)
 
 > 来源:
 > - [Wikipedia Material](https://userstyles.org/styles/140009/wikipedia-material)
 > - [Wikipedia New Light](https://userstyles.org/styles/139227/wikipedia-new-light)
 
 - [萌娘百科](https://github.com/kidonng/cherry/raw/master/styles/moegirl.user.css)
+  ![](screenshots/moegirlpedia.png)
 
 > 来源:
 > - [Remastered Moegirl Paper - Sidebar Edition 萌百重设更新](https://userstyles.org/styles/163374/remastered-moegirl-paper-sidebar-edition)
