@@ -12,12 +12,20 @@ To save a bookmarklet, save the code as a bookmark/drag the code into browser's 
 
 To use a bookmarklet, just open the bookmark.
 
-## Wayback Machine
+## Wayback Machine (archive.org)
 
 View current pages's archive on [Internet Archive](https://archive.org/web/).
 
 ```js
 javascript:window.open(`https://web.archive.org/web/${new Date().toISOString().replace(/-|T|:/g, '').substring(0, 14)}/${location.href}`); void 0
+```
+
+## Webpage archive (archive.is)
+
+View current pages's archive on [Webpage archive](https://archive.fo/).
+
+```js
+javascript:window.open(`https://archive.fo/${location.href}`); void 0
 ```
 
 ## Remove image's referrer
