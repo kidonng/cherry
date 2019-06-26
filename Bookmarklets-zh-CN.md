@@ -12,12 +12,20 @@
 
 要使用书签小程序，打开相应书签即可。
 
-## 网站时光机
+## 网站时光机 (archive.org)
 
 在[互联网档案馆](https://archive.org/web/)查看当前网页的存档。
 
 ```js
 javascript:window.open(`https://web.archive.org/web/${new Date().toISOString().replace(/-|T|:/g, '').substring(0, 14)}/${location.href}`); void 0
+```
+
+## 网页存档 (archive.is)
+
+在[网页存档](https://archive.fo/)上查看当前页面的存档。
+
+```js
+javascript:window.open(`https://archive.fo/${location.href}`); void 0
 ```
 
 ## 移除图片 referrer
