@@ -1,9 +1,13 @@
-# 用户脚本
+<h1 align="center">用户脚本</h1>
+
+<div align="center">
 
 ![](https://img.shields.io/badge/%E5%8E%9F%E5%88%9B-4-blue.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/%E6%94%B9%E7%89%88-2-orange.svg?style=for-the-badge)
 
 [English](README.md) | 简体中文
+
+</div>
 
 你的浏览器需要安装一个用户脚本管理器。
 

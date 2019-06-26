@@ -1,8 +1,16 @@
-# Bookmarklets
+<h1 align="center">Bookmarklets</h1>
+
+<div align="center">
 
 ![](https://img.shields.io/badge/COUNT-2-blue.svg?style=for-the-badge)
 
 English | [简体中文](README-zh-CN.md)
+
+</div>
+
+To save a bookmarklet, save the code as a bookmark/drag the code into browser's bookmarks bar.
+
+To use a bookmarklet, just open the bookmark.
 
 ## Wayback Machine
 

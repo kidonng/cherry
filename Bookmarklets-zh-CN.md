@@ -1,8 +1,16 @@
-# 书签小程序
+<h1 align="center">书签小程序</h1>
+
+<div align="center">
 
 ![](https://img.shields.io/badge/%E6%80%BB%E6%95%B0-2-blue.svg?style=for-the-badge)
 
 [English](README.md) | 简体中文
+
+</div>
+
+要保存书签小程序，将代码保存成书签/拖动到书签栏。
+
+要使用书签小程序，打开相应书签即可。
 
 ## 网站时光机
 
