@@ -1,15 +1,16 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.1.0
+@version      1.1.1
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @preprocessor stylus
 
 @var          checkbox hideFollowBtn       "Hide follow button"        1
+@var          checkbox hideProfileEditBtn  "Hide profile edit button"  1
 @var          checkbox hideDevBadge        "Hide developer badge"      1
 @var          checkbox hideProBadge        "Hide PRO badge"            1
-@var          checkbox hideProfileEditBtn  "Hide profile edit button"  1
+@var          checkbox hideSponsor         "Hide sponsor stuff"        1
 @var          checkbox hideDiscovery       "Hide discovery"            1
 @var          checkbox hideReactionBtn     "Hide reaction button"      1
 @var          checkbox hideContributors    "Hide contributors"         1
@@ -156,6 +157,10 @@
     background-color: unset;
   }
 
+  .participation-avatars {
+    display: none !important
+  }
+
   /* Settings */
   .form-group .form-control,
   .input-contrast,
@@ -247,6 +252,14 @@
   if hideProfileEditBtn {
     .js-profile-editable-edit-button {
       display: none;
+    }
+  }
+  
+  if hideSponsor {
+    .border-top.ml-n3.mr-n3.mt-3.pr-3.d-flex.flex-justify-end,
+    .border-top.border-gray-light.py-3.d-flex.flex-items-center,
+    .border-top.py-3.clearfix:not(.hide-sm) {
+      display: none !important;
     }
   }
 
