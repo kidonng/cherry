@@ -1,9 +1,13 @@
-# User Scripts
+<h1 align="center">User Scripts</h1>
+
+<div align="center">
 
 ![](https://img.shields.io/badge/ORIGINAL-4-blue.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/MODIFIED-2-orange.svg?style=for-the-badge)
 
 English | [简体中文](README-zh-CN.md)
+
+</div>
 
 A user script manager must be installed on your browser.
 
