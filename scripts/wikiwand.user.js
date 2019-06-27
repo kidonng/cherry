@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Wikiwand
-// @version      1.0.0
+// @version      1.0.1
 // @description  Replace Wikiwand browser extension
 // @author       kidonng
 // @include      https://*.wikipedia.org/*
@@ -14,5 +14,5 @@ if (location.host.includes('wikipedia.org') && !location.href.includes('oldforma
   const title = location.pathname.includes('index.php') ? new URLSearchParams(location.search).get('title') : location.pathname.substring(location.pathname.indexOf('/', 1) + 1)
   location.href = `https://www.wikiwand.com/${lang}/${title}${hash}`
 } else if (location.host === 'www.wikiwand.com' && location.hash) {
-  setTimeout(() => document.querySelector(location.hash.replace('/', '')).scrollIntoView(), 0)
+  setTimeout(() => document.querySelector(decodeURIComponent(location.hash.replace('/', ''))).scrollIntoView(), 0)
 }
