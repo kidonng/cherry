@@ -1,11 +1,12 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.1.4
+@version      1.2.0
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @preprocessor stylus
 
+@var          checkbox lightHeader         "Light header"              1
 @var          checkbox hideFollowBtn       "Hide follow button"        1
 @var          checkbox hideProfileEditBtn  "Hide profile edit button"  1
 @var          checkbox hideDevBadge        "Hide developer badge"      1
@@ -92,7 +93,7 @@
     border: 0 !important;
   }
 
-  .bg-gray {
+  .d-flex.flex-wrap.bg-gray {
     background: unset !important;
   }
 
@@ -201,27 +202,41 @@
     display: none !important;
   }
 
-  /* Light header */
-  .Header {
-    background: #fff;
-  }
+  if lightHeader {
+    /* Light header */
+    .Header {
+      background: #fff;
+    }
 
-  .Header-link {
-    color: #000 !important;
-  }
+    .Header-link {
+      color: #000 !important;
+    }
 
-  .Header-link:hover {
-    color: rgba(0, 0, 0, .7) !important;
-  }
+    .Header-link:hover {
+      color: rgba(0, 0, 0, .5) !important;
+    }
 
-  .header-search-wrapper,
-  .jump-to-field-active {
-    background-color: rgba(0, 0, 0, .125) !important;
-  }
+    .header-search-wrapper {
+      border: 1px solid #000 !important;
+    }
 
-  .header-search-input,
-  .header-search-input::placeholder {
-    color: #000;
+    .header-search-wrapper.focus {
+      border-right: 0 !important;
+    }
+
+    .header-search-input,
+    .header-search-input::placeholder {
+      color: #000;
+    }
+
+    .header-search-input {
+      position: relative;
+      top: 1px;
+    }
+
+    .focus .header-search-input {
+      border-right: 1px solid #000 !important;
+    }
   }
 
   /* Remove README border */
@@ -234,7 +249,7 @@
     .user-profile-following-container,
     /* GitHub Hovercard */
     [data-action="follow"] {
-      display: none;
+      display: none !important;
     }
   }
 
@@ -258,7 +273,7 @@
       display: none;
     }
   }
-  
+
   if hideSponsor {
     #funding-links-modal,
     .border-top.ml-n3.mr-n3.mt-3.pr-3.d-flex.flex-justify-end,
@@ -296,6 +311,38 @@
   }
 
   /* Extension - Octotree */
+  .octotree-view-header,
+  .octotree-sidebar.octotree-github-sidebar .octotree-search-bar {
+    background-color: rgb(250, 251, 252) !important;
+    border-right: 1px solid rgb(223, 226, 229) !important;
+  }
+
+  .octotree-sidebar.octotree-github-sidebar .octotree-footer {
+    background-color: rgb(250, 251, 252) !important;
+    border-top: 0;
+  }
+
+  .octotree-sidebar.octotree-github-sidebar .octotree-views .octotree-tree-view .octotree-view-header .octotree-header-repo,
+  .octotree-sidebar.octotree-github-sidebar .octotree-views .octotree-tree-view .octotree-view-header .octotree-header-repo a,
+  .octotree-sidebar.octotree-github-sidebar .octotree-views .octotree-tree-view .octotree-view-header .octotree-header-repo a:hover,
+  .octotree-view-header,
+  .octotree-header-branch,
+  .octotree-view-header i:before {
+    color: rgb(106, 115, 125) !important;
+  }
+
+
+  .octotree-sidebar.octotree-github-sidebar .octotree-search i:hover::before,
+  .octotree-sidebar.octotree-github-sidebar a.octotree-settings .octotree-icon-settings:hover:before,
+  .octotree-sidebar.octotree-github-sidebar a.octotree-pin .octotree-icon-pin:hover::before {
+    color: rgba(106, 115, 125, .5) !important;
+  }
+
+  .octotree-settings.selected i:before,
+  .octotree-pinned i:before {
+    filter: brightness(0);
+  }
+
   .octotree-toggle {
     height: 40px !important;
   }
@@ -304,5 +351,9 @@
   .octotree-ad-big,
   .octotree-toggle span {
     display: none !important;
+  }
+
+  .octotree-trial-msg-view {
+    visibility: hidden;
   }
 }
