@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.2.0
+@version      1.2.1
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -116,6 +116,10 @@
   .pagehead-actions li {
     border: 1px solid #dadce0;
     border-radius: 0.25em;
+  }
+  
+  .pagehead-actions .disabled {
+    display: none;
   }
 
   .reponav-item.selected {
