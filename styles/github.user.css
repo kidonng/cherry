@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.1.1
+@version      1.1.2
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -29,7 +29,9 @@
 
   /* Avatar */
   .avatar,
-  [data-octo-click='hovercard-link-click'] img {
+  [data-octo-click='hovercard-link-click'] img,
+  /* GitHub Hovercard (https://github.com/Justineo/github-hovercard) */
+  .ghh-avatar {
     border-radius: 100% !important;
   }
 
@@ -212,12 +214,12 @@
     color: rgba(0, 0, 0, .7) !important;
   }
 
-
   .header-search-wrapper,
   .jump-to-field-active {
     background-color: rgba(0, 0, 0, .125) !important;
   }
 
+  .header-search-input,
   .header-search-input::placeholder {
     color: #000;
   }
