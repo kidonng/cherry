@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Pages Source
-// @version      1.3.0
+// @version      1.3.1
 // @description  Easily go to GitHub Pages' source repository
 // @author       kidonng
 // @include      http*://*.github.io/*
 // ==/UserScript==
 
 ;(() => {
-  if (location.protocol === 'http') location.protocol = 'https'
+  if (location.protocol === 'http:') location.protocol = 'https:'
 
   document.head.insertAdjacentHTML('beforeend', `<style>
     .page-source {
