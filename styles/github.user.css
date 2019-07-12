@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.2.2
+@version      1.2.3
 @description  Opinionated GitHub Style
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -14,7 +14,7 @@
 @var          checkbox hideSponsor         "Hide sponsor stuff"        1
 @var          checkbox hideDiscovery       "Hide discovery"            1
 @var          checkbox hideReactionBtn     "Hide reaction button"      1
-@var          checkbox hideContributors    "Hide contributors"         1
+@var          checkbox hideParticipators   "Hide participators"        1
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/") {
   /* Link */
@@ -164,10 +164,6 @@
     background-color: unset;
   }
 
-  .participation-avatars {
-    display: none !important
-  }
-
   /* Settings */
   .form-group .form-control,
   .input-contrast,
@@ -303,9 +299,13 @@
   }
 
   /* Files & Commits - Hide contributors */
-  if hideContributors {
+  if hideParticipators {
     .Box-body.d-flex.flex-items-center.flex-auto.f6.border-bottom-0.flex-wrap {
       display: none !important;
+    }
+    
+    .participation-avatars {
+      display: none !important
     }
   }
 
