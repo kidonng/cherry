@@ -3,6 +3,7 @@
 // @version      1.0.2
 // @description  Replace Wikiwand browser extension
 // @author       kidonng
+// @namespace    https://github.com/kidonng/cherry
 // @include      https://*.wikipedia.org/*
 // @include      https://www.wikiwand.com/*
 // ==/UserScript==

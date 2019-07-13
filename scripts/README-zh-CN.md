@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![](https://img.shields.io/badge/%E5%8E%9F%E5%88%9B-4-blue.svg?style=for-the-badge)
-![](https://img.shields.io/badge/%E6%94%B9%E7%89%88-2-orange.svg?style=for-the-badge)
+![原创数：4](https://img.shields.io/badge/%E5%8E%9F%E5%88%9B-4-blue.svg?style=for-the-badge)
+![改版数：2](https://img.shields.io/badge/%E6%94%B9%E7%89%88-2-orange.svg?style=for-the-badge)
 
 [English](README.md) | 简体中文
 
