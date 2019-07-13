@@ -3,6 +3,7 @@
 // @version      1.1.1
 // @description  Redirect all variants of Tieba site to tieba.baidu.com
 // @author       kidonng
+// @namespace    https://github.com/kidonng/cherry
 // @include      http*://tieba.baidu.com/*
 // @include      http*://wapp.baidu.com/*
 // @include      http*://dq.tieba.com/*

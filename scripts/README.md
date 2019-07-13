@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![](https://img.shields.io/badge/ORIGINAL-4-blue.svg?style=for-the-badge)
-![](https://img.shields.io/badge/MODIFIED-2-orange.svg?style=for-the-badge)
+![Original count: 4](https://img.shields.io/badge/ORIGINAL-4-blue.svg?style=for-the-badge)
+![Modified count: 2](https://img.shields.io/badge/MODIFIED-2-orange.svg?style=for-the-badge)
 
 English | [简体中文](README-zh-CN.md)
 

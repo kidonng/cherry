@@ -1,11 +1,9 @@
-<h1 align="center">🌸 Cherry</h1>
+<h1 align="center">🍒 Cherry</h1>
 
 <div align="center">
 
-![](https://img.shields.io/badge/MADE%20WITH-%E2%99%A5-blue.svg?style=for-the-badge)
-[![GitHub](https://img.shields.io/github/license/kidonng/cherry.svg?style=for-the-badge)](./LICENSE)
-
-English | [简体中文](README-zh-CN.md)
+![Made with ♥](https://img.shields.io/badge/MADE%20WITH-%E2%99%A5-blue.svg?style=for-the-badge)
+[![License](https://img.shields.io/github/license/kidonng/cherry.svg?style=for-the-badge)](LICENSE)
 
 </div>
 

@@ -3,6 +3,7 @@
 // @version      2.1.1
 // @description  NCU Campus Network Access Authentication System Helper
 // @author       kidonng
+// @namespace    https://github.com/kidonng/cherry
 // @include      http://222.204.3.154/*
 // @include      http://222.204.3.221:*/*
 // @include      http://aaa.ncu.edu.cn:*/*
@@ -203,7 +204,7 @@
   } else {
     if (location.port !== '801')
       location.href = location.href.replace(/80[2-4]/, '801')
-    
+
     const api = '/include/auth_action.php'
     const ac_id = $('[name="ac_id"]').val()
     const ajax = 1

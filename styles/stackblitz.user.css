@@ -1,0 +1,16 @@
+/* ==UserStyle==
+@name         StackBlitz
+@version      1.0.0
+@description  Clean StackBlitz
+@license      MIT
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+==/UserStyle== */
+
+@-moz-document domain("stackblitz.com") {
+  nav > button:nth-of-type(1), /* "Save" button */
+  nav > button:nth-of-type(4), /* "Deploy to space" button */
+  .mosaic-tile section > div:last-of-type /* Sidebar footer */ {
+    display: none !important;
+  }
+}
