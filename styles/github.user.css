@@ -1,20 +1,19 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.2.3
-@description  Opinionated GitHub Style
+@version      1.3.0
+@description  Clean flat GitHub featuring Pixel blue
+@license      MIT
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @preprocessor stylus
 
 @var          checkbox lightHeader         "Light header"              1
 @var          checkbox hideFollowBtn       "Hide follow button"        1
-@var          checkbox hideProfileEditBtn  "Hide profile edit button"  1
-@var          checkbox hideDevBadge        "Hide developer badge"      1
 @var          checkbox hideProBadge        "Hide PRO badge"            1
 @var          checkbox hideSponsor         "Hide sponsor stuff"        1
 @var          checkbox hideDiscovery       "Hide discovery"            1
 @var          checkbox hideReactionBtn     "Hide reaction button"      1
-@var          checkbox hideParticipators   "Hide participators"        1
+@var          checkbox hideContributors    "Hide file contributors"    1
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/") {
   /* Link */
@@ -31,8 +30,7 @@
   /* Avatar */
   .avatar,
   [data-octo-click='hovercard-link-click'] img,
-  /* GitHub Hovercard (https://github.com/Justineo/github-hovercard) */
-  .ghh-avatar {
+  .ghh-avatar /* GitHub Hovercard */ {
     border-radius: 100% !important;
   }
 
@@ -40,7 +38,6 @@
   .btn,
   .btn:hover {
     background: none;
-    border: 1px solid #dadce0;
     transition: background 100ms linear;
   }
 
@@ -53,7 +50,6 @@
   .btn-primary:focus,
   [open] > .btn-primary {
     background: #1a73e8;
-    border: 0;
   }
 
   .btn-primary:hover {
@@ -70,9 +66,6 @@
 
   .btn-outline:hover {
     background: #1a73e8;
-    border-right: 0;
-    border-bottom: 0;
-    border-left: 0;
   }
 
   .btn-danger:hover:not(:disabled) {
@@ -81,10 +74,6 @@
 
   .btn:disabled {
     border-color: #dadce0;
-  }
-
-  .BtnGroup-item {
-    border-right-width: 0;
   }
 
   /* Dashboard */
@@ -99,8 +88,7 @@
 
   /* Repo header */
   .repohead.experiment-repo-nav,
-  .select-menu-header,
-  .Counter {
+  .select-menu-header {
     background-color: unset;
   }
 
@@ -113,11 +101,12 @@
     border: 0;
   }
 
-  .pagehead-actions li {
+  .pagehead-actions > li {
     border: 1px solid #dadce0;
     border-radius: 0.25em;
   }
   
+  /* Currently only apply to "Fork" button */
   .pagehead-actions .disabled {
     display: none;
   }
@@ -142,8 +131,7 @@
     background-color: unset !important;
   }
 
-  .Box.Box--condensed.d-flex.flex-column.flex-shrink-0,
-  .Box-body.d-flex.flex-justify-between.bg-blue-light.flex-column.flex-md-row.flex-items-start.flex-md-items-center {
+  .Box.Box--condensed.d-flex.flex-column.flex-shrink-0 {
     border-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -151,12 +139,24 @@
 
   .Box.mt-3.position-relative {
     margin-top: 0 !important;
-    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .Box-header.py-2.d-flex.flex-column.flex-shrink-0.flex-md-row.flex-md-items-center {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   .flash-notice {
     background-color: unset;
     margin-top: 0 !important;
+    border-radius: 0;
+  }
+  
+  .flash-notice + .Box.mt-3.position-relative .Box-header {
+    margin-right: 0;
+    margin-left: 0;
   }
 
   /* Issues & Pull requests  */
@@ -176,8 +176,7 @@
     background-color: #1a73e8;
   }
 
-  .session-device .session-state-indicator.recent,
-  .session-device .session-state-indicator.not-recent {
+  .session-device .session-state-indicator.recent {
     box-shadow: none;
   }
 
@@ -187,19 +186,12 @@
   }
 
   /* Profile */
-  .avatar-before-user-status,
-  .js-user-status-container,
-  .user-status-container {
+  .js-user-status-container {
     border: 0 !important;
   }
 
   .UnderlineNav-item.selected {
     border-bottom-color: #1a73e8;
-  }
-
-  .js-profile-editable-area + .pb-3,
-  .contrib-footer {
-    display: none !important;
   }
 
   if lightHeader {
@@ -229,11 +221,6 @@
       color: #000;
     }
 
-    .header-search-input {
-      position: relative;
-      top: 1px;
-    }
-
     .focus .header-search-input {
       border-right: 1px solid #000 !important;
     }
@@ -246,46 +233,29 @@
 
   /* Optional Styles */
   if hideFollowBtn {
-    .user-profile-following-container,
-    /* GitHub Hovercard */
-    [data-action="follow"] {
+    .js-user-profile-follow-button,
+    [data-action="follow"] /* GitHub Hovercard */ {
       display: none !important;
-    }
-  }
-
-  if hideDevBadge {
-    .border-top.border-gray-light.py-3 {
-      display: none;
     }
   }
 
   /* Profile - Hide PRO badge */
   if hideProBadge {
-    .js-pro-badge,
-    .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
+    .js-pro-badge {
       display: none !important;
     }
   }
 
-  /* Profile - Hide edit button */
-  if hideProfileEditBtn {
-    .js-profile-editable-edit-button {
-      display: none;
-    }
-  }
-
   if hideSponsor {
-    #funding-links-modal,
-    .border-top.ml-n3.mr-n3.mt-3.pr-3.d-flex.flex-justify-end,
-    .border-top.border-gray-light.py-3.d-flex.flex-items-center,
-    .border-top.py-3.clearfix:not(.hide-sm) {
+    #sponsor-button-repo,
+    #sponsor-profile-button,
+    .border-top.py-3.clearfix:not(.hide-sm) /* "Sponsoring" section on profile */ {
       display: none !important;
     }
   }
 
   /*  Issues & Pull requests - Hide reaction button */
   if hideReactionBtn {
-    .add-reaction-btn,
     .js-comment-header-reaction-button {
       display: none !important;
     }
@@ -299,13 +269,15 @@
   }
 
   /* Files & Commits - Hide contributors */
-  if hideParticipators {
+  if hideContributors {
+    .Box-body.d-flex.flex-justify-between.bg-blue-light.flex-column.flex-md-row.flex-items-start.flex-md-items-center {
+       border-bottom: 0;
+       border-bottom-left-radius: 0;
+       border-bottom-right-radius: 0;
+     }
+
     .Box-body.d-flex.flex-items-center.flex-auto.f6.border-bottom-0.flex-wrap {
       display: none !important;
-    }
-    
-    .participation-avatars {
-      display: none !important
     }
   }
 
@@ -334,7 +306,6 @@
   .octotree-view-header i:before {
     color: rgb(106, 115, 125) !important;
   }
-
 
   .octotree-sidebar.octotree-github-sidebar .octotree-search i:hover::before,
   .octotree-sidebar.octotree-github-sidebar a.octotree-settings .octotree-icon-settings:hover:before,
@@ -365,5 +336,6 @@
 @-moz-document regexp("https://github.com/.+/blob/.+.md") {
     .Box.mt-3.position-relative {
         border: 0;
+        margin: 1px;
     }
 }
