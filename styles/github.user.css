@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.3.0
+@version      1.3.1
 @description  Clean flat GitHub featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -186,7 +186,9 @@
   }
 
   /* Profile */
-  .js-user-status-container {
+  .avatar-before-user-status,
+  .js-user-status-container,
+  .user-status-container {
     border: 0 !important;
   }
 
