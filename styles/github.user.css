@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.3.2
+@version      1.3.3
 @description  Clean flat GitHub featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -251,6 +251,7 @@
   if hideSponsor {
     #sponsor-button-repo,
     #sponsor-profile-button,
+    .border-top.border-gray-light.py-3.d-flex.flex-items-center.ghh-user-x.tooltipstered, /* "GitHub Sponsor" link on profile */
     .border-top.py-3.clearfix:not(.hide-sm) /* "Sponsoring" section on profile */ {
       display: none !important;
     }
