@@ -3,7 +3,7 @@
 <div align="center">
 
 ![原创数：4](https://img.shields.io/badge/%E5%8E%9F%E5%88%9B-4-blue.svg?style=for-the-badge)
-![改版数：2](https://img.shields.io/badge/%E6%94%B9%E7%89%88-2-orange.svg?style=for-the-badge)
+![改版数：1](https://img.shields.io/badge/%E6%94%B9%E7%89%88-1-orange.svg?style=for-the-badge)
 
 [English](README.md) | 简体中文
 
@@ -51,8 +51,4 @@
 
 ### [Smooth Scroll](https://github.com/kidonng/cherry/raw/master/scripts/smoothscroll.user.js)
 
-用 [Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-websites) 替代 Smooth Scroll 浏览器扩展。
-
-### [View Image](https://github.com/kidonng/cherry/raw/master/scripts/viewimage.user.js)
-
-基于[用户脚本 2.0.1 版](https://gist.github.com/bijij/58cc8cfc859331e4cf80210528a7b255/b2def8f34acc55906402bfed6922b20fa7c45607)并与 [Chrome 扩展](https://github.com/bijij/ViewImage/blob/5c6269a9f56f22fdc4ce3c93449fb4d163923927/js/content-script.js)同步。
+使用 [Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-websites) 替代 Smooth Scroll 浏览器扩展。

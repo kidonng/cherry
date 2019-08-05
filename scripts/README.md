@@ -3,7 +3,7 @@
 <div align="center">
 
 ![Original count: 4](https://img.shields.io/badge/ORIGINAL-4-blue.svg?style=for-the-badge)
-![Modified count: 2](https://img.shields.io/badge/MODIFIED-2-orange.svg?style=for-the-badge)
+![Modified count: 1](https://img.shields.io/badge/MODIFIED-1-orange.svg?style=for-the-badge)
 
 English | [简体中文](README-zh-CN.md)
 
@@ -51,8 +51,4 @@ Replace Wikiwand browser extension.
 
 ### [Smooth Scroll](https://github.com/kidonng/cherry/raw/master/scripts/smoothscroll.user.js)
 
-Replace Smooth Scroll browser extension.
-
-### [View Image](https://github.com/kidonng/cherry/raw/master/scripts/viewimage.user.js)
-
-Based on [Userscript Version 2.0.1](https://gist.github.com/bijij/58cc8cfc859331e4cf80210528a7b255/b2def8f34acc55906402bfed6922b20fa7c45607) & synced with [Chrome Extension](https://github.com/bijij/ViewImage/blob/5c6269a9f56f22fdc4ce3c93449fb4d163923927/js/content-script.js).
+Replace Smooth Scroll browser extension with [Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-websites).
