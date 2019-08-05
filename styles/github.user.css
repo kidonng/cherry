@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.3.1
+@version      1.3.2
 @description  Clean flat GitHub featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -128,7 +128,7 @@
   .commit-tease,
   .bg-blue-light,
   .Box-header {
-    background-color: unset !important;
+    background-color: white !important;
   }
 
   .Box.Box--condensed.d-flex.flex-column.flex-shrink-0 {
