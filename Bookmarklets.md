@@ -6,9 +6,9 @@
 
 </div>
 
-To save a bookmarklet, save the code as a bookmark/drag the code into browser's bookmarks bar.
+[Bookmarklets](https://en.wikipedia.org/wiki/Bookmarklet) are like bookmarks, except the link is JavaScript code.
 
-To use a bookmarklet, just open the bookmark.
+To save a bookmarklet, save the code as a bookmark or drag the code into bookmark bar.
 
 ## Wayback Machine (Internet Archive)
 
