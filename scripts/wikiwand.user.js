@@ -2,6 +2,7 @@
 // @name         Wikiwand
 // @version      1.0.2
 // @description  Replace Wikiwand browser extension
+// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @include      https://*.wikipedia.org/*

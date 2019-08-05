@@ -2,6 +2,7 @@
 // @name         Pages Source
 // @version      1.3.1
 // @description  Easily go to GitHub Pages' source repository
+// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @include      http*://*.github.io/*

@@ -2,6 +2,7 @@
 // @name         Smooth Scroll
 // @version      1.0.0
 // @description  Use Smooth Scroll for Websites to replace Smooth Scroll Chrome Extension
+// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @include      *
