@@ -25,7 +25,7 @@
     log: {
       // Recommend not too high or the page can consume too much memory
       max: 50,
-      info: '#000',
+      info: 'black',
       processing: 'blue',
       success: 'green',
       error: 'red'
