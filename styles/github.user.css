@@ -4,7 +4,8 @@
 @description  Clean flat GitHub featuring Pixel blue
 @license      MIT
 @author       kidonng
-@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+@namespace    kidonng
 @preprocessor stylus
 
 @var          checkbox lightHeader         "Light header"              1
@@ -106,7 +107,7 @@
     border: 1px solid #dadce0;
     border-radius: 0.25em;
   }
-  
+
   /* Currently only apply to "Fork" button */
   .pagehead-actions .disabled {
     display: none;
@@ -143,7 +144,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-  
+
   .Box-header.py-2.d-flex.flex-column.flex-shrink-0.flex-md-row.flex-md-items-center {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -154,7 +155,7 @@
     margin-top: 0 !important;
     border-radius: 0;
   }
-  
+
   .flash-notice + .Box.mt-3.position-relative .Box-header {
     margin-right: 0;
     margin-left: 0;
@@ -333,8 +334,8 @@
 }
 
 @-moz-document regexp("https://github.com/.+/blob/.+.md") {
-    .Box.mt-3.position-relative {
-        border: 0;
-        margin: 1px;
-    }
+  .Box.mt-3.position-relative {
+    border: 0;
+    margin: 1px;
+  }
 }
