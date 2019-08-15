@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.3.5
+@version      1.3.7
 @description  Clean flat GitHub featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -106,11 +106,6 @@
   .pagehead-actions > li {
     border: 1px solid #dadce0;
     border-radius: 0.25em;
-  }
-
-  /* Currently only apply to "Fork" button */
-  .pagehead-actions .disabled {
-    display: none;
   }
 
   .reponav-item.selected {

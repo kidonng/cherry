@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Google
-@version      1.1.0
+@version      1.1.1
 @description  Opinionated Google Style
 @license      MIT
 @author       kidonng
@@ -21,7 +21,7 @@
 
   /* White footer */
   #fbar {
-    background: #fff;
+    background: unset;
   }
 
   .b2hzT,
