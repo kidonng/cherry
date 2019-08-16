@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Wikiwand
-// @version      1.0.2
+// @version      1.0.3
 // @description  Replace Wikiwand browser extension
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
+// @run-at       document-start
 // @include      https://*.wikipedia.org/*
 // @include      https://www.wikiwand.com/*
 // ==/UserScript==
