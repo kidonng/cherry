@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.4.1
+@version      1.4.2
 @description  Clean flat GitHub featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -30,6 +30,8 @@
   /* Add border radius to avatar */
   .avatar,
   .user-profile-mini-avatar img,
+  .select-menu-button-gravatar img,
+  .select-menu-item-gravatar img,
   [data-octo-click='hovercard-link-click'] img,
   .ghh-avatar /* GitHub Hovercard */ {
     border-radius: 100% !important;
