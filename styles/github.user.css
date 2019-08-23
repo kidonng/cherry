@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.4.0
+@version      1.4.1
 @description  Clean flat GitHub featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -158,7 +158,7 @@
 
   if lightHeader {
     .Header {
-      background: white;
+      background: #fafbfc;
     }
 
     .Header-link {
