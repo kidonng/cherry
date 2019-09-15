@@ -1,13 +1,8 @@
-<h1 align="center">User Scripts</h1>
-
-<div align="center">
-
-![Original count: 4](https://img.shields.io/badge/ORIGINAL-4-blue.svg?style=for-the-badge)
-![Modified count: 1](https://img.shields.io/badge/MODIFIED-1-orange.svg?style=for-the-badge)
+# User Scripts
 
 English | [简体中文](README-zh-CN.md)
 
-</div>
+---
 
 A user script manager must be installed on your browser.
 
@@ -15,7 +10,7 @@ We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail
 
 ## Original
 
-### [NCU Net](https://github.com/kidonng/cherry/raw/master/scripts/ncu-net.user.js)
+### [NCU Net](ncu-net.user.js?raw=true)
 
 *NCU Campus Network Access Authentication System* Helper. Works on `NCU-5G/NCU-2.4G` & `NCUWLAN`.
 
@@ -35,20 +30,24 @@ We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail
 3. Click the login/logout button and watch the magic happen!
 4. You can [config language & more](./ncu-net.user.js#L12-L31) in the script.
 
-### [Tieba Redirect](https://github.com/kidonng/cherry/raw/master/scripts/tieba-redirect.user.js)
+### [Tieba Redirect](tieba-redirect.user.js?raw=true)
 
 Redirect all variants of Tieba site (including mobile version) to `tieba.baidu.com`. Also enable you to see sub-replies without login.
 
-### [Pages Source](https://github.com/kidonng/cherry/raw/master/scripts/pages-source.user.js)
+### [Pages Source](pages-source.user.js?raw=true)
 
 Display a GitHub logo in the lower right linked to GitHub Pages' source repository. e.g. [a](https://edwardtufte.github.io/) [b](https://edwardtufte.github.io/tufte-css/)
 
-### [Wikiwand](https://github.com/kidonng/cherry/raw/master/scripts/wikiwand.user.js)
+### [Wikiwand](wikiwand.user.js?raw=true)
 
 Replace Wikiwand browser extension.
 
-## Modified
+## Ported
 
-### [Smooth Scroll](https://github.com/kidonng/cherry/raw/master/scripts/smoothscroll.user.js)
+### [Smooth Scroll](smoothscroll.user.js?raw=true)
 
-Replace Smooth Scroll browser extension with [Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-websites).
+Replace Smooth Scroll browser extension.
+
+#### Source
+
+[Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-websites)
