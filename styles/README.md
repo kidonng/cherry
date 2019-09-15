@@ -1,29 +1,52 @@
-<h1 align="center">User Styles</h1>
-
-<div align="center">
-
-![Original count: 5](https://img.shields.io/badge/ORIGINAL-5-blue.svg?style=for-the-badge)
-![Modified count: 1](https://img.shields.io/badge/MODIFIED-1-orange.svg?style=for-the-badge)
-
-</div>
+# User Styles
 
 A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Firefox](https://addons.mozilla.org/firefox/addon/styl-us/)) must be installed on your browser.
 
+**NOTE** Some styles include font optimization for Windows (Simplified Chinese) only.
+
 ## Original
 
-- [Bilibili](https://github.com/kidonng/cherry/raw/master/styles/bilibili.user.css)
-- [GitHub](https://github.com/kidonng/cherry/raw/master/styles/github.user.css)
-  ![](../screenshots/github.png)
-- [Google](https://github.com/kidonng/cherry/raw/master/styles/google.user.css)
-  ![](../screenshots/google.png)
-- [StackBlitz](https://github.com/kidonng/cherry/raw/master/styles/stackblitz.user.css)
-- [Tieba](https://github.com/kidonng/cherry/raw/master/styles/tieba.user.css)
+### [Bilibili](bilibili.user.css?raw=true)
 
-## Modified
+Clean [Bilibili](https://www.bilibili.com/) annoyances.
 
-- [Moegirlpedia](https://github.com/kidonng/cherry/raw/master/styles/moegirl.user.css)
-  ![](../screenshots/moegirlpedia.png)
+### [GitHub](github.user.css?raw=true)
 
-> Source:
-> - [Remastered Moegirl Paper - Sidebar Edition 萌百重设更新](https://userstyles.org/styles/163374/remastered-moegirl-paper-sidebar-edition)
-> - [Anti-Moe Pedia](https://userstyles.org/styles/145419/anti-moe-pedia)
+Clean flat GitHub style featuring Pixel blue.
+
+![](../screenshots/github.png)
+
+### [Google](google.user.css?raw=true)
+
+Opinionated Google Style.
+
+![](../screenshots/google.png)
+
+### [Stackblitz](stackblitz.user.css?raw=true)
+
+Clean [Stackblitz](https://stackblitz.com/) annoyances.
+
+### [Tieba](tieba.user.css?raw=true)
+
+Clean [Baidu Tieba](https://tieba.baidu.com/) annoyances.
+
+## Ported
+
+### [Moegirlpedia](moegirl.user.css?raw=true)
+
+[Moegirlpedia](https://zh.moegirl.org/) improved.
+
+![](../screenshots/moegirlpedia.png)
+
+#### Source
+
+- [Remastered Moegirl Paper - Sidebar Edition 萌百重设更新](https://userstyles.org/styles/163374/remastered-moegirl-paper-sidebar-edition)
+- [Anti-Moe Pedia](https://userstyles.org/styles/145419/anti-moe-pedia)
+
+### [Inoreader](inoreader.user.css?raw=true)
+
+Tweaks for [Inoreader](https://www.inoreader.com/) light theme.
+
+#### Source
+
+[Inoreader Light tweaks](http://userstyles.org/styles/142459)

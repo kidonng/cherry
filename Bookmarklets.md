@@ -1,10 +1,4 @@
-<h1 align="center">Bookmarklets</h1>
-
-<div align="center">
-
-![Count: 3](https://img.shields.io/badge/COUNT-3-blue.svg?style=for-the-badge)
-
-</div>
+# Bookmarklets
 
 [Bookmarklets](https://en.wikipedia.org/wiki/Bookmarklet) are like bookmarks, except the link is JavaScript code.
 
