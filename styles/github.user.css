@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.4.2
+@version      1.4.3
 @description  Clean flat GitHub style featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -192,7 +192,8 @@
 
   /* Profile - Hide PRO badge */
   if hideProBadge {
-    .js-pro-badge {
+    .js-pro-badge,
+    .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
       display: none !important;
     }
   }
