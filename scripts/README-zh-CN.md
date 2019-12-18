@@ -42,6 +42,23 @@
 
 替代 Wikiwand 浏览器扩展。
 
+### [修复 GitHub emoji](fix-github-emoji.user.js?raw=true)
+
+GitHub 对使用下列 `userAgent` 的用户使用默认图像 (Noto Color Emoji) 显示 emoji:
+
+```js
+!function() {
+    const e = /\bWindows NT 6.1\b/.test(navigator.userAgent)
+        , t = /\bWindows NT 6.2\b/.test(navigator.userAgent)
+        , n = /\bWindows NT 6.3\b/.test(navigator.userAgent)
+        , s = /\bFreeBSD\b/.test(navigator.userAgent)
+        , o = /\bLinux\b/.test(navigator.userAgent);
+    return !(e || t || n || o || s)
+}()
+```
+
+太惨了。该脚本为 Linux 平台修复此问题！
+
 ## 改版
 
 ### [Smooth Scroll](smoothscroll.user.js?raw=true)
