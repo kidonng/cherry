@@ -42,6 +42,23 @@ Display a GitHub logo in the lower right linked to GitHub Pages' source reposito
 
 Replace Wikiwand browser extension.
 
+### [Fix GitHub emoji](fix-github-emoji.user.js?raw=true)
+
+GitHub render emojis with fallback images (Noto Color Emoji) for users with these `userAgent`:
+
+```js
+!function() {
+    const e = /\bWindows NT 6.1\b/.test(navigator.userAgent)
+        , t = /\bWindows NT 6.2\b/.test(navigator.userAgent)
+        , n = /\bWindows NT 6.3\b/.test(navigator.userAgent)
+        , s = /\bFreeBSD\b/.test(navigator.userAgent)
+        , o = /\bLinux\b/.test(navigator.userAgent);
+    return !(e || t || n || o || s)
+}()
+```
+
+Too bad. Let's fix this for Linux!
+
 ## Ported
 
 ### [Smooth Scroll](smoothscroll.user.js?raw=true)
