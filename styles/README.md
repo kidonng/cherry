@@ -6,15 +6,20 @@ A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstor
 
 ## Original
 
-### [Bilibili](bilibili.user.css?raw=true)
-
-Clean [Bilibili](https://www.bilibili.com/) annoyances.
-
 ### [GitHub](github.user.css?raw=true)
 
 Clean flat GitHub style featuring Pixel blue.
 
 ![](../screenshots/github.png)
+
+### Google Tasks
+
+[Google Tasks](https://tasks.google.com/embed/?origin=https://calendar.google.com&fullWidth=1) on desktop.
+
+### [Bilibili](bilibili.user.css?raw=true)
+
+Clean [Bilibili](https://www.bilibili.com/) annoyances.
+
 
 ### [Google](google.user.css?raw=true)
 
