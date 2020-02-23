@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.4.5
-@description  Clean flat GitHub style featuring Pixel blue
+@version      1.5.0
+@description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
 @homepageURL  https://github.com/kidonng/cherry
@@ -16,17 +16,6 @@
 @var          checkbox hideContributors    "Hide file contributors"    1
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/"), url-prefix("https://gist.github.com/") {
-  /* Modify link color */
-  a {
-    color: #1a73e8;
-  }
-
-  /* Modify progress bar color */
-  .pjax-loader-bar .progress {
-    background: #1a73e8;
-    box-shadow: 0 0 10px rgba(26, 115, 232, 0.7);
-  }
-
   /* Add border radius to avatar */
   .avatar,
   .user-profile-mini-avatar img,
@@ -37,48 +26,6 @@
     border-radius: 100% !important;
   }
 
-  /* Button */
-  .btn,
-  .btn:hover {
-    background: none;
-    transition: background 100ms linear;
-  }
-
-  .btn:hover {
-    background: #f1f3f4;
-  }
-
-  .btn-primary,
-  .btn-primary:hover,
-  .btn-primary:focus,
-  [open] > .btn-primary {
-    background: #1a73e8;
-  }
-
-  .btn-primary:hover {
-    background: #3a7af6;
-  }
-
-  .btn-primary:focus {
-    box-shadow: 0 0 0 0.2em rgba(3, 102, 214, 0.3);
-  }
-
-  .btn-primary:disabled {
-    background: rgba(58, 122, 246, 0.7);
-  }
-
-  .btn-outline:hover {
-    background: #1a73e8;
-  }
-
-  .btn-danger:hover:not(:disabled) {
-    background-color: #b5202c;
-  }
-
-  .btn:disabled {
-    border-color: #dadce0;
-  }
-
   /* Clean Dashboard */
   .team-left-column {
     border-right: 0 !important;
@@ -86,15 +33,6 @@
 
   .d-flex.flex-wrap.bg-gray {
     background: unset !important;
-  }
-
-  /* Modify selected tab color */
-  .reponav-item.selected {
-    border-top-color: #1a73e8;
-  }
-
-  .bg-blue-light {
-    background: unset !important; /* Compatible with GitHub Dark` */
   }
 
   .Box.Box--condensed.d-flex.flex-column.flex-shrink-0 {
@@ -118,36 +56,11 @@
     border-radius: 0;
   }
 
-  /* Settings */
-  .form-group .form-control,
-  .input-contrast,
-  .menu-heading {
-    background-color: unset;
-  }
-
-  .menu-item.selected:before,
-  .session-device .session-state-indicator.recent {
-    background-color: #1a73e8;
-  }
-
-  .session-device .session-state-indicator.recent {
-    box-shadow: none;
-  }
-
-  .recent-user-key,
-  .recent-user-key-access {
-    color: #1a73e8;
-  }
-
   /* Profile */
   .avatar-before-user-status,
   .js-user-status-container,
   .user-status-container {
     border: 0 !important;
-  }
-
-  .UnderlineNav-item.selected {
-    border-bottom-color: #1a73e8;
   }
 
   if lightHeader {
@@ -220,49 +133,17 @@
   }
 
   /* Extension - Octotree */
-  .octotree-view-header,
-  .octotree-sidebar.octotree-github-sidebar .octotree-search-bar {
-    background-color: rgb(250, 251, 252) !important;
-    border-right: 1px solid rgb(223, 226, 229) !important;
-  }
-
-  .octotree-sidebar.octotree-github-sidebar .octotree-footer {
-    background-color: rgb(250, 251, 252) !important;
-    border-top: 0;
-  }
-
-  .octotree-sidebar.octotree-github-sidebar .octotree-views .octotree-tree-view .octotree-view-header .octotree-header-repo,
-  .octotree-sidebar.octotree-github-sidebar .octotree-views .octotree-tree-view .octotree-view-header .octotree-header-repo a,
-  .octotree-sidebar.octotree-github-sidebar .octotree-views .octotree-tree-view .octotree-view-header .octotree-header-repo a:hover,
-  .octotree-view-header,
-  .octotree-header-branch,
-  .octotree-view-header i:before {
-    color: rgb(106, 115, 125) !important;
-  }
-
-  .octotree-sidebar.octotree-github-sidebar .octotree-search i:hover::before,
-  .octotree-sidebar.octotree-github-sidebar a.octotree-settings .octotree-icon-settings:hover:before,
-  .octotree-sidebar.octotree-github-sidebar a.octotree-pin .octotree-icon-pin:hover::before {
-    color: rgba(106, 115, 125, .5) !important;
-  }
-
-  .octotree-settings.selected i:before,
-  .octotree-pinned i:before {
-    filter: brightness(0);
-  }
-
   .octotree-toggle {
     height: 40px !important;
   }
 
-  .octotree-ad-small,
-  .octotree-ad-big,
-  .octotree-toggle span {
+  .octotree-ads,
+  .octotree-footer {
     display: none !important;
   }
 
-  .octotree-trial-msg-view {
-    visibility: hidden;
+  .octotree-views {
+    height: 100vh !important;
   }
 
   /* Remove README border */
@@ -270,6 +151,7 @@
     border: 0;
   }
 }
+
 @-moz-document regexp("https://github.com/.+/blob/.+\.md.*") {
   /* Remove Markdown file border */
   .Box.mt-3.position-relative {
