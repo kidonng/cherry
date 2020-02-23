@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.4.4
+@version      1.4.5
 @description  Clean flat GitHub style featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -90,15 +90,7 @@
 
   /* Modify selected tab color */
   .reponav-item.selected {
-    border-color: #1a73e8 #e1e4e8 transparent;
-  }
-
-  /* Use .Box-header style */
-  .commit-tease,
-  .full-commit,
-  .flash.flash-notice.mt-3 {
-    background: #f6f8fa;
-    border: 1px solid #d1d5da;
+    border-top-color: #1a73e8;
   }
 
   .bg-blue-light {
