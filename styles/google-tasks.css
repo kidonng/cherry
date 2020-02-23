@@ -1,0 +1,20 @@
+/* ==UserStyle==
+@name         Google Tasks
+@version      1.0.0
+@description  Google Tasks on desktop
+@license      MIT
+@author       kidonng
+@homepageURL  https://github.com/kidonng/cherry
+@namespace    kidonng
+==/UserStyle== */
+@-moz-document regexp("https://tasks.google.com.*\\?fullWidth=1") {
+  .MCcOAc,
+  .llhEMd {
+    left: 25%;
+    width: 50% !important;
+  }
+
+  .MCcOAc {
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  }
+}
