@@ -27,3 +27,12 @@ Bypass image referrer check (e.g. Weibo). [Test page](https://luyilin.github.io/
 ```js
 javascript:document.querySelectorAll('img').forEach(el => {el.referrerPolicy = 'no-referrer'; el.src = el.src}); void 0
 ```
+
+## Design mode
+
+`contenteditable` for all.
+
+```js
+javascript:document.designMode = 'on'; void 0
+```
+
