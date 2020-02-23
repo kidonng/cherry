@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.5.0
+@version      1.5.1
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -133,10 +133,6 @@
   }
 
   /* Extension - Octotree */
-  .octotree-toggle {
-    height: 40px !important;
-  }
-
   .octotree-ads,
   .octotree-footer {
     display: none !important;
