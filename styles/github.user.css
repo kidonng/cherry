@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.4.3
+@version      1.4.4
 @description  Clean flat GitHub style featuring Pixel blue
 @license      MIT
 @author       kidonng
@@ -278,7 +278,7 @@
     border: 0;
   }
 }
-@-moz-document regexp("https://github.com/.+/blob/.+.md.*") {
+@-moz-document regexp("https://github.com/.+/blob/.+\.md.*") {
   /* Remove Markdown file border */
   .Box.mt-3.position-relative {
     border-right: 0;
