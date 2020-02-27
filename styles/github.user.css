@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.5.1
+@version      1.5.2
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -18,6 +18,7 @@
 @-moz-document url-prefix("https://github.com/"), url-prefix("https://gist.github.com/") {
   /* Add border radius to avatar */
   .avatar,
+  .commit-form-avatar,
   .user-profile-mini-avatar img,
   .select-menu-button-gravatar img,
   .select-menu-item-gravatar img,
