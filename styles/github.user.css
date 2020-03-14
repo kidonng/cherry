@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.5.2
+@version      1.6.0
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -9,21 +9,17 @@
 @preprocessor stylus
 
 @var          checkbox lightHeader         "Light header"              1
-@var          checkbox hideFollowBtn       "Hide follow button"        1
 @var          checkbox hideProBadge        "Hide PRO badge"            1
-@var          checkbox hideSponsor         "Hide sponsor stuff"        1
 @var          checkbox hideDiscovery       "Hide discovery"            1
 @var          checkbox hideContributors    "Hide file contributors"    1
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/"), url-prefix("https://gist.github.com/") {
   /* Add border radius to avatar */
   .avatar,
-  .commit-form-avatar,
   .user-profile-mini-avatar img,
   .select-menu-button-gravatar img,
   .select-menu-item-gravatar img,
-  [data-octo-click='hovercard-link-click'] img,
-  .ghh-avatar /* GitHub Hovercard */ {
+  [data-octo-click='hovercard-link-click'] img /* Gist list */ {
     border-radius: 100% !important;
   }
 
@@ -88,27 +84,10 @@
     }
   }
 
-  /* Optional Styles */
-  if hideFollowBtn {
-    .js-user-profile-follow-button,
-    [data-action="follow"] /* GitHub Hovercard */ {
-      display: none !important;
-    }
-  }
-
   /* Profile - Hide PRO badge */
   if hideProBadge {
     .js-pro-badge,
     .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
-      display: none !important;
-    }
-  }
-
-  if hideSponsor {
-    #sponsor-button-repo,
-    #sponsor-profile-button,
-    .border-top.border-gray-light.py-3.d-flex.flex-items-center.ghh-user-x.tooltipstered, /* "GitHub Sponsor" link on profile */
-    .border-top.py-3.clearfix:not(.hide-sm) /* "Sponsoring" section on profile */ {
       display: none !important;
     }
   }
