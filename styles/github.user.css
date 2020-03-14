@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.6.0
+@version      1.6.1
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -9,12 +9,10 @@
 @preprocessor stylus
 
 @var          checkbox lightHeader         "Light header"              1
-@var          checkbox hideProBadge        "Hide PRO badge"            1
 @var          checkbox hideDiscovery       "Hide discovery"            1
-@var          checkbox hideContributors    "Hide file contributors"    1
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/"), url-prefix("https://gist.github.com/") {
-  /* Add border radius to avatar */
+  /* Round avatar */
   .avatar,
   .user-profile-mini-avatar img,
   .select-menu-button-gravatar img,
@@ -23,43 +21,14 @@
     border-radius: 100% !important;
   }
 
-  /* Clean Dashboard */
-  .team-left-column {
-    border-right: 0 !important;
-  }
-
-  .d-flex.flex-wrap.bg-gray {
-    background: unset !important;
-  }
-
-  .Box.Box--condensed.d-flex.flex-column.flex-shrink-0 {
-    border-bottom: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  .Box.mt-3.position-relative {
-    margin-top: 0 !important;
-  }
-
-  .Box-header.py-2.d-flex.flex-column.flex-shrink-0.flex-md-row.flex-md-items-center {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-  }
-
-  .flash.flash-notice.mt-3 {
-    margin-top: 0 !important;
-    border-bottom: 0;
-    border-radius: 0;
-  }
-
-  /* Profile */
+  /* Remove profile avatar border to match round avatar */
   .avatar-before-user-status,
   .js-user-status-container,
   .user-status-container {
     border: 0 !important;
   }
 
+  /* Light header */
   if lightHeader {
     .Header {
       background: #fafbfc;
@@ -84,35 +53,25 @@
     }
   }
 
-  /* Profile - Hide PRO badge */
-  if hideProBadge {
-    .js-pro-badge,
-    .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
-      display: none !important;
-    }
+  /* Hide PRO badge */
+  .js-pro-badge,
+  .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
+    display: none !important;
+  }
+  
+  /* Hide GitHub Developer Program badge */
+  .d-flex[href="https://developer.github.com"] {
+    display: none !important;
   }
 
-  /* Dashboard - Hide discovery */
+  /* Hide discovery on dashboard */
   if hideDiscovery {
     .team-left-column:last-child {
       visibility: hidden;
     }
   }
 
-  /* Files & Commits - Hide contributors */
-  if hideContributors {
-    .Box-body.d-flex.flex-justify-between.bg-blue-light.flex-column.flex-md-row.flex-items-start.flex-md-items-center {
-       border-bottom: 0;
-       border-bottom-left-radius: 0;
-       border-bottom-right-radius: 0;
-     }
-
-    .Box-body.d-flex.flex-items-center.flex-auto.f6.border-bottom-0.flex-wrap {
-      display: none !important;
-    }
-  }
-
-  /* Extension - Octotree */
+  /* Octotree */
   .octotree-ads,
   .octotree-footer {
     display: none !important;
