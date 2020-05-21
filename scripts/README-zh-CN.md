@@ -8,63 +8,34 @@
 
 推荐安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) 或 [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/))，因为在其他用户脚本管理器上脚本可能失效。
 
-## 原创
-
-### [NCU Net](ncu-net.user.js?raw=true)
+## [NCU Net](ncu-net.user.js?raw=true)
 
 **南昌大学校园网络接入认证系统**助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
 
 > 同时也有[独立版本](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md)。
 
-#### 特点
+### 特点
 
 - 无跳转/弹窗进行登录/注销
 - 记忆用户名和密码
 - 自动连接和重连
 - 连接日志
 
-#### 使用方法
+### 使用方法
 
 1. 连接网络。
 2. 打开认证页面 ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) 并输入你的用户名和密码。
 3. 点击登录/注销按钮并见证奇迹！
 4. 你可以在脚本中设置[语言和更多](./ncu-net.user.js#L12-L31)。
 
-### [Tieba Redirect](tieba-redirect.user.js?raw=true)
+## [Tieba Redirect](tieba-redirect.user.js?raw=true)
 
 将贴吧的其他版本 (包括移动版) 重定向至 `tieba.baidu.com`。同时使你无需登录即可查看楼中楼。
 
-### [Pages Source](pages-source.user.js?raw=true)
+## [Pages Source](pages-source.user.js?raw=true)
 
 在右下角显示一个链接到 GitHub Pages 源码仓库的 GitHub logo。示例 [a](https://edwardtufte.github.io/) [b](https://edwardtufte.github.io/tufte-css/)
 
-### [Wikiwand](wikiwand.user.js?raw=true)
+## [Wikiwand](wikiwand.user.js?raw=true)
 
 替代 Wikiwand 浏览器扩展。
-
-### [修复 GitHub emoji](fix-github-emoji.user.js?raw=true)
-
-GitHub 对使用下列 `userAgent` 的用户使用默认图像 (Noto Color Emoji) 显示 emoji:
-
-```js
-!function() {
-    const e = /\bWindows NT 6.1\b/.test(navigator.userAgent)
-        , t = /\bWindows NT 6.2\b/.test(navigator.userAgent)
-        , n = /\bWindows NT 6.3\b/.test(navigator.userAgent)
-        , s = /\bFreeBSD\b/.test(navigator.userAgent)
-        , o = /\bLinux\b/.test(navigator.userAgent);
-    return !(e || t || n || o || s)
-}()
-```
-
-太惨了。该脚本为 Linux 平台修复此问题！
-
-## 改版
-
-### [Smooth Scroll](smoothscroll.user.js?raw=true)
-
-替代 Smooth Scroll 浏览器扩展。
-
-#### 来源
-
-[Smooth Scroll for Websites](https://github.com/gblazex/smoothscroll-for-websites)

@@ -11,4 +11,4 @@ Cherry is a collection of handcrafted:
 
 ## Notes on the license
 
-[MIT license](LICENSE) applies to my original works. Ported works maintain their own licenses.
+[MIT license](LICENSE) applies to my original works. Ported works keep their own licenses.
