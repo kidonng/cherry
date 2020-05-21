@@ -1,0 +1,18 @@
+/* ==UserStyle==
+@name         Vercel
+@version      1.0.0
+@description  Hide Vercel annoyances
+@license      MIT
+@author       kidonng
+@homepageURL  https://github.com/kidonng/cherry
+@namespace    kidonng
+==/UserStyle== */
+
+@-moz-document domain("vercel.com") {
+  .breadcrumb .divider:first-of-type,
+  .breadcrumb .geist-flex,
+  .geist-feedback-input,
+  a[href='/teams/create'] {
+    display: none !important;
+  }
+}

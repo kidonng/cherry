@@ -1,0 +1,18 @@
+/* ==UserStyle==
+@name         OneDrive Business
+@version      1.0.0
+@description  Hide OneDrive Business annoyances
+@license      MIT
+@author       kidonng
+@homepageURL  https://github.com/kidonng/cherry
+@namespace    kidonng
+==/UserStyle== */
+
+@-moz-document domain("emailncueducn-my.sharepoint.com") {
+  #O365_MainLink_Bell_Container,
+  #O365_MainLink_Help,
+  .LeftNav-linkGroupContainer:nth-of-type(2),
+  .LeftPane-notifications {
+    display: none !important;
+  }
+}

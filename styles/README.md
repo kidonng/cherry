@@ -8,18 +8,13 @@ A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstor
 
 ### [GitHub](github.user.css?raw=true)
 
-Clean flat GitHub style featuring Pixel blue.
+Style optimizations for GitHub.
 
 ![](../screenshots/github.png)
 
-### Google Tasks
+### [Google Tasks](google-tasks.user.css?raw=true)
 
 [Google Tasks](https://tasks.google.com/embed/?origin=https://calendar.google.com&fullWidth=1) on desktop.
-
-### [Bilibili](bilibili.user.css?raw=true)
-
-Clean [Bilibili](https://www.bilibili.com/) annoyances.
-
 
 ### [Google](google.user.css?raw=true)
 
@@ -27,13 +22,18 @@ Opinionated Google Style.
 
 ![](../screenshots/google.png)
 
-### [Stackblitz](stackblitz.user.css?raw=true)
+### [JetBrains Mono](jetbrains-mono.user.css?raw=true)
 
-Clean [Stackblitz](https://stackblitz.com/) annoyances.
+Apply JetBrains Mono font to various sites.
 
-### [Tieba](tieba.user.css?raw=true)
+### Hide annoyances
 
-Clean [Baidu Tieba](https://tieba.baidu.com/) annoyances.
+- [Bilibili](bilibili.user.css?raw=true)
+- [Netlify](netlify.user.css?raw=true)
+- [OneDrive Business](onedrive-business.user.css?raw=true)
+- [Tieba](tieba.user.css?raw=true)
+- [Stackblitz](stackblitz.user.css?raw=true)
+- [Vercel](vercel.user.css?raw=true)
 
 ## Ported
 
@@ -55,3 +55,14 @@ Tweaks for [Inoreader](https://www.inoreader.com/) light theme.
 #### Source
 
 [Inoreader Light tweaks](http://userstyles.org/styles/142459)
+
+### [Wikipedia](https://github.com/kidonng/cherry/raw/c0da67832d3a3464bed851dcd08de21147dccdb5/styles/wikipedia.user.css)
+
+**Archived**
+
+![](https://github.com/kidonng/cherry/raw/c0da67832d3a3464bed851dcd08de21147dccdb5/styles/screenshots/wikipedia.png)
+
+#### Source
+
+- [Wikipedia Material](https://userstyles.org/styles/140009/wikipedia-material)
+- [Wikipedia New Light](https://userstyles.org/styles/139227/wikipedia-new-light)

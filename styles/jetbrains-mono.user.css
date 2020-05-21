@@ -1,0 +1,31 @@
+/* ==UserStyle==
+@name         JetBrains Mono
+@version      1.0.0
+@description  Apply JetBrains Mono font to various sites
+@license      MIT
+@author       kidonng
+@homepageURL  https://github.com/kidonng/cherry
+@namespace    kidonng
+==/UserStyle== */
+
+@-moz-document domain("github.com") {
+  pre,
+  code,
+  .blob-code-inner,
+  #new_comment_field {
+    font-family: JetBrains Mono !important;
+  }
+}
+
+@-moz-document domain("www.notion.so") {
+  .notion-code-block > div,
+  span[style^='font-family:"SFMono-Regular"'] {
+    font-family: JetBrains Mono !important;
+  }
+}
+
+@-moz-document domain("zhuanlan.zhihu.com") {
+  div.highlight {
+    font-family: JetBrains Mono;
+  }
+}
