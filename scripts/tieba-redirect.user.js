@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tieba Redirect
-// @version      1.1.1
+// @version      1.1.2
 // @description  Redirect all variants of Tieba site to tieba.baidu.com
 // @license      MIT
 // @author       kidonng
@@ -11,6 +11,7 @@
 // @include      http*://jump2.bdimg.com/*
 // @include      http*://c.tieba.baidu.com/*
 // @include      http*://wefan.baidu.com/*
+// @include      http*://tiebac.baidu.com/*
 // ==/UserScript==
 
 ;(() => {
@@ -31,6 +32,7 @@
     case 'jump2.bdimg.com':
     case 'c.tieba.baidu.com':
     case 'wefan.baidu.com':
+    case 'tiebac.baidu.com':
       location.host = 'tieba.baidu.com'
       break
     case (location.href.includes('wapp.baidu.com/mo/q/m')):
