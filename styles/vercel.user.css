@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Vercel
-@version      1.0.0
+@version      1.0.1
 @description  Hide Vercel annoyances
 @license      MIT
 @author       kidonng
@@ -9,10 +9,14 @@
 ==/UserStyle== */
 
 @-moz-document domain("vercel.com") {
+  /* Hide user selector */
   .breadcrumb .divider:first-of-type,
-  .breadcrumb .geist-flex,
-  .geist-feedback-input,
-  a[href='/teams/create'] {
+  .breadcrumb .divider:first-of-type + div,
+  /* Hide feedback */
+  .scope + .links > div > div:first-child,
+  /* Hide teams */
+  .button[href='/teams/create'],
+  .menu .item:nth-of-type(3) {
     display: none !important;
   }
 }
