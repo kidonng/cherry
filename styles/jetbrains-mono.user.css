@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         JetBrains Mono
-@version      1.0.0
+@version      1.0.1
 @description  Apply JetBrains Mono font to various sites
 @license      MIT
 @author       kidonng
@@ -14,6 +14,7 @@
   .blob-code-inner,
   #new_comment_field {
     font-family: JetBrains Mono !important;
+    letter-spacing: .3px;
   }
 }
 
