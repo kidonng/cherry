@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tieba Redirect
-// @version      1.1.2
+// @version      1.1.3
 // @description  Redirect all variants of Tieba site to tieba.baidu.com
 // @license      MIT
 // @author       kidonng
@@ -12,6 +12,7 @@
 // @include      http*://c.tieba.baidu.com/*
 // @include      http*://wefan.baidu.com/*
 // @include      http*://tiebac.baidu.com/*
+// @run-at       document-start
 // ==/UserScript==
 
 ;(() => {
