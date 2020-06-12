@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tieba Redirect
 // @version      1.1.3
-// @description  Redirect all variants of Tieba site to tieba.baidu.com
+// @description  Redirect all variants of Tieba domain to tieba.baidu.com
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -24,9 +24,9 @@
         if (params.get('word'))
           location.href = `${prefix}f?kw=${params.get('word')}`
         else if (params.get('kz'))
-          location.href = `${prefix}p/${params.get('kz')}?pn=${Math.ceil(
-            params.get('pn') / 30
-          ) + 1}`
+          location.href = `${prefix}p/${params.get('kz')}?pn=${
+            Math.ceil(params.get('pn') / 30) + 1
+          }`
       } else PageData.user.is_login = true
       break
     case 'dq.tieba.com':
@@ -36,7 +36,7 @@
     case 'tiebac.baidu.com':
       location.host = 'tieba.baidu.com'
       break
-    case (location.href.includes('wapp.baidu.com/mo/q/m')):
+    case location.href.includes('wapp.baidu.com/mo/q/m'):
       location.href = location.href.replace(
         'wapp.baidu.com/mo/q/m',
         'tieba.baidu.com/f'

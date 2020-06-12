@@ -28,14 +28,13 @@
 3. 点击登录/注销按钮并见证奇迹！
 4. 你可以在脚本中设置[语言和更多](./ncu-net.user.js#L12-L31)。
 
-## [Tieba Redirect](tieba-redirect.user.js?raw=true)
-
-将贴吧的其他版本 (包括移动版) 重定向至 `tieba.baidu.com`。同时使你无需登录即可查看楼中楼。
-
-## [Pages Source](pages-source.user.js?raw=true)
+## [Pages 源码](pages-source.user.js?raw=true)
 
 在右下角显示一个链接到 GitHub Pages 源码仓库的 GitHub logo。示例 [a](https://edwardtufte.github.io/) [b](https://edwardtufte.github.io/tufte-css/)
 
-## [Wikiwand](wikiwand.user.js?raw=true)
+## 重定向
 
-替代 Wikiwand 浏览器扩展。
+- [贴吧](tieba-redirect.user.js?raw=true)：重定向贴吧的各种域名变体到 `tieba.baidu.com`，并且无需登录即可查看楼中楼。
+- [知乎](zhihu-redirect.user.js?raw=true)：重定向知乎的各种域名变体到 `www.zhihu.com`。
+- [Wikiwand](wikiwand.user.js?raw=true)：重定向维基百科到 Wikiwand。可替代 Wikiwand 浏览器扩展。
+- [Origin Finder](origin-finder.user.js?raw=true)：重定向至资源的原始版本，例如原始尺寸的图像。
