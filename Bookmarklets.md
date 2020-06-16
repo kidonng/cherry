@@ -4,20 +4,12 @@
 
 To save a bookmarklet, save the code as a bookmark or drag the code into bookmark bar.
 
-## Wayback Machine
-
-View current page's archives on [Wayback Machine](https://web.archive.org/).
-
-```js
-javascript:window.open(`https://web.archive.org/${location.href}`); void 0
-```
-
 ## Archive.today
 
 View current page's archives on [Archive.today](https://archive.today/).
 
 ```js
-javascript:window.open(`https://archive.today/${location.href}`); void 0
+javascript:void(window.open(`https://archive.today/${location.href}`))
 ```
 
 ## Remove image's referrer
@@ -25,14 +17,14 @@ javascript:window.open(`https://archive.today/${location.href}`); void 0
 Bypass image referrer check (e.g. Weibo). [Test page](https://luyilin.github.io/Aoba/)
 
 ```js
-javascript:document.querySelectorAll('img').forEach(el => {el.referrerPolicy = 'no-referrer'; el.src = el.src}); void 0
+javascript:void(document.querySelectorAll('img').forEach(el => {el.referrerPolicy = 'no-referrer'; el.src = el.src}))
 ```
 
 ## Design mode
 
-`contenteditable` for all.
+Toggle `contenteditable` for all elements.
 
 ```js
-javascript:document.designMode = 'on'; void 0
+javascript:document.designMode = document.designMode === 'off' ? 'on' : 'off'; void 0
 ```
 
