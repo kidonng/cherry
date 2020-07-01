@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.6.1
+@version      1.7.0
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -8,91 +8,104 @@
 @namespace    kidonng
 @preprocessor stylus
 
-@var          checkbox lightHeader         "Light header"              1
-@var          checkbox hideDiscovery       "Hide discovery"            1
+@var checkbox lightHeader "Light theme header" 0
+@var checkbox hideExplore "Hide \"Explore repositories\" on dashboard" 1
+@var checkbox hideHighlights "Hide \"Highlights\" on user profile" 1
+@var checkbox hideProBadge "Hide \"PRO\" badge in user hovercard" 1
+@var checkbox removeMDBorders "Remove Markdown file borders" 1
+@var checkbox showCommitMessage "Always show commit message on repository homepage" 1
+@var checkbox expandNavLink "Expand navigation link in repository file tree" 1
 ==/UserStyle== */
-@-moz-document url-prefix("https://github.com/"), url-prefix("https://gist.github.com/") {
-  /* Round avatar */
-  .avatar,
-  .user-profile-mini-avatar img,
-  .select-menu-button-gravatar img,
-  .select-menu-item-gravatar img,
-  [data-octo-click='hovercard-link-click'] img /* Gist list */ {
-    border-radius: 100% !important;
+@-moz-document url-prefix("https://github.com/") {
+  /* Hide "Branch" prefix of branch switcher on repository homepage */
+  #branch-select-menu .d-lg-inline {
+    display: none !important;
   }
 
-  /* Remove profile avatar border to match round avatar */
-  .avatar-before-user-status,
-  .js-user-status-container,
-  .user-status-container {
-    border: 0 !important;
+  /* Match label & issue/PR state's border radius
+   * https://github.com/sindresorhus/refined-github/issues/3291#issuecomment-650470420 */
+  .IssueLabel, .state, .State {
+    border-radius: 6px;
   }
 
-  /* Light header */
   if lightHeader {
+    /* Match .bg-gray-light */
     .Header {
       background: #fafbfc;
     }
 
+    /* Invert .Header-link */
     .Header-link {
       color: black;
     }
 
+    /* Invert .Header-link:focus, .Header-link:hover */
     .Header-link:focus,
     .Header-link:hover {
       color: rgba(0, 0, 0, .7);
     }
 
     .header-search-wrapper {
-      border: 1px solid black;
+      border: 1px solid black !important;
     }
 
     .header-search-input,
     .header-search-input::placeholder {
-      color: black;
+      color: black !important;
     }
   }
 
-  /* Hide PRO badge */
-  .js-pro-badge,
-  .d-block.f6.bg-purple.no-underline.text-bold.text-uppercase.text-white.text-center {
-    display: none !important;
-  }
-  
-  /* Hide GitHub Developer Program badge */
-  .d-flex[href="https://developer.github.com"] {
-    display: none !important;
+  if hideProBadge {
+    .user-status-container + div .Label.Label--purple.text-uppercase.mt-2 {
+      display: none !important;
+    }
   }
 
-  /* Hide discovery on dashboard */
-  if hideDiscovery {
+  if hideHighlights {
+    .user-profile-sticky-bar ~ .border-top.pt-3.mt-3.d-none.d-md-block {
+      display: none !important;
+    }
+  }
+
+  if hideExplore {
     .team-left-column:last-child {
       visibility: hidden;
     }
   }
 
-  /* Octotree */
-  .octotree-ads,
-  .octotree-footer {
-    display: none !important;
+  if removeMDBorders {
+    #readme {
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+    }
   }
 
-  .octotree-views {
-    height: 100vh !important;
+  /* https://github.com/sindresorhus/refined-github/pull/3278#issuecomment-649488947 */
+  if showCommitMessage {
+    .Details[data-issue-and-pr-hovercards-enabled]:not(.Details--on) .Details-content--hidden {
+      display: block !important;
+      height: 1.5em;
+      overflow: hidden;
+    }
   }
 
-  /* Remove README border */
-  #readme {
-    border: 0;
+  /* https://github.com/sindresorhus/refined-github/issues/3281#issuecomment-649480805 */
+  if expandNavLink {
+    [role="rowheader"] .js-navigation-open {
+      display: inline-block;
+      width: 100%;
+    }
   }
 }
 
 @-moz-document regexp("https://github.com/.+/blob/.+\.md.*") {
-  /* Remove Markdown file border */
-  .Box.mt-3.position-relative {
-    border-right: 0;
-    border-left: 0;
-    margin-right: 1px;
-    margin-left: 1px;
+  if removeMDBorders {
+    .repository-content .Box.mt-3.position-relative {
+      border-right: 0;
+      border-left: 0;
+      margin-right: 1px;
+      margin-left: 1px;
+    }
   }
 }
