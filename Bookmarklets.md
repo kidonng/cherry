@@ -20,6 +20,8 @@ Bypass image referrer check (e.g. Weibo). [Test page](https://luyilin.github.io/
 javascript:void(document.querySelectorAll('img').forEach(el => {el.referrerPolicy = 'no-referrer'; el.src = el.src}))
 ```
 
+*Also check out [Auto fix sinaimg](scripts/README.md#user-content-auto-fix-sinaimg)*.
+
 ## Design mode
 
 Toggle `contenteditable` for all elements.
@@ -27,4 +29,3 @@ Toggle `contenteditable` for all elements.
 ```js
 javascript:document.designMode = document.designMode === 'off' ? 'on' : 'off'; void 0
 ```
-

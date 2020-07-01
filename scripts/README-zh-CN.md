@@ -12,7 +12,7 @@
 
 **南昌大学校园网络接入认证系统**助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
 
-> 同时也有[独立版本](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md)。
+*另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md) 命令行程序。*
 
 ### 特点
 
@@ -30,7 +30,13 @@
 
 ## [Pages 源码](pages-source.user.js?raw=true)
 
-在右下角显示一个链接到 GitHub Pages 源码仓库的 GitHub logo。示例 [a](https://edwardtufte.github.io/) [b](https://edwardtufte.github.io/tufte-css/)
+在右下角显示一个链接到 GitHub Pages 源码仓库的 GitHub logo。示例：[1](https://edwardtufte.github.io/) [2](https://edwardtufte.github.io/tufte-css/)
+
+## [自动修复 sinaimg](auto-fix-sinaimg.user.js?raw=true)
+
+使用 `no-referrer` referrer 政策自动修复 `sinaimg.cn` 图片加载。
+
+*另见 [Remove image's referrer](../Bookmarklets.md#user-content-remove-images-referrer)。*
 
 ## 重定向
 
