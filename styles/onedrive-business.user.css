@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         OneDrive Business
-@version      1.0.1
+@version      1.0.2
 @description  Hide OneDrive Business annoyances
 @license      MIT
 @author       kidonng
@@ -8,7 +8,7 @@
 @namespace    kidonng
 ==/UserStyle== */
 
-@-moz-document domain("emailncueducn-my.sharepoint.com") {
+@-moz-document domain("sharepoint.com") {
   #O365_MainLink_Bell,
   #O365_MainLink_Help,
   .ms-Nav-group:nth-of-type(2),
