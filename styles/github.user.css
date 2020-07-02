@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.7.0
+@version      1.8.0
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -26,6 +26,13 @@
    * https://github.com/sindresorhus/refined-github/issues/3291#issuecomment-650470420 */
   .IssueLabel, .state, .State {
     border-radius: 6px;
+  }
+  
+  /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
+  .octicon-file,
+  .octicon-file-directory {
+    width: 16px;
+    height: 16px;
   }
 
   if lightHeader {
