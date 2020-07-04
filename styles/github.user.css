@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.8.0
+@version      1.8.1
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -20,12 +20,6 @@
   /* Hide "Branch" prefix of branch switcher on repository homepage */
   #branch-select-menu .d-lg-inline {
     display: none !important;
-  }
-
-  /* Match label & issue/PR state's border radius
-   * https://github.com/sindresorhus/refined-github/issues/3291#issuecomment-650470420 */
-  .IssueLabel, .state, .State {
-    border-radius: 6px;
   }
   
   /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
