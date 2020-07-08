@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.8.1
+@version      1.8.2
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -13,7 +13,7 @@
 @var checkbox hideHighlights "Hide \"Highlights\" on user profile" 1
 @var checkbox hideProBadge "Hide \"PRO\" badge in user hovercard" 1
 @var checkbox removeMDBorders "Remove Markdown file borders" 1
-@var checkbox showCommitMessage "Always show commit message on repository homepage" 1
+@var checkbox showCommitMessage "Always show commit message on repository homepage" 0
 @var checkbox expandNavLink "Expand navigation link in repository file tree" 1
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/") {
@@ -21,7 +21,7 @@
   #branch-select-menu .d-lg-inline {
     display: none !important;
   }
-  
+
   /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
   .octicon-file,
   .octicon-file-directory {
@@ -86,7 +86,7 @@
   if showCommitMessage {
     .Details[data-issue-and-pr-hovercards-enabled]:not(.Details--on) .Details-content--hidden {
       display: block !important;
-      height: 1.5em;
+      height: 2em;
       overflow: hidden;
     }
   }
