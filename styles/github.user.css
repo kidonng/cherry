@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.9.0
+@version      1.9.1
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -27,14 +27,6 @@
   .octicon-file-directory {
     width: 16px;
     height: 16px;
-  }
-  
-  /* https://github.com/sindresorhus/refined-github/issues/3283 */
-  details-dialog h1.Box-title {
-    position: static;
-    font-size: 14px;
-    font-weight: 600;
-    min-height: unset;
   }
 
   if lightHeader {
