@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Precise Counters
-// @version      1.0.0
+// @version      1.0.1
 // @description  Show precise watch/star/fork counts on hover
 // @license      MIT
 // @author       kidonng
@@ -31,7 +31,7 @@
 
     const forkCount = $('.social-count[href$="/network/members"]')
     if (refinedGitHub) {
-      const forkIcon = document.querySelector('.octicon-repo-forked')
+      const forkIcon = document.querySelector('.btn-with-count .octicon-repo-forked')
       forkIcon.nextSibling.textContent = forkCount.textContent
       selectors.push([forkIcon.nextSibling, forkIcon.parentElement, forkCount])
     } else {
