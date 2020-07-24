@@ -10,7 +10,7 @@ A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstor
 
 Style optimizations for GitHub.
 
-![](../screenshots/github.png)
+![Screenshot](../screenshots/github.png)
 
 ### [Google Tasks](google-tasks.user.css?raw=true)
 
@@ -20,7 +20,7 @@ Style optimizations for GitHub.
 
 Opinionated Google Style.
 
-![](../screenshots/google.png)
+![Screenshot](../screenshots/google.png)
 
 ### [JetBrains Mono](jetbrains-mono.user.css?raw=true)
 
@@ -41,7 +41,7 @@ Apply JetBrains Mono font to various sites.
 
 [Moegirlpedia](https://zh.moegirl.org/) improved.
 
-![](../screenshots/moegirlpedia.png)
+![Screenshot](../screenshots/moegirlpedia.png)
 
 #### Source
 

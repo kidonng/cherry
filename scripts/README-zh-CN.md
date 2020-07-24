@@ -32,6 +32,12 @@
 
 在右下角显示一个链接到 GitHub Pages 源码仓库的 GitHub logo。示例：[1](https://edwardtufte.github.io/) [2](https://edwardtufte.github.io/tufte-css/)
 
+## [GitHub 精确数据](github-precise-counters.user.js?raw=true)
+
+![截图](../screenshots/gitHub-precise-counters.user.gif)
+
+鼠标悬浮时显示精确的 watch/star/fork 数据。与 [Refined GitHub](https://github.com/sindresorhus/refined-github) 的 `hide-watch-and-fork-count` 功能兼容。
+
 ## [自动修复 sinaimg](auto-fix-sinaimg.user.js?raw=true)
 
 使用 `no-referrer` referrer 政策自动修复 `sinaimg.cn` 图片加载。

@@ -32,6 +32,12 @@ We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail
 
 Display a GitHub logo in the lower right linked to GitHub Pages' source repository. e.g. [1](https://edwardtufte.github.io/) [2](https://edwardtufte.github.io/tufte-css/)
 
+## [GitHub Precise Counters](github-precise-counters.user.js?raw=true)
+
+![Screenshot](../screenshots/gitHub-precise-counters.user.gif)
+
+Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](https://github.com/sindresorhus/refined-github)'s `hide-watch-and-fork-count` feature.
+
 ## [Auto fix sinaimg](auto-fix-sinaimg.user.js?raw=true)
 
 Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
