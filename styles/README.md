@@ -22,9 +22,9 @@ Opinionated Google Style.
 
 ![Screenshot](../screenshots/google.png)
 
-### [JetBrains Mono](jetbrains-mono.user.css?raw=true)
+### [Monospace](monospace.user.css?raw=true)
 
-Apply JetBrains Mono font to various sites.
+Apply browser monospace font to various sites.
 
 ### Hide annoyances
 
