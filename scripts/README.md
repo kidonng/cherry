@@ -38,6 +38,10 @@ Display a GitHub logo in the lower right linked to GitHub Pages' source reposito
 
 Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](https://github.com/sindresorhus/refined-github)'s `hide-watch-and-fork-count` feature.
 
+## [GitHub profile README link](github-profile-readme-link.user.js?raw=true)
+
+Make profile README's header link to the README instead of the repository.
+
 ## [Auto fix sinaimg](auto-fix-sinaimg.user.js?raw=true)
 
 Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
