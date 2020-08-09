@@ -38,6 +38,10 @@
 
 鼠标悬浮时显示精确的 watch/star/fork 数据。与 [Refined GitHub](https://github.com/sindresorhus/refined-github) 的 `hide-watch-and-fork-count` 功能兼容。
 
+## [GitHub 个人 README 链接](github-profile-readme-link.user.js?raw=true)
+
+使个人 README 的顶部链接指向 README 而非仓库。
+
 ## [自动修复 sinaimg](auto-fix-sinaimg.user.js?raw=true)
 
 使用 `no-referrer` referrer 政策自动修复 `sinaimg.cn` 图片加载。
