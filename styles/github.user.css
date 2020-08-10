@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.9.2
+@version      1.10.0
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -14,13 +14,21 @@
 @var checkbox hideProBadge "Hide \"PRO\" badge in user hovercard" 1
 @var checkbox removeMDBorders "Remove Markdown file borders" 1
 @var checkbox expandNavLink "Expand navigation link in repository file tree" 1
+@var checkbox extensions "Enable adjustments for some browser extensions" 1
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/") {
-  /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
-  .octicon-file,
-  .octicon-file-directory {
-    width: 16px;
-    height: 16px;
+  /* https://github.com/sindresorhus/refined-github/pull/3444 */
+  /* Align author name on PR sticky header */
+  .sticky-content .author.css-truncate-target {
+    vertical-align: -4px;
+  }
+
+  /* https://github.com/sindresorhus/refined-github/pull/3444 */
+  /* Reposition committer's avatar on PR commit */
+  .pull-request-tab-content .commit .AvatarStack {
+    display: inline-block;
+    margin-bottom: -4px;
+    margin-right: -4px;
   }
 
   if lightHeader {
@@ -81,6 +89,32 @@
     [role="rowheader"] .js-navigation-open {
       display: inline-block;
       width: 100%;
+    }
+  }
+  
+  if extensions {
+    /* https://github.com/sindresorhus/refined-github/pull/3356 */
+    #branch-select-menu ~ .btn,
+    #branch-select-menu + .BtnGroup .btn,
+    #branch-select-menu ~ .flex-self-center .btn,
+    .repository-content > .pb-3 > .BtnGroup ~ .btn {
+      padding: 5px 16px;
+      font-size: 14px;
+    }
+
+    /* https://github.com/sindresorhus/refined-github/pull/3356 */
+    #branch-select-menu ~ .btn .octicon,
+    #branch-select-menu + .BtnGroup .octicon,
+    #branch-select-menu ~ .flex-self-center .octicon,
+    .repository-content > .pb-3 > .BtnGroup ~ .btn .octicon {
+      vertical-align: text-bottom;
+    }
+    
+    /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
+    .octicon-file,
+    .octicon-file-directory {
+      width: 16px;
+      height: 16px;
     }
   }
 }
