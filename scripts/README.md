@@ -12,7 +12,7 @@ We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail
 
 **NCU Campus Network Access Authentication System** Helper. Works on `NCU-5G/NCU-2.4G` & `NCUWLAN`.
 
-*Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI.*
+_Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 ### Features
 
@@ -42,11 +42,21 @@ Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](h
 
 Make profile README's header link to the README instead of the repository.
 
+## [Reposition Octotree bookmark icon](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
+
+Before:
+
+![Screenshot of before](https://user-images.githubusercontent.com/44045911/89754890-12d30380-db10-11ea-9534-f2e704c94012.png)
+
+After:
+
+![Screenshot of after](https://user-images.githubusercontent.com/44045911/89754891-14043080-db10-11ea-86ed-b2316fed36cf.png)
+
 ## [Auto fix sinaimg](auto-fix-sinaimg.user.js?raw=true)
 
 Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 
-*Also check out [Remove image's referrer](../Bookmarklets.md#user-content-remove-images-referrer).*
+_Also check out [Remove image's referrer](../Bookmarklets.md#user-content-remove-images-referrer)._
 
 ## Redirects
 
