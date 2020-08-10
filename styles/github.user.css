@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.10.0
+@version      1.10.1
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -29,6 +29,14 @@
     display: inline-block;
     margin-bottom: -4px;
     margin-right: -4px;
+  }
+
+  /* https://github.com/sindresorhus/refined-github/pull/3444 */
+  /* Add missing border radius to files */
+  .js-blob-wrapper,
+  .file:not(.open) .file-header.file-header--expandable {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   if lightHeader {
@@ -91,7 +99,7 @@
       width: 100%;
     }
   }
-  
+
   if extensions {
     /* https://github.com/sindresorhus/refined-github/pull/3356 */
     #branch-select-menu ~ .btn,
@@ -109,7 +117,7 @@
     .repository-content > .pb-3 > .BtnGroup ~ .btn .octicon {
       vertical-align: text-bottom;
     }
-    
+
     /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
     .octicon-file,
     .octicon-file-directory {
