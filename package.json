@@ -1,0 +1,19 @@
+{
+  "name": "cherry",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "element-ready": "^4.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "rollup": "^2.23.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

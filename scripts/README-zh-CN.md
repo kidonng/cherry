@@ -12,7 +12,7 @@
 
 **南昌大学校园网络接入认证系统**助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
 
-*另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md) 命令行程序。*
+_另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md) 命令行程序。_
 
 ### 特点
 
@@ -42,11 +42,21 @@
 
 使个人 README 的顶部链接指向 README 而非仓库。
 
+## [重新放置 Octotree 书签图标](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
+
+启用前：
+
+![启用前的截图](https://user-images.githubusercontent.com/44045911/89754890-12d30380-db10-11ea-9534-f2e704c94012.png)
+
+启用后
+
+![启用后的截图](https://user-images.githubusercontent.com/44045911/89754891-14043080-db10-11ea-86ed-b2316fed36cf.png)
+
 ## [自动修复 sinaimg](auto-fix-sinaimg.user.js?raw=true)
 
 使用 `no-referrer` referrer 政策自动修复 `sinaimg.cn` 图片加载。
 
-*另见 [Remove image's referrer](../Bookmarklets.md#user-content-remove-images-referrer)。*
+_另见 [移除图片 referrer](../Bookmarklets.md#user-content-remove-images-referrer)。_
 
 ## 重定向
 
