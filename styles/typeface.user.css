@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name         Monospace
+@name         Typeface
 @version      1.1.0
-@description  Apply browser monospace font to various sites
+@description  Typeface optimizations for various sites
 @license      MIT
 @author       kidonng
 @homepageURL  https://github.com/kidonng/cherry
@@ -34,5 +34,17 @@
 @-moz-document domain("zhuanlan.zhihu.com") {
   div.highlight {
     font-family: monospace;
+  }
+}
+
+@-moz-document domain("www.google.com") {
+  .g,
+  html,
+  input,
+  .std,
+  body,
+  h1,
+  .kno-ecr-pt {
+    font-family: Segoe UI, Microsoft YaHei UI, sans-serif;
   }
 }
