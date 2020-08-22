@@ -16,15 +16,9 @@ Style optimizations for GitHub.
 
 [Google Tasks](https://tasks.google.com/embed/?origin=https://calendar.google.com&fullWidth=1) on desktop.
 
-### [Google](google.user.css?raw=true)
+### [Typeface](typeface.user.css?raw=true)
 
-Opinionated Google Style.
-
-![Screenshot](../screenshots/google.png)
-
-### [Monospace](monospace.user.css?raw=true)
-
-Apply browser monospace font to various sites.
+Typeface optimizations for various sites.
 
 ### Hide annoyances
 
