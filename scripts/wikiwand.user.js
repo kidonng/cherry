@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Wikiwand
-// @version      1.0.3
-// @description  Replace Wikiwand browser extension
+// @version      1.1.0
+// @description  Wikiwand browser extension replacement
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -10,12 +10,46 @@
 // @include      https://www.wikiwand.com/*
 // ==/UserScript==
 
-if (location.host.includes('wikipedia.org') && !location.href.includes('oldformat=true')) {
-  const path = location.pathname.substring(1, location.pathname.indexOf('/', 1))
-  const lang = new URLSearchParams(location.search).get('variant') || (path === 'wiki' ? location.host.substring(0, location.host.indexOf('.')) : path)
-  const hash = location.hash.replace('cite_note-', 'citenote')
-  const title = location.pathname.includes('index.php') ? new URLSearchParams(location.search).get('title') : location.pathname.substring(location.pathname.indexOf('/', 1) + 1)
-  location.href = `https://www.wikiwand.com/${lang}/${title}${hash}`
-} else if (location.host === 'www.wikiwand.com' && location.hash && !location.hash.includes('.')) {
-  setTimeout(() => document.querySelector(decodeURIComponent(location.hash.replace('/', ''))).scrollIntoView(), 0)
-}
+;(() => {
+  const { hostname, pathname, search, hash } = location
+
+  if (hostname === 'www.wikiwand.com') {
+    return (document.onreadystatechange = () => {
+      if (document.readyState === 'complete')
+        document
+          .querySelector(decodeURIComponent(hash.replace('/', '')))
+          .scrollIntoView()
+    })
+  }
+
+  const params = new URLSearchParams(search)
+  if (
+    params.has('action') ||
+    params.has('oldid') ||
+    params.get('oldformat') === 'true'
+  )
+    return
+
+  // 1. /wiki/title
+  // 2. /w/index.php?title=title&variant=lang
+  // 3. /lang/title
+  const [, type, _title] = pathname.split('/')
+  const lang =
+    type === 'wiki'
+      ? hostname.split('.')[0]
+      : type === 'w'
+      ? params.get('variant')
+      : type
+  const title = type === 'w' ? params.get('title') : _title
+
+  if (
+    title.startsWith('Special:') ||
+    title.startsWith('User:') ||
+    title.startsWith('User_talk:')
+  )
+    return
+
+  location.href = `https://www.wikiwand.com/${lang}/${title}${
+    hash ? hash.replace('cite_note-', 'citenote') : ''
+  }`
+})()
