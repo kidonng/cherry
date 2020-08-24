@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.12.0
+@version      1.12.1
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -115,6 +115,7 @@
     .gh-header-title {
       display: flex;
       align-items: baseline;
+      flex-wrap: wrap;
     }
     
     .gh-header-title .js-issue-title {
