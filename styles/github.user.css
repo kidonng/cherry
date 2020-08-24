@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.11.0
+@version      1.11.1
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -117,7 +117,7 @@
       align-items: baseline;
     }
     
-    .js-issue-title {
+    .gh-header-title .js-issue-title {
       margin-right: 9px;
     }
     
