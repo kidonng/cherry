@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.11.1
+@version      1.12.0
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -124,6 +124,28 @@
     .gh-header-title .octotree-btn {
       margin-left: -22px;
       order: -1;
+    }
+    
+    /* https://github.com/sindresorhus/refined-github/pull/3439#issuecomment-679069610 */
+    .file-info {
+      display: flex;
+    }
+    
+    .file-info a,
+    .file-info clipboard-copy {
+      order: 1;
+    }
+    
+    .file-info > :not(button) {
+      margin-left: 6px;
+    }
+    
+    .file-info .tooltipped-s:before {
+      bottom: 1px;
+    }
+    
+    .file-info .tooltipped-s:after {
+      margin-top: -2px;
     }
   }
 }
