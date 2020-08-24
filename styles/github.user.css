@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.10.2
+@version      1.11.0
 @description  Style optimizations for GitHub
 @license      MIT
 @author       kidonng
@@ -97,7 +97,6 @@
       font-size: 14px;
     }
 
-    /* https://github.com/sindresorhus/refined-github/pull/3356 */
     #branch-select-menu ~ .btn .octicon,
     #branch-select-menu + .BtnGroup .octicon,
     #branch-select-menu ~ .flex-self-center .octicon,
@@ -110,6 +109,21 @@
     .octicon-file-directory {
       width: 16px;
       height: 16px;
+    }
+    
+    /* https://github.com/ovity/octotree/issues/992 */
+    .gh-header-title {
+      display: flex;
+      align-items: baseline;
+    }
+    
+    .js-issue-title {
+      margin-right: 9px;
+    }
+    
+    .gh-header-title .octotree-btn {
+      margin-left: -22px;
+      order: -1;
     }
   }
 }
