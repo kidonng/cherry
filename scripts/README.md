@@ -34,7 +34,7 @@ Display a GitHub logo in the lower right linked to GitHub Pages' source reposito
 
 ## [GitHub Precise Counters](github-precise-counters.user.js?raw=true)
 
-![Screenshot](../screenshots/gitHub-precise-counters.user.gif)
+![Screenshot](../screenshots/github-precise-counters.gif)
 
 Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](https://github.com/sindresorhus/refined-github)'s `hide-watch-and-fork-count` feature.
 
