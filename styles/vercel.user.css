@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Vercel
-@version      1.0.2
+@version      1.0.3
 @description  Hide Vercel annoyances
 @license      MIT
 @author       kidonng
@@ -16,7 +16,7 @@
   [class^="feedback-input_geist-feedback-input"],
   /* Hide teams */
   .button[href='/teams/create'],
-  .menu .item:nth-of-type(3) {
+  [class^="dashboard_links"] .menu .item:nth-of-type(3) {
     display: none !important;
   }
 }
