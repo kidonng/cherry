@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      1.1.1
+@version      1.1.2
 @description  Typeface optimizations for various sites
 @license      MIT
 @author       kidonng
@@ -13,12 +13,14 @@
   code,
   kbd,
   .blob-code-inner,
-  .blob-code-inner > * /* Compatible with Dark Reader */ {
+  .blob-code-inner > * /* Compatible with Dark Reader */,
+  .cm-s-github-light .CodeMirror-lines {
     font-family: monospace !important;
   }
 
   .blob-code-inner,
-  .blob-num {
+  .blob-num,
+  .cm-s-github-light .CodeMirror-lines {
     font-size: 13px;
   }
 }
