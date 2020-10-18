@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      1.1.0
+@version      1.1.1
 @description  Typeface optimizations for various sites
 @license      MIT
 @author       kidonng
@@ -20,7 +20,6 @@
   .blob-code-inner,
   .blob-num {
     font-size: 13px;
-    font-weight: 500;
   }
 }
 
