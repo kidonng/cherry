@@ -60,7 +60,5 @@ _Also check out [Remove image's referrer](../Bookmarklets.md#user-content-remove
 
 ## Redirects
 
-- [Tieba](tieba-redirect.user.js?raw=true): Redirect all variants of Tieba domain to `tieba.baidu.com`, and enable viewing sub-replies without login.
-- [Zhihu](zhihu-redirect.user.js?raw=true): Redirect all variants of Zhihu domain to `www.zhihu.com`.
 - [Wikiwand](wikiwand.user.js?raw=true): Redirect Wikipedia to Wikiwand. Can replace Wikiwand browser extension.
 - [Origin Finder](origin-finder.user.js?raw=true): Redirect to resources' origin version, such as the original size version of images.

@@ -60,7 +60,5 @@ _另见 [移除图片 referrer](../Bookmarklets.md#user-content-remove-images-re
 
 ## 重定向
 
-- [贴吧](tieba-redirect.user.js?raw=true)：重定向贴吧的各种域名变体到 `tieba.baidu.com`，并且无需登录即可查看楼中楼。
-- [知乎](zhihu-redirect.user.js?raw=true)：重定向知乎的各种域名变体到 `www.zhihu.com`。
 - [Wikiwand](wikiwand.user.js?raw=true)：重定向维基百科到 Wikiwand。可替代 Wikiwand 浏览器扩展。
 - [Origin Finder](origin-finder.user.js?raw=true)：重定向至资源的原始版本，例如原始尺寸的图像。
