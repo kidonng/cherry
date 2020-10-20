@@ -4,7 +4,6 @@ Cherry is a collection of handcrafted resources.
 
 - [User scripts](scripts/README.md)
 - [User styles](styles/README.md)
-- [Bookmarklets](Bookmarklets.md)
 
 ## License Notes
 
