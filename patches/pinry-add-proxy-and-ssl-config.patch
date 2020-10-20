@@ -1,0 +1,149 @@
+From 20038c0a8ee92a8f857bdd5f9a1420a72f024b75 Mon Sep 17 00:00:00 2001
+From: Kid <example@example.com>
+Date: Sun, 29 Mar 2020 23:47:34 +0000
+Subject: [PATCH] Add proxy and SSL config
+
+---
+ Dockerfile                         |  8 ++++----
+ Dockerfile.autobuild               | 18 +++++++++++-------
+ Pipfile                            |  2 +-
+ Pipfile.lock                       |  2 +-
+ docker/nginx/nginx.conf            |  2 +-
+ docker/nginx/sites-enabled/default |  8 ++++++--
+ docker/start_docker.sh             |  2 +-
+ 7 files changed, 25 insertions(+), 17 deletions(-)
+
+diff --git a/Dockerfile b/Dockerfile
+index be1ab077..6b1299fb 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -4,11 +4,11 @@ WORKDIR /app
+ COPY . /app
+
+ # config nodejs
+-RUN curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+-RUN bash n 10
+-RUN npm -g install yarn
++RUN curl -L https://cdn.jsdelivr.net/gh/tj/n/bin/n -o n
++RUN N_NODE_MIRROR=https://npm.taobao.org/mirrors/node bash n 10
++RUN npm -g install yarn --registry=https://registry.npm.taobao.org
+
+ WORKDIR /app
+-RUN pip install pipenv
++RUN pip install pipenv -i https://mirrors.aliyun.com/pypi/simple
+ RUN pipenv install --three --system --dev
+ RUN rm -fr /app/*
+diff --git a/Dockerfile.autobuild b/Dockerfile.autobuild
+index 3f32191d..dc350774 100644
+--- a/Dockerfile.autobuild
++++ b/Dockerfile.autobuild
+@@ -24,13 +24,16 @@ RUN groupadd -g 2300 tmpgroup \
+ RUN mkdir /data
+ RUN chown -R www-data:www-data /data
+
++RUN sed -i "s/archive.ubuntu./mirrors.aliyun./g" /etc/apt/sources.list
++RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
++RUN sed -i "s/security.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
+ RUN apt-get update \
+     && apt-get -y install nginx nginx-extras pwgen \
+     && rm -rf /var/lib/apt/lists/* \
+     && apt-get autoclean
+
+ # required for other database options
+-RUN pip --no-cache-dir install pipenv gunicorn mysqlclient psycopg2 cx-Oracle
++RUN pip --no-cache-dir install pipenv gunicorn mysqlclient psycopg2 cx-Oracle -i https://mirrors.aliyun.com/pypi/simple
+
+ # COPY and start installation
+ COPY . /pinry
+@@ -39,18 +42,19 @@ RUN cd /pinry \
+  && pipenv install --three --system --clear
+
+ # config nodejs
+-RUN curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n || exit
+-RUN bash n 10
+-RUN npm -g install yarn
++RUN curl -L https://cdn.jsdelivr.net/gh/tj/n/bin/n -o n || exit
++RUN N_NODE_MIRROR=https://npm.taobao.org/mirrors/node bash n 10
++RUN npm -g install yarn --registry=https://registry.npm.taobao.org
+
+ # build frontend
+-RUN cd /pinry/pinry-spa/ && yarn install && yarn build
++RUN cd /pinry/pinry-spa/ && SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn install --registry=https://registry.npm.taobao.org && yarn build
+
+ # Load in all of our config files.
+ ADD docker/nginx/nginx.conf /etc/nginx/nginx.conf
+ ADD docker/nginx/sites-enabled/default /etc/nginx/sites-enabled/default
++ADD docker/nginx/certs /etc/nginx/certs
+
+-# 80 is for nginx web, /data contains static files and database /start runs it.
+-EXPOSE 80
++# 443 is for nginx web, /data contains static files and database /start runs it.
++EXPOSE 443
+ VOLUME ["/data"]
+ CMD    ["/pinry/docker/scripts/start.sh"]
+diff --git a/Pipfile b/Pipfile
+index 33d9933a..6be704b4 100644
+--- a/Pipfile
++++ b/Pipfile
+@@ -1,5 +1,5 @@
+ [[source]]
+-url = "https://pypi.python.org/simple"
++url = "https://mirrors.aliyun.com/pypi/simple"
+ name = "pypi"
+ verify_ssl = true
+
+diff --git a/Pipfile.lock b/Pipfile.lock
+index 9d6f61ef..c22da6fd 100644
+--- a/Pipfile.lock
++++ b/Pipfile.lock
+@@ -10,7 +10,7 @@
+         "sources": [
+             {
+                 "name": "pypi",
+-                "url": "https://pypi.python.org/simple",
++                "url": "https://mirrors.aliyun.com/pypi/simple",
+                 "verify_ssl": true
+             }
+         ]
+diff --git a/docker/nginx/nginx.conf b/docker/nginx/nginx.conf
+index d77653ed..d8326e4f 100644
+--- a/docker/nginx/nginx.conf
++++ b/docker/nginx/nginx.conf
+@@ -12,7 +12,7 @@ http {
+ 	tcp_nodelay on;
+ 	keepalive_timeout 65;
+ 	types_hash_max_size 2048;
+-	client_max_body_size 1m;
++	client_max_body_size 5m;
+
+ 	server_names_hash_bucket_size 64;
+
+diff --git a/docker/nginx/sites-enabled/default b/docker/nginx/sites-enabled/default
+index e3d287e4..ef74e1b0 100644
+--- a/docker/nginx/sites-enabled/default
++++ b/docker/nginx/sites-enabled/default
+@@ -1,6 +1,10 @@
+ server {
+-    listen 80 default;
+-    server_name _;
++    listen 443 ssl;
++    server_name example.com;
++    ssl_certificate     /etc/nginx/certs/example.com.pem;
++    ssl_certificate_key /etc/nginx/certs/example.com.key;
++    ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
++    ssl_ciphers         HIGH:!aNULL:!MD5;
+
+     access_log /data/nginx-access.log;
+     error_log /data/nginx-error.log;
+diff --git a/docker/start_docker.sh b/docker/start_docker.sh
+index 8ed57d9b..7675ca23 100755
+--- a/docker/start_docker.sh
++++ b/docker/start_docker.sh
+@@ -10,6 +10,6 @@ then
+     exit 1
+ fi
+
+-sudo docker run -d=true -p=80:80 \
++sudo docker run -d=true -p=443:443 \
+     -v=${DATA_PATH}:/data \
+     pinry/pinry
