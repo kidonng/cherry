@@ -56,7 +56,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 使用 `no-referrer` referrer 政策自动修复 `sinaimg.cn` 图片加载。
 
-_另见 [移除图片 referrer](../Bookmarklets.md#user-content-remove-images-referrer)。_
+[测试页面](https://luyilin.github.io/Aoba/)
 
 ## 重定向
 
