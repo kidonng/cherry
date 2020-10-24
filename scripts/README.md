@@ -56,7 +56,7 @@ After:
 
 Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 
-_Also check out [Remove image's referrer](../Bookmarklets.md#user-content-remove-images-referrer)._
+[Test Page](https://luyilin.github.io/Aoba/)
 
 ## Redirects
 
