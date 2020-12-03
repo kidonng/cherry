@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Origin Finder
-// @version      1.1.0
+// @version      1.1.1
 // @description  Redirect to resources' origin version
 // @license      MIT
 // @author       kidonng
@@ -15,6 +15,7 @@
 // @include      http*://c.tieba.baidu.com/*
 // @include      http*://wefan.baidu.com/*
 // @include      http*://tiebac.baidu.com/*
+// @include      https://mzh.moegirl.org.cn/*
 // @run-at       document-start
 // ==/UserScript==
 
@@ -68,6 +69,10 @@
           'wapp.baidu.com/mo/q/m',
           'tieba.baidu.com/f'
         )
+      break
+    /* Moegirlpedia */
+    case 'mzh.moegirl.org.cn':
+      location.hostname = 'zh.moegirl.org.cn'
       break
   }
 })()
