@@ -42,7 +42,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 使个人 README 的顶部链接指向 README 而非仓库。
 
-## [GitHub 主题切换](github-theme-switch.user.js?raw=true)
+## [GitHub 主题切换](generated/github-theme-switch.user.js?raw=true)
 
 ![截图](https://user-images.githubusercontent.com/44045911/101625949-2a3ae280-3a57-11eb-9298-d1dde71806fc.png)
 

@@ -42,7 +42,7 @@ Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](h
 
 Make profile README's header link to the README instead of the repository.
 
-## [GitHub theme switch](github-theme-switch.user.js?raw=true)
+## [GitHub theme switch](generated/github-theme-switch.user.js?raw=true)
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/101625949-2a3ae280-3a57-11eb-9298-d1dde71806fc.png)
 
