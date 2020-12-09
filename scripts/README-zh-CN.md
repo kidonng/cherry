@@ -42,6 +42,12 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 使个人 README 的顶部链接指向 README 而非仓库。
 
+## [GitHub 主题切换](github-theme-switch.user.js?raw=true)
+
+![截图](https://user-images.githubusercontent.com/44045911/101625949-2a3ae280-3a57-11eb-9298-d1dde71806fc.png)
+
+在 GitHub 的用户下拉菜单中添加主题配置切换。
+
 ## [重新放置 Octotree 书签图标](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 
 启用前：
