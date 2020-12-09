@@ -4,7 +4,10 @@ import commonjs from '@rollup/plugin-commonjs'
 
 const delimiter = '// ==/UserScript=='
 const plugins = [nodeResolve(), commonjs()]
-const inputs = ['scripts/reposition-octotree-bookmark-icon.user.js']
+const inputs = [
+  'scripts/reposition-octotree-bookmark-icon.user.js',
+  'scripts/github-theme-switch.user.js',
+]
 
 export default inputs.map((input) => ({
   input,

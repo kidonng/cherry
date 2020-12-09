@@ -5,7 +5,9 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "element-ready": "^4.1.1"
+    "doma": "^3.0.1",
+    "element-ready": "^4.1.1",
+    "selector-observer": "^2.1.6"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
