@@ -11,9 +11,7 @@ export default inputs.map((input) => ({
   output: {
     banner() {
       const file = readFileSync(input, 'utf8')
-      let header = file.substring(0, file.indexOf(delimiter) + delimiter.length)
-      if (header.includes('unsafeWindow'))
-        header += '\nunsafeWindow.process = { env: {} }'
+      const header = file.substring(0, file.indexOf(delimiter) + delimiter.length)
       return header
     },
     dir: 'scripts/generated',
