@@ -2,7 +2,8 @@
   "name": "cherry",
   "private": true,
   "scripts": {
-    "build": "rollup -c"
+    "build-script": "rollup -c scripts/config/script.js",
+    "build-bookmarklet": "rollup -c scripts/config/bookmarklet.js"
   },
   "dependencies": {
     "doma": "^3.0.1",

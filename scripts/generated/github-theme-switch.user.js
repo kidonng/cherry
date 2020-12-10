@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub theme switch
 // @version      1.0.1
-// @description  Adds theme preferences switch to GitHub's profile dropdown.
+// @description  Add theme preferences switch to GitHub's profile dropdown.
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
