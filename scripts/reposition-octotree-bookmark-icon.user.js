@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Reposition Octotree bookmark icon
-// @version      1.0.1
+// @version      1.0.2
 // @description  https://github.com/ovity/octotree/issues/992
 // @license      MIT
 // @author       kidonng

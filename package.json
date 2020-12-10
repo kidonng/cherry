@@ -6,13 +6,13 @@
   },
   "dependencies": {
     "doma": "^3.0.1",
-    "element-ready": "^4.1.1",
-    "selector-observer": "^2.1.6"
+    "element-ready": "^4.1.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
-    "rollup": "^2.23.1"
+    "rollup": "^2.23.1",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "prettier": {
     "semi": false,

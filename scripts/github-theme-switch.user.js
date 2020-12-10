@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub theme switch
-// @version      1.0.0
+// @version      1.0.1
 // @description  Adds theme preferences switch to GitHub's profile dropdown.
 // @license      MIT
 // @author       kidonng
@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 import doma from 'doma'
-import { observe } from 'selector-observer'
+import elementReady from 'element-ready'
 
 const getForm = async () => {
   const res = await fetch('https://github.com/settings/appearance')
@@ -23,32 +23,37 @@ const getForm = async () => {
   for (const image of form.querySelectorAll('img')) {
     image.parentElement.style.border = 'none'
     image.parentElement.style.fontWeight = 'normal'
-		image.remove()
+    image.remove()
   }
 
   for (const radio of form.querySelectorAll('.position-relative')) {
-		radio.classList.remove('mb-4')
+    radio.classList.remove('mb-4')
   }
 
   return form
 }
 
-observe('.dropdown-item[href="https://gist.github.com/mine"]', {
-  add(item) {
-    const style = document.createElement('style')
-    style.innerHTML = `
-      .github-theme-switch:hover {
-        color: var(--color-text-primary);
-        background-color: var(--color-bg-overlay);
-      }
-    `
-    document.head.appendChild(style)
-
-    const span = document.createElement('span')
-    span.setAttribute('role', 'menuitem')
-    span.classList.add('dropdown-item', 'github-theme-switch')
-    span.textContent = 'Theme preference'
-
-    getForm().then(form => item.after(span, form))
+;(async () => {
+  const style = document.createElement('style')
+  style.innerHTML = `
+  .github-theme-switch:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-overlay);
   }
-})
+  `
+  document.head.appendChild(style)
+
+  const span = document.createElement('span')
+  span.setAttribute('role', 'menuitem')
+  span.classList.add('dropdown-item', 'github-theme-switch')
+  span.textContent = 'Theme preference'
+
+  const item = await elementReady(
+    '.dropdown-item[href="https://gist.github.com/mine"]',
+    {
+      stopOnDomReady: false,
+    }
+  )
+  const form = await getForm()
+  item.after(span, form)
+})()
