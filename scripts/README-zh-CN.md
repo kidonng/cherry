@@ -48,7 +48,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 在 GitHub 的用户下拉菜单中添加主题配置切换。
 
-另提供 [bookrmarklet](generated/github-theme-switch.user-bookmarklet.js?raw=true) 版本。
+另提供[书签](generated/github-theme-switch.user-bookmarklet.js?raw=true)版本。
 
 ## [重新放置 Octotree 书签图标](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 

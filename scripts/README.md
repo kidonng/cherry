@@ -48,8 +48,7 @@ Make profile README's header link to the README instead of the repository.
 
 Add theme preferences switch to GitHub's profile dropdown.
 
-Also available as a [bookrmarklet](generated/github-theme-switch.user-bookmarklet.js?raw=true).
-
+Also available as a [bookmarklet](generated/github-theme-switch.user-bookmarklet.js?raw=true).
 ## [Reposition Octotree bookmark icon](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 
 Before:
