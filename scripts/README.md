@@ -69,3 +69,4 @@ Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 
 - [Wikiwand](wikiwand.user.js?raw=true): Redirect Wikipedia to Wikiwand. Can replace Wikiwand browser extension.
 - [Origin Finder](origin-finder.user.js?raw=true): Redirect to resources' origin version, such as the original size version of images.
+- [HTTPS Everywhere](https-everywhere.user.js?raw=true): Redirect to HTTPS version if available
