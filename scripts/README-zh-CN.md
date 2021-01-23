@@ -70,3 +70,4 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 - [Wikiwand](wikiwand.user.js?raw=true)：重定向维基百科到 Wikiwand。可替代 Wikiwand 浏览器扩展。
 - [Origin Finder](origin-finder.user.js?raw=true)：重定向至资源的原始版本，例如原始尺寸的图像。
+- [HTTPS Everywhere](https-everywhere.user.js?raw=true)：重定向至 HTTPS 版本（如果网站支持）。
