@@ -8,6 +8,12 @@
 
 推荐安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) 或 [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/))，因为在其他用户脚本管理器上脚本可能失效。
 
+## [YouTube 迷你播放器](youtube-mini-player.user.js?raw=true)
+
+![截图](../screenshots/youtube-mini-player.png)
+
+类似 Bilibili 的悬浮 YouTube 迷你播放器，用于便捷地阅读评论等。
+
 ## [NCU Net](ncu-net.user.js?raw=true)
 
 **南昌大学校园网络接入认证系统**助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
