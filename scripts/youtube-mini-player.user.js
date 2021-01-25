@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Mini Player
-// @version      1.1.0
+// @version      1.1.1
 // @description  Floating YouTube mini player like Bilibili
 // @license      MIT
 // @author       kidonng
@@ -64,7 +64,7 @@
   }
 
   const updatePosition = () => {
-    player.style.right = `${-translateX - window.innerWidth / 8}px`
+    player.style.right = `${-translateX - window.innerWidth / 12.5}px`
     player.style.bottom = `${-translateY - window.innerHeight / 10}px`
   }
 
