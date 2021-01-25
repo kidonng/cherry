@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Mini Player
-// @version      1.0.0
+// @version      1.1.0
 // @description  Floating YouTube mini player like Bilibili
 // @license      MIT
 // @author       kidonng
@@ -11,7 +11,6 @@
 ;(() => {
   const $ = document.querySelector.bind(document)
 
-  const scale = 0.5
   document.head.insertAdjacentHTML(
     'beforeend',
     `
@@ -22,8 +21,7 @@
 
       [data-mini-detached] #player:not(.skeleton) {
         position: fixed;
-        right: -7.5vw;
-        bottom: -10vh;
+        transform: scale(.5);
       }
 
       [data-mini-detached] video {
@@ -65,10 +63,9 @@
     placeholder.style.width = width
   }
 
-  const updateTransform = () => {
-    player.style.transform = `scale(${scale}) translate(${
-      translateX / scale
-    }px, ${translateY / scale}px)`
+  const updatePosition = () => {
+    player.style.right = `${-translateX - window.innerWidth / 8}px`
+    player.style.bottom = `${-translateY - window.innerHeight / 10}px`
   }
 
   const headerBottom = () => window.scrollY + header.offsetHeight
@@ -88,14 +85,19 @@
     ) {
       document.body.setAttribute('data-mini-detached', '')
       player.addEventListener('mousedown', mouseDownHandler)
-      updateTransform()
+      observer.observe(video, { attributes: true })
+
+      updatePosition()
+      updateSize()
     } else if (
       headerBottom() < playerBottom() &&
       document.body.hasAttribute('data-mini-detached')
     ) {
       document.body.removeAttribute('data-mini-detached')
       player.removeEventListener('mousedown', mouseDownHandler)
-      player.style.transform = ''
+      observer.disconnect()
+
+      player.removeAttribute('style')
     }
   }
 
@@ -113,6 +115,7 @@
         window.removeEventListener('mousemove', mouseMoveHandler)
         if (moved) {
           moved = false
+          // Prevent pausing video
           video.click()
         }
       },
@@ -125,7 +128,7 @@
     translateX = lastTranslateX + e.clientX - lastClientX
     translateY = lastTranslateY + e.clientY - lastClientY
 
-    updateTransform()
+    updatePosition()
   }
 
   // https://stackoverflow.com/a/54389066
@@ -136,9 +139,7 @@
       player = $('#player:not(.skeleton)')
       video = $('.html5-main-video')
 
-      updateSize()
       player.before(placeholder)
-      observer.observe(video, { attributes: true })
     }
 
     if (
