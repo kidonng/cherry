@@ -8,6 +8,12 @@ A user script manager must be installed on your browser.
 
 We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), as on other user script manager the scripts may not work.
 
+## [YouTube Mini Player](youtube-mini-player.user.js?raw=true)
+
+![Screenshot](../screenshots/youtube-mini-player.png)
+
+Floating YouTube mini player like Bilibili, for conveniently reading comments and more.
+
 ## [NCU Net](ncu-net.user.js?raw=true)
 
 **NCU Campus Network Access Authentication System** Helper. Works on `NCU-5G/NCU-2.4G` & `NCUWLAN`.
@@ -49,6 +55,7 @@ Make profile README's header link to the README instead of the repository.
 Add theme preferences switch to GitHub's profile dropdown.
 
 Also available as a [bookmarklet](generated/github-theme-switch.user-bookmarklet.js?raw=true).
+
 ## [Reposition Octotree bookmark icon](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 
 Before:
