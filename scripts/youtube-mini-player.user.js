@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Mini Player
-// @version      1.1.2
+// @version      1.1.3
 // @description  Floating YouTube mini player like Bilibili
 // @license      MIT
 // @author       kidonng
@@ -26,7 +26,7 @@
         transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
       }
 
-      [data-mini-detached] #player:not(.skeleton) {
+      [data-mini-detached] #player:not(.skeleton):hover {
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
       }
 
