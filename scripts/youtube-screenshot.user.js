@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Screenshot
-// @version      1.0.0
+// @version      1.0.1
 // @description  Screenshot for YouTube
 // @license      MIT
 // @author       kidonng
@@ -54,10 +54,9 @@
   document.body.prepend(container)
 
   const screenshot = () => {
-    const { videoWidth, videoHeight } = video
-    canvas.width = videoWidth
-    canvas.height = videoHeight
-    context.drawImage(video, 0, 0, videoWidth, videoHeight)
+    canvas.width = video.videoWidth
+    canvas.height = video.videoHeight
+    context.drawImage(video, 0, 0)
 
     const image = canvas.toDataURL()
     const title = $('h1:not(.meta)').textContent

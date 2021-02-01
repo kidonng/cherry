@@ -18,6 +18,8 @@
 - 使用右键菜单进行复制等
 - 按 <kbd>s</kbd> 取消
 
+**注** 由于实现限制，截图的颜色可能与视频不一致。
+
 ## [YouTube 迷你播放器](youtube-mini-player.user.js?raw=true)
 
 ![截图](../screenshots/youtube-mini-player.png)
