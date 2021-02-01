@@ -18,6 +18,8 @@ Add a screenshot button to YouTube (shortcut: <kbd>s</kbd>).
 - Use context menu to copy and more
 - Press <kbd>s</kbd> to cancel
 
+**NOTE** Due to implementation limits, the screenshot's color may not be the same as the video's.
+
 ## [YouTube Mini Player](youtube-mini-player.user.js?raw=true)
 
 ![Screenshot](../screenshots/youtube-mini-player.png)
