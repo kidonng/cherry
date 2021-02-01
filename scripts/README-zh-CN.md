@@ -8,11 +8,27 @@
 
 推荐安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) 或 [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/))，因为在其他用户脚本管理器上脚本可能失效。
 
+## [YouTube 截图](youtube-screenshot.user.js?raw=true)
+
+![截图](../screenshots/youtube-screenshot.png)
+
+向 YouTube 添加截图按钮（快捷键： <kbd>s</kbd>）。
+
+- 点击以保存。文件名会使用视频标题和时间戳
+- 使用右键菜单进行复制等
+- 按 <kbd>s</kbd> 取消
+
 ## [YouTube 迷你播放器](youtube-mini-player.user.js?raw=true)
 
 ![截图](../screenshots/youtube-mini-player.png)
 
-类似 Bilibili 的悬浮 YouTube 迷你播放器，用于便捷地阅读评论等。
+为 YouTube 增加类似 Bilibili 的悬浮迷你播放器，用于便捷地阅读评论等。
+
+- 拖拽以移动
+- 已知问题：
+  - 无法调整大小
+  - 无法在剧场模式和全屏下使用
+  - 部分控件（进度条、音量等） 不跟随光标。这是实现限制导致的。
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
