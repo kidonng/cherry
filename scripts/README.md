@@ -8,11 +8,27 @@ A user script manager must be installed on your browser.
 
 We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), as on other user script manager the scripts may not work.
 
+## [YouTube Screenshot](youtube-screenshot.user.js?raw=true)
+
+![Screenshot](../screenshots/youtube-screenshot.png)
+
+Add a screenshot button to YouTube (shortcut: <kbd>s</kbd>).
+
+- Click to save. Video title and timestamp will be used as file name
+- Use context menu to copy and more
+- Press <kbd>s</kbd> to cancel
+
 ## [YouTube Mini Player](youtube-mini-player.user.js?raw=true)
 
 ![Screenshot](../screenshots/youtube-mini-player.png)
 
 Floating YouTube mini player like Bilibili, for conveniently reading comments and more.
+
+- Drag to move
+- Known issues:
+  - Can't resize
+  - Doesn't work in Theater mode and Full screen
+  - Some controls (progress bar, volume, etc.) doesn't follow cursor. This is due to implementation limits.
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
