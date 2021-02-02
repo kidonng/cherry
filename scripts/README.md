@@ -16,7 +16,7 @@ Add a screenshot button to YouTube (shortcut: <kbd>s</kbd>).
 
 - Click to save. Video title and timestamp will be used as file name
 - Use context menu to copy and more
-- Press <kbd>s</kbd> to cancel
+- Press <kbd>Esc</kbd> to cancel
 
 **NOTE** Due to implementation limits, the screenshot's color may not be the same as the video's.
 

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Screenshot
-// @version      1.0.1
+// @version      1.1.0
 // @description  Screenshot for YouTube
 // @license      MIT
 // @author       kidonng
@@ -47,8 +47,11 @@
 
   container.classList.add('screenshot-container')
   container.hidden = true
+
+  a.addEventListener('click', () => (container.hidden = true))
+
   img.title =
-    'Click to save, use context menu to copy and more, press s to cancel'
+    'Click to save, use context menu to copy and more, press Esc to cancel'
 
   container.appendChild(a).appendChild(img)
   document.body.prepend(container)
@@ -76,14 +79,16 @@
 
   document.addEventListener('keypress', (e) => {
     if (
-      document.activeElement.tagName === 'INPUT' ||
-      document.activeElement.tagName === 'TEXTAREA' ||
-      e.code !== 'KeyS'
+      document.activeElement.tagName !== 'INPUT' &&
+      document.activeElement.tagName !== 'TEXTAREA' &&
+      e.code === 'KeyS' &&
+      container.hidden
     )
-      return
+      screenshot()
+  })
 
-    if (container.hidden) screenshot()
-    else container.hidden = true
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape' && !container.hidden) container.hidden = true
   })
 
   // https://stackoverflow.com/a/54389066
