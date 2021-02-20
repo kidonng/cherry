@@ -3,7 +3,8 @@
 @version      1.0.0
 @description  Wikipedia Material + Wikipedia New Light
 @author       kidonng
-@namespace    https://github.com/kidonng/cherry
+@namespace    kidonng
+@homepageURL  https://github.com/kidonng/cherry
 ==/UserStyle== */
 
 @-moz-document domain("wikipedia.org"), domain("wikimedia.org") {
