@@ -5,7 +5,7 @@
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @include      http://*
+// @match        http://*
 // @run-at       document-start
 // ==/UserScript==
 

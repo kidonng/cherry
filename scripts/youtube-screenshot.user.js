@@ -5,7 +5,7 @@
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @include      https://www.youtube.com/*
+// @match        https://www.youtube.com/*
 // ==/UserScript==
 
 ;(() => {
