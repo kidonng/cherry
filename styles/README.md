@@ -48,11 +48,9 @@ Tweaks for [Inoreader](https://www.inoreader.com/) light theme.
 
 [Inoreader Light tweaks](http://userstyles.org/styles/142459)
 
-### [Wikipedia](https://github.com/kidonng/cherry/raw/c0da67832d3a3464bed851dcd08de21147dccdb5/styles/wikipedia.user.css)
+### [Wikipedia](wikipedia.user.css?raw=true)
 
-**Archived**
-
-![](https://github.com/kidonng/cherry/raw/c0da67832d3a3464bed851dcd08de21147dccdb5/styles/screenshots/wikipedia.png)
+![](../screenshots/wikipedia.png)
 
 #### Source
 
