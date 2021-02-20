@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         YouTube Screenshot
-// @version      1.1.0
+// @version      1.1.1
 // @description  Screenshot for YouTube
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://www.youtube.com/*
+// @noframes
 // ==/UserScript==
 
 ;(() => {
