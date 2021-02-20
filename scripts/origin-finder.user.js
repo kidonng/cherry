@@ -5,17 +5,17 @@
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @include      https://img.moegirl.org/*
-// @include      https://dynasty-scans.com/*
-// @include      https://www2.zhihu.com/*
-// @include      http*://tieba.baidu.com/*
-// @include      http*://wapp.baidu.com/*
-// @include      http*://dq.tieba.com/*
-// @include      http*://jump2.bdimg.com/*
-// @include      http*://c.tieba.baidu.com/*
-// @include      http*://wefan.baidu.com/*
-// @include      http*://tiebac.baidu.com/*
-// @include      https://mzh.moegirl.org.cn/*
+// @match        https://img.moegirl.org/*
+// @match        https://dynasty-scans.com/*
+// @match        https://www2.zhihu.com/*
+// @match        http*://tieba.baidu.com/*
+// @match        http*://wapp.baidu.com/*
+// @match        http*://dq.tieba.com/*
+// @match        http*://jump2.bdimg.com/*
+// @match        http*://c.tieba.baidu.com/*
+// @match        http*://wefan.baidu.com/*
+// @match        http*://tiebac.baidu.com/*
+// @match        https://mzh.moegirl.org.cn/*
 // @run-at       document-start
 // ==/UserScript==
 

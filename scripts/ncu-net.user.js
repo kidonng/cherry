@@ -5,9 +5,9 @@
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @include      http://222.204.3.154/*
-// @include      http://222.204.3.221:*/*
-// @include      http://aaa.ncu.edu.cn:*/*
+// @match        http://222.204.3.154/*
+// @match        http://222.204.3.221:*/*
+// @match        http://aaa.ncu.edu.cn:*/*
 // ==/UserScript==
 
 ;(() => {

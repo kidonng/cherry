@@ -5,7 +5,7 @@
 // @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @include      http*://*.github.io/*
+// @match        http*://*.github.io/*
 // ==/UserScript==
 
 ;(() => {
