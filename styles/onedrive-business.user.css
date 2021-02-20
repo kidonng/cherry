@@ -2,10 +2,8 @@
 @name         OneDrive Business
 @version      1.0.2
 @description  Hide OneDrive Business annoyances
-@license      MIT
 @author       kidonng
 @homepageURL  https://github.com/kidonng/cherry
-@namespace    kidonng
 ==/UserStyle== */
 
 @-moz-document domain("sharepoint.com") {

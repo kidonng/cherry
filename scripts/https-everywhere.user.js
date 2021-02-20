@@ -2,7 +2,6 @@
 // @name         HTTPS Everywhere
 // @version      1.1.0
 // @description  Redirect to HTTPS version if available
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        http://*

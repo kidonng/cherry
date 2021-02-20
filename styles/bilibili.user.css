@@ -2,10 +2,8 @@
 @name         Bilibili
 @version      1.1.0
 @description  Hide Bilibili annoyances
-@license      MIT
 @author       kidonng
 @homepageURL  https://github.com/kidonng/cherry
-@namespace    kidonng
 ==/UserStyle== */
 
 @-moz-document domain("www.bilibili.com") {

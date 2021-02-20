@@ -2,10 +2,8 @@
 @name         GitHub
 @version      1.12.2
 @description  Style optimizations for GitHub
-@license      MIT
 @author       kidonng
 @homepageURL  https://github.com/kidonng/cherry
-@namespace    kidonng
 @preprocessor stylus
 
 @var checkbox lightHeader "Light theme header" 0
@@ -108,41 +106,41 @@
       width: 16px;
       height: 16px;
     }
-    
+
     /* https://github.com/ovity/octotree/issues/992 */
     .gh-header-title {
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
     }
-    
+
     .gh-header-title .js-issue-title {
       margin-right: 9px;
     }
-    
+
     .gh-header-title .octotree-btn {
       margin-left: -22px;
       order: -1;
     }
-    
+
     /* https://github.com/sindresorhus/refined-github/pull/3439#issuecomment-679069610 */
     .file-info {
       display: flex;
     }
-    
+
     .file-info a,
     .file-info clipboard-copy {
       order: 1;
     }
-    
+
     .file-info > :not(button) {
       margin-left: 6px;
     }
-    
+
     .file-info .tooltipped-s:before {
       bottom: 1px;
     }
-    
+
     .file-info .tooltipped-s:after {
       margin-top: -2px;
     }

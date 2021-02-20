@@ -2,7 +2,6 @@
 // @name         YouTube Mini Player
 // @version      1.1.3
 // @description  Floating YouTube mini player like Bilibili
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://www.youtube.com/*

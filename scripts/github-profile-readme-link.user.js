@@ -2,7 +2,6 @@
 // @name         GitHub profile README link
 // @version      1.0.0
 // @description  Make profile README's header link to the README instead of the repository
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://github.com/*

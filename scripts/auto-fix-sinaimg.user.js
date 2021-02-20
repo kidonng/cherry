@@ -2,7 +2,6 @@
 // @name         Auto fix sinaimg
 // @version      1.1.0
 // @description  Auto fix loading of sinaimg.cn images
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        http*://*/*

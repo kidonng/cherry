@@ -2,7 +2,6 @@
 // @name         Reposition Octotree bookmark icon
 // @version      1.0.2
 // @description  https://github.com/ovity/octotree/issues/992
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://github.com/*

@@ -2,7 +2,6 @@
 // @name         GitHub Precise Counters
 // @version      1.0.1
 // @description  Show precise watch/star/fork counts on hover
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://github.com/*

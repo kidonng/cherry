@@ -2,7 +2,6 @@
 // @name         YouTube Screenshot
 // @version      1.1.0
 // @description  Screenshot for YouTube
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://www.youtube.com/*
