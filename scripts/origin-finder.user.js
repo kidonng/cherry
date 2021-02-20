@@ -2,7 +2,6 @@
 // @name         Origin Finder
 // @version      1.1.1
 // @description  Redirect to resources' origin version
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://img.moegirl.org/*

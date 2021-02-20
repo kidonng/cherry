@@ -2,10 +2,8 @@
 @name         Tieba
 @version      1.0.0
 @description  Hide Baidu Tieba annoyances
-@license      MIT
 @author       kidonng
 @homepageURL  https://github.com/kidonng/cherry
-@namespace    kidonng
 ==/UserStyle== */
 
 @-moz-document domain("tieba.baidu.com") {

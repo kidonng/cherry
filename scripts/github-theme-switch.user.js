@@ -2,7 +2,6 @@
 // @name         GitHub theme switch
 // @version      1.0.1
 // @description  Add theme preferences switch to GitHub's profile dropdown.
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://github.com/*

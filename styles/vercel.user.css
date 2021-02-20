@@ -2,10 +2,8 @@
 @name         Vercel
 @version      1.0.3
 @description  Hide Vercel annoyances
-@license      MIT
 @author       kidonng
 @homepageURL  https://github.com/kidonng/cherry
-@namespace    kidonng
 ==/UserStyle== */
 
 @-moz-document domain("vercel.com") {

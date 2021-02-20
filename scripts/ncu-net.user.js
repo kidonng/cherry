@@ -2,7 +2,6 @@
 // @name         NCU Net
 // @version      2.1.1
 // @description  NCU Campus Network Access Authentication System Helper
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        http://222.204.3.154/*
