@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Mini Player
-// @version      1.1.5
+// @version      1.1.6
 // @description  Floating YouTube mini player like Bilibili
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -162,8 +162,10 @@
       document.body.removeAttribute('data-mini-enabled')
       window.removeEventListener('scroll', scrollHandler)
 
-      if (document.body.hasAttribute('data-mini-detached'))
+      if (document.body.hasAttribute('data-mini-detached')) {
         document.body.removeAttribute('data-mini-detached')
+        player.removeEventListener('mousedown', mouseDownHandler)
+      }
     }
   })
 })()
