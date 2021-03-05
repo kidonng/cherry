@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Back to Notion
-// @version      1.0.0
+// @version      1.0.1
 // @description  Redirect custom Notion domains to www.notion.so
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @include      https://*
+// @match        https://*/*
 // @exclude      https://www.notion.so/*
 // @run-at       document-start
 // @noframes
