@@ -3,7 +3,7 @@
 @version      1.0.0
 @description  Google Tasks on desktop
 @author       kidonng
-@namespace    kidonng
+@namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
 ==/UserStyle== */
 @-moz-document regexp("https://tasks.google.com.*\\?fullWidth=1") {
