@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Pages Source
-// @version      1.3.2
+// @version      1.3.3
 // @description  Easily go to GitHub Pages' source repository
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -8,8 +8,6 @@
 // ==/UserScript==
 
 ;(() => {
-  if (location.protocol === 'http:') location.protocol = 'https:'
-
   document.head.insertAdjacentHTML('beforeend', `<style>
     #page-source {
       position: fixed;
