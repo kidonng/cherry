@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         HTTPS Everywhere
-// @version      1.1.2
+// @version      1.1.3
 // @description  Redirect to HTTPS version if available
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @match        http://*
+// @match        http://*/*
 // @exclude      http://localhost*
 // @run-at       document-start
 // @noframes
