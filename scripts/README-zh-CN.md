@@ -56,6 +56,18 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 在右下角显示一个链接到 GitHub Pages 源码仓库的 GitHub logo。示例：[1](https://edwardtufte.github.io/) [2](https://edwardtufte.github.io/tufte-css/)
 
+## [清理 GitHub 消息订阅](clean-github-subscriptions.user.js?raw=true)
+
+自动取消所有已关闭/合并的 issue/PR 的消息订阅。
+
+安装脚本后前往[订阅](https://github.com/notifications/subscriptions)页面即可。
+
+**注意**
+
+- **脚本无法知道你想保留哪些消息订阅，操作前请注意。** 如果只想取消某些消息订阅，使用页面上的“Reason“下拉菜单。
+- 如果脚本呆呆地每次只取消一个订阅，请手动翻页。
+- 如果脚本停止运行，可能是遇到了服务器错误或者请求过于频繁。请稍后重试。
+
 ## [GitHub 精确数据](github-precise-counters.user.js?raw=true)
 
 ![截图](../screenshots/github-precise-counters.gif)
