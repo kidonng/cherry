@@ -56,6 +56,18 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 Display a GitHub logo in the lower right linked to GitHub Pages' source repository. e.g. [1](https://edwardtufte.github.io/) [2](https://edwardtufte.github.io/tufte-css/)
 
+## [Clean GitHub Subscriptions](clean-github-subscriptions.user.js?raw=true)
+
+Automatically unsubscribe from all closed/merged issues/PR.
+
+Just install the script and head to [Subscriptions](https://github.com/notifications/subscriptions).
+
+**NOTE**
+
+- **There is no way for the script to figure out what thread you want to keep subscribing to, proceed with caution.** Use the "Reason" dropdown if you only want to clean selective subscriptions.
+- If the script becomes dumb and only unsubscribe one thread at a time, then manually turn to next page first.
+- If the script stops working, you may have an server error or hit a rate limit. Try again later.
+
 ## [GitHub Precise Counters](github-precise-counters.user.js?raw=true)
 
 ![Screenshot](../screenshots/github-precise-counters.gif)
