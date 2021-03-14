@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.13.1
+@version      1.13.2
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -114,7 +114,7 @@
     }
 
     .gh-header-title .js-issue-title {
-      margin-right: 9px;
+      margin-right: 7px;
     }
 
     .gh-header-title .octotree-btn {
@@ -134,7 +134,7 @@
     }
 
     .file-info > :not(button) {
-      margin-left: 6px;
+      margin-left: 7px;
     }
 
     .file-info .tooltipped-s:before {
