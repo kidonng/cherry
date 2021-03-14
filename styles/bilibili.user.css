@@ -1,38 +1,36 @@
 /* ==UserStyle==
 @name         Bilibili
-@version      1.0.0
-@description  Clean Bilibili annoyances
-@license      MIT
+@version      1.1.0
+@description  Hide Bilibili annoyances
 @author       kidonng
+@namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
-@namespace    kidonng
 ==/UserStyle== */
 
 @-moz-document domain("www.bilibili.com") {
-  #bili_live,
-  [sortindex='0'],
-  .side-nav,
-  .gif-menu,
+  li.nav-link-item:nth-of-type(8),
   #reco_list,
   #live_recommand_report,
-  .message,
-  .u-link,
-  #entryOld,
-  .charge-btn,
-  .nameplate,
+  #activity_vote,
   .help.item,
-  .hot-follow > .follow-btn,
-  .bilibili-player-video-top,
-  .bilibili-player-video-inputbar {
-    display: none;
+  .reply-wrap.list-item .level-link,
+  .reply-wrap.list-item > .con > .user > .nameplate,
+  .reply-wrap.list-item > .con > .user > .sailing,
+  .reply-wrap.list-item > .con > .info > .btn-hover.reply,
+  .reply-wrap.list-item > .con > .user > .true-love.stick,
+  .nav-user-center > div:nth-of-type(3),
+  .signin.user-con > div.item:nth-of-type(2),
+  .not-follow-charge-btn.charge-btn.default-btn,
+  .message,
+  .bilibili-player-show.bilibili-player-video-top-follow,
+  .player-tooltips-trigger.bilibili-player-video-top-issue,
+  .appeal-text,
+  .btn-add,
+  .comment-send {
+      display: none !important;
   }
-}
 
-@-moz-document domain("space.bilibili.com") {
-  .i-live.section,
-  .h-message.h-f-btn,
-  .m-level.h-level,
-  .h-fans-icon {
-    display: none;
+  .bilibili-player-video-inputbar {
+      visibility: hidden;
   }
 }

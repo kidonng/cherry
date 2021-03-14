@@ -1,0 +1,16 @@
+/* ==UserStyle==
+@name         Netlify
+@version      1.0.0
+@description  Hide Netlify annoyances
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+
+@-moz-document domain("app.netlify.com") {
+  .nav [aria-labelledby='account-dropdown-label'],
+  .navbar .notifications-btn,
+  .navbar .btn-icon-supportMuted {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+/* ==UserStyle==
+@name         Vercel
+@version      1.0.3
+@description  Hide Vercel annoyances
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+
+@-moz-document domain("vercel.com") {
+  /* Hide user selector */
+  [data-geist-breadcrumb-divider]:nth-child(2),
+  [data-geist-breadcrumb-item]:nth-child(3),
+  /* Hide feedback */
+  [class^="feedback-input_geist-feedback-input"],
+  /* Hide teams */
+  .button[href='/teams/create'],
+  [class^="dashboard_links"] .menu .item:nth-of-type(3) {
+    display: none !important;
+  }
+}

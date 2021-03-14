@@ -1,11 +1,10 @@
 /* ==UserStyle==
 @name         StackBlitz
 @version      1.0.0
-@description  Clean StackBlitz annoyances
-@license      MIT
+@description  Hide StackBlitz annoyances
 @author       kidonng
+@namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
-@namespace    kidonng
 ==/UserStyle== */
 
 @-moz-document domain("stackblitz.com") {

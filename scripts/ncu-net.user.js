@@ -2,12 +2,11 @@
 // @name         NCU Net
 // @version      3.0.0
 // @description  A campus network helper for Nanchang University
-// @license      MIT
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @include      http://222.204.3.154/*
-// @include      http://222.204.3.221/*
-// @include      http://aaa.ncu.edu.cn/*
+// @match        http://222.204.3.154/*
+// @match        http://222.204.3.221/*
+// @match        http://aaa.ncu.edu.cn/*
 // ==/UserScript==
 
 ;(() => {

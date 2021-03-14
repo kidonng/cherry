@@ -6,29 +6,26 @@ A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstor
 
 ## Original
 
-### [Bilibili](bilibili.user.css?raw=true)
-
-Clean [Bilibili](https://www.bilibili.com/) annoyances.
-
 ### [GitHub](github.user.css?raw=true)
 
-Clean flat GitHub style featuring Pixel blue.
+Style optimizations for GitHub. Pairs well with [Refined GitHub](https://github.com/sindresorhus/refined-github), [Octotree](https://github.com/ovity/octotree) and more.
 
-![](../screenshots/github.png)
+### [Google Tasks](google-tasks.user.css?raw=true)
 
-### [Google](google.user.css?raw=true)
+[Google Tasks](https://tasks.google.com/embed/?origin=https://calendar.google.com&fullWidth=1) on desktop.
 
-Opinionated Google Style.
+### [Typeface](typeface.user.css?raw=true)
 
-![](../screenshots/google.png)
+Typeface optimizations for various sites.
 
-### [Stackblitz](stackblitz.user.css?raw=true)
+### Hide annoyances
 
-Clean [Stackblitz](https://stackblitz.com/) annoyances.
-
-### [Tieba](tieba.user.css?raw=true)
-
-Clean [Baidu Tieba](https://tieba.baidu.com/) annoyances.
+- [Bilibili](bilibili.user.css?raw=true)
+- [Netlify](netlify.user.css?raw=true)
+- [OneDrive Business](onedrive-business.user.css?raw=true)
+- [Tieba](tieba.user.css?raw=true)
+- [Stackblitz](stackblitz.user.css?raw=true)
+- [Vercel](vercel.user.css?raw=true)
 
 ## Ported
 
@@ -36,7 +33,7 @@ Clean [Baidu Tieba](https://tieba.baidu.com/) annoyances.
 
 [Moegirlpedia](https://zh.moegirl.org/) improved.
 
-![](../screenshots/moegirlpedia.png)
+![Screenshot](../screenshots/moegirlpedia.png)
 
 #### Source
 
@@ -50,3 +47,12 @@ Tweaks for [Inoreader](https://www.inoreader.com/) light theme.
 #### Source
 
 [Inoreader Light tweaks](http://userstyles.org/styles/142459)
+
+### [Wikipedia](wikipedia.user.css?raw=true)
+
+![](../screenshots/wikipedia.png)
+
+#### Source
+
+- [Wikipedia Material](https://userstyles.org/styles/140009/wikipedia-material)
+- [Wikipedia New Light](https://userstyles.org/styles/139227/wikipedia-new-light)
