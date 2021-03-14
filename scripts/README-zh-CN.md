@@ -81,6 +81,10 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 另提供[书签](generated/github-theme-switch.user-bookmarklet.js?raw=true)版本。
 
+## [GitHub Star 历史](github-star-history.user.js?raw=true)
+
+在 Stargazers 页面添加一个按钮以在 https://star-history.t9t.io/ 查看 star 历史。
+
 ## [重新放置 Octotree 书签图标](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 
 启用前：

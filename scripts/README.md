@@ -81,6 +81,10 @@ Add theme preferences switch to GitHub's profile dropdown.
 
 Also available as a [bookmarklet](generated/github-theme-switch.user-bookmarklet.js?raw=true).
 
+## [GitHub Star history](github-star-history.user.js?raw=true)
+
+Adds a button to Stargazers page to view star history on https://star-history.t9t.io/. 
+
 ## [Reposition Octotree bookmark icon](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 
 Before:
