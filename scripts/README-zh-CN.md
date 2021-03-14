@@ -34,23 +34,18 @@
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
-**南昌大学校园网络接入认证系统**助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
+南昌大学校园网助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
 
 _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md) 命令行程序。_
 
-### 特点
+### 功能
 
-- 无跳转/弹窗进行登录/注销
-- 记忆用户名和密码
-- 自动连接和重连
+- 无跳转登录
+- 记住用户名和密码
+- 自动重连
 - 连接日志
 
-### 使用方法
-
-1. 连接网络。
-2. 打开认证页面 ([NCU-5G/NCU-2.4G](http://222.204.3.154/) or [NCUWLAN](http://aaa.ncu.edu.cn/)) 并输入你的用户名和密码。
-3. 点击登录/注销按钮并见证奇迹！
-4. 你可以在脚本中设置[语言和更多](./ncu-net.user.js#L12-L31)。
+**注** 可以在脚本中[设置超时和重连时间](ncu-net.user.js#L14-L20)。
 
 ## [Pages 源码](pages-source.user.js?raw=true)
 
