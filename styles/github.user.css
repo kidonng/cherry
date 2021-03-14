@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.13.0
+@version      1.13.1
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -8,19 +8,17 @@
 @preprocessor stylus
 
 @var checkbox lightHeader "Light theme header" 0
-@var checkbox hideExplore "Hide \"Explore repositories\" on dashboard" 1
 @var checkbox hideHighlights "Hide \"Highlights\" on user profile" 1
 @var checkbox hideProBadge "Hide \"PRO\" badge in user hovercard" 1
 @var checkbox removeMDBorders "Remove Markdown file borders" 1
 @var checkbox expandNavLink "Expand navigation link in repository file tree" 1
 @var checkbox extensions "Enable adjustments for some browser extensions" 1
 @var checkbox hideOwnPackagesTab "Hide \"Pacakges\" tab on own user profile" 1
-@var checkbox experimental "Enable experimental styles" 0
+@var checkbox alignAuthorName "Align author name on PR sticky header (for Chinese locale users)" 0
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/") {
-  if experimental {
-    /* https://github.com/sindresorhus/refined-github/pull/3444#discussion_r468017909 */
-    /* Align author name on PR sticky header */
+  if alignAuthorName {
+    /* https://github.com/sindresorhus/refined-github/pull/3660#discussion_r506837095 */
     .sticky-content .author.css-truncate-target {
       vertical-align: -4px;
     }
@@ -34,9 +32,9 @@
   }
 
   if lightHeader {
-    /* Match .bg-gray-light */
-    .Header {
-      background: #fafbfc;
+    .Header,
+    .header-search-wrapper {
+      background: var(--color-bg-secondary);
     }
 
     /* Invert .Header-link */
@@ -50,13 +48,8 @@
       color: rgba(0, 0, 0, .7);
     }
 
-    .header-search-wrapper {
-      border: 1px solid black !important;
-    }
-
-    .header-search-input,
     .header-search-input::placeholder {
-      color: black !important;
+      color: rgba(0, 0, 0, .7);
     }
   }
 
@@ -72,17 +65,11 @@
     }
   }
 
-  if hideExplore {
-    .team-left-column:last-child {
-      visibility: hidden;
-    }
-  }
-
   if removeMDBorders {
-    #readme {
-      border-top: 0;
-      border-right: 0;
-      border-left: 0;
+    #readme,
+    #readme > .Box-header,
+    #readme > .Box-body {
+      border: 0;
     }
   }
 
@@ -95,6 +82,7 @@
   }
 
   if extensions {
+    /* Use the same size as branch button for latest tag button */
     /* https://github.com/sindresorhus/refined-github/pull/3356 */
     .rgh-latest-tag-button,
     .rgh-latest-tag-button + .btn,
@@ -109,6 +97,7 @@
       vertical-align: text-bottom;
     }
 
+    /* Adjust file icon size */
     /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
     .octicon-file,
     .octicon-file-directory {
@@ -116,6 +105,7 @@
       height: 16px;
     }
 
+    /* Put Octotree bookmark icon in front of title */
     /* https://github.com/ovity/octotree/issues/992 */
     .gh-header-title {
       display: flex;
@@ -132,6 +122,7 @@
       order: -1;
     }
 
+    /* Put file status icon in front of file name */
     /* https://github.com/sindresorhus/refined-github/pull/3439#issuecomment-679069610 */
     .file-info {
       display: flex;
@@ -159,8 +150,7 @@
 @-moz-document regexp("https://github.com/.+/blob/.+\.md.*") {
   if removeMDBorders {
     .repository-content .Box.mt-3.position-relative {
-      border-right: 0;
-      border-left: 0;
+      border: 0;
       margin-right: 1px;
       margin-left: 1px;
     }
