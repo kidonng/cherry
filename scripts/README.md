@@ -12,7 +12,6 @@ We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail
 
 ![Screenshot](../screenshots/youtube-screenshot.png)
 
-A campus network helper for Nanchang University. Supports `NCU-5G/NCU-2.4G` & `NCUWLAN`.
 Add a screenshot button to YouTube (shortcut: <kbd>s</kbd>).
 
 - Click to save. Video title and timestamp will be used as file name
@@ -35,7 +34,7 @@ Floating YouTube mini player like Bilibili, for conveniently reading comments an
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
-**NCU Campus Network Access Authentication System** Helper. Works on `NCU-5G/NCU-2.4G` & `NCUWLAN`.
+A campus network helper for Nanchang University. Supports `NCU-5G/NCU-2.4G` & `NCUWLAN`.
 
 _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
