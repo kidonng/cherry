@@ -106,6 +106,7 @@ Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 - [Wikiwand](wikiwand.user.js?raw=true): Redirect Wikipedia to Wikiwand. Can replace Wikiwand browser extension.
 - [Origin Finder](origin-finder.user.js?raw=true): Redirect to resources' origin version, such as the original size version of images.
 - [HTTPS Everywhere](https-everywhere.user.js?raw=true): Redirect to HTTPS version if available
+- [Google Bang](google-bang.user.js?raw=true): Add support for !Bang Search Shortcuts to Google
 - [Back to Notion](back-to-notion.user.js?raw=true): Redirect custom Notion domains to `www.notion.so`. [Test](https://anotioneer.com/)
 
   **Note** This only checks if a HTTPS URL matches `/[0-9a-f]{32}$/`. False positives may be reported.
