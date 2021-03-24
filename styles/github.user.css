@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.13.2
+@version      1.14.0
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -120,29 +120,6 @@
     .gh-header-title .octotree-btn {
       margin-left: -22px;
       order: -1;
-    }
-
-    /* Put file status icon in front of file name */
-    /* https://github.com/sindresorhus/refined-github/pull/3439#issuecomment-679069610 */
-    .file-info {
-      display: flex;
-    }
-
-    .file-info a,
-    .file-info clipboard-copy {
-      order: 1;
-    }
-
-    .file-info > :not(button) {
-      margin-left: 7px;
-    }
-
-    .file-info .tooltipped-s:before {
-      bottom: 1px;
-    }
-
-    .file-info .tooltipped-s:after {
-      margin-top: -2px;
     }
   }
 }
