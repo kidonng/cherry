@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.14.0
+@version      1.14.1
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -54,7 +54,7 @@
   }
 
   if hideProBadge {
-    .user-status-container + div .Label.Label--purple.text-uppercase.mt-2 {
+    .js-hovercard-content [title="Label: Pro"] {
       display: none !important;
     }
   }
