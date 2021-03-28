@@ -7,7 +7,7 @@ import ky from 'https://cdn.jsdelivr.net/npm/ky@0.27.0/index.js'
 export interface Config {
   version: number
   servers: Server[]
-  [key: string]: any
+  [key: string]: unknown
 }
 
 export interface Server {
@@ -19,7 +19,7 @@ export interface Server {
   remarks?: string
   plugin?: string
   plugin_opts?: string
-  [key: string]: any
+  [key: string]: unknown
 }
 
 export function convertServer(entry: Server): string {

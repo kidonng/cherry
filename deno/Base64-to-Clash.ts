@@ -17,7 +17,7 @@ export async function convertURL(url: string): Promise<string> {
       case 'vmess:':
         try {
           const decodedData = JSON.parse(new TextDecoder().decode(decode(url.hostname)))
-          const proxy: any = {
+          const proxy: Record<string, unknown> = {
             name: `${decodedData.ps} (VMESS)`,
             type: 'vmess',
             server: decodedData.add,

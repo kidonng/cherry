@@ -13,8 +13,8 @@ const api = ky.extend({
   headers: { token },
 })
 
-const createForm = (data: any) => {
-  const form: any = {}
+const createForm = (data: Record<string, string>) => {
+  const form: Record<string, string> = {}
   const fields = [
     'inChina',
     'addressProvince',
@@ -48,7 +48,7 @@ const editableFields = {
 }
 
 ;(async () => {
-  const { code, data } = await api('getPreSignInfo').json<any>()
+  const { code, data } = await api('getPreSignInfo').json()
 
   if (code === '1') {
     console.error('❌ Token 过期')
@@ -87,7 +87,7 @@ const editableFields = {
       'content-type': 'application/x-www-form-urlencoded',
     },
     body: new URLSearchParams(form),
-  }).json<any>()
+  }).json<Record<string, unknown>>()
 
   if (result.code === '0') console.log('🎉 打卡成功')
   else console.error(result)
