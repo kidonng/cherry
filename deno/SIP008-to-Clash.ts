@@ -1,13 +1,9 @@
-import { join } from 'https://deno.land/std@0.91.0/path/mod.ts'
-import { existsSync } from 'https://deno.land/std@0.91.0/fs/exists.ts'
 // @deno-types="https://cdn.jsdelivr.net/npm/ky@0.27.0/index.d.ts"
 import ky from 'https://cdn.jsdelivr.net/npm/ky@0.27.0/index.js'
-import yaml from 'https://cdn.skypack.dev/js-yaml'
-import { Config } from 'https://github.com/kidonng/cherry/raw/master/deno/SIP008-to-SIP002.ts'
+import { Config, Server } from './SIP008-to-SIP002.ts'
+import { generateConfig } from './utils/clash.ts'
 
-export async function convertURL(url: string): Promise<string> {
-  const { servers } = await ky(url).json<Config>()
-  
+export function convertServers(servers: Server[]) {
   const proxies = servers.map(server => ({
     name: server.remarks,
     type: 'ss',
@@ -17,23 +13,19 @@ export async function convertURL(url: string): Promise<string> {
     password: server.password
   }))
 
-  const config = join(Deno.env.get('HOME')!, '.config', 'clash', 'private.yaml')
-  const rules = existsSync(config)
-    ? yaml.load(Deno.readTextFileSync(config)).rules
-    : [
-      'GEOIP,CN,DIRECT',
-      'MATCH,PROXY'
-    ]
-
-  return yaml.dump({
+  return {
     proxies,
     'proxy-groups': [{
       name: 'PROXY',
       type: 'select',
       proxies: proxies.map(proxy => proxy.name)
-    }],
-    rules
-  })
+    }]
+  }
 }
 
-if (import.meta.main) console.log(await convertURL(Deno.args[0]))
+if (import.meta.main) {
+  const [url] = Deno.args
+  const { servers } = await ky(url).json<Config>()
+  const proxies = convertServers(servers)
+  console.log(generateConfig(proxies))
+}

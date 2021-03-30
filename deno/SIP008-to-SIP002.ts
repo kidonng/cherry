@@ -30,9 +30,8 @@ export function convertServer(entry: Server): string {
   )}@${server}:${server_port}#${remarks}`
 }
 
-export async function convertURL(url: string): Promise<string> {
+if (import.meta.main) {
+  const [url] = Deno.args
   const { servers } = await ky(url).json<Config>()
-  return servers.map(convertServer).join('\n')
+  console.log(servers.map(convertServer).join('\n'))
 }
-
-if (import.meta.main) console.log(await convertURL(Deno.args[0]))

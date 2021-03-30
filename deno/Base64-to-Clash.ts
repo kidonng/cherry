@@ -1,12 +1,9 @@
-import { join } from 'https://deno.land/std@0.91.0/path/mod.ts'
-import { existsSync } from 'https://deno.land/std@0.91.0/fs/exists.ts'
 import { decode } from 'https://deno.land/std@0.91.0/encoding/base64.ts'
 // @deno-types="https://cdn.jsdelivr.net/npm/ky@0.27.0/index.d.ts"
 import ky from 'https://cdn.jsdelivr.net/npm/ky@0.27.0/index.js'
-import yaml from 'https://cdn.skypack.dev/js-yaml'
+import { generateConfig } from './utils/clash.ts'
 
-export async function convertURL(url: string): Promise<string> {
-  const rawSub = await ky(url).text()
+export function convertSub(rawSub: string) {
   const decodedSub = new TextDecoder().decode(decode(rawSub))
 
   const proxies = []
@@ -45,23 +42,19 @@ export async function convertURL(url: string): Promise<string> {
     }
   }
 
-  const config = join(Deno.env.get('HOME')!, '.config', 'clash', 'private.yaml')
-  const rules = existsSync(config)
-    ? yaml.load(Deno.readTextFileSync(config)).rules
-    : [
-      'GEOIP,CN,DIRECT',
-      'MATCH,PROXY'
-    ]
-
-  return yaml.dump({
+  return {
     proxies,
     'proxy-groups': [{
       name: 'PROXY',
       type: 'select',
       proxies: proxies.map(proxy => proxy.name)
-    }],
-    rules
-  })
+    }]
+  }
 }
 
-if (import.meta.main) console.log(await convertURL(Deno.args[0]))
+if (import.meta.main) {
+  const [url] = Deno.args
+  const rawSub = await ky(url).text()
+  const proxies = convertSub(url)
+  console.log(generateConfig(proxies))
+}
