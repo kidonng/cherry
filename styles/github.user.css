@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.14.1
+@version      1.15.0
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -120,6 +120,12 @@
     .gh-header-title .octotree-btn {
       margin-left: -22px;
       order: -1;
+    }
+
+    /* Unhide README header */
+    /* https://github.com/sindresorhus/refined-github/issues/4157 */
+    .repository-content #readme:not(.blob) .Box-title {
+      visibility: visible;
     }
   }
 }
