@@ -40,3 +40,7 @@ deno run --allow-net --allow-env --allow-read https://cdn.jsdelivr.net/gh/kidonn
 export NCU_TOKEN <TOKEN>
 deno run --allow-net --allow-env https://cdn.jsdelivr.net/gh/kidonng/cherry/scripts/ncu-covid-sign.ts
 ```
+
+## [YouTube URL to playlist](YouTube-URL-to-playlist.ts)
+
+Convert a YouTube video URL to its parent playlist.
