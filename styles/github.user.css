@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.16.1
+@version      1.16.2
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -106,14 +106,6 @@
     .rgh-latest-tag-button + .btn .octicon,
     .rgh-latest-tag-button + .dropdown .btn .octicon {
       vertical-align: text-bottom;
-    }
-
-    /* Adjust file icon size */
-    /* https://github.com/mallowigi/a-file-icon-web/pull/2#issuecomment-648701903 */
-    .octicon-file,
-    .octicon-file-directory {
-      width: 16px;
-      height: 16px;
     }
 
     /* Unhide README header */
