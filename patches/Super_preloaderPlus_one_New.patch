@@ -1,0 +1,16 @@
+--- Super_preloaderPlus_one_New.user.js	2021-04-05 22:52:55.000000000 +0800
++++ Super_preloaderPlus_one_New.user.mod.js	2021-04-05 23:13:05.000000000 +0800
+@@ -10651,6 +10651,13 @@
+ 
+ 
+           function XHRrequest(link) {
++            if (link.startsWith('https://exhentai.org')) {
++              logger.debug("[Super-preloader]", 'Loading with plain fetch');
++              return fetch(link)
++                .then(res => res.text())
++                .then(res => XHRLoaded({ data: res }))
++                .catch(console.log);
++            }
+             var reqConf = {
+               headers: SSS.a_headers ? SSS.a_headers : {
+                 Referer: cplink
