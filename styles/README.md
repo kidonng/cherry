@@ -26,6 +26,7 @@ Typeface optimizations for various sites.
 - [Tieba](tieba.user.css?raw=true)
 - [Stackblitz](stackblitz.user.css?raw=true)
 - [Vercel](vercel.user.css?raw=true)
+- [Zhihu](zhihu.user.css?raw=true)
 
 ## Ported
 

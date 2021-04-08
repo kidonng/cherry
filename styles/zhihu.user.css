@@ -1,0 +1,32 @@
+/* ==UserStyle==
+@name         Zhihu
+@version      1.0.0
+@description  Hide Zhihu annoyances
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+
+@-moz-document domain("www.zhihu.com") {
+.AppHeader-userInfo,
+.QuestionButtonGroup,
+.QuestionHeaderActions > .Button:first-child,
+.QuestionHeaderActions > .Popover:last-child,
+.VoteButton--down,
+.ContentItem-actions > .ContentItem-action:nth-child(4),
+.ContentItem-actions > .ContentItem-action:nth-child(5),
+.CommentItemV2-hoverBtn,
+.CommentsV2-footer,
+.Question-sideColumn,
+.VotableTopicCard {
+  display: none !important;
+}
+
+.QuestionButtonGroup + .QuestionHeaderActions {
+  margin-left: 0;
+}
+
+.Avatar {
+  border-radius: 100%;
+}
+}
