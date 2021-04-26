@@ -8,6 +8,7 @@ export function convertSub(rawSub: string) {
 
   const proxies = []
   for (const sub of decodedSub.split('\n')) {
+    if (sub === '') return
     const url = new URL(sub)
 
     switch (url.protocol) {
@@ -55,6 +56,6 @@ export function convertSub(rawSub: string) {
 if (import.meta.main) {
   const [url] = Deno.args
   const rawSub = await ky(url).text()
-  const proxies = convertSub(url)
+  const proxies = convertSub(rawSub)
   console.log(generateConfig(proxies))
 }
