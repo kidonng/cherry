@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      1.3.0
+@version      1.3.1
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -8,18 +8,17 @@
 ==/UserStyle== */
 
 @-moz-document domain("github.com") {
-  pre,
-  code,
+  pre, /* e.g. editor, commit description */
+  code, /* e.g. Markdown code */
   kbd,
-  .blob-code-inner,
-  .blob-code-inner > * /* Compatible with Dark Reader */,
-  .cm-s-github-light .CodeMirror-lines {
+  .blob-code-inner {
     font-family: monospace, JetBrainsMono Nerd Font !important;
   }
 
+  .CodeMirror-lines,
   .blob-code-inner,
   .blob-num {
-    font-size: 13px;
+    font-size: 13px !important;
   }
 
   /* Bold function */
