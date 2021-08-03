@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Screenshot
-// @version      1.1.1
+// @version      1.1.2
 // @description  Screenshot for YouTube
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -66,7 +66,8 @@
     const time = $('.ytp-time-current')
       .textContent.replace(/(\d+):(\d+):(\d+)/, '$1h$2m$3s')
       .replace(/(\d+):(\d+)/, '$1m$2s')
-    const download = `${title} (${time})`
+    const id = new URLSearchParams(location.search).get('v')
+    const download = `${title} (${id}-${time})`
 
     a.download = download
     a.href = image
