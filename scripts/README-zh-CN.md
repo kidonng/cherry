@@ -4,9 +4,7 @@
 
 ---
 
-你的浏览器需要安装一个用户脚本管理器。
-
-推荐安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) 或 [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/))，因为在其他用户脚本管理器上脚本可能失效。
+您的浏览器需要安装一个用户脚本管理器（如 Violentmonkey for [Chrome](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag) 或 [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey)）。
 
 ## [YouTube 截图](youtube-screenshot.user.js?raw=true)
 
@@ -59,7 +57,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 **注意**
 
-- **脚本无法知道你想保留哪些消息订阅，操作前请注意。** 如果只想取消某些消息订阅，使用页面上的“Reason“下拉菜单。
+- **脚本无法知道哪些消息订阅需要被保留，操作前请注意。** 如果只想取消某些消息订阅，使用页面上的“Reason“下拉菜单。
 - 如果脚本呆呆地每次只取消一个订阅，请手动翻页。
 - 如果脚本停止运行，可能是遇到了服务器错误或者请求过于频繁。请稍后重试。
 

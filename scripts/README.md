@@ -4,9 +4,7 @@ English | [简体中文](README-zh-CN.md)
 
 ---
 
-A user script manager must be installed on your browser.
-
-We recommend Tampermonkey for [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), as on other user script manager the scripts may not work.
+A user script manager (e.g. Violentmonkey for [Chrome](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag) or [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey)) must be installed on your browser.
 
 ## [YouTube Screenshot](youtube-screenshot.user.js?raw=true)
 
@@ -83,7 +81,7 @@ Also available as a [bookmarklet](generated/github-theme-switch.user-bookmarklet
 
 ## [GitHub Star history](github-star-history.user.js?raw=true)
 
-Adds a button to Stargazers page to view star history on https://star-history.t9t.io/. 
+Adds a button to Stargazers page to view star history on https://star-history.t9t.io/.
 
 ## [Reposition Octotree bookmark icon](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 
@@ -110,4 +108,3 @@ Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 - [Back to Notion](back-to-notion.user.js?raw=true): Redirect custom Notion domains to `www.notion.so`. [Test](https://anotioneer.com/)
 
   **Note** This only checks if a HTTPS URL matches `/[0-9a-f]{32}$/`. False positives may be reported.
-
