@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Screenshot
-// @version      1.1.2
+// @version      1.1.3
 // @description  Screenshot for YouTube
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -67,7 +67,7 @@
       .textContent.replace(/(\d+):(\d+):(\d+)/, '$1h$2m$3s')
       .replace(/(\d+):(\d+)/, '$1m$2s')
     const id = new URLSearchParams(location.search).get('v')
-    const download = `${title} (${id}-${time})`
+    const download = `${title} (${id} ${time})`
 
     a.download = download
     a.href = image
