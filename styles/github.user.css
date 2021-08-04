@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.16.2
+@version      1.16.3
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -93,19 +93,13 @@
   }
 
   if extensions {
-    /* Use the same size as branch button for latest tag button */
+    /* Use the same size as branch button for latest-tag-button and list-prs-for-file */
     /* https://github.com/sindresorhus/refined-github/pull/3356 */
     .rgh-latest-tag-button,
     .rgh-latest-tag-button + .btn,
-    .rgh-latest-tag-button + .dropdown .btn {
+    :is(.rgh-latest-tag-button, #branch-select-menu) + .dropdown .btn {
       padding: 5px 16px;
       font-size: 14px;
-    }
-
-    .rgh-latest-tag-button .octicon,
-    .rgh-latest-tag-button + .btn .octicon,
-    .rgh-latest-tag-button + .dropdown .btn .octicon {
-      vertical-align: text-bottom;
     }
 
     /* Unhide README header */
