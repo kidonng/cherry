@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HTTPS Everywhere
-// @version      1.2.0
+// @version      1.2.1
 // @description  Redirect to HTTPS version if available
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -16,8 +16,8 @@
 ;(() => {
   const domains = GM_getValue('domains', {})
 
-  if (domains[location.hostname] === false) {
-    if (location.protocol === 'https:') {
+  if (location.protocol === 'https:') {
+    if (domains[location.hostname] === false) {
       domains[location.hostname] = true
       GM_setValue('domains', domains)
     }
@@ -25,11 +25,15 @@
     return
   }
 
-  try {
-    const https = location.href.replace('http', 'https')
-    fetch(https, { mode: 'no-cors' }).then(() => {
+  if (domains[location.hostname] === false) return
+
+  const https = location.href.replace('http', 'https')
+  fetch(https, { mode: 'no-cors' })
+    .then(() => {
       GM_setValue('domains', { ...domains, [location.hostname]: false })
       location.replace(https)
     })
-  } catch (e) {}
+    .catch(() => {
+      GM_setValue('domains', { ...domains, [location.hostname]: false })
+    })
 })()
