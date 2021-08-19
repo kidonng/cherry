@@ -1,4 +1,6 @@
-# Git Patches
+# Patches
+
+Apply patches with `patch -p0 <path/to/patch` or `git apply path/to/patch`.
 
 ## [exa](https://github.com/ogham/exa)
 

@@ -1,4 +1,4 @@
-# Deno Scripts
+# [Deno](https://deno.land/) Scripts
 
 ## [SIP008 to SIP002](SIP008-to-SIP002.ts)
 
