@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.16.4
+@version      1.16.5
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -13,7 +13,7 @@
 @var checkbox hideProBadge "Hide \"PRO\" badge in user hovercard" 1
 @var checkbox expandNavLink "Expand navigation link in repository file tree" 1
 @var checkbox extensions "Enable adjustments for some browser extensions" 1
-@var checkbox hidePackagesTab "Hide \"Pacakges\" tab on user profile" 1
+@var checkbox hidePackagesTab "Hide \"Packages\" tab on user profile" 1
 @var checkbox alignAuthorName "Align author name on PR sticky header (for Chinese locale users)" 0
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/") {
