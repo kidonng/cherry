@@ -47,7 +47,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [Pages 源码](pages-source.user.js?raw=true)
 
-在右下角显示一个链接到 GitHub Pages 源码仓库的 GitHub logo。
+访问 [GitHub Pages](https://pages.github.com/) 站点时，在右下角显示一个链接到原始仓库的 GitHub logo。
 
 ## [清理 GitHub 消息订阅](clean-github-subscriptions.user.js?raw=true)
 

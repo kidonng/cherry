@@ -47,7 +47,7 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 ## [Pages Source](pages-source.user.js?raw=true)
 
-Display a GitHub logo in the lower right linked to GitHub Pages' source repository.
+Display a GitHub logo in the bottom right corner linked to the source repository when visiting a [GitHub Pages](https://pages.github.com/) site.
 
 ## [Clean GitHub Subscriptions](clean-github-subscriptions.user.js?raw=true)
 

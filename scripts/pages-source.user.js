@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Pages Source
-// @version      1.4.0
+// @version      1.4.1
 // @description  Easily go to GitHub Pages' source repository
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -10,10 +10,11 @@
 // ==/UserScript==
 
 ;(() => {
+  const id = 'cherry-pages-source'
   document.head.insertAdjacentHTML(
     'beforeend',
     `<style>
-    #page-source {
+    #${id} {
       position: fixed;
       right: 0;
       bottom: 0;
@@ -22,16 +23,13 @@
       transition: opacity .25s;
     }
 
-    #page-source:hover {
+    #${id}:hover {
       opacity: 1;
     }
   </style>`
   )
 
-  const username = location.host.slice(
-    0,
-    location.host.indexOf('github.io') - 1
-  )
+  const username = location.hostname.replace('.github.io', '')
   let href = `https://github.com/${username}`
   let title
   if (document.title !== 'Site not found · GitHub Pages') {
@@ -49,6 +47,6 @@
 
   document.body.insertAdjacentHTML(
     'beforeend',
-    `<a href="${href}" id="page-source" title="${title}">${icon}</a>`
+    `<a href="${href}" id="${id}" title="${title}">${icon}</a>`
   )
 })()
