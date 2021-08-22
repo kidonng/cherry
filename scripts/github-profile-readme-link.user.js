@@ -10,9 +10,11 @@
 ;(() => {
   'use strict'
 
-   const link = document.querySelector('.user-profile-nav + div .octicon-octoface + a')
+  const link = document.querySelector(
+    '.user-profile-nav + div .octicon-octoface + a'
+  )
 
-   if (link) {
-     link.href += '#readme'
-   }
+  if (link) {
+    link.href += '#readme'
+  }
 })()

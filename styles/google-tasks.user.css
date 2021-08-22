@@ -6,7 +6,8 @@
 @namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
 ==/UserStyle== */
-@-moz-document regexp("https://tasks.google.com.*\\?fullWidth=1") {
+@-moz-document regexp("https://tasks.google.com.*\\?fullWidth=1")
+{
   .MCcOAc,
   .llhEMd {
     left: 25%;

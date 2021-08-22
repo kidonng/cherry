@@ -7,10 +7,13 @@
 // @match        https://github.com/*/*/stargazers
 // ==/UserScript==
 
-(() => {
+;(() => {
   const a = document.createElement('a')
   a.classList.add('btn', 'float-right', 'mt-n1')
-  a.href = `https://star-history.t9t.io/#${location.pathname.split('/').slice(1, 3).join('/')}`
+  a.href = `https://star-history.t9t.io/#${location.pathname
+    .split('/')
+    .slice(1, 3)
+    .join('/')}`
 
   const svgNS = 'http://www.w3.org/2000/svg'
   const path = document.createElementNS(svgNS, 'path')

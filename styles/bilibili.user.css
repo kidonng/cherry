@@ -27,10 +27,10 @@
   .appeal-text,
   .btn-add,
   .comment-send {
-      display: none !important;
+    display: none !important;
   }
 
   .bilibili-player-video-inputbar {
-      visibility: hidden;
+    visibility: hidden;
   }
 }

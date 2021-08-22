@@ -70,8 +70,12 @@
   }
 
   const updatePosition = (reset) => {
-    player.style.right = `${reset ? 0 : -translateX - window.innerWidth / 12.5}px`
-    player.style.bottom = `${reset ? 0 : -translateY - window.innerHeight / 10}px`
+    player.style.right = `${
+      reset ? 0 : -translateX - window.innerWidth / 12.5
+    }px`
+    player.style.bottom = `${
+      reset ? 0 : -translateY - window.innerHeight / 10
+    }px`
   }
 
   const headerBottom = () => window.scrollY + header.offsetHeight

@@ -8,25 +8,25 @@
 ==/UserStyle== */
 
 @-moz-document domain("www.zhihu.com") {
-.AppHeader-userInfo,
-.QuestionButtonGroup,
-.QuestionHeaderActions > .Button:first-child,
-.QuestionHeaderActions > .Popover:last-child,
-.VoteButton--down,
-.ContentItem-actions > .ContentItem-action:nth-child(4),
-.ContentItem-actions > .ContentItem-action:nth-child(5),
-.CommentItemV2-hoverBtn,
-.CommentsV2-footer,
-.Question-sideColumn,
-.VotableTopicCard {
-  display: none !important;
-}
+  .AppHeader-userInfo,
+  .QuestionButtonGroup,
+  .QuestionHeaderActions > .Button:first-child,
+  .QuestionHeaderActions > .Popover:last-child,
+  .VoteButton--down,
+  .ContentItem-actions > .ContentItem-action:nth-child(4),
+  .ContentItem-actions > .ContentItem-action:nth-child(5),
+  .CommentItemV2-hoverBtn,
+  .CommentsV2-footer,
+  .Question-sideColumn,
+  .VotableTopicCard {
+    display: none !important;
+  }
 
-.QuestionButtonGroup + .QuestionHeaderActions {
-  margin-left: 0;
-}
+  .QuestionButtonGroup + .QuestionHeaderActions {
+    margin-left: 0;
+  }
 
-.Avatar {
-  border-radius: 100%;
-}
+  .Avatar {
+    border-radius: 100%;
+  }
 }

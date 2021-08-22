@@ -14,7 +14,9 @@ export function convertSub(rawSub: string) {
     switch (url.protocol) {
       case 'vmess:':
         try {
-          const decodedData = JSON.parse(new TextDecoder().decode(decode(url.hostname)))
+          const decodedData = JSON.parse(
+            new TextDecoder().decode(decode(url.hostname))
+          )
           const proxy: Record<string, unknown> = {
             name: `${decodedData.ps} (VMESS)`,
             type: 'vmess',
@@ -22,12 +24,13 @@ export function convertSub(rawSub: string) {
             port: decodedData.port,
             uuid: decodedData.id,
             alterId: decodedData.aid,
-            cipher: 'auto'
+            cipher: 'auto',
           }
           if (decodedData?.tls === 'tls') proxy.tls = true
           if (decodedData?.net) proxy.network = decodedData.net
           if (decodedData?.path) proxy['ws-path'] = decodedData.path
-          if (decodedData?.host) proxy['ws-headers'] = { Host: decodedData.host }
+          if (decodedData?.host)
+            proxy['ws-headers'] = { Host: decodedData.host }
           proxies.push(proxy)
         } catch {}
         break
@@ -37,7 +40,7 @@ export function convertSub(rawSub: string) {
           type: 'trojan',
           server: url.hostname,
           port: Number(url.port),
-          password: url.username
+          password: url.username,
         })
         break
     }
@@ -45,11 +48,13 @@ export function convertSub(rawSub: string) {
 
   return {
     proxies,
-    'proxy-groups': [{
-      name: 'PROXY',
-      type: 'select',
-      proxies: proxies.map(proxy => proxy.name)
-    }]
+    'proxy-groups': [
+      {
+        name: 'PROXY',
+        type: 'select',
+        proxies: proxies.map((proxy) => proxy.name),
+      },
+    ],
   }
 }
 

@@ -15,7 +15,7 @@
     checkInterval: 5000,
 
     // Recommend >= 10s, NCUWLAN needs a 10s break between two login
-    retryTimeout: 10000
+    retryTimeout: 10000,
   }
 
   const msg =
@@ -27,17 +27,18 @@
           error: '连接异常，正在重连',
           online: '网络已连接',
           offline: '网络已断开',
-          ...zh_CN
+          ...zh_CN,
         }
       : {
           loaded: 'Successfully loaded NCU Net',
           connected: 'Successfully connected',
-          failed: `Failed to connect, retry in ${config.retryTimeout /
-            1000} sec(s)`,
+          failed: `Failed to connect, retry in ${
+            config.retryTimeout / 1000
+          } sec(s)`,
           error: 'Connection error, reconnecting',
           online: 'Network is online',
           offline: 'Network is offline',
-          ...en_US
+          ...en_US,
         }
 
   $('#notice-title, #notice-content').hide()

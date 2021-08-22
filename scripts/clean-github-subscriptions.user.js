@@ -18,7 +18,9 @@
       if (next.disabled) alert('Subscriptions cleaned!')
       else next.click()
     } else {
-      subscriptions.forEach(i => i.closest('.d-flex').querySelector('input').click())
+      subscriptions.forEach((i) =>
+        i.closest('.d-flex').querySelector('input').click()
+      )
       $('[form="threads-unsubscribe-form"]').click()
     }
   }

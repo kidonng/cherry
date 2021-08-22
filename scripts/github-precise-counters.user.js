@@ -30,7 +30,9 @@
 
     const forkCount = $('.social-count[href$="/network/members"]')
     if (refinedGitHub) {
-      const forkIcon = document.querySelector('.btn-with-count .octicon-repo-forked')
+      const forkIcon = document.querySelector(
+        '.btn-with-count .octicon-repo-forked'
+      )
       forkIcon.nextSibling.textContent = forkCount.textContent
       selectors.push([forkIcon.nextSibling, forkIcon.parentElement, forkCount])
     } else {
