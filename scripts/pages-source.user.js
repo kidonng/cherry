@@ -5,6 +5,8 @@
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        http*://*.github.io/*
+// @example      https://edwardtufte.github.io/
+// @example      https://edwardtufte.github.io/tufte-css/
 // ==/UserScript==
 
 ;(() => {

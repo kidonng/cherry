@@ -47,7 +47,7 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 ## [Pages Source](pages-source.user.js?raw=true)
 
-Display a GitHub logo in the lower right linked to GitHub Pages' source repository. e.g. [1](https://edwardtufte.github.io/) [2](https://edwardtufte.github.io/tufte-css/)
+Display a GitHub logo in the lower right linked to GitHub Pages' source repository.
 
 ## [Clean GitHub Subscriptions](clean-github-subscriptions.user.js?raw=true)
 
