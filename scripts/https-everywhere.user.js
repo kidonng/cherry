@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HTTPS Everywhere
-// @version      1.2.2
+// @version      1.2.3
 // @description  Redirect to HTTPS version if available
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -8,18 +8,18 @@
 // @match        https://*/*
 // @exclude      http://localhost*
 // @run-at       document-start
-// @grant        GM_getValue
-// @grant        GM_setValue
+// @grant        GM.getValue
+// @grant        GM.setValue
 // @noframes
 // ==/UserScript==
 
-;(() => {
-  const domains = GM_getValue('domains', {})
+;(async () => {
+  const domains = await GM.getValue('domains', {})
 
   if (location.protocol === 'https:') {
     if (domains[location.hostname] === false) {
       domains[location.hostname] = true
-      GM_setValue('domains', domains)
+      await GM.setValue('domains', domains)
     }
 
     return
@@ -34,7 +34,7 @@
       break
     default:
       domains[location.hostname] = false
-      GM_setValue('domains', domains)
+      await GM.setValue('domains', domains)
 
       fetch(https, { mode: 'no-cors' })
         .then(() => {
