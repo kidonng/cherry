@@ -49,6 +49,10 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 Display a GitHub logo in the bottom right corner linked to the source repository when visiting a [GitHub Pages](https://pages.github.com/) site.
 
+## [Forge Source](forge-source.user.js?raw=true)
+
+Display a SourceForge logo in the bottom right linked to the source project when visiting a [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/) site.
+
 ## [Clean GitHub Subscriptions](clean-github-subscriptions.user.js?raw=true)
 
 Automatically unsubscribe from all closed/merged issues/PR.
