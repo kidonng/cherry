@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      1.3.1
+@version      1.3.2
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -32,7 +32,8 @@
   }
 }
 
-@-moz-document domain("www.notion.so") {
+@-moz-document domain("www.notion.so"), regexp("https://.+\\.notion\\.site/.+")
+{
   .notion-code-block > div,
   span[style^='font-family:"SFMono-Regular"'] {
     font-family: monospace !important;

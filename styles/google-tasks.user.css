@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name         Google Tasks
-@version      1.0.0
+@version      1.0.1
 @description  Google Tasks on desktop
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
 ==/UserStyle== */
-@-moz-document regexp("https://tasks.google.com.*\\?fullWidth=1")
+@-moz-document regexp("https://tasks\\.google\\.com/.*\\?fullWidth=1")
 {
   .MCcOAc,
   .llhEMd {
