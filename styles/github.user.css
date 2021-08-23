@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      1.16.5
+@version      2
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -9,27 +9,27 @@
 
 @var checkbox lightHeader "Light theme header" 0
 @var checkbox repositionOctotreeBookmark "Reposition Octotree bookmark icon" 0
-@var checkbox hideHighlights "Hide \"Highlights\" on user profile" 1
-@var checkbox hideProBadge "Hide \"PRO\" badge in user hovercard" 1
-@var checkbox expandNavLink "Expand navigation link in repository file tree" 1
-@var checkbox extensions "Enable adjustments for some browser extensions" 1
-@var checkbox hidePackagesTab "Hide \"Packages\" tab on user profile" 1
+@var checkbox hideHighlights "Hide \"Achievements\" and \"Highlights\" on user profile" 1
 @var checkbox alignAuthorName "Align author name on PR sticky header (for Chinese locale users)" 0
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/")
 {
   if alignAuthorName {
-    /* https://github.com/sindresorhus/refined-github/pull/3660#discussion_r506837095 */
+    /*
+     * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
+     * https://github.com/sindresorhus/refined-github/pull/3660#discussion_r506837095
+     */
     .sticky-content .author.css-truncate-target {
       vertical-align: -4px;
     }
   }
 
-  /* Revert https://github.com/sindresorhus/refined-github/pull/3760 */
-  if hidePackagesTab {
-    .UnderlineNav-item[href$='?tab=packages']:not(.selected) {
-      display: none;
-    }
+  /*
+   * Hide "Packages" tab on user profile
+   * https://github.com/sindresorhus/refined-github/pull/4487
+   */
+  .UnderlineNav-item[href$='?tab=packages']:not(.selected) {
+    display: none;
   }
 
   if lightHeader {
@@ -38,12 +38,10 @@
       background: var(--color-bg-secondary);
     }
 
-    /* Invert .Header-link */
     .Header-link {
       color: black;
     }
 
-    /* Invert .Header-link:focus, .Header-link:hover */
     .Header-link:focus,
     .Header-link:hover {
       color: rgba(0, 0, 0, 0.7);
@@ -54,29 +52,31 @@
     }
   }
 
-  if hideProBadge {
-    .js-hovercard-content [title='Label: Pro'] {
-      display: none !important;
-    }
+  /* Hide Pro badge */
+  .js-hovercard-content [title='Label: Pro'] {
+    display: none !important;
   }
 
   if hideHighlights {
-    .user-profile-sticky-bar ~ .border-top.pt-3.mt-3.d-none.d-md-block {
+    .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
       display: none !important;
     }
   }
 
-  /* https://github.com/sindresorhus/refined-github/issues/3281#issuecomment-649480805 */
-  if expandNavLink {
-    [role='rowheader'] .js-navigation-open {
-      display: inline-block;
-      width: 100%;
-    }
+  /*
+   * Expand navigation link in repository file tree
+   * https://github.com/sindresorhus/refined-github/issues/3281#issuecomment-649480805
+   */
+  [role='rowheader'] .js-navigation-open {
+    display: inline-block;
+    width: 100%;
   }
 
   if repositionOctotreeBookmark {
-    /* Put Octotree bookmark icon in front of title */
-    /* https://github.com/ovity/octotree/issues/992 */
+    /*
+     * Put Octotree bookmark icon in front of title
+     * https://github.com/ovity/octotree/issues/992
+     */
     .gh-header-title {
       display: flex;
       align-items: baseline;
@@ -93,24 +93,26 @@
     }
   }
 
-  if extensions {
-    /* Use the same size as branch button for latest-tag-button and list-prs-for-file */
-    /* https://github.com/sindresorhus/refined-github/pull/3356 */
-    .rgh-latest-tag-button,
-    .rgh-latest-tag-button + .btn,
-    :is(.rgh-latest-tag-button, #branch-select-menu) + .dropdown .btn {
-      padding: 5px 16px;
-      font-size: 14px;
-    }
+  /*
+   * Use the same size as branch button for latest-tag-button and list-prs-for-file
+   * https://github.com/sindresorhus/refined-github/pull/3356
+   */
+  .rgh-latest-tag-button,
+  .rgh-latest-tag-button + .btn,
+  :is(.rgh-latest-tag-button, #branch-select-menu) + .dropdown .btn {
+    padding: 5px 16px;
+    font-size: 14px;
+  }
 
-    /* Unhide README header */
-    /* https://github.com/sindresorhus/refined-github/issues/4157 */
-    .repository-content #readme:not(.blob) .Box-title {
-      visibility: visible;
-    }
+  /*
+   * Unhide README header
+   * https://github.com/sindresorhus/refined-github/issues/4157
+   */
+  .repository-content #readme:not(.blob) .Box-title {
+    visibility: visible;
+  }
 
-    .repository-content #readme:not(.blob) .Box-header {
-      margin-bottom: 0;
-    }
+  .repository-content #readme:not(.blob) .Box-header {
+    margin-bottom: 0;
   }
 }
