@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HTTPS Everywhere
-// @version      1.2.3
+// @version      1.2.4
 // @description  Redirect to HTTPS version if available
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -27,19 +27,17 @@
 
   const https = location.href.replace('http', 'https')
 
-  switch (domains[location.hostname]) {
-    case true:
-      location.replace(https)
-    case false:
-      break
-    default:
-      domains[location.hostname] = false
-      await GM.setValue('domains', domains)
-
-      fetch(https, { mode: 'no-cors' })
-        .then(() => {
-          location.replace(https)
-        })
-        .catch(() => {})
+  if (location.hostname in domains) {
+    if (domains[location.hostname]) location.replace(https)
+    return
   }
+
+  domains[location.hostname] = false
+  await GM.setValue('domains', domains)
+
+  fetch(https, { mode: 'no-cors' })
+    .then(() => {
+      location.replace(https)
+    })
+    .catch(() => {})
 })()

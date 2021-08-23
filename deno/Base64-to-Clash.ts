@@ -11,8 +11,8 @@ export function convertSub(rawSub: string) {
     if (sub === '') return
     const url = new URL(sub)
 
-    switch (url.protocol) {
-      case 'vmess:':
+    ;({
+      'vmess:'() {
         try {
           const decodedData = JSON.parse(
             new TextDecoder().decode(decode(url.hostname))
@@ -33,8 +33,8 @@ export function convertSub(rawSub: string) {
             proxy['ws-headers'] = { Host: decodedData.host }
           proxies.push(proxy)
         } catch {}
-        break
-      case 'trojan:':
+      },
+      'trojan:'() {
         proxies.push({
           name: `${decodeURIComponent(url.hash.slice(1))} (Trojan)`,
           type: 'trojan',
@@ -42,8 +42,8 @@ export function convertSub(rawSub: string) {
           port: Number(url.port),
           password: url.username,
         })
-        break
-    }
+      },
+    }[url.protocol]())
   }
 
   return {
