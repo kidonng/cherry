@@ -23,8 +23,10 @@ Typeface optimizations for various sites.
 - [Bilibili](bilibili.user.css?raw=true)
 - [Netlify](netlify.user.css?raw=true)
 - [OneDrive Business](onedrive-business.user.css?raw=true)
-- [Tieba](tieba.user.css?raw=true)
+- [Reddit](reddit.user.css?raw=true)
 - [Stackblitz](stackblitz.user.css?raw=true)
+- [Tieba](tieba.user.css?raw=true)
+- [Twitter](twitter.user.css?raw=true)
 - [Vercel](vercel.user.css?raw=true)
 - [Zhihu](zhihu.user.css?raw=true)
 

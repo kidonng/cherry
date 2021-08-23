@@ -1,0 +1,20 @@
+/* ==UserStyle==
+@name         Twitter
+@version      1
+@description  Hide Twitter annoyances
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+
+@-moz-document domain("twitter.com") {
+  /* New to Twitter? */
+  .css-1dbjc4n.r-1h3ijdo + .css-1dbjc4n.r-kemksi.r-1kqtdi0.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,
+  /* You might like & Trends for you */
+  .css-1dbjc4n.r-1ysxnx4.r-k0dy70.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,
+  [aria-label="Footer"],
+  /* Register banner */
+  .r-zchlnj.r-1xcajam.r-12vffkv.r-1d2f490.r-1p0dtai.r-aqfbo4.css-1dbjc4n {
+    display: none !important;
+  }
+}

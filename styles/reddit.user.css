@@ -1,0 +1,15 @@
+/* ==UserStyle==
+@name         Reddit
+@version      1
+@description  Hide Reddit annoyances
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+
+@-moz-document domain("www.reddit.com") {
+  /* More posts from the community */
+  ._2l7c_Oz0UVsamALvPrlznq {
+    display: none !important;
+  }
+}
