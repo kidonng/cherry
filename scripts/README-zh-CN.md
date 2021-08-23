@@ -53,6 +53,10 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 访问 [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/) 站点时，在右下角显示一个链接到原始项目的 SourceForge logo。
 
+## [Camo 侦探](camo-detective.user.js?raw=true)
+
+替换 GitHub 上的 `camo.githubusercontent.com` 图片链接为图片的 `[data-canonical-src]` 属性。
+
 ## [清理 GitHub 消息订阅](clean-github-subscriptions.user.js?raw=true)
 
 自动取消所有已关闭/合并的 issue/PR 的消息订阅。

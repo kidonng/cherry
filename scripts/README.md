@@ -53,6 +53,10 @@ Display a GitHub logo in the bottom right corner linked to the source repository
 
 Display a SourceForge logo in the bottom right linked to the source project when visiting a [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/) site.
 
+## [Camo Detective](camo-detective.user.js?raw=true)
+
+Replace `camo.githubusercontent.com` image links on GitHub with image's `[data-canonical-src]` attribute.
+
 ## [Clean GitHub Subscriptions](clean-github-subscriptions.user.js?raw=true)
 
 Automatically unsubscribe from all closed/merged issues/PR.
