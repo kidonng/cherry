@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Zhihu
-@version      1.0.0
+@version      2
 @description  Hide Zhihu annoyances
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -8,16 +8,18 @@
 ==/UserStyle== */
 
 @-moz-document domain("www.zhihu.com") {
-  .AppHeader-userInfo,
   .QuestionButtonGroup,
   .QuestionHeaderActions > .Button:first-child,
-  .QuestionHeaderActions > .Popover:last-child,
   .VoteButton--down,
   .ContentItem-actions > .ContentItem-action:nth-child(4),
   .ContentItem-actions > .ContentItem-action:nth-child(5),
   .CommentItemV2-hoverBtn,
   .CommentsV2-footer,
-  .Question-sideColumn,
+  .AppBanner,
+  .AnswerInfo-favlists,
+  .Footer,
+  .Question-mainColumnLogin,
+  [data-za-detail-view-path-module='RelatedQuestions'],
   .VotableTopicCard {
     display: none !important;
   }
