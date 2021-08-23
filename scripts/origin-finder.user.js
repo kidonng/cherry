@@ -1,77 +1,118 @@
 // ==UserScript==
 // @name         Origin Finder
-// @version      1.1.1
+// @version      2
 // @description  Redirect to resources' origin version
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @match        https://img.moegirl.org/*
+// @match        https://*.m.wikipedia.org/*
+// @match        https://img.moegirl.org.cn/*
+// @match        https://mzh.moegirl.org.cn/*
 // @match        https://dynasty-scans.com/*
 // @match        https://www2.zhihu.com/*
-// @match        http*://tieba.baidu.com/*
-// @match        http*://wapp.baidu.com/*
+// @match        http*://c.tieba.baidu.com/*
 // @match        http*://dq.tieba.com/*
 // @match        http*://jump2.bdimg.com/*
-// @match        http*://c.tieba.baidu.com/*
-// @match        http*://wefan.baidu.com/*
+// @match        http*://tieba.baidu.com/*
 // @match        http*://tiebac.baidu.com/*
-// @match        https://mzh.moegirl.org.cn/*
+// @match        http*://wapp.baidu.com/*
+// @match        http*://wefan.baidu.com/*
 // @run-at       document-start
 // ==/UserScript==
 
 ;(async () => {
   'use strict'
 
-  const { hostname, pathname, href, search } = location
+  const url = new URL(location.href)
+  const { hostname, pathname, searchParams } = url
 
-  switch (hostname) {
-    /* Moegirlpedia */
-    case 'img.moegirl.org':
-      if (pathname.endsWith('128.png'))
-        location.pathname = pathname.replace('128', 'original')
-      break
-    /* Dynasty Scans */
-    case 'dynasty-scans.com':
-      const re = /(tag_contents_covers\/(\d{3}\/){3})(medium|thumb)/
-      if (re.test(pathname)) {
-        const url = pathname.replace(re, '$1original')
-        const res = await fetch(url, { method: 'HEAD' })
-        if (res.status === 200) location.pathname = url
-      }
-      break
-    /* Zhihu */
-    case 'www2.zhihu.com':
-      location.hostname = 'www.zhihu.com'
-      break
-    /* Tieba */
-    case 'tieba.baidu.com':
-      if (pathname.startsWith('/mo')) {
-        const params = new URLSearchParams(search.substring(1))
-        const prefix = 'https://tieba.baidu.com/'
-        if (params.get('word'))
-          location.href = `${prefix}f?kw=${params.get('word')}`
-        else if (params.get('kz'))
-          location.href = `${prefix}p/${params.get('kz')}?pn=${
-            Math.ceil(params.get('pn') / 30) + 1
-          }`
-      } else PageData.user.is_login = true
-      break
-    case 'dq.tieba.com':
-    case 'jump2.bdimg.com':
-    case 'c.tieba.baidu.com':
-    case 'wefan.baidu.com':
-    case 'tiebac.baidu.com':
-      location.host = 'tieba.baidu.com'
-      break
-    case 'wapp.baidu.com':
-      if (href.includes('/mo/q/m'))
-        location.href = href.replace(
-          'wapp.baidu.com/mo/q/m',
-          'tieba.baidu.com/f'
-        )
-      break
-    /* Moegirlpedia */
-    case 'mzh.moegirl.org.cn':
-      location.hostname = 'zh.moegirl.org.cn'
-      break
+  function tieba() {
+    if (window.PageData?.user) window.PageData.user.is_login = true
+
+    return {
+      hostname: 'tieba.baidu.com',
+      pathname: pathname.replace(/.*\/m/, '/f'),
+    }
   }
+
+  const redirect = {
+    [hostname]() {
+      /*
+       * Wikipedia - mobile to desktop
+       * Example: https://zh.m.wikipedia.org/wiki/Wikipedia:首页
+       */
+      if (
+        hostname.endsWith('.m.wikipedia.org') &&
+        !navigator.userAgentData.mobile
+      )
+        return {
+          hostname: hostname.replace('.m.wikipedia.org', '.wikipedia.org'),
+        }
+    },
+    /*
+     * Moegirlpedia - original size avatar
+     * Example: https://img.moegirl.org.cn/common/avatars/1/128.png
+     */
+    'img.moegirl.org.cn': () => ({
+      pathname: pathname.replace(
+        /(\/common\/avatars\/\d+\/)128\.png/,
+        '$1original.png'
+      ),
+    }),
+    /*
+     * Moegirlpedia - mobile to desktop
+     * Example: https://mzh.moegirl.org.cn/Mainpage
+     * Example: https://mzh.moegirl.org.cn/index.php?title=Mainpage&mobileaction=toggle_view_mobile
+     */
+    'mzh.moegirl.org.cn': () =>
+      !navigator.userAgentData.mobile &&
+      !searchParams.has('mobileaction') && { hostname: 'zh.moegirl.org.cn' },
+    /*
+     * Dynasty Scans
+     * Example: https://dynasty-scans.com/system/tag_contents_covers/000/004/136/medium/i166035.jpg (from https://dynasty-scans.com/series/4_koma_c)
+     * Example: https://dynasty-scans.com/system/tag_contents_covers/000/008/619/thumb/00%20Volume%20cover.jpg (from https://dynasty-scans.com/series/1_x)
+     */
+    'dynasty-scans.com'() {
+      const re = /(tag_contents_covers\/(\d{3}\/){3})(medium|thumb)/
+      const match = pathname.match(re)
+      if (match) {
+        const original = pathname.replace(re, '$1original')
+        fetch(original, { method: 'HEAD' })
+          .then(({ ok }) => {
+            if (ok) {
+              url.pathname = original
+              location.assign(url.href)
+            } else if (match[3] === 'thumb') {
+              url.pathname = pathname.replace(re, '$1medium')
+              location.assign(url.href)
+            }
+          })
+          .catch(() => {})
+      }
+    },
+    /*
+     * Zhihu
+     * Example: https://www2.zhihu.com/question/19581624
+     */
+    'www2.zhihu.com': () => ({ hostname: 'www.zhihu.com' }),
+    /*
+     * Tieba
+     * Example: https://wapp.baidu.com/mo/q/m?kw=百度
+     * Example: https://wapp.baidu.com/m?kw=百度
+     * Example: https://wapp.baidu.com/p/7320885912
+     */
+    ...Object.fromEntries(
+      [
+        'c.tieba.baidu.com',
+        'dq.tieba.com',
+        'jump2.bdimg.com',
+        'tieba.baidu.com',
+        'tiebac.baidu.com',
+        'wapp.baidu.com',
+        'wefan.baidu.com',
+      ].map((domain) => [domain, tieba])
+    ),
+  }[hostname]()
+
+  Object.assign(url, redirect)
+  if (location.href !== url.href) location.assign(url.href)
 })()
