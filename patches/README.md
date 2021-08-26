@@ -10,6 +10,6 @@ Apply patches with `patch -p0 <path/to/patch` or `git apply path/to/patch`.
 
 - [Add proxy and SSL config](pinry-add-proxy-and-ssl-config.patch)
 
-## [Super_preloaderPlus_one_New](https://greasyfork.org/en/scripts/33522-super-preloaderplus-one-new)
+## [Super-preloader](https://machsix.github.io/Super-preloader/)
 
 - [Fix preloading on `exhentai.org`](Super_preloaderPlus_one_New.patch)
