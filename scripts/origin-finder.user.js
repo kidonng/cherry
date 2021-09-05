@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Origin Finder
-// @version      2
+// @version      3
 // @description  Redirect to resources' origin version
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -16,6 +16,7 @@
 // @match        http*://tiebac.baidu.com/*
 // @match        http*://wapp.baidu.com/*
 // @match        http*://wefan.baidu.com/*
+// @match        https://*.github.com/*
 // @run-at       document-start
 // ==/UserScript==
 
@@ -36,6 +37,17 @@
 
   const redirect = {
     [hostname]() {
+      /*
+       * GitHub - redirect github.com to github.io
+       * Example: https://tingletech.github.com/moon-phase/
+       */
+      if (
+        hostname.endsWith('.github.com') &&
+        document.querySelector(
+          'a[href="https://github.blog/changelog/2021-01-29-github-pages-will-stop-redirecting-pages-sites-from-github-com-after-april-15-2021/"]'
+        )
+      )
+        return { hostname: hostname.replace('.github.com', '.github.io') }
       /*
        * Wikipedia - mobile to desktop
        * Example: https://zh.m.wikipedia.org/wiki/Wikipedia:首页
