@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      3
+@version      4
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -17,7 +17,8 @@
 {
   if hidePublicBadge {
     [itemprop='name'] + .Label,
-    .public [itemprop^='name'] + .Label {
+    .public [itemprop^='name'] + .Label,
+    .pinned-item-list-item-content .Label {
       display: none;
     }
   }
