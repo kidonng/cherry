@@ -1,20 +1,28 @@
 /* ==UserStyle==
 @name         GitHub
-@version      2
+@version      3
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
 @preprocessor stylus
 
+@var checkbox hidePublicBadge "Hide \"Public\" badge after repository name" 1
 @var checkbox lightHeader "Light theme header" 0
 @var checkbox repositionOctotreeBookmark "Reposition Octotree bookmark icon" 0
-@var checkbox hideHighlights "Hide \"Achievements\" and \"Highlights\" on user profile" 1
-@var checkbox alignAuthorName "Align author name on PR sticky header (for Chinese locale users)" 0
+@var checkbox hideProfileHighlights "Hide \"Achievements\" and \"Highlights\" on user profile" 1
+@var checkbox alignPRAuthorName "Align author name on PR sticky header (for Chinese locale users)" 0
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/")
 {
-  if alignAuthorName {
+  if hidePublicBadge {
+    [itemprop='name'] + .Label,
+    .public [itemprop^='name'] + .Label {
+      display: none;
+    }
+  }
+
+  if alignPRAuthorName {
     /*
      * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
      * https://github.com/sindresorhus/refined-github/pull/3660#discussion_r506837095
@@ -57,7 +65,7 @@
     display: none !important;
   }
 
-  if hideHighlights {
+  if hideProfileHighlights {
     .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
       display: none !important;
     }
