@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name         GitHub
-@version      5
+@version      6
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
 @preprocessor stylus
 
-@var checkbox hidePublicBadge "Hide \"Public\" badge after repository name" 1
+@var checkbox hidePublicBadge "Hide \"Public\" badge after repository name" 0
 @var checkbox lightHeader "Light theme header" 0
 @var checkbox repositionOctotreeBookmark "Reposition Octotree bookmark icon" 0
 @var checkbox hideProfileHighlights "Hide \"Achievements\" and \"Highlights\" on user profile" 1
@@ -16,12 +16,14 @@
 @-moz-document url-prefix("https://github.com/")
 {
   if hidePublicBadge {
+    /* https://github.com/sindresorhus/refined-github/issues/4767#issuecomment-915449216 */
     [itemprop='name'] + .Label,
     .public [itemprop^='name'] + .Label,
-    .pinned-item-list-item-content .Label {
+    .pinned-item-list-item-content .Label,
+    .Popover .f5 + .Label {
       display: none;
     }
-    
+
     .rgh-ci-link .Label + .commit-build-statuses {
       margin-left: 0;
     }
