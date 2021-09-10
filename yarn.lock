@@ -279,6 +279,7 @@ __metadata:
     element-ready: ^4.1.1
     rollup: ^2.23.1
     rollup-plugin-terser: ^7.0.2
+    selector-observer: ^2.1.6
   languageName: unknown
   linkType: soft
 
@@ -1119,6 +1120,22 @@ fsevents@~2.3.2:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
+  languageName: node
+  linkType: hard
+
+"selector-observer@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "selector-observer@npm:2.1.6"
+  dependencies:
+    selector-set: ^1.1
+  checksum: 182ef15c6541639b0962ff99d5b33c6ca8e0c89bcbfbd0c3edd88b144a646ea11718939b08718ed6c3018ab757f79d8e465cf94c23d8eadbb41e48341bf08574
+  languageName: node
+  linkType: hard
+
+"selector-set@npm:^1.1":
+  version: 1.1.5
+  resolution: "selector-set@npm:1.1.5"
+  checksum: 025d3f8b98a6a43730ef39a00e2f3f5f478eb75fd783667e8ddd1066c6fd24c510c03bc104c4b15180ba037f8ef300918b929eb3a207f61b6592a75234fd6097
   languageName: node
   linkType: hard
 

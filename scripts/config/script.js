@@ -14,22 +14,27 @@ const plugins = [
   }),
 ]
 const inputs = [
-  'scripts/reposition-octotree-bookmark-icon.user.js',
-  'scripts/github-theme-switch.user.js',
+  'github-hide-public-badge',
+  'github-theme-switch',
+  'reposition-octotree-bookmark-icon',
 ]
 
-export default inputs.map((input) => ({
-  input,
-  output: {
-    banner() {
-      const file = readFileSync(input, 'utf8')
-      const header = file.substring(
-        0,
-        file.indexOf(delimiter) + delimiter.length
-      )
-      return header
+export default inputs.map((input) => {
+  const full = `scripts/${input}.user.js`
+
+  return {
+    input: full,
+    output: {
+      banner() {
+        const file = readFileSync(full, 'utf8')
+        const header = file.substring(
+          0,
+          file.indexOf(delimiter) + delimiter.length
+        )
+        return header
+      },
+      dir: 'scripts/generated',
     },
-    dir: 'scripts/generated',
-  },
-  plugins,
-}))
+    plugins,
+  }
+})

@@ -45,6 +45,12 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 **注** 可以在脚本中[设置超时和重连时间](ncu-net.user.js#L14-L20)。
 
+## [GitHub 隐藏 public 标签](generated/github-hide-public-badge.user.js?raw=true)
+
+隐藏仓库的 "Public" 标签或移除 "Public" 前缀。
+
+![截图](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
+
 ## [Pages 源链接](pages-source.user.js?raw=true)
 
 访问 [GitHub Pages](https://pages.github.com/) 站点时，在右下角显示一个链接到原始仓库的 GitHub logo。

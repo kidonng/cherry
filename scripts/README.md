@@ -45,6 +45,12 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 **NOTE** You can [configure timeout and retry interval](ncu-net.user.js#L14-L20) in the script.
 
+## [GitHub hide public badge](generated/github-hide-public-badge.user.js?raw=true)
+
+Hides "Public" repository badge or removes "Public" prefix.
+
+![Screenshot](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
+
 ## [Pages Source](pages-source.user.js?raw=true)
 
 Display a GitHub logo in the bottom right corner linked to the source repository when visiting a [GitHub Pages](https://pages.github.com/) site.

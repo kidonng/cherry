@@ -7,10 +7,10 @@ const bookmarklet = () => ({
 })
 
 const plugins = [nodeResolve(), commonjs(), terser(), bookmarklet()]
-const inputs = ['scripts/github-theme-switch.user.js']
+const inputs = ['github-theme-switch']
 
 export default inputs.map((input) => ({
-  input,
+  input: `scripts/${input}.user.js`,
   output: {
     format: 'iife',
     dir: 'scripts/generated',
