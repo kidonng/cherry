@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      1.3.2
+@version      1
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -19,16 +19,6 @@
   .blob-code-inner,
   .blob-num {
     font-size: 13px !important;
-  }
-
-  /* Bold function */
-  .pl-en {
-    font-weight: bold;
-  }
-
-  /* Italic comment */
-  .pl-c {
-    font-style: italic;
   }
 }
 
