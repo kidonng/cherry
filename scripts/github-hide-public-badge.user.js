@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub hide public badge
-// @version      3
+// @version      4
 // @description  Hides "Public" repository badge or removes "Public" prefix
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -26,7 +26,7 @@ document.head.insertAdjacentHTML(
 
 observe('.Label.Label--secondary', {
   add(badge) {
-    const newText = badge.textContent.replace(/^Public ?/, '')
+    const newText = badge.textContent.trim().replace(/^Public ?/, '')
 
     if (newText === '') {
       badge.hidden = true
