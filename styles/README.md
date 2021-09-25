@@ -18,6 +18,10 @@ Style optimizations for GitHub. Pairs well with [Refined GitHub](https://github.
 
 Typeface optimizations for various sites.
 
+### [Print](print.user.css?raw=true)
+
+Print style optimizations for various sites.
+
 ### Hide annoyances
 
 - [Bilibili](bilibili.user.css?raw=true)
