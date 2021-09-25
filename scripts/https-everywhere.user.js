@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HTTPS Everywhere
-// @version      1.2.5
+// @version      2
 // @description  Redirect to HTTPS version if available
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -16,6 +16,7 @@
 ;(async () => {
   // Exclude IPv4 hosts
   if (location.hostname.match(/^(\d+\.){3}\d+$/)) return
+  if (location.hostname.endsWith('.github.io')) location.protocol = 'https:'
 
   const domains = await GM.getValue('domains', {})
 
@@ -28,19 +29,17 @@
     return
   }
 
-  const https = location.href.replace('http', 'https')
-
   if (location.hostname in domains) {
-    if (domains[location.hostname]) location.replace(https)
+    if (domains[location.hostname]) location.protocol = 'https:'
     return
   }
 
   domains[location.hostname] = false
   await GM.setValue('domains', domains)
 
-  fetch(https, { mode: 'no-cors' })
+  fetch(location.href.replace('http', 'https'), { mode: 'no-cors' })
     .then(() => {
-      location.replace(https)
+      location.protocol = 'https:'
     })
     .catch(() => {})
 })()
