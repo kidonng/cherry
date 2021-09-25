@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      7
+@version      8
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -90,6 +90,15 @@
   /* Remove avatar border */
   .avatar {
      box-shadow: none;
+  }
+
+  /*
+   * Hide following items below new comment box:
+   * - "Remember, contributions to this repository should follow its contributing guidelines and code of conduct."
+   * - "Show your support for <user> by sponsoring them."
+   */
+  #issuecomment-new .timeline-comment--caret ~ div {
+    display: none !important;
   }
 
   if repositionOctotreeBookmark {
