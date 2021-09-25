@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      6
+@version      7
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -87,6 +87,11 @@
     width: 100%;
   }
 
+  /* Remove avatar border */
+  .avatar {
+     box-shadow: none;
+  }
+
   if repositionOctotreeBookmark {
     /*
      * Put Octotree bookmark icon in front of title
@@ -129,5 +134,18 @@
 
   .repository-content #readme:not(.blob) .Box-header {
     margin-bottom: 0;
+  }
+
+  /*
+   * Hide "Copy" button on files
+   * https://github.com/sindresorhus/refined-github/issues/4802#issuecomment-924081058
+   */
+  .rgh-copy-file {
+    display: none;
+  }
+
+  .rgh-copy-file + .btn {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
   }
 }
