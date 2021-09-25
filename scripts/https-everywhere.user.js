@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HTTPS Everywhere
-// @version      1.2.4
+// @version      1.2.5
 // @description  Redirect to HTTPS version if available
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -14,6 +14,9 @@
 // ==/UserScript==
 
 ;(async () => {
+  // Exclude IPv4 hosts
+  if (location.hostname.match(/^(\d+\.){3}\d+$/)) return
+
   const domains = await GM.getValue('domains', {})
 
   if (location.protocol === 'https:') {
