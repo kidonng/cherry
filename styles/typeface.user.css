@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      1
+@version      2
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -11,6 +11,7 @@
   pre, /* e.g. editor, commit description */
   code, /* e.g. Markdown code */
   kbd,
+  .rgh-monospace-textareas :is(#merge_title_field, #commit-summary-input, textarea), /* https://github.com/sindresorhus/refined-github/blob/37fa4677f1ecf26d7176c8d9d43f8a4db6d5d902/source/features/monospace-textareas.css#L8-L10 */
   .blob-code-inner {
     font-family: monospace, JetBrainsMono Nerd Font !important;
   }
