@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      8
+@version      9
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -153,7 +153,7 @@
     display: none;
   }
 
-  .rgh-copy-file + .btn {
+  .rgh-copy-file:first-child + .btn {
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
   }
