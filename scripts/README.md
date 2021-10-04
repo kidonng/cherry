@@ -51,7 +51,7 @@ Hides "Public" repository badge or removes "Public" prefix.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
-## [Pages Source](pages-source.user.js?raw=true)
+## [Pages Source](generated/pages-source.user.js?raw=true)
 
 Display a GitHub logo in the bottom right corner linked to the source repository when visiting a [GitHub Pages](https://pages.github.com/) site.
 
@@ -91,7 +91,7 @@ Make profile README's header link to the README instead of the repository.
 
 Add theme preferences switch to GitHub's profile dropdown.
 
-Also available as a [bookmarklet](generated/github-theme-switch.user-bookmarklet.js?raw=true).
+Also available as a [bookmarklet](generated/github-theme-switch.bookmarklet.js?raw=true).
 
 ## [GitHub Star history](github-star-history.user.js?raw=true)
 

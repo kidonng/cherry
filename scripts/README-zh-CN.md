@@ -51,7 +51,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ![截图](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
-## [Pages 源链接](pages-source.user.js?raw=true)
+## [Pages 源链接](generated/pages-source.user.js?raw=true)
 
 访问 [GitHub Pages](https://pages.github.com/) 站点时，在右下角显示一个链接到原始仓库的 GitHub logo。
 
@@ -91,7 +91,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 在 GitHub 的用户下拉菜单中添加主题配置切换。
 
-另提供[书签](generated/github-theme-switch.user-bookmarklet.js?raw=true)版本。
+另提供[书签](generated/github-theme-switch.bookmarklet.js?raw=true)版本。
 
 ## [GitHub Star 历史](github-star-history.user.js?raw=true)
 
