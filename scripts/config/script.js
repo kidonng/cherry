@@ -14,6 +14,7 @@ const root = 'scripts'
 for (const script of [
   'github-hide-public-badge.user.js',
   'github-theme-switch.user.js',
+  'pages-source.user.tsx',
   'reposition-octotree-bookmark-icon.user.js',
 ]) {
   const path = `${root}/${script}`
