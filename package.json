@@ -2,8 +2,8 @@
   "name": "cherry",
   "private": true,
   "scripts": {
-    "build-script": "rollup -c scripts/config/script.js",
-    "build-bookmarklet": "rollup -c scripts/config/bookmarklet.js"
+    "build-script": "node scripts/config/script.js",
+    "build-bookmarklet": "node scripts/config/bookmarklet.js"
   },
   "packageManager": "yarn@3.0.2",
   "dependencies": {
@@ -12,9 +12,7 @@
     "selector-observer": "^2.1.6"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "rollup": "^2.23.1",
-    "rollup-plugin-terser": "^7.0.2"
+    "@yarnpkg/esbuild-plugin-pnp": "^2.0.0-rc.1",
+    "esbuild": "^0.13.3"
   }
 }

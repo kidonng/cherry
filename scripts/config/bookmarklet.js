@@ -1,20 +1,28 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
+const { basename, extname } = require('path')
+const { writeFileSync } = require('fs')
+const esbuild = require('esbuild')
+const { pnpPlugin } = require('@yarnpkg/esbuild-plugin-pnp')
 
-const bookmarklet = () => ({
-  renderChunk: (code) => `javascript:${code}`,
-})
+const plugins = [pnpPlugin()]
+const root = 'scripts'
+for (const script of ['github-theme-switch.user.js']) {
+  const path = `${root}/${script}`
 
-const plugins = [nodeResolve(), commonjs(), terser(), bookmarklet()]
-const inputs = ['github-theme-switch']
-
-export default inputs.map((input) => ({
-  input: `scripts/${input}.user.js`,
-  output: {
-    format: 'iife',
-    dir: 'scripts/generated',
-    entryFileNames: '[name]-bookmarklet.js',
-  },
-  plugins,
-}))
+  esbuild
+    .build({
+      entryPoints: [path],
+      outfile: `${root}/generated/${basename(
+        path,
+        extname(path)
+      )}.bookmarklet.js`,
+      bundle: true,
+      minify: true,
+      write: false,
+      plugins,
+    })
+    .then((result) => {
+      for (const { path, contents } of result.outputFiles) {
+        writeFileSync(path, 'javascript:' + new TextDecoder().decode(contents))
+      }
+    })
+}
