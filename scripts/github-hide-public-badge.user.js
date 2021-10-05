@@ -7,7 +7,7 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-// Ported from https://github.com/sindresorhus/refined-github/pull/4770
+// Ported from https://github.com/refined-github/refined-github/pull/4770
 
 import { observe } from 'selector-observer'
 

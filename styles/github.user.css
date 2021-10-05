@@ -16,7 +16,7 @@
 @-moz-document url-prefix("https://github.com/")
 {
   if hidePublicBadge {
-    /* https://github.com/sindresorhus/refined-github/issues/4767#issuecomment-915449216 */
+    /* https://github.com/refined-github/refined-github/issues/4767#issuecomment-915449216 */
     [itemprop='name'] + .Label,
     .public [itemprop^='name'] + .Label,
     .pinned-item-list-item-content .Label,
@@ -32,7 +32,7 @@
   if alignPRAuthorName {
     /*
      * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
-     * https://github.com/sindresorhus/refined-github/pull/3660#discussion_r506837095
+     * https://github.com/refined-github/refined-github/pull/3660#discussion_r506837095
      */
     .sticky-content .author.css-truncate-target {
       vertical-align: -4px;
@@ -41,7 +41,7 @@
 
   /*
    * Hide "Packages" tab on user profile
-   * https://github.com/sindresorhus/refined-github/pull/4487
+   * https://github.com/refined-github/refined-github/pull/4487
    */
   .UnderlineNav-item[href$='?tab=packages']:not(.selected) {
     display: none;
@@ -80,7 +80,7 @@
 
   /*
    * Expand navigation link in repository file tree
-   * https://github.com/sindresorhus/refined-github/issues/3281#issuecomment-649480805
+   * https://github.com/refined-github/refined-github/issues/3281#issuecomment-649480805
    */
   [role='rowheader'] .js-navigation-open {
     display: inline-block;
@@ -124,7 +124,7 @@
 
   /*
    * Use the same size as branch button for latest-tag-button and list-prs-for-file
-   * https://github.com/sindresorhus/refined-github/pull/3356
+   * https://github.com/refined-github/refined-github/pull/3356
    */
   .rgh-latest-tag-button,
   .rgh-latest-tag-button + .btn,
@@ -135,7 +135,7 @@
 
   /*
    * Unhide README header
-   * https://github.com/sindresorhus/refined-github/issues/4157
+   * https://github.com/refined-github/refined-github/issues/4157
    */
   .repository-content #readme:not(.blob) .Box-title {
     visibility: visible;
@@ -147,7 +147,7 @@
 
   /*
    * Hide "Copy" button on files
-   * https://github.com/sindresorhus/refined-github/issues/4802#issuecomment-924081058
+   * https://github.com/refined-github/refined-github/issues/4802#issuecomment-924081058
    */
   .rgh-copy-file {
     display: none;

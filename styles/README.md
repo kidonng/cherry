@@ -8,7 +8,7 @@ A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstor
 
 ### [GitHub](github.user.css?raw=true)
 
-Style optimizations for GitHub. Pairs well with [Refined GitHub](https://github.com/sindresorhus/refined-github), [Octotree](https://github.com/ovity/octotree) and more.
+Style optimizations for GitHub. Pairs well with [Refined GitHub](https://github.com/refined-github/refined-github), [Octotree](https://github.com/ovity/octotree) and more.
 
 ### [Google Tasks](google-tasks.user.css?raw=true)
 

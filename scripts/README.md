@@ -79,7 +79,7 @@ Just install the script and head to [Subscriptions](https://github.com/notificat
 
 ![Screenshot](../screenshots/github-precise-counters.gif)
 
-Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](https://github.com/sindresorhus/refined-github)'s `hide-watch-and-fork-count` feature.
+Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](https://github.com/refined-github/refined-github)'s `hide-watch-and-fork-count` feature.
 
 ## [GitHub profile README link](github-profile-readme-link.user.js?raw=true)
 
