@@ -1,19 +1,15 @@
 const { basename, extname } = require('path')
 const { writeFileSync } = require('fs')
 const esbuild = require('esbuild')
-const { pnpPlugin } = require('@yarnpkg/esbuild-plugin-pnp')
+const { plugins } = require('./esbuild')
 
-const plugins = [pnpPlugin()]
-const root = 'scripts'
-for (const script of ['github-theme-switch.user.js']) {
-  const path = `${root}/${script}`
-
+for (const script of ['scripts/github-theme-switch.user.tsx']) {
   esbuild
     .build({
-      entryPoints: [path],
-      outfile: `${root}/generated/${basename(
-        path,
-        extname(path)
+      entryPoints: [script],
+      outfile: `scripts/generated/${basename(
+        script,
+        extname(script)
       )}.bookmarklet.js`,
       bundle: true,
       minify: true,

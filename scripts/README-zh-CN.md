@@ -87,9 +87,9 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 主题切换](generated/github-theme-switch.user.js?raw=true)
 
-![截图](https://user-images.githubusercontent.com/44045911/101625949-2a3ae280-3a57-11eb-9298-d1dde71806fc.png)
+![截图](./../screenshots/github-theme-switch.png)
 
-在 GitHub 的用户下拉菜单中添加主题配置切换。
+向 GitHub 顶栏添加主题设置下拉菜单。
 
 另提供[书签](generated/github-theme-switch.bookmarklet.js?raw=true)版本。
 

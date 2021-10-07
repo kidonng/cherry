@@ -87,9 +87,9 @@ Make profile README's header link to the README instead of the repository.
 
 ## [GitHub theme switch](generated/github-theme-switch.user.js?raw=true)
 
-![Screenshot](https://user-images.githubusercontent.com/44045911/101625949-2a3ae280-3a57-11eb-9298-d1dde71806fc.png)
+![Screenshot](./../screenshots/github-theme-switch.png)
 
-Add theme preferences switch to GitHub's profile dropdown.
+Add theme preferences dropdown to GitHub header.
 
 Also available as a [bookmarklet](generated/github-theme-switch.bookmarklet.js?raw=true).
 
