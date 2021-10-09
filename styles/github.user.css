@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      9
+@version      10
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -131,30 +131,5 @@
   :is(.rgh-latest-tag-button, #branch-select-menu) + .dropdown .btn {
     padding: 5px 16px;
     font-size: 14px;
-  }
-
-  /*
-   * Unhide README header
-   * https://github.com/refined-github/refined-github/issues/4157
-   */
-  .repository-content #readme:not(.blob) .Box-title {
-    visibility: visible;
-  }
-
-  .repository-content #readme:not(.blob) .Box-header {
-    margin-bottom: 0;
-  }
-
-  /*
-   * Hide "Copy" button on files
-   * https://github.com/refined-github/refined-github/issues/4802#issuecomment-924081058
-   */
-  .rgh-copy-file {
-    display: none;
-  }
-
-  .rgh-copy-file:first-child + .btn {
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 6px;
   }
 }
