@@ -28,6 +28,7 @@ function build(scripts, options = {}) {
 const config = [
   [
     [
+      'scripts/github-conversation-list-avatars.user.tsx',
       'scripts/github-hide-public-badge.user.js',
       'scripts/pages-source.user.tsx',
       'scripts/reposition-octotree-bookmark-icon.user.js',

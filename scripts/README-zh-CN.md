@@ -51,6 +51,12 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ![截图](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
+## [GitHub 对话列表头像](generated/github-conversation-list-avatars.user.js?raw=true)
+
+向 GitHub 的对话列表添加头像。
+
+![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
+
 ## [Pages 源链接](generated/pages-source.user.js?raw=true)
 
 访问 [GitHub Pages](https://pages.github.com/) 站点时，在右下角显示一个链接到原始仓库的 GitHub logo。

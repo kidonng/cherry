@@ -51,6 +51,12 @@ Hides "Public" repository badge or removes "Public" prefix.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
+## [GitHub conversation list avatars](generated/github-conversation-list-avatars.user.js?raw=true)
+
+Add avatars in GitHub's conversation list.
+
+![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
+
 ## [Pages Source](generated/pages-source.user.js?raw=true)
 
 Display a GitHub logo in the bottom right corner linked to the source repository when visiting a [GitHub Pages](https://pages.github.com/) site.
