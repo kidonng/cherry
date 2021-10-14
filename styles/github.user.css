@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      12
+@version      13
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -101,6 +101,11 @@
   /* Bold username in dicussion lists (it seems to be always bold in other places) */
   :is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"] {
     font-weight: 600;
+  }
+  
+  /* Add missing spacing for file template buttons */
+  .js-template-suggestion:not(.d-none) {
+    margin-left: 8px;
   }
 
   /*
