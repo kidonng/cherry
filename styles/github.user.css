@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      13
+@version      14
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -76,15 +76,6 @@
     .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
       display: none !important;
     }
-  }
-
-  /*
-   * Expand navigation link in repository file tree
-   * https://github.com/refined-github/refined-github/issues/3281#issuecomment-649480805
-   */
-  [role='rowheader'] .js-navigation-open {
-    display: inline-block;
-    width: 100%;
   }
 
   /* Remove avatar border */
