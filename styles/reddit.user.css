@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Reddit
-@version      2
+@version      3
 @description  Hide Reddit annoyances
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -8,12 +8,15 @@
 ==/UserStyle== */
 
 @-moz-document domain("www.reddit.com") {
+  [aria-label="downvote"],
   /* Powerups */
   .YgQMt0wJgGwSzvy9w0JK8,
   /* Achievements */
   ._3NdKulBcLHFmpKDAy9Barm,
   /* Post award badges */
   ._3XoW0oYd5806XiOr24gGdb,
+  /* Post list: save, hide, report buttons */
+  [id$="-share-menu"] ~ div,
   /* Post: save, hide, report buttons */
   [id$="-overlay-share-menu"] ~ ._3U_7i38RDPV5eBv7m4M-9J,
   /* Comment: reply, report, save buttons */
