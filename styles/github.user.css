@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      14
+@version      15
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -76,27 +76,6 @@
     .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
       display: none !important;
     }
-  }
-
-  /* Remove avatar border */
-  .avatar {
-     box-shadow: none;
-  }
-  
-  /* Remove scroll bar on single line code blocks */
-  .js-clipboard-copy svg {
-    width: 15px;
-    height: 15px;
-  }
-  
-  /* Bold username in dicussion lists (it seems to be always bold in other places) */
-  :is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"] {
-    font-weight: 600;
-  }
-  
-  /* Add missing spacing for file template buttons */
-  .js-template-suggestion:not(.d-none) {
-    margin-left: 8px;
   }
 
   /*
