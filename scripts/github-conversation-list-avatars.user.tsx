@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub conversation list avatars
-// @version      1
+// @version      2
 // @description  Add avatars in GitHub's conversation list
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -13,24 +13,31 @@ import { observe } from 'selector-observer'
 const className = 'gcla-processed'
 
 observe(
-  `:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]:not(.${className})`,
-  {
-    add(el) {
-      el.classList.add(className)
+    `:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]:not(.${className})`,
+    {
+        add(el) {
+            el.classList.add(className)
 
-      const username = el.textContent
-      const size = 16
+            const username = el.textContent
+            const alt = `@${username}`
+            const src =
+                document.querySelector<HTMLImageElement>(`[alt="${alt}"]`)
+                    ?.src ||
+                `https://avatars.githubusercontent.com/${username}?size=32`
 
-      el.prepend(
-        <img
-          className="avatar-user v-align-text-bottom"
-          src={`https://avatars.githubusercontent.com/${username}?size=${
-            size * devicePixelRatio
-          }`}
-          width={size}
-        />,
-        ' '
-      )
-    },
-  }
+            el.prepend(
+                <img
+                    className="avatar avatar-user"
+                    style={{ transform: 'translateY(-1.5px)' }}
+                    src={src}
+                    width="16"
+                    height="16"
+                    alt={alt}
+                    loading="lazy"
+                    decoding="async"
+                />,
+                ' '
+            )
+        },
+    }
 )
