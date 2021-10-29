@@ -2,6 +2,10 @@
 
 Apply patches with `patch -p0 <path/to/patch` or `git apply path/to/patch`.
 
+## [anti-redirect](https://github.com/axetroy/anti-redirect)
+
+- [Remove console banner](anti-redirect.patch)
+
 ## [exa](https://github.com/ogham/exa)
 
 - [Support reading arguments from config file and environment variables](exa.patch) ([source](https://github.com/ogham/exa/pull/763))

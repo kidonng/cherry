@@ -1,12 +1,13 @@
 /* ==UserStyle==
 @name         GitHub
-@version      15
+@version      16
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
 @preprocessor stylus
 
+@var checkbox colorBender "Blue open issues/pull requests and green closed issues/merge pull requests" 0
 @var checkbox hidePublicBadge "Hide \"Public\" badge after repository name" 0
 @var checkbox lightHeader "Light theme header" 0
 @var checkbox repositionOctotreeBookmark "Reposition Octotree bookmark icon" 0
@@ -15,107 +16,128 @@
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/")
 {
-  if hidePublicBadge {
-    /* https://github.com/refined-github/refined-github/issues/4767#issuecomment-915449216 */
-    [itemprop='name'] + .Label,
-    .public [itemprop^='name'] + .Label,
-    .pinned-item-list-item-content .Label,
-    .Popover .f5 + .Label {
-      display: none;
+    if hidePublicBadge {
+        /* https://github.com/refined-github/refined-github/issues/4767#issuecomment-915449216 */
+        [itemprop='name'] + .Label,
+        .public [itemprop^='name'] + .Label,
+        .pinned-item-list-item-content .Label,
+        .Popover .f5 + .Label {
+            display: none;
+        }
+
+        .rgh-ci-link .Label + .commit-build-statuses {
+            margin-left: 0;
+        }
     }
 
-    .rgh-ci-link .Label + .commit-build-statuses {
-      margin-left: 0;
-    }
-  }
-
-  if alignPRAuthorName {
-    /*
+    if alignPRAuthorName {
+        /*
      * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
      * https://github.com/refined-github/refined-github/pull/3660#discussion_r506837095
      */
-    .sticky-content .author.css-truncate-target {
-      vertical-align: -4px;
+        .sticky-content .author.css-truncate-target {
+            vertical-align: -4px;
+        }
     }
-  }
 
-  /*
+    /*
    * Hide "Packages" tab on user profile
    * https://github.com/refined-github/refined-github/pull/4487
    */
-  .UnderlineNav-item[href$='?tab=packages']:not(.selected) {
-    display: none;
-  }
-
-  if lightHeader {
-    .Header,
-    .header-search-wrapper {
-      background: var(--color-bg-secondary);
+    .UnderlineNav-item[href$='?tab=packages']:not(.selected) {
+        display: none;
     }
 
-    .Header-link {
-      color: black;
+    if lightHeader {
+        .Header,
+        .header-search-wrapper {
+            background: var(--color-bg-secondary);
+        }
+
+        .Header-link {
+            color: black;
+        }
+
+        .Header-link:focus,
+        .Header-link:hover {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .header-search-input::placeholder {
+            color: rgba(0, 0, 0, 0.7);
+        }
     }
 
-    .Header-link:focus,
-    .Header-link:hover {
-      color: rgba(0, 0, 0, 0.7);
+    /* Hide Pro badge */
+    .js-hovercard-content [title='Label: Pro'] {
+        display: none !important;
     }
 
-    .header-search-input::placeholder {
-      color: rgba(0, 0, 0, 0.7);
+    if hideProfileHighlights {
+        .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
+            display: none !important;
+        }
     }
-  }
 
-  /* Hide Pro badge */
-  .js-hovercard-content [title='Label: Pro'] {
-    display: none !important;
-  }
-
-  if hideProfileHighlights {
-    .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
-      display: none !important;
-    }
-  }
-
-  /*
+    /*
    * Hide following items below new comment box:
    * - "Remember, contributions to this repository should follow its contributing guidelines and code of conduct."
    * - "Show your support for <user> by sponsoring them."
    */
-  #issuecomment-new .timeline-comment--caret ~ div {
-    display: none !important;
-  }
+    #issuecomment-new .timeline-comment--caret ~ div {
+        display: none !important;
+    }
 
-  if repositionOctotreeBookmark {
-    /*
+    if repositionOctotreeBookmark {
+        /*
      * Put Octotree bookmark icon in front of title
      * https://github.com/ovity/octotree/issues/992
      */
-    .gh-header-title {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
+        .gh-header-title {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .gh-header-title .js-issue-title {
+            margin-right: 7px;
+        }
+
+        .gh-header-title .octotree-btn {
+            margin-left: -22px;
+            order: -1;
+        }
     }
 
-    .gh-header-title .js-issue-title {
-      margin-right: 7px;
-    }
-
-    .gh-header-title .octotree-btn {
-      margin-left: -22px;
-      order: -1;
-    }
-  }
-
-  /*
+    /*
    * Use the same size as branch button for latest-tag-button and list-prs-for-file
    * https://github.com/refined-github/refined-github/pull/3356
    */
-  .rgh-latest-tag-button,
-  .rgh-latest-tag-button + .btn,
-  :is(.rgh-latest-tag-button, #branch-select-menu) + .dropdown .btn {
-    padding: 5px 16px;
-    font-size: 14px;
-  }
+    .rgh-latest-tag-button,
+    .rgh-latest-tag-button + .btn,
+    :is(.rgh-latest-tag-button, #branch-select-menu) + .dropdown .btn {
+        padding: 5px 16px;
+        font-size: 14px;
+    }
+
+    if colorBender {
+        .open.octicon {
+            color: var(--color-accent-emphasis);
+        }
+
+        .State--open,
+        .TimelineItem-badge.color-bg-success-inverse {
+            background-color: var(--color-accent-emphasis) !important;
+        }
+
+        .issue-closed-done .octicon-issue-closed.closed,
+        .merged.octicon {
+            color: var(--color-success-emphasis);
+        }
+
+        .State--merged,
+        .TimelineItem-badge.color-bg-done-emphasis {
+            background-color: var(--color-success-emphasis) !important;
+        }
+    }
 }
