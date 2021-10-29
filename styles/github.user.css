@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      16
+@version      17
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -126,7 +126,8 @@
         }
 
         .State--open,
-        .TimelineItem-badge.color-bg-success-inverse {
+        .TimelineItem.js-targetable-element
+            .TimelineItem-badge.color-bg-success-inverse {
             background-color: var(--color-accent-emphasis) !important;
         }
 
@@ -136,7 +137,8 @@
         }
 
         .State--merged,
-        .TimelineItem-badge.color-bg-done-emphasis {
+        .TimelineItem.js-targetable-element
+            .TimelineItem-badge.color-bg-done-emphasis {
             background-color: var(--color-success-emphasis) !important;
         }
     }
