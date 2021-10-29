@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      18
+@version      19
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -121,8 +121,10 @@
     }
 
     if colorBender {
-        .open.octicon {
-            color: var(--color-accent-emphasis);
+        .open.octicon,
+        .octicon-issue-opened[aria-label='Open issue'], /* Dashboard "Recent activity" */
+        .contribution-activity-listing :is(.octicon-issue-opened, .octicon-git-pull-request).color-text-success /* Profile timeline */ {
+            color: var(--color-accent-emphasis) !important;
         }
 
         .State--open,
@@ -132,11 +134,15 @@
 
         .issue-closed-done .octicon-issue-closed.closed,
         .merged.octicon {
-            color: var(--color-success-emphasis);
+            color: var(--color-success-emphasis) !important;
+        }
+
+        .contribution-activity-listing :is(.issue-closed-done .octicon-issue-closed.color-text-danger, .merged.octicon) /* Profile timeline */ {
+            color: var(--color-success-fg) !important;
         }
 
         .State--merged,
-        .TimelineItem.js-targetable-element .TimelineItem-badge.color-bg-done-emphasis /* Close event */ {
+        .TimelineItem:is(.js-targetable-element, .js-details-container) .TimelineItem-badge.color-bg-done-emphasis /* Close event */ {
             background-color: var(--color-success-emphasis) !important;
         }
     }
