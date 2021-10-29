@@ -12,9 +12,9 @@ A user script manager (e.g. Violentmonkey for [Chrome](https://chrome.google.com
 
 Add a screenshot button to YouTube (shortcut: <kbd>s</kbd>).
 
-- Click to save. Video title and timestamp will be used as file name
-- Use context menu to copy and more
-- Press <kbd>Esc</kbd> to cancel
+-   Click to save. Video title and timestamp will be used as file name
+-   Use context menu to copy and more
+-   Press <kbd>Esc</kbd> to cancel
 
 **NOTE** Due to implementation limits, the screenshot's color may not be the same as the video's.
 
@@ -24,11 +24,11 @@ Add a screenshot button to YouTube (shortcut: <kbd>s</kbd>).
 
 Floating YouTube mini player like Bilibili, for conveniently reading comments and more.
 
-- Drag to move
-- Known issues:
-  - Can't resize
-  - Doesn't work in Theater mode and Full screen
-  - Some controls (progress bar, volume, etc.) doesn't follow cursor. This is due to implementation limits.
+-   Drag to move
+-   Known issues:
+    -   Can't resize
+    -   Doesn't work in Theater mode and Full screen
+    -   Some controls (progress bar, volume, etc.) doesn't follow cursor. This is due to implementation limits.
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
@@ -38,10 +38,10 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 ### Features
 
-- Jump-free login
-- Remember username & password
-- Auto reconnect
-- Connection logs
+-   Jump-free login
+-   Remember username & password
+-   Auto reconnect
+-   Connection logs
 
 **NOTE** You can [configure timeout and retry interval](ncu-net.user.js#L14-L20) in the script.
 
@@ -56,6 +56,14 @@ Hides "Public" repository badge or removes "Public" prefix.
 Add avatars in GitHub's conversation list.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
+
+## [GitHub icon tweaks](generated/github-icon-tweaks.user.js?raw=true)
+
+Tweak certain GitHub icons' color and style.
+
+| Before                                                  | After                                                 |
+| ------------------------------------------------------- | ----------------------------------------------------- |
+| ![Before](../screenshots/github-icon-tweaks-before.png) | ![After](../screenshots/github-icon-tweaks-after.png) |
 
 ## [Pages Source](generated/pages-source.user.js?raw=true)
 
@@ -77,9 +85,9 @@ Just install the script and head to [Subscriptions](https://github.com/notificat
 
 **NOTE**
 
-- **There is no way for the script to figure out what thread you want to keep subscribing to, proceed with caution.** Use the "Reason" dropdown if you only want to clean selective subscriptions.
-- If the script becomes dumb and only unsubscribe one thread at a time, then manually turn to next page first.
-- If the script stops working, you may have an server error or hit a rate limit. Try again later.
+-   **There is no way for the script to figure out what thread you want to keep subscribing to, proceed with caution.** Use the "Reason" dropdown if you only want to clean selective subscriptions.
+-   If the script becomes dumb and only unsubscribe one thread at a time, then manually turn to next page first.
+-   If the script stops working, you may have an server error or hit a rate limit. Try again later.
 
 ## [GitHub Precise Counters](github-precise-counters.user.js?raw=true)
 
@@ -121,7 +129,7 @@ Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 
 ## Redirects
 
-- [Wikiwand](wikiwand.user.js?raw=true): Redirect Wikipedia to Wikiwand. Can replace Wikiwand browser extension.
-- [Origin Finder](origin-finder.user.js?raw=true): Redirect to resources' origin version, such as the original size version of images.
-- [HTTPS Everywhere](https-everywhere.user.js?raw=true): Redirect to HTTPS version if available
-- [Google Bang](google-bang.user.js?raw=true): Add support for [!Bang Search Shortcuts](https://duckduckgo.com/bang) to Google
+-   [Wikiwand](wikiwand.user.js?raw=true): Redirect Wikipedia to Wikiwand. Can replace Wikiwand browser extension.
+-   [Origin Finder](origin-finder.user.js?raw=true): Redirect to resources' origin version, such as the original size version of images.
+-   [HTTPS Everywhere](https-everywhere.user.js?raw=true): Redirect to HTTPS version if available
+-   [Google Bang](google-bang.user.js?raw=true): Add support for [!Bang Search Shortcuts](https://duckduckgo.com/bang) to Google

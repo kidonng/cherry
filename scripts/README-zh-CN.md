@@ -12,9 +12,9 @@
 
 向 YouTube 添加截图按钮（快捷键： <kbd>s</kbd>）。
 
-- 点击以保存。文件名会使用视频标题和时间戳
-- 使用右键菜单进行复制等
-- 按 <kbd>Esc</kbd> 取消
+-   点击以保存。文件名会使用视频标题和时间戳
+-   使用右键菜单进行复制等
+-   按 <kbd>Esc</kbd> 取消
 
 **注** 由于实现限制，截图的颜色可能与视频不一致。
 
@@ -24,11 +24,11 @@
 
 为 YouTube 增加类似 Bilibili 的悬浮迷你播放器，用于便捷地阅读评论等。
 
-- 拖拽以移动
-- 已知问题：
-  - 无法调整大小
-  - 无法在剧场模式和全屏下使用
-  - 部分控件（进度条、音量等） 不跟随光标。这是实现限制导致的。
+-   拖拽以移动
+-   已知问题：
+    -   无法调整大小
+    -   无法在剧场模式和全屏下使用
+    -   部分控件（进度条、音量等） 不跟随光标。这是实现限制导致的。
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
@@ -38,10 +38,10 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ### 功能
 
-- 无跳转登录
-- 记住用户名和密码
-- 自动重连
-- 连接日志
+-   无跳转登录
+-   记住用户名和密码
+-   自动重连
+-   连接日志
 
 **注** 可以在脚本中[设置超时和重连时间](ncu-net.user.js#L14-L20)。
 
@@ -56,6 +56,14 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 向 GitHub 的对话列表添加头像。
 
 ![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
+
+## [GitHub 图标调整](generated/github-icon-tweaks.user.js?raw=true)
+
+调整部分 GitHub 图标的颜色和样式。
+
+| 启用前                                                  | 启用后                                                |
+| ------------------------------------------------------- | ----------------------------------------------------- |
+| ![Before](../screenshots/github-icon-tweaks-before.png) | ![After](../screenshots/github-icon-tweaks-after.png) |
 
 ## [Pages 源链接](generated/pages-source.user.js?raw=true)
 
@@ -77,9 +85,9 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 **注意**
 
-- **脚本无法知道哪些消息订阅需要被保留，操作前请注意。** 如果只想取消某些消息订阅，使用页面上的“Reason“下拉菜单。
-- 如果脚本呆呆地每次只取消一个订阅，请手动翻页。
-- 如果脚本停止运行，可能是遇到了服务器错误或者请求过于频繁。请稍后重试。
+-   **脚本无法知道哪些消息订阅需要被保留，操作前请注意。** 如果只想取消某些消息订阅，使用页面上的“Reason“下拉菜单。
+-   如果脚本呆呆地每次只取消一个订阅，请手动翻页。
+-   如果脚本停止运行，可能是遇到了服务器错误或者请求过于频繁。请稍后重试。
 
 ## [GitHub 精确数据](github-precise-counters.user.js?raw=true)
 
@@ -121,7 +129,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## 重定向
 
-- [Wikiwand](wikiwand.user.js?raw=true)：重定向维基百科到 Wikiwand。可替代 Wikiwand 浏览器扩展
-- [Origin Finder](origin-finder.user.js?raw=true)：重定向至资源的原始版本，例如原始尺寸的图像
-- [HTTPS Everywhere](https-everywhere.user.js?raw=true)：重定向至 HTTPS 版本（如果网站支持）
-- [Google Bang](google-bang.user.js?raw=true): 为 Google 添加 [!Bang 搜索捷径](https://duckduckgo.com/bang)支持
+-   [Wikiwand](wikiwand.user.js?raw=true)：重定向维基百科到 Wikiwand。可替代 Wikiwand 浏览器扩展
+-   [Origin Finder](origin-finder.user.js?raw=true)：重定向至资源的原始版本，例如原始尺寸的图像
+-   [HTTPS Everywhere](https-everywhere.user.js?raw=true)：重定向至 HTTPS 版本（如果网站支持）
+-   [Google Bang](google-bang.user.js?raw=true): 为 Google 添加 [!Bang 搜索捷径](https://duckduckgo.com/bang)支持
