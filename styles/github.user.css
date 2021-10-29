@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      19
+@version      20
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -142,7 +142,8 @@
         }
 
         .State--merged,
-        .TimelineItem:is(.js-targetable-element, .js-details-container) .TimelineItem-badge.color-bg-done-emphasis /* Close event */ {
+        .TimelineItem:is(.js-targetable-element, .js-details-container) .TimelineItem-badge.color-bg-done-emphasis, /* Close event */
+        [data-octo-click="profile_timeline_toggle_rollup_created_issues"] .State--closed {
             background-color: var(--color-success-emphasis) !important;
         }
     }

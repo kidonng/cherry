@@ -8,7 +8,9 @@ A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstor
 
 ### [GitHub](github.user.css?raw=true)
 
-Style optimizations for GitHub. Pairs well with [Refined GitHub](https://github.com/refined-github/refined-github), [Octotree](https://github.com/ovity/octotree) and more.
+Style optimizations for GitHub and [Refined GitHub](https://github.com/refined-github/refined-github).
+
+Note: "Blue open issues/pull requests and green closed issues/merge pull requests" option requires [GitHub icon tweaks](../scripts/README.md#github-icon-tweaks).
 
 ### [Google Tasks](google-tasks.user.css?raw=true)
 
@@ -24,15 +26,15 @@ Print style optimizations for various sites.
 
 ### Hide annoyances
 
-- [Bilibili](bilibili.user.css?raw=true)
-- [Netlify](netlify.user.css?raw=true)
-- [OneDrive Business](onedrive-business.user.css?raw=true)
-- [Reddit](reddit.user.css?raw=true)
-- [Stackblitz](stackblitz.user.css?raw=true)
-- [Tieba](tieba.user.css?raw=true)
-- [Twitter](twitter.user.css?raw=true)
-- [Vercel](vercel.user.css?raw=true)
-- [Zhihu](zhihu.user.css?raw=true)
+-   [Bilibili](bilibili.user.css?raw=true)
+-   [Netlify](netlify.user.css?raw=true)
+-   [OneDrive Business](onedrive-business.user.css?raw=true)
+-   [Reddit](reddit.user.css?raw=true)
+-   [Stackblitz](stackblitz.user.css?raw=true)
+-   [Tieba](tieba.user.css?raw=true)
+-   [Twitter](twitter.user.css?raw=true)
+-   [Vercel](vercel.user.css?raw=true)
+-   [Zhihu](zhihu.user.css?raw=true)
 
 ## Ported
 
@@ -44,8 +46,8 @@ Print style optimizations for various sites.
 
 #### Source
 
-- [Remastered Moegirl Paper - Sidebar Edition 萌百重设更新](https://userstyles.org/styles/163374/remastered-moegirl-paper-sidebar-edition)
-- [Anti-Moe Pedia](https://userstyles.org/styles/145419/anti-moe-pedia)
+-   [Remastered Moegirl Paper - Sidebar Edition 萌百重设更新](https://userstyles.org/styles/163374/remastered-moegirl-paper-sidebar-edition)
+-   [Anti-Moe Pedia](https://userstyles.org/styles/145419/anti-moe-pedia)
 
 ### [Inoreader](inoreader.user.css?raw=true)
 
@@ -61,5 +63,5 @@ Tweaks for [Inoreader](https://www.inoreader.com/) light theme.
 
 #### Source
 
-- [Wikipedia Material](https://userstyles.org/styles/140009/wikipedia-material)
-- [Wikipedia New Light](https://userstyles.org/styles/139227/wikipedia-new-light)
+-   [Wikipedia Material](https://userstyles.org/styles/140009/wikipedia-material)
+-   [Wikipedia New Light](https://userstyles.org/styles/139227/wikipedia-new-light)
