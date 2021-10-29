@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub icon tweaks
-// @version      1
+// @version      2
 // @description  Tweak certain GitHub icons' color and style
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -37,3 +37,12 @@ observe('#discussion_bucket .TimelineItem-badge', {
             )
     },
 })
+
+observe(
+    '[data-octo-click="profile_timeline_toggle_rollup_created_issues"] .State--closed',
+    {
+        add(badge) {
+            badge.classList.add('color-bg-done-emphasis')
+        },
+    }
+)
