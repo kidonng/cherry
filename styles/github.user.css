@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      21
+@version      22
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -124,20 +124,17 @@
         .open.octicon,
         .octicon-issue-opened[aria-label='Open issue'], /* Dashboard "Recent activity" */
         .contribution-activity-listing :is(.octicon-issue-opened, .octicon-git-pull-request).color-text-success /* Profile timeline */ {
-            color: var(--color-accent-emphasis) !important;
+            color: var(--color-accent-fg) !important;
         }
 
         .State--open,
         .TimelineItem.js-targetable-element .TimelineItem-badge.color-bg-success-inverse /* Reopen event */ {
-            background-color: var(--color-accent-emphasis) !important;
+            background-color: var(--color-accent-fg) !important;
         }
 
         .closed.octicon,
         .issue-closed-done .octicon-issue-closed.closed,
-        .merged.octicon {
-            color: var(--color-success-emphasis) !important;
-        }
-
+        .merged.octicon,
         .contribution-activity-listing :is(.issue-closed-done .octicon-issue-closed.color-text-danger, .merged.octicon) /* Profile timeline */ {
             color: var(--color-success-fg) !important;
         }
@@ -145,7 +142,7 @@
         .State--merged,
         .TimelineItem:is(.js-targetable-element, .js-details-container) .TimelineItem-badge.color-bg-done-emphasis, /* Close event */
         [data-octo-click="profile_timeline_toggle_rollup_created_issues"] .State--closed {
-            background-color: var(--color-success-emphasis) !important;
+            background-color: var(--color-success-fg) !important;
         }
     }
 }
