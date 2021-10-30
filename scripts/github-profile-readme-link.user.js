@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub profile README link
-// @version      1.0.1
+// @version      2
 // @description  Make profile README's header link to the README instead of the repository
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -11,7 +11,7 @@
   'use strict'
 
   const link = document.querySelector(
-    '.user-profile-nav + div .octicon-octoface + a'
+    '.user-profile-nav + div .text-mono a'
   )
 
   if (link) {
