@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      22
+@version      23
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -139,6 +139,7 @@
             color: var(--color-success-fg) !important;
         }
 
+        .State--closed,
         .State--merged,
         .TimelineItem:is(.js-targetable-element, .js-details-container) .TimelineItem-badge.color-bg-done-emphasis, /* Close event */
         [data-octo-click="profile_timeline_toggle_rollup_created_issues"] .State--closed {
