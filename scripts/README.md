@@ -67,15 +67,16 @@ Tweak certain GitHub icons' color and style.
 
 ## [Pages Source](generated/pages-source.user.js?raw=true)
 
-Display a GitHub logo in the bottom right corner linked to the source repository when visiting a [GitHub Pages](https://pages.github.com/) site.
+Display a logo in the bottom right corner linked to the source repository when visiting a site hosted on the following Git hosting services:
 
-## [Forge Source](forge-source.user.js?raw=true)
-
-Display a SourceForge logo in the bottom right linked to the source project when visiting a [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/) site.
+-   [GitHub Pages](https://pages.github.com/)
+-   [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
+-   [Gitee Pages](https://gitee.com/help/articles/4136)
+-   [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/)
 
 ## [Camo Detective](camo-detective.user.js?raw=true)
 
-Replace `camo.githubusercontent.com` image links on GitHub with image's `[data-canonical-src]` attribute.
+Replace `camo.githubusercontent.com` image links on GitHub with image's `data-canonical-src` attribute.
 
 ## [Clean GitHub Subscriptions](clean-github-subscriptions.user.js?raw=true)
 

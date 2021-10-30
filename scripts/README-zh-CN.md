@@ -67,15 +67,16 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [Pages 源链接](generated/pages-source.user.js?raw=true)
 
-访问 [GitHub Pages](https://pages.github.com/) 站点时，在右下角显示一个链接到原始仓库的 GitHub logo。
+访问以下 Git 托管平台上的站点时，在右下角显示一个链接到原始仓库的 logo:
 
-## [Forge 源链接](forge-source.user.js?raw=true)
-
-访问 [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/) 站点时，在右下角显示一个链接到原始项目的 SourceForge logo。
+-   [GitHub Pages](https://pages.github.com/)
+-   [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
+-   [Gitee Pages](https://gitee.com/help/articles/4136)
+-   [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/)
 
 ## [Camo 侦探](camo-detective.user.js?raw=true)
 
-替换 GitHub 上的 `camo.githubusercontent.com` 图片链接为图片的 `[data-canonical-src]` 属性。
+替换 GitHub 上的 `camo.githubusercontent.com` 图片链接为图片的 `data-canonical-src` 属性。
 
 ## [清理 GitHub 消息订阅](clean-github-subscriptions.user.js?raw=true)
 
