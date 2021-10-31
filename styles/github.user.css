@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      24
+@version      25
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -72,6 +72,10 @@
     .js-hovercard-content [title='Label: Pro'] {
         display: none !important;
     }
+    
+    .branch-action-state-closed-dirty .branch-action-icon {
+      background-color: var(--color-danger-emphasis);
+    }
 
     if hideProfileHighlights {
         .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
@@ -121,28 +125,23 @@
     }
 
     if colorBender {
-        .open.octicon,
-        .octicon-issue-opened[aria-label='Open issue'], /* Dashboard "Recent activity" */
-        .contribution-activity-listing :is(.octicon-issue-opened, .octicon-git-pull-request).color-text-success /* Profile timeline */ {
+        :is(.octicon-issue-opened, .octicon-git-pull-request):is(.open, .color-text-success) {
             color: var(--color-accent-fg) !important;
         }
 
         .State--open,
-        .TimelineItem.js-targetable-element .TimelineItem-badge.color-bg-success-inverse /* Reopen event */ {
+        .js-targetable-element > .TimelineItem-badge.color-bg-success-inverse {
             background-color: var(--color-accent-emphasis) !important;
         }
 
-        .closed.octicon,
-        .issue-closed-done .octicon-issue-closed.closed,
-        .merged.octicon,
-        .contribution-activity-listing :is(.issue-closed-done .octicon-issue-closed.color-text-danger, .merged.octicon) /* Profile timeline */ {
+        .octicon-issue-closed:is(.closed, .color-text-danger),
+        .issue-closed-done .octicon-issue-closed.color-text-danger,
+        .octicon-git-merge:is(.merged, .color-fg-done) {
             color: var(--color-success-fg) !important;
         }
 
-        .State--closed,
-        .State--merged,
-        .TimelineItem:is(.js-targetable-element, .js-details-container) .TimelineItem-badge.color-bg-done-emphasis, /* Close event */
-        [data-octo-click="profile_timeline_toggle_rollup_created_issues"] .State--closed {
+        :is(.State--closed, .TimelineItem-badge).color-bg-done-emphasis,
+        .State--merged {
             background-color: var(--color-success-emphasis) !important;
         }
     }
