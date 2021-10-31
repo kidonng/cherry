@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      25
+@version      26
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -71,10 +71,6 @@
     /* Hide Pro badge */
     .js-hovercard-content [title='Label: Pro'] {
         display: none !important;
-    }
-    
-    .branch-action-state-closed-dirty .branch-action-icon {
-      background-color: var(--color-danger-emphasis);
     }
 
     if hideProfileHighlights {
