@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         YouTube Screenshot
-// @version      2
+// @version      3
 // @description  Screenshot for YouTube
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -77,8 +77,8 @@
 
     document.addEventListener('keypress', (e) => {
         if (
-            document.activeElement.tagName !== 'INPUT' &&
-            document.activeElement.tagName !== 'TEXTAREA' &&
+            !document.activeElement instanceof HTMLInputElement &&
+            !document.activeElement instanceof HTMLTextAreaElement &&
             e.code === 'KeyS' &&
             container.hidden
         )
