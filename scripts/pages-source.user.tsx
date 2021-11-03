@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Pages Source
-// @version      3
+// @version      4
 // @description  Easily go to popular Git hosting services' source repository
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -16,12 +16,13 @@
 // @example      https://x1y9.gitee.io/gesture/help/background.html
 // @example      http://grandperspectiv.sourceforge.net/
 // @example      https://archgeotux.sourceforge.io/
+// @grant        GM.addStyle
 // ==/UserScript==
 
 import React from 'dom-chef'
 
 const id = 'cherry-pages-source'
-document.head.append(<style>{`#${id}:hover { opacity: 1 !important; }`}</style>)
+GM.addStyle(`#${id}:hover { opacity: 1 !important; }`)
 
 const host = location.hostname.split('.')
 const path = location.pathname.split('/')[1]

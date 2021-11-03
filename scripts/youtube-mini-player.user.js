@@ -1,20 +1,18 @@
 // ==UserScript==
 // @name         YouTube Mini Player
-// @version      1.1.6
+// @version      2
 // @description  Floating YouTube mini player like Bilibili
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://www.youtube.com/*
 // @noframes
+// @grant        GM.addStyle
 // ==/UserScript==
 
 ;(() => {
-  const $ = document.querySelector.bind(document)
+    const $ = document.querySelector.bind(document)
 
-  document.head.insertAdjacentHTML(
-    'beforeend',
-    `
-    <style>
+    GM.addStyle(`
       #player:not(.skeleton) {
         z-index: 1000;
       }
@@ -41,135 +39,134 @@
       [data-mini-detached] .mini-placeholder {
         display: block;
       }
-    </style>`
-  )
+    `)
 
-  let initialized
-  let header
-  let container
-  let player
-  let video
+    let initialized
+    let header
+    let container
+    let player
+    let video
 
-  let lastClientX
-  let lastClientY
-  let lastTranslateX = 0
-  let lastTranslateY = 0
-  let translateX = 0
-  let translateY = 0
-  let moved
+    let lastClientX
+    let lastClientY
+    let lastTranslateX = 0
+    let lastTranslateY = 0
+    let translateX = 0
+    let translateY = 0
+    let moved
 
-  const placeholder = document.createElement('div')
-  placeholder.classList.add('mini-placeholder')
+    const placeholder = document.createElement('div')
+    placeholder.classList.add('mini-placeholder')
 
-  const updateSize = () => {
-    const { height, width } = video.style
-    player.style.height = height
-    player.style.width = width
-    placeholder.style.height = height
-    placeholder.style.width = width
-  }
-
-  const updatePosition = (reset) => {
-    player.style.right = `${
-      reset ? 0 : -translateX - window.innerWidth / 12.5
-    }px`
-    player.style.bottom = `${
-      reset ? 0 : -translateY - window.innerHeight / 10
-    }px`
-  }
-
-  const headerBottom = () => window.scrollY + header.offsetHeight
-  const playerBottom = () =>
-    container.offsetTop + Number(video.style.height.replace('px', ''))
-
-  const observer = new MutationObserver((mutations) =>
-    mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'style') updateSize()
-    })
-  )
-
-  const scrollHandler = () => {
-    if (
-      headerBottom() >= playerBottom() &&
-      !document.body.hasAttribute('data-mini-detached')
-    ) {
-      document.body.setAttribute('data-mini-detached', '')
-      player.addEventListener('mousedown', mouseDownHandler)
-      observer.observe(video, { attributes: true })
-
-      updatePosition()
-      updateSize()
-    } else if (
-      headerBottom() < playerBottom() &&
-      document.body.hasAttribute('data-mini-detached')
-    ) {
-      document.body.removeAttribute('data-mini-detached')
-      player.removeEventListener('mousedown', mouseDownHandler)
-      observer.disconnect()
-
-      player.removeAttribute('style')
+    const updateSize = () => {
+        const { height, width } = video.style
+        player.style.height = height
+        player.style.width = width
+        placeholder.style.height = height
+        placeholder.style.width = width
     }
-  }
 
-  const mouseDownHandler = (e) => {
-    lastClientX = e.clientX
-    lastClientY = e.clientY
+    const updatePosition = (reset) => {
+        player.style.right = `${
+            reset ? 0 : -translateX - window.innerWidth / 12.5
+        }px`
+        player.style.bottom = `${
+            reset ? 0 : -translateY - window.innerHeight / 10
+        }px`
+    }
 
-    window.addEventListener('mousemove', mouseMoveHandler)
-    window.addEventListener(
-      'mouseup',
-      () => {
-        lastTranslateX = translateX
-        lastTranslateY = translateY
+    const headerBottom = () => window.scrollY + header.offsetHeight
+    const playerBottom = () =>
+        container.offsetTop + Number(video.style.height.replace('px', ''))
 
-        window.removeEventListener('mousemove', mouseMoveHandler)
-        if (moved) {
-          moved = false
-          // Prevent pausing video
-          video.click()
-        }
-      },
-      { once: true }
+    const observer = new MutationObserver((mutations) =>
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'style') updateSize()
+        })
     )
-  }
 
-  const mouseMoveHandler = (e) => {
-    moved = true
-    translateX = lastTranslateX + e.clientX - lastClientX
-    translateY = lastTranslateY + e.clientY - lastClientY
+    const scrollHandler = () => {
+        if (
+            headerBottom() >= playerBottom() &&
+            !document.body.hasAttribute('data-mini-detached')
+        ) {
+            document.body.setAttribute('data-mini-detached', '')
+            player.addEventListener('mousedown', mouseDownHandler)
+            observer.observe(video, { attributes: true })
 
-    updatePosition()
-  }
+            updatePosition()
+            updateSize()
+        } else if (
+            headerBottom() < playerBottom() &&
+            document.body.hasAttribute('data-mini-detached')
+        ) {
+            document.body.removeAttribute('data-mini-detached')
+            player.removeEventListener('mousedown', mouseDownHandler)
+            observer.disconnect()
 
-  // https://stackoverflow.com/a/54389066
-  window.addEventListener('yt-navigate-finish', () => {
-    if (!initialized) {
-      header = $('#container.ytd-masthead')
-      container = $('#primary-inner')
-      player = $('#player:not(.skeleton)')
-      video = $('.html5-main-video')
-
-      player.before(placeholder)
+            player.removeAttribute('style')
+        }
     }
 
-    if (
-      !document.body.hasAttribute('data-mini-enabled') &&
-      location.pathname === '/watch'
-    ) {
-      document.body.setAttribute('data-mini-enabled', '')
-      window.addEventListener('scroll', scrollHandler, { passive: true })
-      updatePosition(true)
-    } else if (
-      document.body.hasAttribute('data-mini-enabled') &&
-      location.pathname !== '/watch'
-    ) {
-      document.body.removeAttribute('data-mini-enabled')
-      window.removeEventListener('scroll', scrollHandler)
+    const mouseDownHandler = (e) => {
+        lastClientX = e.clientX
+        lastClientY = e.clientY
 
-      if (document.body.hasAttribute('data-mini-detached')) {
-        document.body.removeAttribute('data-mini-detached')
-        player.removeEventListener('mousedown', mouseDownHandler)
-      }
+        window.addEventListener('mousemove', mouseMoveHandler)
+        window.addEventListener(
+            'mouseup',
+            () => {
+                lastTranslateX = translateX
+                lastTranslateY = translateY
+
+                window.removeEventListener('mousemove', mouseMoveHandler)
+                if (moved) {
+                    moved = false
+                    // Prevent pausing video
+                    video.click()
+                }
+            },
+            { once: true }
+        )
     }
-  })
+
+    const mouseMoveHandler = (e) => {
+        moved = true
+        translateX = lastTranslateX + e.clientX - lastClientX
+        translateY = lastTranslateY + e.clientY - lastClientY
+
+        updatePosition()
+    }
+
+    // https://stackoverflow.com/a/54389066
+    window.addEventListener('yt-navigate-finish', () => {
+        if (!initialized) {
+            header = $('#container.ytd-masthead')
+            container = $('#primary-inner')
+            player = $('#player:not(.skeleton)')
+            video = $('.html5-main-video')
+
+            player.before(placeholder)
+        }
+
+        if (
+            !document.body.hasAttribute('data-mini-enabled') &&
+            location.pathname === '/watch'
+        ) {
+            document.body.setAttribute('data-mini-enabled', '')
+            window.addEventListener('scroll', scrollHandler, { passive: true })
+            updatePosition(true)
+        } else if (
+            document.body.hasAttribute('data-mini-enabled') &&
+            location.pathname !== '/watch'
+        ) {
+            document.body.removeAttribute('data-mini-enabled')
+            window.removeEventListener('scroll', scrollHandler)
+
+            if (document.body.hasAttribute('data-mini-detached')) {
+                document.body.removeAttribute('data-mini-detached')
+                player.removeEventListener('mousedown', mouseDownHandler)
+            }
+        }
+    })
 })()
