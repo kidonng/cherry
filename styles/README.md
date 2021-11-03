@@ -1,6 +1,6 @@
 # User Styles
 
-A user style manager (e.g. Stylus for [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Firefox](https://addons.mozilla.org/firefox/addon/styl-us/)) must be installed on your browser.
+A user style manager such as [Stylus](https://add0n.com/stylus.html) is required to use user styles.
 
 **NOTE** Some styles include font optimization for Windows (Simplified Chinese) only.
 

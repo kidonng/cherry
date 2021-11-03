@@ -4,7 +4,7 @@ English | [简体中文](README-zh-CN.md)
 
 ---
 
-A user script manager (e.g. Violentmonkey for [Chrome](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag) or [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey)) must be installed on your browser.
+A user script manager such as [Violentmonkey](https://violentmonkey.github.io/get-it/) is required to use user scripts.
 
 ## [YouTube Screenshot](youtube-screenshot.user.js?raw=true)
 

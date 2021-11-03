@@ -4,7 +4,7 @@
 
 ---
 
-您的浏览器需要安装一个用户脚本管理器（如 Violentmonkey for [Chrome](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag) 或 [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey)）。
+使用用户脚本需要用户脚本管理器，例如 [Violentmonkey](https://violentmonkey.github.io/get-it/)。
 
 ## [YouTube 截图](youtube-screenshot.user.js?raw=true)
 
