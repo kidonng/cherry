@@ -13,6 +13,7 @@
     "dom-chef": "^5.0.0",
     "doma": "^3.0.1",
     "element-ready": "^4.1.1",
+    "github-url-detection": "^5.7.0",
     "selector-observer": "^2.1.6"
   },
   "devDependencies": {

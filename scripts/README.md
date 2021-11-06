@@ -45,6 +45,15 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 **NOTE** You can [configure timeout and retry interval](ncu-net.user.js#L14-L20) in the script.
 
+## [GitHub Hovercards](generated/github-hovercards.user.js)
+
+Enable native hovercards for more GitHub links:
+
+-   Repository roots
+-   Commits
+-   Issue conversations
+-   Pull request conversations
+
 ## [GitHub hide public badge](generated/github-hide-public-badge.user.js?raw=true)
 
 Hides "Public" repository badge or removes "Public" prefix.

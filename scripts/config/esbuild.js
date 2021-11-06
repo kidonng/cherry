@@ -38,6 +38,7 @@ const config = [
             'scripts/github-conversation-list-avatars.user.tsx',
             'scripts/github-hide-public-badge.user.js',
             'scripts/github-icon-tweaks.user.ts',
+            'scripts/github-hovercards.user.ts',
             'scripts/pages-source.user.tsx',
             'scripts/reposition-octotree-bookmark-icon.user.js',
         ],

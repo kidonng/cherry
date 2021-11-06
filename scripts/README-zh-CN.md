@@ -45,6 +45,15 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 **注** 可以在脚本中[设置超时和重连时间](ncu-net.user.js#L14-L20)。
 
+## [GitHub 悬浮卡片](generated/github-hovercards.user.js)
+
+启用更多链接的原生悬浮信息卡片：
+
+-   仓库根目录
+-   提交
+-   Issue 对话
+-   Pull request 对话
+
 ## [GitHub 隐藏 public 标签](generated/github-hide-public-badge.user.js?raw=true)
 
 隐藏仓库的 "Public" 标签或移除 "Public" 前缀。
