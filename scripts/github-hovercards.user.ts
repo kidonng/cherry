@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      1
+// @version      2
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -17,7 +17,7 @@ document
     .setAttribute('data-repository-hovercards-enabled', '')
 
 observe(
-    `a:is([href^="/"], [href^="${location.origin}"]):not([data-hovercard-type])`,
+    `a:is([href^="/"], [href^="${location.origin}"]):not(:is([data-hovercard-type], [data-pjax]))`,
     {
         constructor: HTMLAnchorElement,
         add(link) {
