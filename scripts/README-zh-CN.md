@@ -2,9 +2,11 @@
 
 [English](README.md) | 简体中文
 
----
-
 使用用户脚本需要用户脚本管理器，例如 [Violentmonkey](https://violentmonkey.github.io/get-it/)。
+
+如果你喜欢我的 GitHub 用户脚本，请务必也了解下 [Refined GitHub](https://github.com/refined-github/refined-github)。
+
+---
 
 ## [YouTube 截图](youtube-screenshot.user.js?raw=true)
 
@@ -45,7 +47,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 **注** 可以在脚本中[设置超时和重连时间](ncu-net.user.js#L14-L20)。
 
-## [GitHub 悬浮卡片](generated/github-hovercards.user.js)
+## [GitHub 悬浮卡片](generated/github-hovercards.user.js?raw=true)
 
 启用更多链接的原生悬浮信息卡片：
 

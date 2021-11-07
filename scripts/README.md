@@ -2,9 +2,11 @@
 
 English | [简体中文](README-zh-CN.md)
 
----
-
 A user script manager such as [Violentmonkey](https://violentmonkey.github.io/get-it/) is required to use user scripts.
+
+If you like my GitHub user scripts, be sure to check out [Refined GitHub](https://github.com/refined-github/refined-github).
+
+---
 
 ## [YouTube Screenshot](youtube-screenshot.user.js?raw=true)
 
@@ -45,7 +47,7 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 **NOTE** You can [configure timeout and retry interval](ncu-net.user.js#L14-L20) in the script.
 
-## [GitHub Hovercards](generated/github-hovercards.user.js)
+## [GitHub Hovercards](generated/github-hovercards.user.js?raw=true)
 
 Enable native hovercards for more GitHub links:
 
