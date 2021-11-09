@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Notion Localization
-// @version      3
+// @version      4
 // @description  Enable Notion's native localization for more languages
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -15,7 +15,7 @@ import doma from 'doma'
     const info = localStorage.getItem('ajs_user_traits')
     if (!info) return
 
-    const { app_version, locale } = JSON.parse(info)
+    const { app_version, locale, is_desktop } = JSON.parse(info)
     const key = `messages-${app_version}-${locale}`
     const messages = localStorage.getItem(key)
 
@@ -39,23 +39,25 @@ import doma from 'doma'
             const { textContent } = dom.querySelector('#messages')!
 
             localStorage.setItem(key, textContent!)
-            alert(
-                navigator.language === 'zh-CN'
-                    ? `Notion ${app_version} 版本中文资源已下载，点击确定即可享受 ✨`
-                    : `${locale} resources for Notion ${app_version} version has been downloaded, press OK to enjoy ✨`
-            )
+            alert(`[Notion Localization]\n${locale} messages updated successfully ✨`)
             location.pathname = '/'
         } catch (e) {
+            alert(`[Notion Localization]\n${locale} messages failed to update 😢`)
         } finally {
             return
         }
     }
 
-    const script = document.createElement('script')
-    script.id = 'messages'
-    script.type = 'application/json'
-    script.dataset['locale'] = 'en-US'
-    script.innerHTML = messages
+    const init = () => {
+        const script = document.createElement('script')
+        script.id = 'messages'
+        script.type = 'application/json'
+        script.dataset['locale'] = 'en-US'
+        script.innerHTML = messages
+    
+        document.documentElement.prepend(script)
+    }
 
-    document.documentElement.prepend(script)
+    if (is_desktop) document.addEventListener('readystatechange', init, { once: true })
+    else init()
 })()
