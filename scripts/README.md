@@ -32,6 +32,14 @@ Floating YouTube mini player like Bilibili, for conveniently reading comments an
     -   Doesn't work in Theater mode and Full screen
     -   Some controls (progress bar, volume, etc.) doesn't follow cursor. This is due to implementation limits.
 
+## [Notion Localization](generated/notion-localization.user.js?raw=true)
+
+Enable Notion's native localization for more languages.
+
+Note: it only works if you set Notion's language to English.
+
+![Screenshot](../screenshots/notion-localization.png)
+
 ## [NCU Net](ncu-net.user.js?raw=true)
 
 A campus network helper for Nanchang University. Supports `NCU-5G/NCU-2.4G` & `NCUWLAN`.

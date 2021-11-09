@@ -32,6 +32,14 @@
     -   无法在剧场模式和全屏下使用
     -   部分控件（进度条、音量等） 不跟随光标。这是实现限制导致的。
 
+## [Notion 本地化](generated/notion-localization.user.js?raw=true)
+
+启用更多语言的 Notion 原生本地化翻译。
+
+注：需将 Notion 的语言设为英文方可生效。
+
+![截图](../screenshots/notion-localization.png)
+
 ## [NCU Net](ncu-net.user.js?raw=true)
 
 南昌大学校园网助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。
