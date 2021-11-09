@@ -44,6 +44,14 @@ Notes:
 
 ![Screenshot](../screenshots/notion-localization.png)
 
+---
+
+Usage for macOS app: run the following command in your terminal
+
+```sh
+echo \n"((d, s = d.createElement('script')) => d.onreadystatechange = () => d.readyState === 'complete' && d.body.append(s.src = 'https://cdn.jsdelivr.net/gh/kidonng/cherry@master/scripts/generated/notion-localization.user.js' && s))(document)" >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+```
+
 ## [NCU Net](ncu-net.user.js?raw=true)
 
 A campus network helper for Nanchang University. Supports `NCU-5G/NCU-2.4G` & `NCUWLAN`.

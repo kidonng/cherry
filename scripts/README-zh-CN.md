@@ -44,6 +44,14 @@
 
 ![截图](../screenshots/notion-localization.png)
 
+---
+
+macOS 应用使用方法：在终端执行以下命令
+
+```sh
+echo \n"((d, s = d.createElement('script')) => d.onreadystatechange = () => d.readyState === 'complete' && d.body.append(s.src = 'https://cdn.jsdelivr.net/gh/kidonng/cherry@master/scripts/generated/notion-localization.user.js' && s))(document)" >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+```
+
 ## [NCU Net](ncu-net.user.js?raw=true)
 
 南昌大学校园网助手。支持 `NCU-5G/NCU-2.4G` 和 `NCUWLAN`。

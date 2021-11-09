@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Notion Localization
-// @version      2
+// @version      3
 // @description  Enable Notion's native localization for more languages
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -15,9 +15,8 @@ import doma from 'doma'
     const info = localStorage.getItem('ajs_user_traits')
     if (!info) return
 
-    const { app_version } = JSON.parse(info)
-    const { language } = navigator
-    const key = `messages-${app_version}-${language}`
+    const { app_version, locale } = JSON.parse(info)
+    const key = `messages-${app_version}-${locale}`
     const messages = localStorage.getItem(key)
 
     if (!messages) {
@@ -31,8 +30,8 @@ import doma from 'doma'
                 body: JSON.stringify({ hash: '' }),
             })
             const { localeHtml } = await assetsRes.json()
-            if (!(language in localeHtml)) return
-            const htmlUrl = localeHtml[language]
+            if (!(locale in localeHtml)) return
+            const htmlUrl = localeHtml[locale]
 
             const htmlRes = await fetch(htmlUrl)
             const html = await htmlRes.text()
@@ -43,7 +42,7 @@ import doma from 'doma'
             alert(
                 navigator.language === 'zh-CN'
                     ? `Notion ${app_version} 版本中文资源已下载，点击确定即可享受 ✨`
-                    : `${language} resources for Notion ${app_version} version has been downloaded, press OK to enjoy ✨`
+                    : `${locale} resources for Notion ${app_version} version has been downloaded, press OK to enjoy ✨`
             )
             location.pathname = '/'
         } catch (e) {
