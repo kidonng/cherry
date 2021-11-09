@@ -36,7 +36,11 @@
 
 启用更多语言的 Notion 原生本地化翻译。
 
-注：需将 Notion 的语言设为英文方可生效。
+注：
+
+-   必须登录方可生效
+-   Notion 的语言须设为 English
+-   如果 Notion 的代码比脚本先运行后者就可能失效。碰到这种情况请通过 [`https://www.notino.so`](https://www.notino.so) 打开 Notion 或一直刷新。
 
 ![截图](../screenshots/notion-localization.png)
 
