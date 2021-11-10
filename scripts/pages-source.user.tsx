@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Pages Source
-// @version      4
+// @version      5
 // @description  Easily go to popular Git hosting services' source repository
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -58,7 +58,11 @@ switch (host[host.length - 2]) {
 
         if (document.title === 'Page not found · GitHub Pages') break
 
-        href += `/${path || `${username}.github.io`}`
+        // Exclude paths beginning with 4 digits which are most likely to be YYYY
+        // and prefer `username.github.io` as source repository
+        if (path && !path.match(/^\d{4}/)) href += `/${path}`
+        else href += `${username}.github.io`
+
         title = 'Go to source repository'
         break
     case 'gitlab':
