@@ -68,6 +68,8 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 悬浮卡片](generated/github-hovercards.user.js?raw=true)
 
+*实现 [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)*
+
 启用更多链接的原生悬浮信息卡片：
 
 -   仓库根目录
@@ -77,17 +79,23 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 隐藏 public 标签](generated/github-hide-public-badge.user.js?raw=true)
 
+*移植自 [refined-github#4770](https://github.com/refined-github/refined-github/pull/4770)*
+
 隐藏仓库的 "Public" 标签或移除 "Public" 前缀。
 
 ![截图](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
 ## [GitHub 对话列表头像](generated/github-conversation-list-avatars.user.js?raw=true)
 
+*实现 [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)*
+
 向 GitHub 的对话列表添加头像。
 
 ![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
 ## [GitHub 图标调整](generated/github-icon-tweaks.user.js?raw=true)
+
+*实现 [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)*
 
 调整部分 GitHub 图标的颜色和样式。
 
@@ -106,6 +114,8 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [Camo 侦探](camo-detective.user.js?raw=true)
 
+*实现 [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)*
+
 替换 GitHub 上的 `camo.githubusercontent.com` 图片链接为图片的 `data-canonical-src` 属性。
 
 ## [清理 GitHub 消息订阅](clean-github-subscriptions.user.js?raw=true)
@@ -122,15 +132,21 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 精确数据](github-precise-counters.user.js?raw=true)
 
+*实现 [refined-github#3382](https://github.com/refined-github/refined-github/issues/3382)*
+
 ![截图](../screenshots/github-precise-counters.gif)
 
 鼠标悬浮时显示精确的 watch/star/fork 数据。与 [Refined GitHub](https://github.com/refined-github/refined-github) 的 `hide-watch-and-fork-count` 功能兼容。
 
 ## [GitHub 个人 README 链接](github-profile-readme-link.user.js?raw=true)
 
+*实现 [refined-github#3426](https://github.com/refined-github/refined-github/issues/3426#issuecomment-671077874)*
+
 使个人 README 的顶部链接指向 README 而非仓库。
 
 ## [GitHub 主题切换](generated/github-theme-switch.user.js?raw=true)
+
+*移植自 [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)。你可能会更喜欢[使用 GitHub 的原生命令面板](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452)。*
 
 ![截图](./../screenshots/github-theme-switch.png)
 
@@ -140,9 +156,13 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub Star 历史](github-star-history.user.js?raw=true)
 
+*实现 [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)*
+
 在 Stargazers 页面添加一个按钮以在 https://star-history.t9t.io/ 查看 star 历史。
 
 ## [重新放置 Octotree 书签图标](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
+
+*实现 [octotree#992](https://github.com/ovity/octotree/issues/992)*
 
 启用前：
 

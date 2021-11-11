@@ -68,6 +68,8 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 ## [GitHub Hovercards](generated/github-hovercards.user.js?raw=true)
 
+*Implementation of [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)*
+
 Enable native hovercards for more GitHub links:
 
 -   Repository roots
@@ -77,17 +79,23 @@ Enable native hovercards for more GitHub links:
 
 ## [GitHub hide public badge](generated/github-hide-public-badge.user.js?raw=true)
 
+*Ported from [refined-github#4770](https://github.com/refined-github/refined-github/pull/4770)*
+
 Hides "Public" repository badge or removes "Public" prefix.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
 ## [GitHub conversation list avatars](generated/github-conversation-list-avatars.user.js?raw=true)
 
+*Implementation of [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)*
+
 Add avatars in GitHub's conversation list.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
 ## [GitHub icon tweaks](generated/github-icon-tweaks.user.js?raw=true)
+
+*Implementation of [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)*
 
 Tweak certain GitHub icons' color and style.
 
@@ -106,6 +114,8 @@ Display a logo in the bottom right corner linked to the source repository when v
 
 ## [Camo Detective](camo-detective.user.js?raw=true)
 
+*Implementation of [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)*
+
 Replace `camo.githubusercontent.com` image links on GitHub with image's `data-canonical-src` attribute.
 
 ## [Clean GitHub Subscriptions](clean-github-subscriptions.user.js?raw=true)
@@ -122,15 +132,21 @@ Just install the script and head to [Subscriptions](https://github.com/notificat
 
 ## [GitHub Precise Counters](github-precise-counters.user.js?raw=true)
 
+*Implementation of [refined-github#3382](https://github.com/refined-github/refined-github/issues/3382)*
+
 ![Screenshot](../screenshots/github-precise-counters.gif)
 
 Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](https://github.com/refined-github/refined-github)'s `hide-watch-and-fork-count` feature.
 
 ## [GitHub profile README link](github-profile-readme-link.user.js?raw=true)
 
+*Implementation of [refined-github#3426](https://github.com/refined-github/refined-github/issues/3426#issuecomment-671077874)*
+
 Make profile README's header link to the README instead of the repository.
 
 ## [GitHub theme switch](generated/github-theme-switch.user.js?raw=true)
+
+*Ported from [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804). You may like [using GitHub's Command palette](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452) instead.*
 
 ![Screenshot](./../screenshots/github-theme-switch.png)
 
@@ -140,9 +156,13 @@ Also available as a [bookmarklet](generated/github-theme-switch.bookmarklet.js?r
 
 ## [GitHub Star history](github-star-history.user.js?raw=true)
 
+*Implementation of [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)*
+
 Adds a button to Stargazers page to view star history on https://star-history.t9t.io/.
 
 ## [Reposition Octotree bookmark icon](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
+
+*Implementation of [octotree#992](https://github.com/ovity/octotree/issues/992)*
 
 Before:
 
