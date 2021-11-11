@@ -39,8 +39,7 @@ Enable Notion's native localization for more languages.
 Notes:
 
 -   You must be logged in for it to work
--   Notion's language must be set to English
--   The script may not work if Notion's code happen to run before it. Open Notion with [`https://www.notino.so`](https://www.notino.so) or keep refreshing if the issue happens.
+-   The script may not work if Notion's code happen to run before it. Open Notion with [`https://www.notion.so`](https://www.notion.so) or keep refreshing if the issue happens.
 
 ![Screenshot](../screenshots/notion-localization.png)
 
