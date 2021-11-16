@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Twitter
-@version      3
+@version      4
 @description  Hide Twitter annoyances
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -13,9 +13,6 @@
   /* You might like & Trends for you */
   .css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,
   [aria-label="Footer"],
-  /* Follow button */
-  .css-1dbjc4n.r-obd0qt.r-1pz39u2.r-1777fci.r-15ysp7h.r-s8bhmr,
-  .css-1dbjc4n.r-obd0qt.r-18u37iz.r-1w6e6rj.r-1h0z5md.r-dnmrzs,
   /* Topics to follow */
   [aria-label="Timeline: Carousel"],
   /* Register banner */
