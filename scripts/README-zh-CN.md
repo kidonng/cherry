@@ -68,7 +68,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 悬浮卡片](generated/github-hovercards.user.js?raw=true)
 
-*实现 [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)*
+_实现 [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
 
 启用更多链接的原生悬浮信息卡片：
 
@@ -79,7 +79,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 隐藏 public 标签](generated/github-hide-public-badge.user.js?raw=true)
 
-*移植自 [refined-github#4770](https://github.com/refined-github/refined-github/pull/4770)*
+_移植自 [refined-github#4770](https://github.com/refined-github/refined-github/pull/4770)_
 
 隐藏仓库的 "Public" 标签或移除 "Public" 前缀。
 
@@ -87,7 +87,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 对话列表头像](generated/github-conversation-list-avatars.user.js?raw=true)
 
-*实现 [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)*
+_实现 [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)_
 
 向 GitHub 的对话列表添加头像。
 
@@ -95,7 +95,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 图标调整](generated/github-icon-tweaks.user.js?raw=true)
 
-*实现 [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)*
+_实现 [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)_
 
 调整部分 GitHub 图标的颜色和样式。
 
@@ -114,7 +114,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [Camo 侦探](camo-detective.user.js?raw=true)
 
-*实现 [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)*
+_实现 [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)_
 
 替换 GitHub 上的 `camo.githubusercontent.com` 图片链接为图片的 `data-canonical-src` 属性。
 
@@ -132,7 +132,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 精确数据](github-precise-counters.user.js?raw=true)
 
-*实现 [refined-github#3382](https://github.com/refined-github/refined-github/issues/3382)*
+_实现 [refined-github#3382](https://github.com/refined-github/refined-github/issues/3382)_
 
 ![截图](../screenshots/github-precise-counters.gif)
 
@@ -140,13 +140,13 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub 个人 README 链接](github-profile-readme-link.user.js?raw=true)
 
-*实现 [refined-github#3426](https://github.com/refined-github/refined-github/issues/3426#issuecomment-671077874)*
+_实现 [refined-github#3426](https://github.com/refined-github/refined-github/issues/3426#issuecomment-671077874)_
 
 使个人 README 的顶部链接指向 README 而非仓库。
 
 ## [GitHub 主题切换](generated/github-theme-switch.user.js?raw=true)
 
-*移植自 [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)。你可能会更喜欢[使用 GitHub 的原生命令面板](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452)。*
+_移植自 [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)。你可能会更喜欢[使用 GitHub 的原生命令面板](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452)。_
 
 ![截图](./../screenshots/github-theme-switch.png)
 
@@ -156,13 +156,13 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 ## [GitHub Star 历史](github-star-history.user.js?raw=true)
 
-*实现 [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)*
+_实现 [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)_
 
 在 Stargazers 页面添加一个按钮以在 https://star-history.t9t.io/ 查看 star 历史。
 
 ## [重新放置 Octotree 书签图标](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
 
-*实现 [octotree#992](https://github.com/ovity/octotree/issues/992)*
+_实现 [octotree#992](https://github.com/ovity/octotree/issues/992)_
 
 启用前：
 
@@ -171,6 +171,10 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 启用后
 
 ![启用后的截图](https://user-images.githubusercontent.com/44045911/89754891-14043080-db10-11ea-86ed-b2316fed36cf.png)
+
+## [Telegram 原始媒体](generated/telegram-raw-media.user.js?raw=1)
+
+用常规元素展示 `t.me` 上的媒体。使上下文菜单、拖放功能能够对它们生效。
 
 ## [自动修复 sinaimg](auto-fix-sinaimg.user.js?raw=true)
 

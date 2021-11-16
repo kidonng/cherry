@@ -42,6 +42,7 @@ const config = [
             'scripts/notion-localization.user.tsx',
             'scripts/pages-source.user.tsx',
             'scripts/reposition-octotree-bookmark-icon.user.js',
+            'scripts/telegram-raw-media.user.tsx',
         ],
     ],
     [['scripts/github-theme-switch.user.tsx'], { keepNames: true }],
