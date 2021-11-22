@@ -93,7 +93,9 @@ Add avatars in GitHub's conversation list.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
-## [GitHub icon tweaks](generated/github-icon-tweaks.user.js?raw=true)
+## [~~GitHub icon tweaks~~](generated/github-icon-tweaks.user.js?raw=true)
+
+**⚠️ No longer maintained. GitHub has implemented most changes.**
 
 _Implementation of [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)_
 
@@ -144,9 +146,11 @@ _Implementation of [refined-github#3426](https://github.com/refined-github/refin
 
 Make profile README's header link to the README instead of the repository.
 
-## [GitHub theme switch](generated/github-theme-switch.user.js?raw=true)
+## [~~GitHub theme switch~~](generated/github-theme-switch.user.js?raw=true)
 
-_Ported from [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804). You may like [using GitHub's Command palette](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452) instead._
+**⚠️ No longer maintained. Use [GitHub's Command palette](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452) instead.**
+
+_Ported from [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)._
 
 ![Screenshot](./../screenshots/github-theme-switch.png)
 

@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const esbuild = require('esbuild')
 const { plugins } = require('./esbuild')
 
-for (const script of ['scripts/github-theme-switch.user.tsx']) {
+for (const script of []) {
     console.log(`Building ${chalk.bold(script)} as bookmarklet`)
 
     esbuild
