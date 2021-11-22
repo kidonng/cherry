@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      4
+// @version      5
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -12,7 +12,7 @@ import { observe } from 'selector-observer'
 import * as detect from 'github-url-detection'
 
 observe(
-    `a:is([href^="/"], [href^="${location.origin}"]):not([data-hovercard-type], [data-pjax], .js-pjax-history-navigate)`,
+    `a:is([href^="/"], [href^="${location.origin}"]):not([data-hovercard-type], [data-pjax], .js-pjax-history-navigate, .js-navigation-open)`,
     {
         constructor: HTMLAnchorElement,
         add(link) {
