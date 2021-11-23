@@ -39,6 +39,7 @@ const config = [
             'scripts/github-hide-public-badge.user.js',
             'scripts/github-hovercards.user.ts',
             'scripts/notion-localization.user.tsx',
+            'scripts/origin-finder.user.ts',
             'scripts/pages-source.user.tsx',
             'scripts/reposition-octotree-bookmark-icon.user.js',
             'scripts/telegram-raw-media.user.tsx',

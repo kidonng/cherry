@@ -1,22 +1,10 @@
 // ==UserScript==
 // @name         Origin Finder
-// @version      3
+// @version      4
 // @description  Redirect to resources' origin version
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @match        https://*.m.wikipedia.org/*
-// @match        https://img.moegirl.org.cn/*
-// @match        https://mzh.moegirl.org.cn/*
-// @match        https://dynasty-scans.com/*
-// @match        https://www2.zhihu.com/*
-// @match        http*://c.tieba.baidu.com/*
-// @match        http*://dq.tieba.com/*
-// @match        http*://jump2.bdimg.com/*
-// @match        http*://tieba.baidu.com/*
-// @match        http*://tiebac.baidu.com/*
-// @match        http*://wapp.baidu.com/*
-// @match        http*://wefan.baidu.com/*
-// @match        https://*.github.com/*
+// @match        http*://*
 // @run-at       document-start
 // ==/UserScript==
 
@@ -25,6 +13,7 @@
   const { hostname, pathname, searchParams } = url
 
   function tieba() {
+    // @ts-expect-error
     if (window.PageData?.user) window.PageData.user.is_login = true
 
     return {
@@ -52,7 +41,8 @@
        */
       if (
         hostname.endsWith('.m.wikipedia.org') &&
-        !navigator.userAgentData.mobile
+        // @ts-expect-error
+        !navigator.userAgentData?.mobile
       )
         return {
           hostname: hostname.replace('.m.wikipedia.org', '.wikipedia.org'),
@@ -74,7 +64,8 @@
      * Example: https://mzh.moegirl.org.cn/index.php?title=Mainpage&mobileaction=toggle_view_mobile
      */
     'mzh.moegirl.org.cn': () =>
-      !navigator.userAgentData.mobile &&
+      // @ts-expect-error
+      !navigator.userAgentData?.mobile &&
       !searchParams.has('mobileaction') && { hostname: 'zh.moegirl.org.cn' },
     /*
      * Dynasty Scans
@@ -121,7 +112,7 @@
         'wefan.baidu.com',
       ].map((domain) => [domain, tieba])
     ),
-  }[hostname]()
+  }[hostname]!()
 
   Object.assign(url, redirect)
   if (location.href !== url.href) location.assign(url.href)
