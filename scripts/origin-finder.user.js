@@ -21,8 +21,6 @@
 // ==/UserScript==
 
 ;(async () => {
-  'use strict'
-
   const url = new URL(location.href)
   const { hostname, pathname, searchParams } = url
 

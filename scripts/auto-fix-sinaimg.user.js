@@ -8,8 +8,6 @@
 // ==/UserScript==
 
 ;(() => {
-    'use strict'
-
     const regex = /ws(\d)\.sinaimg\.cn/
     const replace = 'wx$1.sinaimg.cn'
 

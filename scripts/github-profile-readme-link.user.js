@@ -8,8 +8,6 @@
 // ==/UserScript==
 
 ;(() => {
-  'use strict'
-
   const link = document.querySelector(
     '.user-profile-nav + div .text-mono a'
   )
