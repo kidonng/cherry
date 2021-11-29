@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      9
+// @version      10
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -28,9 +28,6 @@ observe(
         add(link) {
             let { pathname } = link
 
-            if (detect.isPRCommit(link))
-                pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
-
             if (
                 pathname === location.pathname ||
                 (detect.isRepoRoot(link) &&
@@ -44,6 +41,9 @@ observe(
                 link.closest('.Popover-message')
             )
                 return
+
+            if (detect.isPRCommit(link))
+                pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
 
             if (
                 detect.isConversation(link) &&

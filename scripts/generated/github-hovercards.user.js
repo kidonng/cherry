@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      9
+// @version      10
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -15,4 +15,4 @@
         [data-hydro-click*='"target":"PINNED_REPO"'],
         [data-hydro-click*='"click_target":"REPOSITORY"'],
         [itemprop="name codeRepository"]
-    )`,{constructor:HTMLAnchorElement,add(e){let{pathname:i}=e;if(Q(e)&&(i=i.replace(/pull\/\d+\/commits/,"commit")),!(i===location.pathname||J(e)&&at(e).nameWithOwner===at().nameWithOwner||![J,V,ot].some(R=>R(e))||e.closest(".Popover-message"))){if(V(e)&&i.endsWith("/linked_closing_reference"))return fetch(i,{method:"HEAD"}).then(({url:R})=>{e.href=R,e.dataset.hovercardUrl=`${R}/hovercard`,e.parentElement.classList.remove("tooltipped")});e.dataset.hovercardUrl=`${i}/hovercard`}}});})();
+    )`,{constructor:HTMLAnchorElement,add(e){let{pathname:i}=e;if(!(i===location.pathname||J(e)&&at(e).nameWithOwner===at().nameWithOwner||![J,V,ot].some(R=>R(e))||e.closest(".Popover-message"))){if(Q(e)&&(i=i.replace(/pull\/\d+\/commits/,"commit")),V(e)&&i.endsWith("/linked_closing_reference"))return fetch(i,{method:"HEAD"}).then(({url:R})=>{e.href=R,e.dataset.hovercardUrl=`${R}/hovercard`,e.parentElement.classList.remove("tooltipped")});e.dataset.hovercardUrl=`${i}/hovercard`}}});})();
