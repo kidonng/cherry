@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      6
+// @version      7
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -14,5 +14,5 @@
         .js-navigation-open,
         [data-hydro-click*='"target":"PINNED_REPO"'],
         [data-hydro-click*='"click_target":"REPOSITORY"'],
-        [itemprop="name codeRepository"],
+        [itemprop="name codeRepository"]
     )`,{constructor:HTMLAnchorElement,add(e){let{pathname:i}=e,y="";it(e)?y="repository":tt(e)?(y="commit",V(e)&&(i=i.replace(/pull\/\d+\/commits/,"commit"))):ot(e)?y="issue":nt(e)&&(y="pull_request"),y&&(e.dataset[`${y==="issue"||y==="pull_request"?"issueAndPr":y}HovercardsEnabled`]="",e.dataset.hovercardType=y,e.dataset.hovercardUrl=`${i}/hovercard`)}});})();
