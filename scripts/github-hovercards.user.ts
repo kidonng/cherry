@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      8
+// @version      9
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -10,6 +10,8 @@
 
 import { observe } from 'selector-observer'
 import * as detect from 'github-url-detection'
+
+const { getRepositoryInfo } = detect.utils
 
 observe(
     `a:is([href^="/"], [href^="${location.origin}"]):not(
@@ -24,16 +26,24 @@ observe(
     {
         constructor: HTMLAnchorElement,
         add(link) {
+            let { pathname } = link
+
+            if (detect.isPRCommit(link))
+                pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
+
             if (
+                pathname === location.pathname ||
+                (detect.isRepoRoot(link) &&
+                    getRepositoryInfo(link)!.nameWithOwner ===
+                        getRepositoryInfo()!.nameWithOwner) ||
                 ![
                     detect.isRepoRoot,
                     detect.isConversation,
                     detect.isCommit,
-                ].some((fn) => fn(link))
+                ].some((fn) => fn(link)) ||
+                link.closest('.Popover-message')
             )
                 return
-
-            let { pathname } = link
 
             if (
                 detect.isConversation(link) &&
@@ -44,8 +54,6 @@ observe(
                     link.dataset['hovercardUrl'] = `${url}/hovercard`
                     link.parentElement!.classList.remove('tooltipped')
                 })
-            else if (detect.isPRCommit(link))
-                pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
 
             link.dataset['hovercardUrl'] = `${pathname}/hovercard`
         },
