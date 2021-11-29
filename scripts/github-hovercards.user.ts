@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      7
+// @version      8
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -24,29 +24,30 @@ observe(
     {
         constructor: HTMLAnchorElement,
         add(link) {
+            if (
+                ![
+                    detect.isRepoRoot,
+                    detect.isConversation,
+                    detect.isCommit,
+                ].some((fn) => fn(link))
+            )
+                return
+
             let { pathname } = link
-            let type = ''
 
-            if (detect.isRepoRoot(link)) type = 'repository'
-            else if (detect.isCommit(link)) {
-                type = 'commit'
+            if (
+                detect.isConversation(link) &&
+                pathname.endsWith('/linked_closing_reference')
+            )
+                return fetch(pathname, { method: 'HEAD' }).then(({ url }) => {
+                    link.href = url
+                    link.dataset['hovercardUrl'] = `${url}/hovercard`
+                    link.parentElement!.classList.remove('tooltipped')
+                })
+            else if (detect.isPRCommit(link))
+                pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
 
-                if (detect.isPRCommit(link))
-                    pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
-            } else if (detect.isIssue(link)) type = 'issue'
-            else if (detect.isPRConversation(link)) type = 'pull_request'
-
-            if (type) {
-                link.dataset[
-                    `${
-                        type === 'issue' || type === 'pull_request'
-                            ? 'issueAndPr'
-                            : type
-                    }HovercardsEnabled`
-                ] = ''
-                link.dataset['hovercardType'] = type
-                link.dataset['hovercardUrl'] = `${pathname}/hovercard`
-            }
+            link.dataset['hovercardUrl'] = `${pathname}/hovercard`
         },
     }
 )
