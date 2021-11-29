@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      10
+// @version      11
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -32,7 +32,7 @@ observe(
                 pathname === location.pathname ||
                 (detect.isRepoRoot(link) &&
                     getRepositoryInfo(link)!.nameWithOwner ===
-                        getRepositoryInfo()!.nameWithOwner) ||
+                        getRepositoryInfo()?.nameWithOwner) ||
                 ![
                     detect.isRepoRoot,
                     detect.isConversation,
