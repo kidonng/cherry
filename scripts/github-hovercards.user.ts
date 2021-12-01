@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      11
+// @version      12
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -11,18 +11,39 @@
 import { observe } from 'selector-observer'
 import * as detect from 'github-url-detection'
 
-const { getRepositoryInfo } = detect.utils
+const ownerAndName = (source: HTMLAnchorElement | Location) =>
+    source.pathname.split('/').slice(1, 3).join('/')
+
+const userObserver = new MutationObserver(([mutation]) => {
+    const target = mutation!.target as HTMLAnchorElement
+    if (target.getAttribute('aria-label') !== 'Hovercard is unavailable') return
+
+    target.setAttribute('aria-label', 'Hover again to active hovercard')
+    target.dataset['hovercardUrl'] = target.dataset['hovercardUrl']!.replace(
+        '/users',
+        '/orgs'
+    )
+    target.addEventListener(
+        'mouseover',
+        () => {
+            target.removeAttribute('aria-label')
+            target.classList.remove('tooltipped')
+        },
+        { once: true }
+    )
+})
 
 observe(
-    `a:is([href^="/"], [href^="${location.origin}"]):not(
-        [data-hovercard-type],
-        [data-pjax],
-        .js-pjax-history-navigate,
-        .js-navigation-open,
-        [data-hydro-click*='"target":"PINNED_REPO"'],
-        [data-hydro-click*='"click_target":"REPOSITORY"'],
-        [itemprop="name codeRepository"]
-    )`,
+    `a:is([href^="/"], [href^="${location.origin}"]):not(${[
+        '[data-hovercard-url]', // Has hovercard
+        '[data-pjax]', // PJAX link
+        '.js-pjax-history-navigate', // PJAX link
+        '.js-navigation-open', // PJAX link
+        `[data-hydro-click*='"target":"PINNED_REPO"']`, // Has meta (pinned repo)
+        `[data-hydro-click*='"click_context":"REPOSITORY_CARD","click_target":"REPOSITORY"']`, // Has meta (info card)
+        `[data-hydro-click*='"event_type":"search_result.click"'][data-hydro-click*='"model_name":"Repository"']`, // Has meta (search results)
+        '[itemprop="name codeRepository"]', // Has meta (list item)
+    ].join()})`,
     {
         constructor: HTMLAnchorElement,
         add(link) {
@@ -31,16 +52,21 @@ observe(
             if (
                 pathname === location.pathname ||
                 (detect.isRepoRoot(link) &&
-                    getRepositoryInfo(link)!.nameWithOwner ===
-                        getRepositoryInfo()?.nameWithOwner) ||
+                    ownerAndName(link) === ownerAndName(location)) ||
                 ![
                     detect.isRepoRoot,
                     detect.isConversation,
                     detect.isCommit,
+                    detect.isProfile,
                 ].some((fn) => fn(link)) ||
-                link.closest('.Popover-message')
+                link.closest('.Popover-message') // Inside hovercard
             )
                 return
+
+            if (detect.isProfile(link)) {
+                pathname = `/users${pathname}`
+                userObserver.observe(link, { attributes: true })
+            }
 
             if (detect.isPRCommit(link))
                 pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
