@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub theme switch
-// @version      3
+// @version      4
 // @description  Add theme preferences dropdown to GitHub header
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -13,7 +13,7 @@ import doma from 'doma'
 import { sync, sun, moon } from '@primer/octicons'
 import { AppearanceFormElement } from './vendor/github-appearance-form-element'
 
-const appearance = 'https://github.com/settings/appearance'
+const appearance = '/settings/appearance'
 const label = 'Theme Preferences'
 const icons =
     sync.toSVG({ class: 'd-none gts-auto' }) +
@@ -101,7 +101,7 @@ async function addDropdown(form: Element) {
 }
 
 ;(async () => {
-    if (location.href === appearance) return
+    if (location.pathname === appearance) return
 
     getForm().then(addDropdown)
 })()
