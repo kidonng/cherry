@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      12
+// @version      13
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -13,6 +13,9 @@ import * as detect from 'github-url-detection'
 
 const ownerAndName = (source: HTMLAnchorElement | Location) =>
     source.pathname.split('/').slice(1, 3).join('/')
+// https://github.com/fregante/github-url-detection/pull/108
+const isProfile = (source: HTMLAnchorElement) =>
+    detect.isProfile(source) && !source.pathname.includes('.')
 
 const userObserver = new MutationObserver(([mutation]) => {
     const target = mutation!.target as HTMLAnchorElement
@@ -57,13 +60,18 @@ observe(
                     detect.isRepoRoot,
                     detect.isConversation,
                     detect.isCommit,
-                    detect.isProfile,
+                    isProfile,
                 ].some((fn) => fn(link)) ||
-                link.closest('.Popover-message') // Inside hovercard
+                link.closest(
+                    [
+                        '.Popover-message', // Inside hovercard
+                        '.js-feature-preview-indicator-container', // Inside profile dropdown
+                    ].join()
+                )
             )
                 return
 
-            if (detect.isProfile(link)) {
+            if (isProfile(link)) {
                 pathname = `/users${pathname}`
                 userObserver.observe(link, { attributes: true })
             }
