@@ -2,9 +2,8 @@
 
 ## [NCU COVID Sign](ncu-covid-sign.mjs)
 
-**Recommend to use [Deno version](../deno/README.md#ncu-covid-sign)**
+**[Deno version](../deno/README.md#ncu-covid-sign) is recommended**
 
 ```sh
-export NCU_TOKEN=<TOKEN>
-node sign.mjs
+NCU_TOKEN=foobar node sign.mjs
 ```
