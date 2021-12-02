@@ -5,6 +5,6 @@
 **Recommend to use [Deno version](../deno/README.md#ncu-covid-sign)**
 
 ```sh
-export NCU_TOKEN <TOKEN>
+export NCU_TOKEN=<TOKEN>
 node sign.mjs
 ```
