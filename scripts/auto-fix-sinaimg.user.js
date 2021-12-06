@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Auto fix sinaimg
-// @version      2
+// @version      3
 // @description  Auto fix loading of sinaimg.cn images
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @match        http*://*/*
+// @match        http://*/*
+// @match        https://*/*
 // ==/UserScript==
 
 ;(() => {

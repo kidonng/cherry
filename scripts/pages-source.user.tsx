@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name         Pages Source
-// @version      6
+// @version      7
 // @description  Easily go to popular Git hosting services' source repository
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
-// @match        http*://*.github.io/*
-// @match        http*://*.gitlab.io/*
-// @match        http*://*.gitee.io/*
+// @match        http://*.github.io/*
+// @match        https://*.github.io/*
+// @match        http://*.gitlab.io/*
+// @match        https://*.gitlab.io/*
+// @match        http://*.gitee.io/*
+// @match        https://*.gitee.io/*
 // @match        http://*.sourceforge.net/*
 // @match        https://*.sourceforge.io/*
 // @example      https://edwardtufte.github.io/
