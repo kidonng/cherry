@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         HTTPS Everywhere
-// @version      3
+// @version      4
 // @description  Redirect to HTTPS version if available
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        http://*/*
 // @match        https://*/*
-// @exclude      http://localhost*
+// @exclude      http://localhost:*
 // @run-at       document-start
 // @grant        GM.getValue
 // @grant        GM.setValue
