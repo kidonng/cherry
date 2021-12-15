@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      4
+@version      5
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -45,16 +45,16 @@
   }
 }
 
-@-moz-document domain("www.notion.so"), regexp("https://.+\\.notion\\.site/.+")
+@-moz-document domain("www.notion.so"), regexp(".+\\.notion\\.site/.*")
 {
-  .notion-code-block > div,
-  span[style^='font-family:"SFMono-Regular"'] {
+  [style*="SFMono-Regular"] {
     font-family: monospace !important;
   }
 }
 
-@-moz-document domain("zhuanlan.zhihu.com") {
-  div.highlight {
-    font-family: monospace;
+@-moz-document domain("www.zhihu.com"), domain("zhuanlan.zhihu.com") {
+  code {
+    font-family: monospace !important;
+    font-size: 13px !important;
   }
 }
