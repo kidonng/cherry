@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      5
+@version      6
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -47,7 +47,10 @@
 
 @-moz-document domain("www.notion.so"), regexp(".+\\.notion\\.site/.*")
 {
-  [style*="SFMono-Regular"] {
+  /* Inline/Standalone code blocks */
+  [style*="SFMono-Regular"],
+  /* Pages using monospace fonts */
+  [style*="iawriter-mono"] {
     font-family: monospace !important;
   }
 }
