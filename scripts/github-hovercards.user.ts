@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      15
+// @version      16
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -31,6 +31,23 @@ const userObserver = new MutationObserver(([mutation]) => {
     )
     // See `deactivateTimeout` in https://github.githubassets.com/assets/app/assets/modules/github/behaviors/hovercards.ts
     setTimeout(() => target.dispatchEvent(new MouseEvent('mouseover')), 100)
+})
+
+const issueObserver = new MutationObserver(([mutation]) => {
+    const target = mutation!.target as HTMLAnchorElement
+    if (target.getAttribute('aria-label') !== 'Hovercard is unavailable') return
+
+    target.setAttribute('aria-label', 'Loading...')
+    target.dispatchEvent(
+        new MouseEvent('mouseleave', { relatedTarget: target.parentElement })
+    )
+    fetch(target.pathname, { method: 'HEAD' }).then(({ url }) => {
+        target.href = url
+        target.dataset['hovercardUrl'] = `${url}/hovercard`
+        target.removeAttribute('aria-label')
+        target.classList.remove('tooltipped')
+        setTimeout(() => target.dispatchEvent(new MouseEvent('mouseover')), 100)
+    })
 })
 
 observe(
@@ -81,15 +98,20 @@ observe(
             if (detect.isPRCommit(link))
                 pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
 
-            if (
-                detect.isConversation(link) &&
-                pathname.endsWith('/linked_closing_reference')
-            )
-                return fetch(pathname, { method: 'HEAD' }).then(({ url }) => {
-                    link.href = url
-                    link.dataset['hovercardUrl'] = `${url}/hovercard`
-                    link.parentElement!.classList.remove('tooltipped')
-                })
+            if (detect.isConversation(link)) {
+                if (pathname.endsWith('/linked_closing_reference'))
+                    return fetch(pathname, { method: 'HEAD' }).then(
+                        ({ url }) => {
+                            link.href = url
+                            link.dataset['hovercardUrl'] = `${url}/hovercard`
+                            link.parentElement!.classList.remove('tooltipped')
+                        }
+                    )
+
+                // Handle if the issue has been transferred
+                if (detect.isIssue(link))
+                    issueObserver.observe(link, { attributes: true })
+            }
 
             link.dataset['hovercardUrl'] = `${pathname}/hovercard`
         },
