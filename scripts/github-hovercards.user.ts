@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      14
+// @version      15
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -20,19 +20,17 @@ const userObserver = new MutationObserver(([mutation]) => {
     const target = mutation!.target as HTMLAnchorElement
     if (target.getAttribute('aria-label') !== 'Hovercard is unavailable') return
 
-    target.setAttribute('aria-label', 'Hover again to active hovercard')
+    target.removeAttribute('aria-label')
+    target.classList.remove('tooltipped')
     target.dataset['hovercardUrl'] = target.dataset['hovercardUrl']!.replace(
         '/users',
         '/orgs'
     )
-    target.addEventListener(
-        'mouseover',
-        () => {
-            target.removeAttribute('aria-label')
-            target.classList.remove('tooltipped')
-        },
-        { once: true }
+    target.dispatchEvent(
+        new MouseEvent('mouseleave', { relatedTarget: target.parentElement })
     )
+    // See `deactivateTimeout` in https://github.githubassets.com/assets/app/assets/modules/github/behaviors/hovercards.ts
+    setTimeout(() => target.dispatchEvent(new MouseEvent('mouseover')), 100)
 })
 
 observe(
@@ -55,7 +53,7 @@ observe(
                 pathname === location.pathname ||
                 (detect.isRepoRoot(link) &&
                     getRepositoryInfo(link)!.nameWithOwner ===
-                        getRepositoryInfo()!.nameWithOwner) ||
+                        getRepositoryInfo()?.nameWithOwner) ||
                 ![
                     detect.isRepoTree,
                     detect.isConversation,
@@ -76,6 +74,7 @@ observe(
 
             if (isProfile(link)) {
                 pathname = `/users${pathname}`
+                // Handle if the profile is for an organization
                 userObserver.observe(link, { attributes: true })
             }
 
