@@ -70,12 +70,12 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 _Implementation of [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
 
-Enable native hovercards for more GitHub links:
+Enable native hovercards for most GitHub links of the following types:
 
--   Repository roots
+-   Repository file trees
+-   Conversations (issues & pull requests)
 -   Commits
--   Issue conversations
--   Pull request conversations
+-   Profiles (users & organizations)
 
 ## [GitHub hide public badge](generated/github-hide-public-badge.user.js?raw=true)
 

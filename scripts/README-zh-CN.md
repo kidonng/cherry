@@ -70,12 +70,12 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 _实现 [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
 
-启用更多链接的原生悬浮信息卡片：
+为下列类型的 GitHub 链接启用原生信息悬浮卡片：
 
--   仓库根目录
--   提交
--   Issue 对话
--   Pull request 对话
+-   仓库文件树
+-   对话（issues 与 pull requests）
+-   Commits
+-   用户与组织信息
 
 ## [GitHub 隐藏 public 标签](generated/github-hide-public-badge.user.js?raw=true)
 
