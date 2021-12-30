@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      17
+// @version      18
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -11,7 +11,6 @@
 import { observe } from 'selector-observer'
 import * as detect from 'github-url-detection'
 
-const { getRepositoryInfo } = detect.utils
 // https://github.com/fregante/github-url-detection/pull/108
 const isProfile = (source: HTMLAnchorElement) =>
     detect.isProfile(source) && !source.pathname.includes('.')
@@ -67,13 +66,14 @@ observe(
             let { pathname } = link
 
             if (
+                ![
+                    detect.isRepoHome,
+                    detect.isConversation,
+                    detect.isDiscussion,
+                    detect.isCommit,
+                    isProfile,
+                ].some((fn) => fn(link)) ||
                 pathname === location.pathname ||
-                (detect.isRepoTree(link) &&
-                    getRepositoryInfo(link)!.nameWithOwner ===
-                        getRepositoryInfo()?.nameWithOwner) ||
-                ![detect.isConversation, detect.isCommit, isProfile].some(
-                    (fn) => fn(link)
-                ) ||
                 link.closest(
                     [
                         '.Popover-message', // Inside hovercard
@@ -82,9 +82,6 @@ observe(
                 )
             )
                 return
-
-            if (detect.isRepoTree(link))
-                pathname = `/${getRepositoryInfo(link)!.nameWithOwner}`
 
             if (isProfile(link)) {
                 pathname = `/users${pathname}`
