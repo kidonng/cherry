@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      16
+// @version      17
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -68,15 +68,12 @@ observe(
 
             if (
                 pathname === location.pathname ||
-                (detect.isRepoRoot(link) &&
+                (detect.isRepoTree(link) &&
                     getRepositoryInfo(link)!.nameWithOwner ===
                         getRepositoryInfo()?.nameWithOwner) ||
-                ![
-                    detect.isRepoTree,
-                    detect.isConversation,
-                    detect.isCommit,
-                    isProfile,
-                ].some((fn) => fn(link)) ||
+                ![detect.isConversation, detect.isCommit, isProfile].some(
+                    (fn) => fn(link)
+                ) ||
                 link.closest(
                     [
                         '.Popover-message', // Inside hovercard
