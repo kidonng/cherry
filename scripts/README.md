@@ -32,7 +32,7 @@ Floating YouTube mini player like Bilibili, for conveniently reading comments an
     -   Doesn't work in Theater mode and Full screen
     -   Some controls (progress bar, volume, etc.) doesn't follow cursor. This is due to implementation limits.
 
-## [Notion Localization](generated/notion-localization.user.js?raw=true)
+## [Notion Localization](https://kidonng.github.io/cherry/notion-localization.user.js)
 
 Enable Notion's native localization for more languages.
 
@@ -48,7 +48,7 @@ Notes:
 Usage for macOS app: run the following command in your terminal
 
 ```sh
-curl https://cdn.jsdelivr.net/gh/kidonng/cherry@master/scripts/generated/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+curl https://kidonng.github.io/cherry/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
 ```
 
 ## [NCU Net](ncu-net.user.js?raw=true)
@@ -66,7 +66,7 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 **NOTE** You can [configure timeout and retry interval](ncu-net.user.js#L14-L20) in the script.
 
-## [GitHub Hovercards](generated/github-hovercards.user.js?raw=true)
+## [GitHub Hovercards](https://kidonng.github.io/cherry/github-hovercards.user.js)
 
 _Implementation of [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
 
@@ -77,7 +77,7 @@ Enable native hovercards for most GitHub links of the following types:
 -   Commits
 -   Profiles (users & organizations)
 
-## [GitHub hide public badge](generated/github-hide-public-badge.user.js?raw=true)
+## [GitHub hide public badge](https://kidonng.github.io/cherry/github-hide-public-badge.user.js)
 
 _Ported from [refined-github#4770](https://github.com/refined-github/refined-github/pull/4770)_
 
@@ -85,7 +85,7 @@ Hides "Public" repository badge or removes "Public" prefix.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
-## [GitHub conversation list avatars](generated/github-conversation-list-avatars.user.js?raw=true)
+## [GitHub conversation list avatars](https://kidonng.github.io/cherry/github-conversation-list-avatars.user.js)
 
 _Implementation of [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)_
 
@@ -93,7 +93,7 @@ Add avatars in GitHub's conversation list.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
-## [~~GitHub icon tweaks~~](generated/github-icon-tweaks.user.js?raw=true)
+## [~~GitHub icon tweaks~~](https://kidonng.github.io/cherry/github-icon-tweaks.user.js)
 
 **⚠️ No longer maintained. GitHub has implemented most changes.**
 
@@ -105,7 +105,7 @@ Tweak certain GitHub icons' color and style.
 | ------------------------------------------------------- | ----------------------------------------------------- |
 | ![Before](../screenshots/github-icon-tweaks-before.png) | ![After](../screenshots/github-icon-tweaks-after.png) |
 
-## [Pages Source](generated/pages-source.user.js?raw=true)
+## [Pages Source](https://kidonng.github.io/cherry/pages-source.user.js)
 
 Display a logo in the bottom right corner linked to the source repository when visiting a site hosted on the following Git hosting services:
 
@@ -146,7 +146,7 @@ _Implementation of [refined-github#3426](https://github.com/refined-github/refin
 
 Make profile README's header link to the README instead of the repository.
 
-## [~~GitHub theme switch~~](generated/github-theme-switch.user.js?raw=true)
+## [~~GitHub theme switch~~](https://kidonng.github.io/cherry/github-theme-switch.user.js)
 
 **⚠️ No longer maintained. Use [GitHub's Command palette](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452) instead.**
 
@@ -156,7 +156,7 @@ _Ported from [refined-github#3804](https://github.com/refined-github/refined-git
 
 Add theme preferences dropdown to GitHub header.
 
-Also available as a [bookmarklet](generated/github-theme-switch.bookmarklet.js?raw=true).
+Also available as a [bookmarklet](https://kidonng.github.io/cherry/github-theme-switch.bookmarklet.js).
 
 ## [GitHub Star history](github-star-history.user.js?raw=true)
 
@@ -164,7 +164,7 @@ _Implementation of [refined-github#4097](https://github.com/refined-github/refin
 
 Adds a button to Stargazers page to view star history on https://star-history.t9t.io/.
 
-## [Reposition Octotree bookmark icon](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
+## [Reposition Octotree bookmark icon](https://kidonng.github.io/cherry/reposition-octotree-bookmark-icon.user.js)
 
 _Implementation of [octotree#992](https://github.com/ovity/octotree/issues/992)_
 
@@ -176,7 +176,7 @@ After:
 
 ![Screenshot of after](https://user-images.githubusercontent.com/44045911/89754891-14043080-db10-11ea-86ed-b2316fed36cf.png)
 
-## [Telegram Raw Media](generated/telegram-raw-media.user.js?raw=1)
+## [Telegram Raw Media](https://kidonng.github.io/cherry/telegram-raw-media.user.js)
 
 Show media on `t.me` as regular elements. Make context menu, drag and drop, etc. work on them.
 
@@ -189,6 +189,6 @@ Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 ## Redirects
 
 -   [Wikiwand](wikiwand.user.js?raw=true): Redirect Wikipedia to Wikiwand. Can replace Wikiwand browser extension.
--   [Origin Finder](generated/origin-finder.user.js?raw=true): Redirect to resources' origin version, such as the original size version of images.
+-   [Origin Finder](https://kidonng.github.io/cherry/origin-finder.user.js): Redirect to resources' origin version, such as the original size version of images.
 -   [HTTPS Everywhere](https-everywhere.user.js?raw=true): Redirect to HTTPS version if available
 -   [Google Bang](google-bang.user.js?raw=true): Add support for [!Bang Search Shortcuts](https://duckduckgo.com/bang) to Google

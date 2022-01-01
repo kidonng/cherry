@@ -32,7 +32,7 @@
     -   无法在剧场模式和全屏下使用
     -   部分控件（进度条、音量等） 不跟随光标。这是实现限制导致的。
 
-## [Notion 本地化](generated/notion-localization.user.js?raw=true)
+## [Notion 本地化](https://kidonng.github.io/cherry/notion-localization.user.js)
 
 启用更多语言的 Notion 原生本地化翻译。
 
@@ -48,7 +48,7 @@
 macOS 应用使用方法：在终端执行以下命令
 
 ```sh
-curl https://cdn.jsdelivr.net/gh/kidonng/cherry@master/scripts/generated/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+curl https://kidonng.github.io/cherry/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
 ```
 
 ## [NCU Net](ncu-net.user.js?raw=true)
@@ -66,7 +66,7 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 **注** 可以在脚本中[设置超时和重连时间](ncu-net.user.js#L14-L20)。
 
-## [GitHub 悬浮卡片](generated/github-hovercards.user.js?raw=true)
+## [GitHub 悬浮卡片](https://kidonng.github.io/cherry/github-hovercards.user.js)
 
 _实现 [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
 
@@ -77,7 +77,7 @@ _实现 [refined-github#5052](https://github.com/refined-github/refined-github/i
 -   Commits
 -   用户与组织信息
 
-## [GitHub 隐藏 public 标签](generated/github-hide-public-badge.user.js?raw=true)
+## [GitHub 隐藏 public 标签](https://kidonng.github.io/cherry/github-hide-public-badge.user.js)
 
 _移植自 [refined-github#4770](https://github.com/refined-github/refined-github/pull/4770)_
 
@@ -85,7 +85,7 @@ _移植自 [refined-github#4770](https://github.com/refined-github/refined-githu
 
 ![截图](https://user-images.githubusercontent.com/44045911/132693134-ffa6a0fa-5366-447f-8e49-deda12884bd7.png)
 
-## [GitHub 对话列表头像](generated/github-conversation-list-avatars.user.js?raw=true)
+## [GitHub 对话列表头像](https://kidonng.github.io/cherry/github-conversation-list-avatars.user.js)
 
 _实现 [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)_
 
@@ -93,7 +93,7 @@ _实现 [refined-github#4906](https://github.com/refined-github/refined-github/i
 
 ![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
-## [GitHub 图标调整](generated/github-icon-tweaks.user.js?raw=true)
+## [GitHub 图标调整](https://kidonng.github.io/cherry/github-icon-tweaks.user.js)
 
 _实现 [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)_
 
@@ -103,7 +103,7 @@ _实现 [refined-github#5007](https://github.com/refined-github/refined-github/i
 | ------------------------------------------------------- | ----------------------------------------------------- |
 | ![Before](../screenshots/github-icon-tweaks-before.png) | ![After](../screenshots/github-icon-tweaks-after.png) |
 
-## [Pages 源链接](generated/pages-source.user.js?raw=true)
+## [Pages 源链接](https://kidonng.github.io/cherry/pages-source.user.js)
 
 访问以下 Git 托管平台上的站点时，在右下角显示一个链接到原始仓库的 logo:
 
@@ -144,7 +144,7 @@ _实现 [refined-github#3426](https://github.com/refined-github/refined-github/i
 
 使个人 README 的顶部链接指向 README 而非仓库。
 
-## [GitHub 主题切换](generated/github-theme-switch.user.js?raw=true)
+## [GitHub 主题切换](https://kidonng.github.io/cherry/github-theme-switch.user.js)
 
 _移植自 [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)。你可能会更喜欢[使用 GitHub 的原生命令面板](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452)。_
 
@@ -152,7 +152,7 @@ _移植自 [refined-github#3804](https://github.com/refined-github/refined-githu
 
 向 GitHub 顶栏添加主题设置下拉菜单。
 
-另提供[书签](generated/github-theme-switch.bookmarklet.js?raw=true)版本。
+另提供[书签](https://kidonng.github.io/cherry/github-theme-switch.bookmarklet.js)版本。
 
 ## [GitHub Star 历史](github-star-history.user.js?raw=true)
 
@@ -160,7 +160,7 @@ _实现 [refined-github#4097](https://github.com/refined-github/refined-github/i
 
 在 Stargazers 页面添加一个按钮以在 https://star-history.t9t.io/ 查看 star 历史。
 
-## [重新放置 Octotree 书签图标](generated/reposition-octotree-bookmark-icon.user.js?raw=true)
+## [重新放置 Octotree 书签图标](https://kidonng.github.io/cherry/reposition-octotree-bookmark-icon.user.js)
 
 _实现 [octotree#992](https://github.com/ovity/octotree/issues/992)_
 
@@ -172,7 +172,7 @@ _实现 [octotree#992](https://github.com/ovity/octotree/issues/992)_
 
 ![启用后的截图](https://user-images.githubusercontent.com/44045911/89754891-14043080-db10-11ea-86ed-b2316fed36cf.png)
 
-## [Telegram 原始媒体](generated/telegram-raw-media.user.js?raw=1)
+## [Telegram 原始媒体](https://kidonng.github.io/cherry/telegram-raw-media.user.js)
 
 用常规元素展示 `t.me` 上的媒体。使上下文菜单、拖放功能能够对它们生效。
 
@@ -185,6 +185,6 @@ _实现 [octotree#992](https://github.com/ovity/octotree/issues/992)_
 ## 重定向
 
 -   [Wikiwand](wikiwand.user.js?raw=true)：重定向维基百科到 Wikiwand。可替代 Wikiwand 浏览器扩展
--   [Origin Finder](generated/origin-finder.user.js?raw=true)：重定向至资源的原始版本，例如原始尺寸的图像
+-   [Origin Finder](https://kidonng.github.io/cherry/origin-finder.user.js)：重定向至资源的原始版本，例如原始尺寸的图像
 -   [HTTPS Everywhere](https-everywhere.user.js?raw=true)：重定向至 HTTPS 版本（如果网站支持）
 -   [Google Bang](google-bang.user.js?raw=true): 为 Google 添加 [!Bang 搜索捷径](https://duckduckgo.com/bang)支持

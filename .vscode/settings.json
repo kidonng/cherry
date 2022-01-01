@@ -1,8 +1,7 @@
 {
   "search.exclude": {
     "**/.yarn": true,
-    "**/.pnp.*": true,
-    "scripts/generated/*": true
+    "**/.pnp.*": true
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
