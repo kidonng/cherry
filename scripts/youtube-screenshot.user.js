@@ -1,39 +1,40 @@
 // ==UserScript==
 // @name         YouTube Screenshot
-// @version      3
+// @version      4
 // @description  Screenshot for YouTube
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://www.youtube.com/*
 // @noframes
-// @grant        GM.addStyle
 // ==/UserScript==
 
 ;(() => {
     const $ = document.querySelector.bind(document)
     const svgNS = 'http://www.w3.org/2000/svg'
 
-    GM.addStyle(`
-      .screenshot-container {
-        /* https://codepen.io/sdthornton/pen/wBZdXq */
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
-        /* https://stackoverflow.com/a/50925544 */
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10000;
-      }
-
-      .screenshot-container:hover {
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-      }
-
-      .screenshot-container img {
-        width: 100%;
-      }
-    `)
+    document.head.insertAdjacentHTML(
+        'beforeend',
+        `
+        <style>
+        .screenshot-container {
+            /* https://codepen.io/sdthornton/pen/wBZdXq */
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+            /* https://stackoverflow.com/a/50925544 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+        }
+        .screenshot-container:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        .screenshot-container img {
+            width: 100%;
+        }
+        </style>`
+    )
 
     let video
     const container = document.createElement('div')

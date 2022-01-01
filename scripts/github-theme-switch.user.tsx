@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         GitHub theme switch
-// @version      4
+// @version      5
 // @description  Add theme preferences dropdown to GitHub header
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://github.com/*
-// @grant        GM.addStyle
 // ==/UserScript==
 
 import React from 'dom-chef'
@@ -62,13 +61,13 @@ async function addDropdown(form: Element) {
         autoPanel
     )
 
-    GM.addStyle(
-        ['auto', 'light', 'dark']
-            .map(
+    document.head.append(
+        <style>
+            {['auto', 'light', 'dark'].map(
                 (mode) =>
                     `[data-color-mode="${mode}"] .gts-${mode} { display: inline-block !important; }`
-            )
-            .join('')
+            )}
+        </style>
     )
 
     const summary = (
