@@ -37,6 +37,7 @@ const config = [
         [
             'scripts/github-conversation-list-avatars.user.tsx',
             'scripts/github-hide-public-badge.user.js',
+            'scripts/github-icon-tweaks.user.ts',
             'scripts/github-hovercards.user.ts',
             'scripts/notion-localization.user.tsx',
             'scripts/origin-finder.user.ts',
@@ -45,6 +46,7 @@ const config = [
             'scripts/telegram-raw-media.user.tsx',
         ],
     ],
+    [['scripts/github-theme-switch.user.tsx'], { keepNames: true }],
 ]
 
 module.exports = { plugins, build, config }
