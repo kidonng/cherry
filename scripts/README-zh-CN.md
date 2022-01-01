@@ -152,7 +152,7 @@ _移植自 [refined-github#3804](https://github.com/refined-github/refined-githu
 
 向 GitHub 顶栏添加主题设置下拉菜单。
 
-另提供[书签](https://kidonng.github.io/cherry/github-theme-switch.bookmarklet.js)版本。
+另提供[书签](https://kidonng.github.io/cherry/github-theme-switch.user.bookmarklet.js)版本。
 
 ## [GitHub Star 历史](github-star-history.user.js?raw=true)
 

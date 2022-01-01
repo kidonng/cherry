@@ -156,7 +156,7 @@ _Ported from [refined-github#3804](https://github.com/refined-github/refined-git
 
 Add theme preferences dropdown to GitHub header.
 
-Also available as a [bookmarklet](https://kidonng.github.io/cherry/github-theme-switch.bookmarklet.js).
+Also available as a [bookmarklet](https://kidonng.github.io/cherry/github-theme-switch.user.bookmarklet.js).
 
 ## [GitHub Star history](github-star-history.user.js?raw=true)
 

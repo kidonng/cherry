@@ -17,6 +17,7 @@ for (const script of ['scripts/github-theme-switch.user.tsx']) {
             bundle: true,
             minify: true,
             write: false,
+            legalComments: 'none',
             plugins,
         })
         .then((result) => {
