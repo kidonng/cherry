@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      27
+@version      28
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -46,6 +46,11 @@
    */
     .UnderlineNav-item[href$='?tab=packages']:not(.selected) {
         display: none;
+    }
+
+    /* Mute visited conversation (issue/PR) link */
+    .js-issue-row .h4:visited:not(:hover) {
+        color: var(--color-fg-muted) !important;
     }
 
     if lightHeader {
