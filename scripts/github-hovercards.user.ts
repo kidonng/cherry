@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      18
+// @version      19
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -73,7 +73,7 @@ observe(
                     detect.isCommit,
                     isProfile,
                 ].some((fn) => fn(link)) ||
-                pathname === location.pathname ||
+                pathname.toLowerCase() === location.pathname.toLowerCase() ||
                 link.closest(
                     [
                         '.Popover-message', // Inside hovercard
