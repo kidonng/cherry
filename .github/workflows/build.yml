@@ -7,7 +7,7 @@ on:
             - scripts
 
 jobs:
-    sync:
+    build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -19,11 +19,11 @@ jobs:
             - name: Upload
               run: |
                   tmp=$(mktemp -d)
-                  mv scripts/generated $tmp
-                  git switch --orphan gh-pages
-                  mv $tmp/generated/*.js .
+                  mv scripts/generated/*.js $tmp
+                  cd $tmp
+                  git init -b gh-pages .
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
                   git add .
                   git commit -m Build
-                  git push
+                  git push $GITHUB_SERVER_URL/$GITHUB_REPOSITORY gh-pages -f
