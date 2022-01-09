@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      28
+@version      29
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -8,7 +8,6 @@
 @preprocessor stylus
 
 @var checkbox colorBender "Blue open issues/pull requests and green closed issues/merge pull requests" 0
-@var checkbox hidePublicBadge "Hide \"Public\" badge after repository name" 0
 @var checkbox lightHeader "Light theme header" 0
 @var checkbox repositionOctotreeBookmark "Reposition Octotree bookmark icon" 0
 @var checkbox hideProfileHighlights "Hide \"Achievements\" and \"Highlights\" on user profile" 1
@@ -16,20 +15,6 @@
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/")
 {
-    if hidePublicBadge {
-        /* https://github.com/refined-github/refined-github/issues/4767#issuecomment-915449216 */
-        [itemprop='name'] + .Label,
-        .public [itemprop^='name'] + .Label,
-        .pinned-item-list-item-content .Label,
-        .Popover .f5 + .Label {
-            display: none;
-        }
-
-        .rgh-ci-link .Label + .commit-build-statuses {
-            margin-left: 0;
-        }
-    }
-
     if alignPRAuthorName {
         /*
      * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
@@ -49,6 +34,7 @@
     }
 
     /* Mute visited conversation (issue/PR) link */
+    /* https://github.com/refined-github/refined-github/pull/5258 */
     .js-issue-row .h4:visited:not(:hover) {
         color: var(--color-fg-muted) !important;
     }
@@ -112,17 +98,6 @@
             margin-left: -22px;
             order: -1;
         }
-    }
-
-    /*
-   * Use the same size as branch button for latest-tag-button and list-prs-for-file
-   * https://github.com/refined-github/refined-github/pull/3356
-   */
-    .rgh-latest-tag-button,
-    .rgh-latest-tag-button + .btn,
-    :is(.rgh-latest-tag-button, #branch-select-menu) + .dropdown .btn {
-        padding: 5px 16px;
-        font-size: 14px;
     }
 
     if colorBender {
