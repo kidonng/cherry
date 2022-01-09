@@ -25,12 +25,13 @@ export function convertSub(rawSub: string) {
             uuid: decodedData.id,
             alterId: decodedData.aid,
             cipher: 'auto',
+            'ws-opts': {},
           }
           if (decodedData?.tls === 'tls') proxy.tls = true
           if (decodedData?.net) proxy.network = decodedData.net
-          if (decodedData?.path) proxy['ws-path'] = decodedData.path
+          if (decodedData?.path) proxy['ws-opts'].path = decodedData.path
           if (decodedData?.host)
-            proxy['ws-headers'] = { Host: decodedData.host }
+            proxy['ws-opts'].headers = { Host: decodedData.host }
           proxies.push(proxy)
         } catch {}
       },
