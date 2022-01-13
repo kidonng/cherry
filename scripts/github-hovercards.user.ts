@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      19
+// @version      20
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -11,9 +11,7 @@
 import { observe } from 'selector-observer'
 import * as detect from 'github-url-detection'
 
-// https://github.com/fregante/github-url-detection/pull/108
-const isProfile = (source: HTMLAnchorElement) =>
-    detect.isProfile(source) && !source.pathname.includes('.')
+const { getUsername, getCleanPathname } = detect.utils
 
 const userObserver = new MutationObserver(([mutation]) => {
     const target = mutation!.target as HTMLAnchorElement
@@ -40,7 +38,7 @@ const issueObserver = new MutationObserver(([mutation]) => {
     target.dispatchEvent(
         new MouseEvent('mouseleave', { relatedTarget: target.parentElement })
     )
-    fetch(target.pathname, { method: 'HEAD' }).then(({ url }) => {
+    fetch(target.href, { method: 'HEAD' }).then(({ url }) => {
         target.href = url
         target.dataset['hovercardUrl'] = `${url}/hovercard`
         target.removeAttribute('aria-label')
@@ -63,38 +61,35 @@ observe(
     {
         constructor: HTMLAnchorElement,
         add(link) {
-            let { pathname } = link
+            let pathname = getCleanPathname(link)
 
             if (
                 ![
                     detect.isRepoHome,
-                    detect.isConversation,
+                    detect.isIssue,
+                    detect.isPR,
                     detect.isDiscussion,
                     detect.isCommit,
-                    isProfile,
+                    detect.isProfile,
                 ].some((fn) => fn(link)) ||
-                pathname.toLowerCase() === location.pathname.toLowerCase() ||
-                link.closest(
-                    [
-                        '.Popover-message', // Inside hovercard
-                        '.js-feature-preview-indicator-container', // Inside profile dropdown
-                    ].join()
-                )
+                pathname.toLowerCase() === getCleanPathname().toLowerCase() ||
+                link.closest('.Popover-message') // Inside hovercard
             )
                 return
 
-            if (isProfile(link)) {
-                pathname = `/users${pathname}`
+            if (detect.isProfile(link)) {
+                pathname = pathname.replace(/([\w-]+).*/, '$1')
+
+                if (pathname === getUsername()) return
+
+                pathname = `users/${pathname}`
                 // Handle if the profile is for an organization
                 userObserver.observe(link, { attributes: true })
             }
 
-            if (detect.isPRCommit(link))
-                pathname = pathname.replace(/pull\/\d+\/commits/, 'commit')
-
-            if (detect.isConversation(link)) {
+            if (detect.isIssue(link) || detect.isPR(link)) {
                 if (pathname.endsWith('/linked_closing_reference'))
-                    return fetch(pathname, { method: 'HEAD' }).then(
+                    return fetch(link.href, { method: 'HEAD' }).then(
                         ({ url }) => {
                             link.href = url
                             link.dataset['hovercardUrl'] = `${url}/hovercard`
@@ -105,9 +100,13 @@ observe(
                 // Handle if the issue has been transferred
                 if (detect.isIssue(link))
                     issueObserver.observe(link, { attributes: true })
+                else
+                    pathname = detect.isPRCommit(link)
+                        ? pathname.replace(/\/pull\/\d+\/commits/, '/commit')
+                        : pathname.replace(/(\/pull\/\d+).*/, '$1')
             }
 
-            link.dataset['hovercardUrl'] = `${pathname}/hovercard`
+            link.dataset['hovercardUrl'] = `/${pathname}/hovercard`
         },
     }
 )
