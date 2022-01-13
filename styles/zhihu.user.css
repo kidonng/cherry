@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Zhihu
-@version      2
+@version      3
 @description  Hide Zhihu annoyances
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -20,6 +20,10 @@
   .Footer,
   .Question-mainColumnLogin,
   [data-za-detail-view-path-module='RelatedQuestions'],
+  .SidebarShortcut [data-za-detail-view-path-module='ContentList'],
+  .Zi--VIP,
+  [aria-label=" 好物推荐官"],
+  .AnswerAuthor-buttons,
   .VotableTopicCard {
     display: none !important;
   }
