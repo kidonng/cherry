@@ -74,6 +74,7 @@ Enable native hovercards for most GitHub links of the following types:
 
 -   Repository file trees
 -   Conversations (issues & pull requests)
+-   Discussions
 -   Commits
 -   Profiles (users & organizations)
 
