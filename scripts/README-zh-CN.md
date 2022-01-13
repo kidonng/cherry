@@ -73,8 +73,9 @@ _实现 [refined-github#5052](https://github.com/refined-github/refined-github/i
 为下列类型的 GitHub 链接启用原生信息悬浮卡片：
 
 -   仓库文件树
--   对话（issues 与 pull requests）
--   Commits
+-   对话（议题与拉取请求）
+-   讨论
+-   提交
 -   用户与组织信息
 
 ## [GitHub 隐藏 public 标签](https://kidonng.github.io/cherry/github-hide-public-badge.user.js)

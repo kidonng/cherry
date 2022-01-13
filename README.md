@@ -2,10 +2,10 @@
 
 Cherry is a collection of handcrafted resources.
 
-- [User scripts](scripts/README.md)
-- [User styles](styles/README.md)
-- [Node scripts](node/README.md)
-- [Deno scripts](deno/README.md)
+- [User Scripts](scripts/README.md)
+- [User Styles](styles/README.md)
+- [Node Scripts](node/README.md)
+- [Deno Scripts](deno/README.md)
 - [Patches](patches/README.md)
 
 ## License
