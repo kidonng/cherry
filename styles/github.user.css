@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      31
+@version      32
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -10,7 +10,6 @@
 @var checkbox colorBender "Blue open issues/pull requests and green closed issues/merge pull requests" 0
 @var checkbox lightHeader "Light theme header" 0
 @var checkbox repositionOctotreeBookmark "Reposition Octotree bookmark icon" 0
-@var checkbox hideProfileHighlights "Hide \"Achievements\" and \"Highlights\" on user profile" 1
 @var checkbox alignPRAuthorName "Align author name on PR sticky header (for Chinese locale users)" 0
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/")
@@ -38,7 +37,7 @@
     .js-issue-row .h4:visited:not(:hover) {
         color: var(--color-fg-muted) !important;
     }
-    
+
     /* Restore spacing between "Milestone" and "Linked pull requests" in sidebar */
     /* https://github.com/refined-github/refined-github/issues/5280#issuecomment-1008327309 */
     create-issue-branch .discussion-sidebar-item {
@@ -70,12 +69,6 @@
     /* Hide Pro badge */
     .js-hovercard-content [title='Label: Pro'] {
         display: none !important;
-    }
-
-    if hideProfileHighlights {
-        .border-top.color-border-secondary.pt-3.mt-3.d-none.d-md-block {
-            display: none !important;
-        }
     }
 
     /*
@@ -130,5 +123,13 @@
         .branch-action-state-merged .branch-action-icon {
             background-color: var(--color-success-emphasis) !important;
         }
+    }
+}
+
+@-moz-document regexp("https://github.com/.+/.+/edit/.+/.github/ISSUE_TEMPLATE/.+")
+{
+    /* GitHub limits this to 550px and content below is inaccessible */
+    .repository-content > .d-flex {
+        min-height: 900px !important;
     }
 }
