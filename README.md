@@ -8,6 +8,6 @@ Cherry is a collection of handcrafted resources.
 - [Deno scripts](deno/README.md)
 - [Patches](patches/README.md)
 
-## License Notes
+## License
 
-[MIT license](LICENSE) applies to my original works, while ported works keep their own licenses.
+[MPL-2.0 License](LICENSE) applies, except for [ported user styles](styles/README.md#ported).
