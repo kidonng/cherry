@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      32
+@version      33
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -36,14 +36,6 @@
     /* https://github.com/refined-github/refined-github/pull/5258 */
     .js-issue-row .h4:visited:not(:hover) {
         color: var(--color-fg-muted) !important;
-    }
-
-    /* Restore spacing between "Milestone" and "Linked pull requests" in sidebar */
-    /* https://github.com/refined-github/refined-github/issues/5280#issuecomment-1008327309 */
-    create-issue-branch .discussion-sidebar-item {
-        margin-top: 16px;
-        padding-top: 16px !important;
-        border-top: 1px solid var(--color-border-muted);
     }
 
     if lightHeader {
