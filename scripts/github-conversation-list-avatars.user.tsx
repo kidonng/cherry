@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub conversation list avatars
-// @version      2
+// @version      3
 // @description  Add avatars in GitHub's conversation list
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -28,7 +28,6 @@ observe(
             el.prepend(
                 <img
                     className="avatar avatar-user"
-                    style={{ transform: 'translateY(-1.5px)' }}
                     src={src}
                     width="16"
                     height="16"
