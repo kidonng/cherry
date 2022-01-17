@@ -10,4 +10,4 @@ Cherry is a collection of handcrafted resources.
 
 ## License Notes
 
-[MIT license](LICENSE) applies to my original works, while ported works keep their own licenses.
+[MIT license](LICENSE) applies to my original works, while [ported user styles](styles/README.md#ported) and [vendored scripts](scripts/vendor) keep their own licenses/copyrights.
