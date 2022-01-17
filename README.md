@@ -10,4 +10,7 @@ Cherry is a collection of handcrafted resources.
 
 ## License
 
-[MPL-2.0 License](LICENSE) applies, except for [ported user styles](styles/README.md#ported).
+[MPL-2.0 License](LICENSE) applies, except for:
+
+- [Ported user styles](styles/README.md#ported)
+- [Vendor scripts](scripts/vendor)
