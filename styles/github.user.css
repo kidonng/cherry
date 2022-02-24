@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      34
+@version      35
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -14,6 +14,21 @@
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/")
 {
+    .markdown-body :is(
+        img:not([data-canonical-src^="https://img.shields.io/"]),
+        [data-type="mermaid"] .render-viewer
+    ) {
+        /* Same as `.rounded` */
+        border-radius: 6px;
+    }
+
+    /* Inspired by `.markdown-body .footnotes li:target::before` */
+    .markdown-body [data-footnote-ref]:target {
+        padding: 4px;
+        border: 2px solid var(--color-accent-emphasis);
+        border-radius: 6px;
+    }
+
     if alignPRAuthorName {
         /*
          * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
