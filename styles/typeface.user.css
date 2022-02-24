@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      6
+@version      7
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -8,56 +8,43 @@
 ==/UserStyle== */
 
 @-moz-document domain("github.com") {
-  .branch-name,
-  .commit .sha-block,
-  .commit .sha,
-  .commit-ref,
-  .commit-desc pre,
-  .commit-tease-sha,
-  .blob-num,
-  .blob-code-inner,
-  kbd,
-  tt,
-  code,
-  pre,
-  .input-monospace,
-  .text-mono,
-  .file-editor-textarea,
-  .CommunityTemplate-highlight,
-  .file-info,
-  .hook-delivery-guid,
-  .hook-delivery-response-status,
-  .export-phrase pre,
-  .oauth-app-info-container dl.keys dd,
-  .two-factor-recovery-codes,
-  .CodeMirror-lines,
-  /* Refined GitHub */
-  #commits_bucket [aria-label='View commit details'], /* https://github.com/refined-github/refined-github/pull/4899/files#diff-24ef5929102e80386c178f9c0e79536d11501971d9dc7e7a3490b48bf565f174R45-R48 */
-  .rgh-monospace-textareas :is(#merge_title_field, #commit-summary-input, textarea) /* https://github.com/refined-github/refined-github/blob/37fa4677f1ecf26d7176c8d9d43f8a4db6d5d902/source/features/monospace-textareas.css#L8-L10 */
-  {
-    font-family: monospace, JetBrainsMono Nerd Font !important;
-  }
+    #readme .markdown-body {
+        font-family: New York, LXGW WenKai, serif;
+    }
 
-  .blob-num,
-  .blob-code-inner,
-  .CodeMirror-lines {
-    font-size: 13px !important;
-  }
+    #readme .markdown-body :is(h1, h2, h3, h4, h5, h6) {
+        font-family: system-ui;
+    }
+
+    .blob-num,
+    .blob-code-inner,
+    .CodeMirror-lines /* `!important` is for this selector */ {
+        font-size: 13px !important;
+    }
 }
 
-@-moz-document domain("www.notion.so"), regexp(".+\\.notion\\.site/.*")
-{
-  /* Inline/Standalone code blocks */
-  [style*="SFMono-Regular"],
-  /* Pages using monospace fonts */
-  [style*="iawriter-mono"] {
-    font-family: monospace !important;
-  }
+@-moz-document domain("developer.mozilla.org"), domain("interactive-examples.mdn.mozilla.net") {
+    code,
+    code[class*='language-'] {
+        font-family: monospace;
+    }
 }
 
-@-moz-document domain("www.zhihu.com"), domain("zhuanlan.zhihu.com") {
-  code {
-    font-family: monospace !important;
-    font-size: 13px !important;
-  }
+@-moz-document domain("wikipedia.org"), domain("moegirl.org.cn") {
+    .mw-body-content {
+        font-size: 16px;
+    }
+
+    :not(.mw-editfont-monospace) > .mw-parser-output {
+        font-family: New York, LXGW WenKai, serif;
+    }
+
+    #firstHeading,
+    .mw-headline {
+        font-family: system-ui;
+    }
+
+    .mw-userlink {
+        font-weight: bold;
+    }
 }
