@@ -1,0 +1,83 @@
+/* ==UserStyle==
+@name         [Serif] Georgia to New York
+@version      1
+@description  Replace Georgia with New York globally
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+@font-face {
+  font-family: Georgia;
+  src: local('New York Regular');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-style: italic;
+  src: local('New York Italic Regular Italic');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 500;
+  src: local('New York Medium');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 500;
+  font-style: italic;
+  src: local('New York Italic Medium Italic');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 600;
+  src: local('New York Semibold');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 600;
+  font-style: italic;
+  src: local('New York Italic Semibold Italic');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 700;
+  src: local('New York Bold');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 700;
+  font-style: italic;
+  src: local('New York Italic Bold Italic');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 800;
+  src: local('New York Heavy');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 800;
+  font-style: italic;
+  src: local('New York Italic Heavy Italic');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 900;
+  src: local('New York Black');
+}
+
+@font-face {
+  font-family: Georgia;
+  font-weight: 900;
+  font-style: italic;
+  src: local('New York Italic Black Italic');
+}

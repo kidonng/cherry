@@ -1,0 +1,122 @@
+/* ==UserStyle==
+@name         [Sans-serif] Arial to SF Pro
+@version      1
+@description  Replace Arial with SF Pro globally
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+@font-face {
+  font-family: Arial;
+  font-weight: 100;
+  src: local('SF Pro Ultralight');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 100;
+  font-style: italic;
+  src: local('SF Pro Italic Ultralight Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 200;
+  src: local('SF Pro Thin');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 200;
+  font-style: italic;
+  src: local('SF Pro Italic Thin Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 300;
+  src: local('SF Pro Light');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 300;
+  font-style: italic;
+  src: local('SF Pro Italic Light Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  src: local('SF Pro Regular');
+}
+
+@font-face {
+  font-family: Arial;
+  font-style: italic;
+  src: local('SF Pro Italic Regular Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 500;
+  src: local('SF Pro Medium');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 500;
+  font-style: italic;
+  src: local('SF Pro Italic Medium Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 600;
+  src: local('SF Pro Semibold');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 600;
+  font-style: italic;
+  src: local('SF Pro Italic Semibold Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 700;
+  src: local('SF Pro Bold');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 700;
+  font-style: italic;
+  src: local('SF Pro Italic Bold Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 800;
+  src: local('SF Pro Heavy');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 800;
+  font-style: italic;
+  src: local('SF Pro Italic Heavy Italic');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 900;
+  src: local('SF Pro Black');
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: 900;
+  font-style: italic;
+  src: local('SF Pro Italic Black Italic');
+}
