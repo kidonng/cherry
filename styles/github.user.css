@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      33
+@version      34
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -16,26 +16,20 @@
 {
     if alignPRAuthorName {
         /*
-     * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
-     * https://github.com/refined-github/refined-github/pull/3660#discussion_r506837095
-     */
+         * Fix a GitHub bug that PR author name is not aligned when using Chinese locale
+         * https://github.com/refined-github/refined-github/pull/3660#discussion_r506837095
+         */
         .sticky-content .author.css-truncate-target {
             vertical-align: -4px;
         }
     }
 
     /*
-   * Hide "Packages" tab on user profile
-   * https://github.com/refined-github/refined-github/pull/4487
-   */
+     * Hide "Packages" tab on user profile
+     * https://github.com/refined-github/refined-github/pull/4487
+     */
     .UnderlineNav-item[href$='?tab=packages']:not(.selected) {
         display: none;
-    }
-
-    /* Mute visited conversation (issue/PR) link */
-    /* https://github.com/refined-github/refined-github/pull/5258 */
-    .js-issue-row .h4:visited:not(:hover) {
-        color: var(--color-fg-muted) !important;
     }
 
     if lightHeader {
@@ -64,19 +58,19 @@
     }
 
     /*
-   * Hide following items below new comment box:
-   * - "Remember, contributions to this repository should follow its contributing guidelines and code of conduct."
-   * - "Show your support for <user> by sponsoring them."
-   */
+     * Hide following items below new comment box:
+     * - "Remember, contributions to this repository should follow its contributing guidelines and code of conduct."
+     * - "Show your support for <user> by sponsoring them."
+     */
     #issuecomment-new .timeline-comment--caret ~ div {
         display: none !important;
     }
 
     if repositionOctotreeBookmark {
         /*
-     * Put Octotree bookmark icon in front of title
-     * https://github.com/ovity/octotree/issues/992
-     */
+         * Put Octotree bookmark icon in front of title
+         * https://github.com/ovity/octotree/issues/992
+         */
         .gh-header-title {
             display: flex;
             align-items: baseline;
