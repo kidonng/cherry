@@ -1,0 +1,109 @@
+/* ==UserStyle==
+@name         [Monospace] Menlo to JetBrains Mono
+@version      1
+@description  Replace Menlo with JetBrains Mono globally
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+@font-face {
+  font-family: Menlo;
+  font-weight: 100;
+  src: local('JetBrains Mono Regular Thin');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 100;
+  font-style: italic;
+  src: local('JetBrains Mono Italic Thin Italic');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 200;
+  src: local('JetBrains Mono Regular ExtraLight');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 200;
+  font-style: italic;
+  src: local('JetBrains Mono Regular ExtraLight');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 300;
+  src: local('JetBrains Mono Regular Light');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 300;
+  font-style: italic;
+  src: local('JetBrains Mono Italic Light Italic');
+}
+
+@font-face {
+  font-family: Menlo;
+  src: local('JetBrains Mono Regular Regular');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-style: italic;
+  src: local('JetBrains Mono Italic Italic');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 500;
+  src: local('JetBrains Mono Regular Medium');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 500;
+  font-style: italic;
+  src: local('JetBrains Mono Italic Medium Italic');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 600;
+  src: local('JetBrains Mono Regular SemiBold');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 600;
+  font-style: italic;
+  src: local('JetBrains Mono Italic SemiBold Italic');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 700;
+  src: local('JetBrains Mono Regular Bold');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 700;
+  font-style: italic;
+  src: local('JetBrains Mono Italic Bold Italic');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 900;
+  src: local('JetBrains Mono Regular ExtraBold');
+}
+
+@font-face {
+  font-family: Menlo;
+  font-weight: 900;
+  font-style: italic;
+  src: local('JetBrains Mono Italic ExtraBold Italic');
+}

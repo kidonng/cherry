@@ -36,6 +36,12 @@ Print style optimizations for various sites.
 -   [Vercel](vercel.user.css?raw=true)
 -   [Zhihu](zhihu.user.css?raw=true)
 
+### Font replacement
+
+- [\[Monospace\] Menlo to JetBrains Mono](menlo-to-jetbrains-mono.user.css?raw=true)
+- [\[Sans-serif\] Arial to SF Pro](arial-to-sf-pro.user.css?raw=true)
+- [\[Serif\] Georgia to New York](georgia-to-new-york.user.css?raw=true)
+
 ## Ported
 
 ### [Moegirlpedia](moegirl.user.css?raw=true)
