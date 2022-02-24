@@ -18,7 +18,7 @@ Note: "Blue open issues/pull requests and green closed issues/merge pull request
 
 ### [Typeface](typeface.user.css?raw=true)
 
-Typeface optimizations for various sites.
+Typeface optimizations for various sites, best paired with [Font replacement](#font-replacement).
 
 ### [Print](print.user.css?raw=true)
 
