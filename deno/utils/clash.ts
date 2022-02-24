@@ -4,9 +4,9 @@ import yaml from 'https://cdn.skypack.dev/js-yaml'
 
 export function generateConfig(proxies: Record<string, unknown>): string {
   const config = join(Deno.env.get('HOME')!, '.config', 'clash', 'config.yaml')
-  const rules = existsSync(config)
-    ? yaml.load(Deno.readTextFileSync(config)).rules
-    : ['GEOIP,CN,DIRECT', 'MATCH,PROXY']
+  const rules = (existsSync(config)
+    && yaml.load(Deno.readTextFileSync(config))?.rules)
+    || ['GEOIP,CN,DIRECT', 'MATCH,PROXY']
 
   return yaml.dump({ ...proxies, rules })
 }
