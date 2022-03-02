@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      7
+@version      8
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -23,8 +23,7 @@
     }
 }
 
-@-moz-document domain("developer.mozilla.org"), domain("interactive-examples.mdn.mozilla.net") {
-    code,
+@-moz-document domain("interactive-examples.mdn.mozilla.net") {
     code[class*='language-'] {
         font-family: monospace;
     }
