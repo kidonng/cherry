@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         [Monospace] Menlo to JetBrains Mono
-@version      1
+@version      2
 @description  Replace Menlo with JetBrains Mono globally
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -29,7 +29,7 @@
   font-family: Menlo;
   font-weight: 200;
   font-style: italic;
-  src: local('JetBrains Mono Regular ExtraLight');
+  src: local('JetBrains Mono Italic ExtraLight Italic');
 }
 
 @font-face {
