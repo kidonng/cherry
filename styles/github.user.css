@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      37
+@version      39
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -24,7 +24,7 @@
     }
     
     /* Dim commit message for trees just like files */
-    .commit-author + span .Link--primary {
+    .commit-author + span .Link--primary:not(:hover) {
         color: var(--color-fg-muted) !important;
     }
 
