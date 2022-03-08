@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      36
+@version      37
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -21,6 +21,11 @@
 
     .UnderlineNav .Counter {
         color: inherit;
+    }
+    
+    /* Dim commit message for trees just like files */
+    .commit-author + span .Link--primary {
+        color: var(--color-fg-muted) !important;
     }
 
     .markdown-body :is(
