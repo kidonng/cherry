@@ -39,6 +39,7 @@ Print style optimizations for various sites.
 ### Font replacement
 
 - [\[Monospace\] Menlo to JetBrains Mono](menlo-to-jetbrains-mono.user.css?raw=true)
+- [\[Monospace\] Menlo to Cascadia Code](menlo-to-cascadia-code.user.css?raw=true)
 - [\[Sans-serif\] Arial to SF Pro](arial-to-sf-pro.user.css?raw=true)
 - [\[Serif\] Georgia to New York](georgia-to-new-york.user.css?raw=true)
 

@@ -1,0 +1,83 @@
+/* ==UserStyle==
+@name         [Monospace] Menlo to Cascadia Code
+@version      1
+@description  Replace Menlo with Cascadia Code globally
+@author       kidonng
+@namespace    https://github.com/kidonng/cherry
+@homepageURL  https://github.com/kidonng/cherry
+==/UserStyle== */
+@font-face {
+    font-family: Menlo;
+    font-weight: 100;
+    src: local('Cascadia Code Regular ExtraLight');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 100;
+    font-style: italic;
+    src: local('Cascadia Code Italic ExtraLight Italic');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 200;
+    src: local('Cascadia Code Regular Light');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 200;
+    font-style: italic;
+    src: local('Cascadia Code Italic Light Italic');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 300;
+    src: local('Cascadia Code Regular SemiLight');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 300;
+    font-style: italic;
+    src: local('Cascadia Code Italic SemiLight Italic');
+}
+
+@font-face {
+    font-family: Menlo;
+    src: local('Cascadia Code Regular Regular');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-style: italic;
+    src: local('Cascadia Code Italic Italic');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 600;
+    src: local('Cascadia Code Regular SemiBold');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 600;
+    font-style: italic;
+    src: local('Cascadia Code Italic SemiBold Italic');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 700;
+    src: local('Cascadia Code Regular Bold');
+}
+
+@font-face {
+    font-family: Menlo;
+    font-weight: 700;
+    font-style: italic;
+    src: local('Cascadia Code Italic Bold Italic');
+}
