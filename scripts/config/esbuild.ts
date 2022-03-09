@@ -14,7 +14,7 @@ function build(script: string, options = {}) {
         `[${new Date().toLocaleTimeString()}] Building ${colors.bold(script)}`
     )
 
-    esbuild.build({
+    return esbuild.build({
         entryPoints: [script],
         outdir: 'scripts/generated',
         bundle: true,
