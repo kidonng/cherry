@@ -8,8 +8,9 @@
 // @run-at       document-start
 // ==/UserScript==
 
-import React from 'dom-chef'
-import doma from 'doma'
+import type {} from './lib/@types/web.ts'
+import { React } from './lib/dom-chef.ts'
+import { doma } from './lib/doma.ts'
 ;(async () => {
     // - `window.CONFIG.version` may not be available at this point
     // - If `localStorage.ajs_user_traits` exists, the user is logged in and localization is available

@@ -8,8 +8,9 @@
 // @example      https://github.com/npm/npm
 // ==/UserScript==
 
-import { observe } from 'selector-observer'
-import * as detect from 'github-url-detection'
+import type {} from './lib/@types/web.ts'
+import { observe } from './lib/selector-observer.ts'
+import * as detect from './lib/github-url-detection.ts'
 
 const { getUsername, getCleanPathname } = detect.utils
 

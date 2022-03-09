@@ -9,8 +9,9 @@
 // @example      https://github.com/refined-github/refined-github/pull/4770#event-5278197585
 // ==/UserScript==
 
-import { observe } from 'selector-observer'
-import * as octicons from '@primer/octicons'
+import type {} from './lib/@types/web.ts'
+import { observe } from './lib/selector-observer.ts'
+import { octicons } from './lib/@primer/octicons.ts'
 
 observe('.js-issues-results:not(#show_issue) .TimelineItem-badge', {
     add(badge) {

@@ -1,17 +1,17 @@
 // ==UserScript==
 // @name         Telegram Raw Media
-// @version      1
+// @version      2
 // @description  Show media on t.me as regular elements
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://t.me/*
 // @match        https://telegram.me/*
-// @grant        GM.addStyle
 // @example      https://t.me/kichann/1281
 // ==/UserScript==
 
-import React from 'dom-chef'
-import { observe } from 'selector-observer'
+import type {} from './lib/@types/web.ts'
+import { React } from './lib/dom-chef.ts'
+import { observe } from './lib/selector-observer.ts'
 
 const parseUrl = (source: HTMLElement) =>
     source.style.backgroundImage.replace(/^url\("(.+)"\)$/, '$1')
@@ -20,7 +20,8 @@ const thumbPreview =
 const preview = `.link_preview_image, ${thumbPreview}`
 const processed = 'trm-processed'
 
-GM.addStyle(`
+document.head.append(
+    <style>{`
 /* Remove the cover on videos */
 .link_preview_video_player:after {
     display: none;
@@ -30,7 +31,8 @@ GM.addStyle(`
 ${thumbPreview} {
     object-fit: cover;
 }
-`)
+`}</style>
+)
 
 observe(`:is(.tgme_widget_message_photo, ${preview}):not(.${processed})`, {
     add(target) {

@@ -1,18 +1,15 @@
-const { basename, extname } = require('path')
-const { writeFileSync } = require('fs')
-const chalk = require('chalk')
-const esbuild = require('esbuild')
-const { plugins } = require('./esbuild')
+import { colors, esbuild, path } from './deps.ts'
+import { plugins } from './esbuild.ts'
 
 for (const script of ['scripts/github-theme-switch.user.tsx']) {
-    console.log(`Building ${chalk.bold(script)} as bookmarklet`)
+    console.log(`Building ${colors.bold(script)} as bookmarklet`)
 
     esbuild
         .build({
             entryPoints: [script],
-            outfile: `scripts/generated/${basename(
+            outfile: `scripts/generated/${path.basename(
                 script,
-                extname(script)
+                path.extname(script)
             )}.bookmarklet.js`,
             bundle: true,
             minify: true,
@@ -22,7 +19,7 @@ for (const script of ['scripts/github-theme-switch.user.tsx']) {
         })
         .then((result) => {
             for (const { path, contents } of result.outputFiles) {
-                writeFileSync(
+                Deno.writeTextFileSync(
                     path,
                     'javascript:' + new TextDecoder().decode(contents)
                 )

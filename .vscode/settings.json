@@ -1,8 +1,5 @@
 {
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": false
 }

@@ -11,15 +11,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
+            - uses: denoland/setup-deno@v1
             - name: Build
               run: |
-                  yarn
-                  yarn build-script
-                  yarn build-bookmarklet
+                  deno run -A scripts/config/script.ts
+                  deno run -A scripts/config/bookmarklet.ts
             - name: Upload
               run: |
                   git switch --orphan gh-pages
                   mv scripts/generated/*.js .
+                  du -h *.js
                   git add *.js
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
