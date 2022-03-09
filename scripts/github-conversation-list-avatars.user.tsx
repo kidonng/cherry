@@ -7,13 +7,16 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import React from 'dom-chef'
-import { observe } from 'selector-observer'
+import type {} from './lib/@types/web.ts'
+import { React } from './lib/dom-chef.ts'
+import { observe } from './lib/selector-observer.ts'
 
 const className = 'gcla-processed'
 
 // https://github.com/refined-github/refined-github/blob/82fb3d62f11838ad4120f510bd90520c57bb12da/source/features/highlight-collaborators-and-own-conversations.css#L4
-document.head.append(<style>{`.${className}.rgh-collaborator { padding: 2px 5px 4px; }`}</style>)
+document.head.append(
+    <style>{`.${className}.rgh-collaborator { padding: 2px 5px 4px; }`}</style>
+)
 
 observe(
     `:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]:not(.${className})`,

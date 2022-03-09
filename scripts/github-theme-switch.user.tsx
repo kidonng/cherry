@@ -7,17 +7,18 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import React from 'dom-chef'
-import doma from 'doma'
-import { sync, sun, moon } from '@primer/octicons'
-import { AppearanceFormElement } from './vendor/github-appearance-form-element'
+import type {} from './lib/@types/web.ts'
+import { React } from './lib/dom-chef.ts'
+import { doma } from './lib/doma.ts'
+import { octicons } from './lib/@primer/octicons.ts'
+import { AppearanceFormElement } from './vendor/github-appearance-form-element.ts'
 
 const appearance = '/settings/appearance'
 const label = 'Theme Preferences'
 const icons =
-    sync.toSVG({ class: 'd-none gts-auto' }) +
-    sun.toSVG({ class: 'd-none gts-light' }) +
-    moon.toSVG({ class: 'd-none gts-dark' })
+    octicons.sync.toSVG({ class: 'd-none gts-auto' }) +
+    octicons.sun.toSVG({ class: 'd-none gts-light' }) +
+    octicons.moon.toSVG({ class: 'd-none gts-dark' })
 
 async function getForm() {
     const res = await fetch(appearance)
@@ -88,7 +89,7 @@ async function addDropdown(form: Element) {
                 <details-menu
                     class="dropdown-menu dropdown-menu-sw pt-2"
                     role="menu"
-                    style={{ width: '180px', 'padding-left': '12px' }}
+                    style={{ width: '180px', paddingLeft: '12px' }}
                 >
                     {newForm}
                 </details-menu>
