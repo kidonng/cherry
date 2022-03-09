@@ -4,7 +4,7 @@ import { plugins } from './esbuild.ts'
 for (const script of ['scripts/github-theme-switch.user.tsx']) {
     console.log(`Building ${colors.bold(script)} as bookmarklet`)
 
-    esbuild
+    await esbuild
         .build({
             entryPoints: [script],
             outfile: `scripts/generated/${path.basename(
@@ -26,3 +26,5 @@ for (const script of ['scripts/github-theme-switch.user.tsx']) {
             }
         })
 }
+
+esbuild.stop()
