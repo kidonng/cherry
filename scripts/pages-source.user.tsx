@@ -21,7 +21,6 @@
 // @example      https://archgeotux.sourceforge.io/
 // ==/UserScript==
 
-import type {} from './lib/@types/web.ts'
 import { React } from './lib/dom-chef.ts'
 
 const id = 'cherry-pages-source'

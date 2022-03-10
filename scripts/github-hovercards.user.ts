@@ -8,7 +8,6 @@
 // @example      https://github.com/npm/npm
 // ==/UserScript==
 
-import type {} from './lib/@types/web.ts'
 import { observe } from './lib/selector-observer.ts'
 import * as detect from './lib/github-url-detection.ts'
 
