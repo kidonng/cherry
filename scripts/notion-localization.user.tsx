@@ -8,7 +8,6 @@
 // @run-at       document-start
 // ==/UserScript==
 
-import type {} from './lib/@types/web.ts'
 import { React } from './lib/dom-chef.ts'
 import { doma } from './lib/doma.ts'
 ;(async () => {

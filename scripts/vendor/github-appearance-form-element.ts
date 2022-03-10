@@ -1,6 +1,5 @@
 // Modified from https://github.githubassets.com/assets/app/assets/modules/github/settings/appearance-form-element.ts
 
-import type {} from '../lib/@types/web.ts'
 import {ColorMode, getClientTheme, getPreferredColorMode, setClientMode, setClientTheme} from './github-color-modes.ts'
 import {controller, target, targets} from '../lib/@github/catalyst.ts'
 

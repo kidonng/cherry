@@ -9,7 +9,6 @@
 // @example      https://github.com/refined-github/refined-github/pull/4770#event-5278197585
 // ==/UserScript==
 
-import type {} from './lib/@types/web.ts'
 import { observe } from './lib/selector-observer.ts'
 import { octicons } from './lib/@primer/octicons.ts'
 

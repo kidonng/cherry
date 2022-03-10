@@ -7,7 +7,6 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import type {} from './lib/@types/web.ts'
 import { React } from './lib/dom-chef.ts'
 import { observe } from './lib/selector-observer.ts'
 
