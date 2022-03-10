@@ -1,4 +1,4 @@
-import { colors, esbuild, denoPlugin } from './deps.ts'
+import { path, esbuild, denoPlugin } from './deps.ts'
 
 const delimiter = '// ==/UserScript=='
 function getBanner(path: string) {
@@ -9,38 +9,51 @@ function getBanner(path: string) {
 
 const plugins = [denoPlugin()]
 
-function build(script: string, options = {}) {
-    console.log(
-        `[${new Date().toLocaleTimeString()}] Building ${colors.bold(script)}`
-    )
+type Options = (script: string) => esbuild.BuildOptions
 
-    return esbuild.build({
-        entryPoints: [script],
-        outdir: 'scripts/generated',
-        bundle: true,
-        minify: true,
-        banner: { js: getBanner(script) },
-        plugins,
-        ...options,
-    })
-}
+const base: Options = (script) => ({
+    entryPoints: [script],
+    bundle: true,
+    minify: true,
+    plugins,
+})
 
-const config: [string[], Record<string, unknown>][] = [
-    [
-        [
-            'scripts/github-conversation-list-avatars.user.tsx',
-            'scripts/github-hide-public-badge.user.js',
-            'scripts/github-icon-tweaks.user.ts',
-            'scripts/github-hovercards.user.ts',
-            'scripts/notion-localization.user.tsx',
-            'scripts/origin-finder.user.ts',
-            'scripts/pages-source.user.tsx',
-            'scripts/reposition-octotree-bookmark-icon.user.js',
-            'scripts/telegram-raw-media.user.tsx',
-        ],
-        {},
-    ],
-    [['scripts/github-theme-switch.user.tsx'], { keepNames: true }],
+const userscript: Options = (script) => ({
+    ...base(script),
+    outdir: 'scripts/generated',
+    banner: {
+        js: getBanner(script),
+    },
+})
+
+const bookmarklet: Options = (script) => ({
+    ...base(script),
+    outfile: `scripts/generated/${path.basename(
+        script,
+        path.extname(script)
+    )}.bookmarklet.js`,
+    write: false,
+    legalComments: 'none',
+})
+
+export const config: esbuild.BuildOptions[] = [
+    ...[
+        'scripts/github-conversation-list-avatars.user.tsx',
+        'scripts/github-hide-public-badge.user.js',
+        'scripts/github-icon-tweaks.user.ts',
+        'scripts/github-hovercards.user.ts',
+        'scripts/notion-localization.user.tsx',
+        'scripts/origin-finder.user.ts',
+        'scripts/pages-source.user.tsx',
+        'scripts/reposition-octotree-bookmark-icon.user.js',
+        'scripts/telegram-raw-media.user.tsx',
+    ].map((script) => userscript(script)),
+    {
+        ...userscript('scripts/github-theme-switch.user.tsx'),
+        keepNames: true,
+    },
 ]
 
-export { plugins, build, config }
+export const bookmarkletConfig: esbuild.BuildOptions[] = [
+    bookmarklet('scripts/github-theme-switch.user.tsx'),
+]

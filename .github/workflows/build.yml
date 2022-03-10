@@ -20,7 +20,6 @@ jobs:
               run: |
                   git switch --orphan gh-pages
                   mv scripts/generated/*.js .
-                  du -h *.js
                   git add *.js
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"

@@ -1,10 +1,13 @@
-import { build, config } from './esbuild.ts'
 import { esbuild } from './deps.ts'
+import { config } from './esbuild.ts'
 
-for (const [scripts, options] of config) {
-    for (const script of scripts) {
-        await build(script, options)
-    }
+for (const options of config) {
+    const result = await esbuild.build({ ...options, metafile: true })
+    console.log(
+        await esbuild.analyzeMetafile(result.metafile!, {
+            color: true,
+        })
+    )
 }
 
 esbuild.stop()
