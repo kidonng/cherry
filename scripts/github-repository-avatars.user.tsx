@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Repository Avatars
-// @version      1
+// @version      2
 // @description  Add avatars to GitHub repositories
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -8,7 +8,8 @@
 // ==/UserScript==
 
 import { React } from './lib/dom-chef.ts'
-;(() => {
+
+const init = () => {
     const icon = document.querySelector(
         '#repository-container-header .octicon-repo'
     )
@@ -33,4 +34,7 @@ import { React } from './lib/dom-chef.ts'
     if (author.dataset.hovercardType === 'user')
         avatar.classList.add('avatar-user')
     icon.replaceWith(avatar)
-})()
+}
+
+document.addEventListener('pjax:end', init)
+init()
