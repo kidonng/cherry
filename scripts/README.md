@@ -73,7 +73,7 @@ _Implementation of [refined-github#5052](https://github.com/refined-github/refin
 Enable native hovercards for most GitHub links of the following types:
 
 -   Repository file trees
--   Conversations (issues & pull requests)
+-   Issues & pull requests
 -   Discussions
 -   Commits
 -   Profiles (users & organizations)
@@ -90,9 +90,15 @@ Hides "Public" repository badge or removes "Public" prefix.
 
 _Implementation of [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)_
 
-Add avatars in GitHub's conversation list.
+Add avatars in GitHub's issue and pull request list.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
+
+## [GitHub Repository Avatars](https://kidonng.github.io/cherry/github-repository-avatars.user.js)
+
+Add avatars to GitHub repositories, like on official mobile app.
+
+![Screenshot](../screenshots/github-repository-avatars.png)
 
 ## [~~GitHub icon tweaks~~](https://kidonng.github.io/cherry/github-icon-tweaks.user.js)
 
