@@ -73,7 +73,7 @@ _实现 [refined-github#5052](https://github.com/refined-github/refined-github/i
 为下列类型的 GitHub 链接启用原生信息悬浮卡片：
 
 -   仓库文件树
--   对话（议题与拉取请求）
+-   议题与拉取请求
 -   讨论
 -   提交
 -   用户与组织信息
@@ -90,9 +90,15 @@ _移植自 [refined-github#4770](https://github.com/refined-github/refined-githu
 
 _实现 [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)_
 
-向 GitHub 的对话列表添加头像。
+向 GitHub 的议题和拉取请求列表添加头像。
 
 ![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
+
+## [GitHub Repository Avatars](https://kidonng.github.io/cherry/github-repository-avatars.user.js)
+
+Add avatars to GitHub repositories, like on official mobile app.
+
+![Screenshot](../screenshots/github-repository-avatars.png)
 
 ## [GitHub 图标调整](https://kidonng.github.io/cherry/github-icon-tweaks.user.js)
 

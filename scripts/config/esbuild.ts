@@ -42,6 +42,7 @@ export const config: esbuild.BuildOptions[] = [
         'scripts/github-hide-public-badge.user.js',
         'scripts/github-icon-tweaks.user.ts',
         'scripts/github-hovercards.user.ts',
+        'scripts/github-repository-avatars.user.tsx',
         'scripts/notion-localization.user.tsx',
         'scripts/origin-finder.user.ts',
         'scripts/pages-source.user.tsx',
