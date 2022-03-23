@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Repository Avatars
-// @version      2
+// @version      3
 // @description  Add avatars to GitHub repositories
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -24,7 +24,7 @@ const init = () => {
 
     const avatar = (
         <img
-            className="avatar box-shadow-none mr-2"
+            className="avatar mr-2"
             src={src}
             width="24"
             height="24"
