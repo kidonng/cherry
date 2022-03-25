@@ -7,8 +7,6 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import { React } from './lib/dom-chef.ts'
-
 const init = () => {
     const icon = document.querySelector(
         '#repository-container-header .octicon-repo'
@@ -22,15 +20,14 @@ const init = () => {
         document.querySelector<HTMLImageElement>(`[alt="${alt}"]`)?.src ||
         `https://avatars.githubusercontent.com/${username}?size=48`
 
-    const avatar = (
-        <img
-            className="avatar mr-2"
-            src={src}
-            width="24"
-            height="24"
-            alt={alt}
-        />
-    )
+    const avatar = Object.assign(document.createElement('img'), {
+            className: "avatar mr-2",
+            src,
+            width: 24,
+            height: 24,
+            alt
+    })
+
     if (author.dataset.hovercardType === 'user')
         avatar.classList.add('avatar-user')
     icon.replaceWith(avatar)
