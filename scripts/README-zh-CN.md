@@ -70,7 +70,9 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 用 [fzf](https://github.com/ajitid/fzf-for-js) 替换 GitHub 的 "Go to file" 功能 (<kbd>t</kbd>)，并支持[“增强搜索模式”](https://github.com/junegunn/fzf#search-syntax)。
 
-![Screenshot](../screenshots/github-fzf-finder.png)
+![截图](../screenshots/github-fzf-finder.png)
+
+**注意**：暂不支持实时高亮当前匹配项目。
 
 ## [GitHub 悬浮卡片](https://kidonng.github.io/cherry/github-hovercards.user.js)
 
@@ -100,11 +102,11 @@ _实现 [refined-github#4906](https://github.com/refined-github/refined-github/i
 
 ![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
-## [GitHub Repository Avatars](https://kidonng.github.io/cherry/github-repository-avatars.user.js)
+## [GitHub 仓库头像](https://kidonng.github.io/cherry/github-repository-avatars.user.js)
 
-Add avatars to GitHub repositories, like on official mobile app.
+为 GitHub 仓库添加头像，类似于官方移动应用。
 
-![Screenshot](../screenshots/github-repository-avatars.png)
+![截图](../screenshots/github-repository-avatars.png)
 
 ## [GitHub 图标调整](https://kidonng.github.io/cherry/github-icon-tweaks.user.js)
 

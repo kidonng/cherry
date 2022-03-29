@@ -72,6 +72,8 @@ Power GitHub's "Go to file" feature (<kbd>t</kbd>) with [fzf](https://github.com
 
 ![Screenshot](../screenshots/github-fzf-finder.png)
 
+**Note**: Real-time highlighting of currently-matched items is not supported at the moment.
+
 ## [GitHub Hovercards](https://kidonng.github.io/cherry/github-hovercards.user.js)
 
 _Implementation of [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
