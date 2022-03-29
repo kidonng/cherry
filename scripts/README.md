@@ -66,6 +66,12 @@ _Also check out [NCU Net](https://github.com/kidonng/ncu-net) CLI._
 
 **NOTE** You can [configure timeout and retry interval](ncu-net.user.js#L14-L20) in the script.
 
+## [GitHub fzf Finder](https://kidonng.github.io/cherry/github-fzf-finder.user.js)
+
+Power GitHub's "Go to file" feature (<kbd>t</kbd>) with [fzf](https://github.com/ajitid/fzf-for-js), with support for ["extended-search mode"](https://github.com/junegunn/fzf#search-syntax).
+
+![Screenshot](../screenshots/github-fzf-finder.png)
+
 ## [GitHub Hovercards](https://kidonng.github.io/cherry/github-hovercards.user.js)
 
 _Implementation of [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_

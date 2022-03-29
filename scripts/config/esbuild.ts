@@ -39,6 +39,7 @@ const bookmarklet: Options = (script) => ({
 export const config: esbuild.BuildOptions[] = [
     ...[
         'scripts/github-conversation-list-avatars.user.tsx',
+        'scripts/github-fzf-finder.user.ts',
         'scripts/github-hide-public-badge.user.js',
         'scripts/github-icon-tweaks.user.ts',
         'scripts/github-hovercards.user.ts',

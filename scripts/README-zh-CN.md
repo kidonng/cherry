@@ -66,6 +66,12 @@ _另见 [NCU Net](https://github.com/kidonng/ncu-net/blob/master/README-zh-CN.md
 
 **注** 可以在脚本中[设置超时和重连时间](ncu-net.user.js#L14-L20)。
 
+## [GitHub fzf 搜索](https://kidonng.github.io/cherry/github-fzf-finder.user.js)
+
+用 [fzf](https://github.com/ajitid/fzf-for-js) 替换 GitHub 的 "Go to file" 功能 (<kbd>t</kbd>)，并支持[“增强搜索模式”](https://github.com/junegunn/fzf#search-syntax)。
+
+![Screenshot](../screenshots/github-fzf-finder.png)
+
 ## [GitHub 悬浮卡片](https://kidonng.github.io/cherry/github-hovercards.user.js)
 
 _实现 [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
