@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      8
+@version      9
 @description  Typeface optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -8,14 +8,6 @@
 ==/UserStyle== */
 
 @-moz-document domain("github.com") {
-    #readme .markdown-body {
-        font-family: New York, LXGW WenKai, serif;
-    }
-
-    #readme .markdown-body :is(h1, h2, h3, h4, h5, h6) {
-        font-family: system-ui;
-    }
-
     .blob-num,
     .blob-code-inner,
     .CodeMirror-lines /* `!important` is for this selector */ {
@@ -31,19 +23,20 @@
 
 @-moz-document domain("wikipedia.org"), domain("moegirl.org.cn") {
     .mw-body-content {
-        font-size: 16px;
-    }
-
-    :not(.mw-editfont-monospace) > .mw-parser-output {
-        font-family: New York, LXGW WenKai, serif;
-    }
-
-    #firstHeading,
-    .mw-headline {
-        font-family: system-ui;
+        font-size: 16px !important;
     }
 
     .mw-userlink {
         font-weight: bold;
+    }
+}
+
+@-moz-document domain("www.notion.so"), domain("notion.site") {
+    [style*='Georgia'] {
+        font-family: Lyon-Text, Songti SC, serif !important;
+    }
+
+    [style*='iawriter-mono'] {
+        font-family:  monospace !important;
     }
 }
