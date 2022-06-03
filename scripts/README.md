@@ -32,6 +32,26 @@ Floating YouTube mini player like Bilibili, for conveniently reading comments an
     -   Doesn't work in Theater mode and Full screen
     -   Some controls (progress bar, volume, etc.) doesn't follow cursor. This is due to implementation limits.
 
+## [Block Notion Analytics](https://kidonng.github.io/cherry/block-notion-analytics.user.js)
+
+Block following analytics services Notion uses:
+
+- Amplitude
+- Intercom (note: this also disables the support chat)
+- Segment
+- Sentry
+- Statsig
+
+---
+
+**This script is compatible with Notion desktop app.**
+
+Example usage for macOS: run the following command in your terminal. This need to be done every time the app updates.
+
+```sh
+curl https://kidonng.github.io/cherry/block-notion-analytics.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+```
+
 ## [Notion Localization](https://kidonng.github.io/cherry/notion-localization.user.js)
 
 Enable Notion's native localization for more languages.
@@ -45,7 +65,9 @@ Notes:
 
 ---
 
-Usage for macOS app: run the following command in your terminal
+**This script is compatible with Notion desktop app.**
+
+Example usage for macOS: run the following command in your terminal. This need to be done every time the app updates.
 
 ```sh
 curl https://kidonng.github.io/cherry/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js

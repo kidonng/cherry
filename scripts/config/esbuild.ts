@@ -44,6 +44,7 @@ const bookmarklet: Options = (script) => ({
 
 export const config: esbuild.BuildOptions[] = [
     ...[
+        'scripts/block-notion-analytics.user.ts',
         'scripts/github-conversation-list-avatars.user.tsx',
         'scripts/github-fzf-finder.user.ts',
         'scripts/github-hide-public-badge.user.js',

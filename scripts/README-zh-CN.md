@@ -32,6 +32,26 @@
     -   无法在剧场模式和全屏下使用
     -   部分控件（进度条、音量等） 不跟随光标。这是实现限制导致的。
 
+# [拦截 Notion 统计](https://kidonng.github.io/cherry/block-notion-analytics.user.js)
+
+拦截下列 Notion 使用的统计服务：
+
+- Amplitude
+- Intercom（注：客户支持聊天也会不可用）
+- Segment
+- Sentry
+- Statsig
+
+---
+
+**本脚本兼容 Notion 桌面端应用。**
+
+macOS 用法示例：在终端执行以下命令。每次应用升级都需进行此操作。
+
+```sh
+curl https://kidonng.github.io/cherry/block-notion-analytics.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+```
+
 ## [Notion 本地化](https://kidonng.github.io/cherry/notion-localization.user.js)
 
 启用更多语言的 Notion 原生本地化翻译。
@@ -45,7 +65,9 @@
 
 ---
 
-macOS 应用使用方法：在终端执行以下命令
+**本脚本兼容 Notion 桌面端应用。**
+
+macOS 用法示例：在终端执行以下命令。每次应用升级都需进行此操作。
 
 ```sh
 curl https://kidonng.github.io/cherry/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
