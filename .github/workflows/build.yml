@@ -14,8 +14,8 @@ jobs:
             - uses: denoland/setup-deno@v1
             - name: Build
               run: |
-                  deno run -A scripts/config/script.ts
-                  deno run -A scripts/config/bookmarklet.ts
+                  deno task script
+                  deno task bookmarklet
             - name: Upload
               run: |
                   git switch --orphan gh-pages

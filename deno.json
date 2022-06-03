@@ -1,4 +1,9 @@
 {
+    "tasks": {
+        "bookmarklet": "deno run --import-map import_map.json -A scripts/config/bookmarklet.ts",
+        "script": "deno run --import-map import_map.json -A scripts/config/script.ts",
+        "watch": "deno run --import-map import_map.json -A scripts/config/watch.ts"
+    },
     "compilerOptions": {
         "lib": ["DOM", "DOM.Iterable", "Deno.ns"]
     }

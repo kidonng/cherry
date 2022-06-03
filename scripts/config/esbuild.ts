@@ -1,4 +1,6 @@
-import { path, esbuild, denoPlugin } from './deps.ts'
+import * as path from 'std/path/mod.ts'
+import * as esbuild from 'esbuild'
+import { denoPlugin } from 'esbuild_deno_loader'
 
 const delimiter = '// ==/UserScript=='
 function getBanner(path: string) {

@@ -1,4 +1,5 @@
-import { colors, esbuild } from './deps.ts'
+import * as colors from 'std/fmt/colors.ts'
+import * as esbuild from 'esbuild'
 import { config } from './esbuild.ts'
 
 console.log('Started watching')

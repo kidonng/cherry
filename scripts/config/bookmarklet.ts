@@ -1,4 +1,4 @@
-import { esbuild } from './deps.ts'
+import * as esbuild from 'esbuild'
 import { bookmarkletConfig } from './esbuild.ts'
 
 for (const options of bookmarkletConfig) {

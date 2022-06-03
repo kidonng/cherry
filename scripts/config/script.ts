@@ -1,4 +1,4 @@
-import { esbuild } from './deps.ts'
+import * as esbuild from 'esbuild'
 import { config } from './esbuild.ts'
 
 for (const options of config) {
