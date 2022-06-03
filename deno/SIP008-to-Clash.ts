@@ -11,7 +11,7 @@ export function convertServers(servers: Server[]) {
     port: server.server_port,
     cipher: server.method,
     password: server.password,
-  }))
+  })).filter(i => !i.cipher.startsWith('2022'))
 
   return {
     proxies,
