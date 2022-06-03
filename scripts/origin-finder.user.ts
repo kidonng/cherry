@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Origin Finder
-// @version      7
+// @version      8
 // @description  Redirect to resources' origin version
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -11,7 +11,7 @@
 
 ;(async () => {
     const url = new URL(location.href)
-    const { hostname, pathname, searchParams } = url
+    const { hostname, pathname } = url
 
     const redirects = [
         /*
@@ -30,22 +30,6 @@
             () => ({ hostname: hostname.replace('.github.com', '.github.io') }),
         ],
         /*
-         * Wikipedia - mobile to desktop
-         * Example: https://zh.m.wikipedia.org/wiki/Wikipedia:首页
-         */
-        [
-            () =>
-                hostname.endsWith('.m.wikipedia.org') &&
-                // @ts-expect-error
-                !navigator.userAgentData?.mobile,
-            () => ({
-                hostname: hostname.replace(
-                    '.m.wikipedia.org',
-                    '.wikipedia.org'
-                ),
-            }),
-        ],
-        /*
          * Moegirlpedia - original size avatar
          * Example: https://img.moegirl.org.cn/common/avatars/1/128.png
          */
@@ -59,42 +43,28 @@
             }),
         ],
         /*
-         * Moegirlpedia - mobile to desktop
-         * Example: https://mzh.moegirl.org.cn/Mainpage
-         * Example: https://mzh.moegirl.org.cn/index.php?title=Mainpage&mobileaction=toggle_view_mobile
-         */
-        [
-            () =>
-                hostname === 'mzh.moegirl.org.cn' &&
-                // @ts-expect-error
-                !navigator.userAgentData?.mobile &&
-                !searchParams.has('mobileaction'),
-            { hostname: 'zh.moegirl.org.cn' },
-        ],
-        /*
          * Dynasty Scans
          * Example: https://dynasty-scans.com/system/tag_contents_covers/000/004/136/medium/i166035.jpg (from https://dynasty-scans.com/series/4_koma_c)
          * Example: https://dynasty-scans.com/system/tag_contents_covers/000/008/619/thumb/00%20Volume%20cover.jpg (from https://dynasty-scans.com/series/1_x)
          */
         [
             'dynasty-scans.com',
-            () => {
+            async () => {
                 const re = /(tag_contents_covers\/(\d{3}\/){3})(medium|thumb)/
                 const match = pathname.match(re)
 
                 if (match) {
                     const original = pathname.replace(re, '$1original')
-                    fetch(original, { method: 'HEAD' })
-                        .then(({ ok }) => {
-                            if (ok) {
-                                url.pathname = original
-                                location.assign(url.href)
-                            } else if (match[3] === 'thumb') {
-                                url.pathname = pathname.replace(re, '$1medium')
-                                location.assign(url.href)
+
+                    try {
+                        const { ok } = await fetch(original, { method: 'HEAD' })
+
+                        if (ok) return { pathname: original }
+                        else if (match[3] === 'thumb')
+                            return {
+                                pathname: pathname.replace(re, '$1medium'),
                             }
-                        })
-                        .catch(() => {})
+                    } catch {}
                 }
             },
         ],
@@ -140,7 +110,7 @@
         )
             continue
 
-        const redirect = typeof action === 'function' ? action() : action
+        const redirect = typeof action === 'function' ? await action() : action
         Object.assign(url, redirect)
         if (location.href !== url.href) location.assign(url.href)
     }
