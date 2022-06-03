@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Print
-@version      1
+@version      2
 @description  Print style optimizations for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -10,6 +10,14 @@
 @-moz-document domain("www.masadora.jp"), domain("www.masadora.net") {
   @media print {
     #printControl {
+      display: none;
+    }
+  }
+}
+
+@-moz-document domain("moegirl.org.cn") {
+  @media print {
+    #flowthread {
       display: none;
     }
   }
