@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Origin Finder
-// @version      6
+// @version      7
 // @description  Redirect to resources' origin version
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -130,7 +130,6 @@
                 }
             },
         ],
-        ['strongloop.com', { href: 'https://github.com/strongloop' }],
     ]
 
     for (const [condition, action] of redirects) {
