@@ -32,7 +32,7 @@
     -   无法在剧场模式和全屏下使用
     -   部分控件（进度条、音量等） 不跟随光标。这是实现限制导致的。
 
-# [拦截 Notion 统计](https://kidonng.github.io/cherry/block-notion-analytics.user.js)
+## [拦截 Notion 统计](https://kidonng.github.io/cherry/block-notion-analytics.user.js)
 
 拦截下列 Notion 使用的统计服务：
 
