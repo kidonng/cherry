@@ -1,6 +1,7 @@
 {
     "imports": {
         "@github/catalyst": "https://esm.sh/@github/catalyst@1.4.2",
+        "@github/hotkey": "https://esm.sh/@github/hotkey@2.0.0",
         "@primer/octicons": "https://esm.sh/@primer/octicons@17.2.0",
         "dom-chef": "https://esm.sh/dom-chef@5.1.0",
         "doma": "https://esm.sh/doma@3.0.1",

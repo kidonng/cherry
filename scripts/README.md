@@ -51,6 +51,24 @@ Usage for macOS app: run the following command in your terminal
 curl https://kidonng.github.io/cherry/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
 ```
 
+## [Refined Danbooru](https://kidonng.github.io/cherry/refined-danbooru.user.js)
+
+Make [Danbooru](https://safebooru.donmai.us/) great again.
+
+- [More keyboard shortcuts](https://github.com/danbooru/danbooru/issues/5175). New shortcuts can be found on Danbooru's [Keyboard Shortcuts](https://safebooru.donmai.us/static/keyboard_shortcuts) page.
+- <kbd>esc</kbd> to clear search boxes
+  - <kbd>esc</kbd> to unfocus search boxes when they are clear
+- Expandable tag list
+- Use Gelbooru to search for more than 2 tags when Danbooru doesn't allow it
+- <kbd>Alt</kbd> + click to toggle tag in search box
+- Improvements for "Related Tags"
+  - Restore <kbd>Meta</kbd> / <kbd>Shift</kbd> click behavior of tag links
+  - <kbd>Alt</kbd> + click to (de)select all tags in the same type
+- Improvements for `safebooru.donmai.us`
+  - Show "Safebooru" as site name to easily recognize it
+  - Link hidden post notice to current page/post
+- Make post previews draggable
+
 ## [NCU Net](ncu-net.user.js?raw=true)
 
 A campus network helper for Nanchang University. Supports `NCU-5G/NCU-2.4G` & `NCUWLAN`.

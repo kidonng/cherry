@@ -53,6 +53,7 @@ export const config: esbuild.BuildOptions[] = [
         'scripts/notion-localization.user.tsx',
         'scripts/origin-finder.user.ts',
         'scripts/pages-source.user.tsx',
+        'scripts/refined-danbooru.user.tsx',
         'scripts/reposition-octotree-bookmark-icon.user.js',
         'scripts/telegram-raw-media.user.tsx',
     ].map((script) => userscript(script)),
