@@ -7,9 +7,9 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import { React } from './lib/dom-chef.ts'
-import { doma } from './lib/doma.ts'
-import { octicons } from './lib/@primer/octicons.ts'
+import React from 'dom-chef'
+import doma from 'doma'
+import * as octicons from '@primer/octicons'
 import { AppearanceFormElement } from './vendor/github-appearance-form-element.ts'
 
 const appearance = '/settings/appearance'

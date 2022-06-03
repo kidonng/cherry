@@ -7,8 +7,8 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import { React } from './lib/dom-chef.ts'
-import { observe } from './lib/selector-observer.ts'
+import React from 'dom-chef'
+import { observe } from 'selector-observer'
 
 const className = 'gcla-processed'
 

@@ -9,7 +9,7 @@
 
 // Ported from https://github.com/refined-github/refined-github/pull/4770
 
-import { observe } from './lib/selector-observer.ts'
+import { observe } from 'selector-observer'
 
 function upperCaseFirst(input) {
   return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()

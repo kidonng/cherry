@@ -21,7 +21,7 @@
 // @example      https://archgeotux.sourceforge.io/
 // ==/UserScript==
 
-import { React } from './lib/dom-chef.ts'
+import React from 'dom-chef'
 
 const id = 'cherry-pages-source'
 document.head.append(<style>{`#${id}:hover { opacity: 1 !important; }`}</style>)

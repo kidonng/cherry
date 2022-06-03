@@ -9,8 +9,8 @@
 // @example      https://t.me/kichann/1281
 // ==/UserScript==
 
-import { React } from './lib/dom-chef.ts'
-import { observe } from './lib/selector-observer.ts'
+import React from 'dom-chef'
+import { observe } from 'selector-observer'
 
 const parseUrl = (source: HTMLElement) =>
     source.style.backgroundImage.replace(/^url\("(.+)"\)$/, '$1')

@@ -7,7 +7,7 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import { React } from './lib/dom-chef.ts'
+import React from 'dom-chef'
 
 const init = () => {
     const icon = document.querySelector(

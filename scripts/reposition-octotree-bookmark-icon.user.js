@@ -7,7 +7,7 @@
 // @match        https://github.com/*
 // ==/UserScript==
 
-import { elementReady } from './lib/element-ready.ts'
+import elementReady from 'element-ready'
 
 // Divider
 ;(async () => {

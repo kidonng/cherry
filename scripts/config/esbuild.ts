@@ -9,7 +9,11 @@ function getBanner(path: string) {
     return header
 }
 
-const plugins = [denoPlugin()]
+const plugins = [
+    denoPlugin({
+        importMapURL: new URL('../../import_map.json', import.meta.url),
+    }),
+]
 
 type Options = (script: string) => esbuild.BuildOptions
 
