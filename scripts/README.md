@@ -36,11 +36,11 @@ Floating YouTube mini player like Bilibili, for conveniently reading comments an
 
 Block following analytics services Notion uses:
 
-- Amplitude
-- Intercom (note: this also disables the support chat)
-- Segment
-- Sentry
-- Statsig
+-   Amplitude
+-   Intercom (note: this also disables the support chat)
+-   Segment
+-   Sentry
+-   Statsig
 
 ---
 
@@ -77,19 +77,19 @@ curl https://kidonng.github.io/cherry/notion-localization.user.js >> /Applicatio
 
 Make [Danbooru](https://safebooru.donmai.us/) great again.
 
-- [More keyboard shortcuts](https://github.com/danbooru/danbooru/issues/5175). New shortcuts can be found on Danbooru's [Keyboard Shortcuts](https://safebooru.donmai.us/static/keyboard_shortcuts) page.
-- <kbd>esc</kbd> to clear search boxes
-  - <kbd>esc</kbd> to unfocus search boxes when they are clear
-- Expandable tag list
-- Use Gelbooru to search for more than 2 tags when Danbooru doesn't allow it
-- <kbd>Alt</kbd> + click to toggle tag in search box
-- Improvements for "Related Tags"
-  - Restore <kbd>Meta</kbd> / <kbd>Shift</kbd> click behavior of tag links
-  - <kbd>Alt</kbd> + click to (de)select all tags in the same type
-- Improvements for `safebooru.donmai.us`
-  - Show "Safebooru" as site name to easily recognize it
-  - Link hidden post notice to current page/post
-- Make post previews draggable
+-   [More keyboard shortcuts](https://github.com/danbooru/danbooru/issues/5175). New shortcuts can be found on Danbooru's [Keyboard Shortcuts](https://safebooru.donmai.us/static/keyboard_shortcuts) page.
+-   <kbd>esc</kbd> to clear search boxes
+    -   <kbd>esc</kbd> to unfocus search boxes when they are clear
+-   Expandable tag list
+-   Use Gelbooru to search for more than 2 tags when Danbooru doesn't allow it
+-   <kbd>Alt</kbd> + click to toggle tag in search box
+-   Improvements for "Related Tags"
+    -   Restore <kbd>Meta</kbd> / <kbd>Shift</kbd> click behavior of tag links
+    -   <kbd>Alt</kbd> + click to (de)select all tags in the same type
+-   Improvements for `safebooru.donmai.us`
+    -   Show "Safebooru" as site name to easily recognize it
+    -   Link hidden post notice to current page/post
+-   Make post previews draggable
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
@@ -116,7 +116,7 @@ Power GitHub's "Go to file" feature (<kbd>t</kbd>) with [fzf](https://github.com
 
 ## [GitHub Hovercards](https://kidonng.github.io/cherry/github-hovercards.user.js)
 
-_Implementation of [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
+_Implement [refined-github#5052](https://github.com/refined-github/refined-github/issues/5052)_
 
 Enable native hovercards for most GitHub links of the following types:
 
@@ -136,13 +136,15 @@ Hides "Public" repository badge or removes "Public" prefix.
 
 ## [GitHub conversation list avatars](https://kidonng.github.io/cherry/github-conversation-list-avatars.user.js)
 
-_Implementation of [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)_
+_Implement [refined-github#4906](https://github.com/refined-github/refined-github/issues/4906#issuecomment-940602726)_
 
 Add avatars in GitHub's issue and pull request list.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
 ## [GitHub Repository Avatars](https://kidonng.github.io/cherry/github-repository-avatars.user.js)
+
+_Implement [refined-github#5546](https://github.com/refined-github/refined-github/issues/5546)_
 
 Add avatars to GitHub repositories, like on official mobile app.
 
@@ -152,7 +154,7 @@ Add avatars to GitHub repositories, like on official mobile app.
 
 **⚠️ No longer maintained. GitHub has implemented most changes.**
 
-_Implementation of [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)_
+_Implement [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)_
 
 Tweak certain GitHub icons' color and style.
 
@@ -171,7 +173,7 @@ Display a logo in the bottom right corner linked to the source repository when v
 
 ## [Camo Detective](camo-detective.user.js?raw=true)
 
-_Implementation of [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)_
+_Implement [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)_
 
 Replace `camo.githubusercontent.com` image links on GitHub with image's `data-canonical-src` attribute.
 
@@ -189,7 +191,7 @@ Just install the script and head to [Subscriptions](https://github.com/notificat
 
 ## [GitHub Precise Counters](github-precise-counters.user.js?raw=true)
 
-_Implementation of [refined-github#3382](https://github.com/refined-github/refined-github/issues/3382)_
+_Implement [refined-github#3382](https://github.com/refined-github/refined-github/issues/3382)_
 
 ![Screenshot](../screenshots/github-precise-counters.gif)
 
@@ -197,7 +199,7 @@ Show precise watch/star/fork counts on hover. Compatible with [Refined GitHub](h
 
 ## [GitHub profile README link](github-profile-readme-link.user.js?raw=true)
 
-_Implementation of [refined-github#3426](https://github.com/refined-github/refined-github/issues/3426#issuecomment-671077874)_
+_Implement [refined-github#3426](https://github.com/refined-github/refined-github/issues/3426#issuecomment-671077874)_
 
 Make profile README's header link to the README instead of the repository.
 
@@ -215,13 +217,13 @@ Also available as a [bookmarklet](https://kidonng.github.io/cherry/github-theme-
 
 ## [GitHub Star history](github-star-history.user.js?raw=true)
 
-_Implementation of [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)_
+_Implement [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)_
 
 Adds a button to Stargazers page to view star history on https://star-history.t9t.io/.
 
 ## [Reposition Octotree bookmark icon](https://kidonng.github.io/cherry/reposition-octotree-bookmark-icon.user.js)
 
-_Implementation of [octotree#992](https://github.com/ovity/octotree/issues/992)_
+_Implement [octotree#992](https://github.com/ovity/octotree/issues/992)_
 
 Before:
 

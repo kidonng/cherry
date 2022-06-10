@@ -36,11 +36,11 @@
 
 拦截下列 Notion 使用的统计服务：
 
-- Amplitude
-- Intercom（注：客户支持聊天也会不可用）
-- Segment
-- Sentry
-- Statsig
+-   Amplitude
+-   Intercom（注：客户支持聊天也会不可用）
+-   Segment
+-   Sentry
+-   Statsig
 
 ---
 
@@ -77,19 +77,19 @@ curl https://kidonng.github.io/cherry/notion-localization.user.js >> /Applicatio
 
 让 [Danbooru](https://safebooru.donmai.us/) 再次伟大。
 
-- [更多键盘快捷键](https://github.com/danbooru/danbooru/issues/5175)。新快捷键可在 Danbooru 的[键盘快捷键页面](https://safebooru.donmai.us/static/keyboard_shortcuts)查看。
-- <kbd>esc</kbd> 清除搜索框
-  - 搜索框为空时，<kbd>esc</kbd> 取消聚焦搜索框
-- 可展开的标签列表
-- Danbooru 不准搜索 2 个以上标签时使用 Gelbooru
-- <kbd>Alt</kbd> + 点击标签将其添加到搜索框或移除
-- 改进 "Related Tags"
-  - 恢复 <kbd>Meta</kbd> / <kbd>Shift</kbd> 点击标签的行为
-  - <kbd>Alt</kbd> + 点击选择/取消选择所有同类标签
-- 改进 `safebooru.donmai.us`
-  - 替换站点名称为易于辨认的 "Safebooru"
-  - 受限图片提示中的链接指向当前页面
-- 恢复图片预览的拖放
+-   [更多键盘快捷键](https://github.com/danbooru/danbooru/issues/5175)。新快捷键可在 Danbooru 的[键盘快捷键页面](https://safebooru.donmai.us/static/keyboard_shortcuts)查看。
+-   <kbd>esc</kbd> 清除搜索框
+    -   搜索框为空时，<kbd>esc</kbd> 取消聚焦搜索框
+-   可展开的标签列表
+-   Danbooru 不准搜索 2 个以上标签时使用 Gelbooru
+-   <kbd>Alt</kbd> + 点击标签将其添加到搜索框或移除
+-   改进 "Related Tags"
+    -   恢复 <kbd>Meta</kbd> / <kbd>Shift</kbd> 点击标签的行为
+    -   <kbd>Alt</kbd> + 点击选择/取消选择所有同类标签
+-   改进 `safebooru.donmai.us`
+    -   替换站点名称为易于辨认的 "Safebooru"
+    -   受限图片提示中的链接指向当前页面
+-   恢复图片预览的拖放
 
 ## [NCU Net](ncu-net.user.js?raw=true)
 
@@ -143,6 +143,8 @@ _实现 [refined-github#4906](https://github.com/refined-github/refined-github/i
 ![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
 ## [GitHub 仓库头像](https://kidonng.github.io/cherry/github-repository-avatars.user.js)
+
+_实现 [refined-github#5546](https://github.com/refined-github/refined-github/issues/5546)_
 
 为 GitHub 仓库添加头像，类似于官方移动应用。
 
