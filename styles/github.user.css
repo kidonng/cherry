@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      41
+@version      42
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -54,6 +54,14 @@
         padding: 4px;
         border: 2px solid var(--color-accent-emphasis);
         border-radius: 6px;
+    }
+    
+    /* Sticky blob header */
+    .js-blob-header {
+        position: sticky;
+        top: 0;
+        /* Same as .file-header */
+        z-index: 2;
     }
 
     if alignPRAuthorName {
