@@ -20,7 +20,6 @@ type Options = (script: string) => esbuild.BuildOptions
 const base: Options = (script) => ({
     entryPoints: [script],
     bundle: true,
-    minify: true,
     plugins,
 })
 
@@ -38,6 +37,7 @@ const bookmarklet: Options = (script) => ({
         script,
         path.extname(script)
     )}.bookmarklet.js`,
+    minify: true,
     write: false,
     legalComments: 'none',
 })
@@ -60,6 +60,7 @@ export const config: esbuild.BuildOptions[] = [
     ].map((script) => userscript(script)),
     {
         ...userscript('scripts/github-theme-switch.user.tsx'),
+        // @github/catalyst relies on this
         keepNames: true,
     },
 ]
