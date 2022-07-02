@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      42
+@version      43
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -100,11 +100,6 @@
         .header-search-input::placeholder {
             color: rgba(0, 0, 0, 0.7);
         }
-    }
-
-    /* Hide Pro badge */
-    .js-hovercard-content [title='Label: Pro'] {
-        display: none !important;
     }
 
     /*
