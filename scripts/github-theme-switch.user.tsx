@@ -12,6 +12,18 @@ import doma from 'doma'
 import * as octicons from '@primer/octicons'
 import { AppearanceFormElement } from './vendor/github-appearance-form-element.ts'
 
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            // https://github.com/refined-github/refined-github/blob/90ad3b20c70681ca0ee85ef341e1818a887f9462/source/globals.d.ts#L42
+            'details-menu': IntrinsicElements['div'] & {
+                src?: string
+                preload?: boolean
+            }
+        }
+    }
+}
+
 const appearance = '/settings/appearance'
 const label = 'Theme Preferences'
 const icons =
@@ -28,7 +40,7 @@ async function getForm() {
     return form
 }
 
-async function addDropdown(form: Element) {
+function addDropdown(form: Element) {
     for (const img of form.querySelectorAll('img')) img.remove()
 
     const spinner = form.querySelector('.status-indicator-spinner')!
@@ -86,7 +98,7 @@ async function addDropdown(form: Element) {
             <details className="details-overlay details-reset">
                 {summary}
                 <details-menu
-                    class="dropdown-menu dropdown-menu-sw pt-2"
+                    className="dropdown-menu dropdown-menu-sw pt-2"
                     role="menu"
                     style={{ width: '180px', paddingLeft: '12px' }}
                 >
@@ -102,5 +114,6 @@ async function addDropdown(form: Element) {
 ;(async () => {
     if (location.pathname === appearance) return
 
-    getForm().then(addDropdown)
+    const form = await getForm()
+    addDropdown(form)
 })()

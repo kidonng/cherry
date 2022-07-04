@@ -66,5 +66,9 @@ export const config: esbuild.BuildOptions[] = [
 ]
 
 export const bookmarkletConfig: esbuild.BuildOptions[] = [
-    bookmarklet('scripts/github-theme-switch.user.tsx'),
+    {
+        ...bookmarklet('scripts/github-theme-switch.user.tsx'),
+        // @github/catalyst relies on this
+        keepNames: true,
+    },
 ]
