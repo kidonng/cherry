@@ -1,3 +1,4 @@
+import * as fs from 'std/fs/mod.ts'
 import * as path from 'std/path/mod.ts'
 import * as esbuild from 'esbuild'
 import { denoPlugin } from 'esbuild_deno_loader'
@@ -15,25 +16,27 @@ const plugins = [
     }),
 ]
 
+const root = 'scripts'
+const outdir = `${root}/generated`
 type Options = (script: string) => esbuild.BuildOptions
 
 const base: Options = (script) => ({
-    entryPoints: [script],
+    entryPoints: [`${root}/${script}`],
     bundle: true,
     plugins,
 })
 
 const userscript: Options = (script) => ({
     ...base(script),
-    outdir: 'scripts/generated',
+    outdir,
     banner: {
-        js: getBanner(script),
+        js: getBanner(`${root}/${script}`),
     },
 })
 
 const bookmarklet: Options = (script) => ({
     ...base(script),
-    outfile: `scripts/generated/${path.basename(
+    outfile: `${outdir}/${path.basename(
         script,
         path.extname(script)
     )}.bookmarklet.js`,
@@ -43,31 +46,26 @@ const bookmarklet: Options = (script) => ({
 })
 
 export const config: esbuild.BuildOptions[] = [
-    ...[
-        'scripts/block-notion-analytics.user.ts',
-        'scripts/github-conversation-list-avatars.user.tsx',
-        'scripts/github-fzf-finder.user.ts',
-        'scripts/github-hide-public-badge.user.js',
-        'scripts/github-hovercards.user.ts',
-        'scripts/github-icon-tweaks.user.ts',
-        'scripts/github-repository-avatars.user.tsx',
-        'scripts/notion-localization.user.tsx',
-        'scripts/origin-finder.user.ts',
-        'scripts/pages-source.user.tsx',
-        'scripts/refined-danbooru.user.tsx',
-        'scripts/reposition-octotree-bookmark-icon.user.js',
-        'scripts/telegram-raw-media.user.tsx',
-    ].map((script) => userscript(script)),
     {
-        ...userscript('scripts/github-theme-switch.user.tsx'),
+        ...userscript('github-theme-switch.user.tsx'),
         // @github/catalyst relies on this
         keepNames: true,
     },
 ]
+const scriptsWithConfig = config.map((i) => (i.entryPoints! as string[])[0])
+config.push(
+    ...[
+        ...fs.expandGlobSync(`${root}/*.ts{,x}`),
+        { name: 'github-hide-public-badge.user.js' },
+        { name: 'reposition-octotree-bookmark-icon.user.js' },
+    ]
+        .filter((i) => !scriptsWithConfig.includes(`${root}/${i.name}`))
+        .map((i) => userscript(i.name))
+)
 
 export const bookmarkletConfig: esbuild.BuildOptions[] = [
     {
-        ...bookmarklet('scripts/github-theme-switch.user.tsx'),
+        ...bookmarklet('github-theme-switch.user.tsx'),
         // @github/catalyst relies on this
         keepNames: true,
     },
