@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Refined Danbooru
-// @version       1
+// @version       2
 // @description   Make Danbooru great again
 // @author        kidonng
 // @namespace     https://github.com/kidonng/cherry
@@ -161,15 +161,15 @@ const renderShortcuts = (shortcuts: Record<string, string[]>) =>
     )
 
 const navShortcuts = {
-    'Go to My account/Login': ['g m', '#nav-my-account-link, #nav-login-link'],
-    'Go to Posts': ['g p', '#nav-posts-link'],
-    'Go to Comments': ['g c', '#nav-comments-link'],
-    'Go to Notes': ['g n', '#nav-notes-link'],
-    'Go to Artists': ['g r', '#nav-artists-link'],
-    'Go to Tags': ['g t', '#nav-tags-link'],
-    'Go to Pools': ['g o', '#nav-pools-link'],
-    'Go to Wiki': ['g w', '#nav-wiki-link'],
-    'Go to Forum': ['g f', '#nav-forum-link'],
+    'Jump to My account/Login': ['j m', '#nav-my-account-link, #nav-login-link'],
+    'Jump to Posts': ['j p', '#nav-posts-link'],
+    'Jump to Comments': ['j c', '#nav-comments-link'],
+    'Jump to Notes': ['j n', '#nav-notes-link'],
+    'Jump to Artists': ['j r', '#nav-artists-link'],
+    'Jump to Tags': ['j t', '#nav-tags-link'],
+    'Jump to Pools': ['j o', '#nav-pools-link'],
+    'Jump to Wiki': ['j w', '#nav-wiki-link'],
+    'Jump to Forum': ['j f', '#nav-forum-link'],
 }
 const postShortcuts = {
     'Add post to pool': ['p', '#pool'],
