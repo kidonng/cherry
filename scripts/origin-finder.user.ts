@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Origin Finder
-// @version      8
+// @version      9
 // @description  Redirect to resources' origin version
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -99,6 +99,13 @@
                     pathname: pathname.replace(/.*\/m/, '/f'),
                 }
             },
+        ],
+        // Notification page on GitHub Gist is 404
+        // https://github.com/github-community/community/discussions/19760
+        [
+            () =>
+                hostname === 'gist.github.com' && pathname === '/notifications',
+            { hostname: 'github.com' },
         ],
     ]
 
