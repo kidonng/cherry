@@ -9,6 +9,7 @@
 // @run-at       document-start
 // ==/UserScript==
 
+import select from 'select-dom'
 ;(async () => {
     const url = new URL(location.href)
     const { hostname, pathname } = url
@@ -24,9 +25,7 @@
                 hostname.endsWith('.github.com') &&
                 // A note with link will show if there is a matching user
                 // "Did you mean to visit <username>.github.io?"
-                document.querySelector(
-                    `a[href="//${hostname.replace('.com', '.io')}/" i]`
-                ),
+                select(`a[href="//${hostname.replace('.com', '.io')}/" i]`),
             () => ({ hostname: hostname.replace('.github.com', '.github.io') }),
         ],
         /*

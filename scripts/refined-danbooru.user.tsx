@@ -9,15 +9,16 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+import select from 'select-dom'
 import { install as hotkey } from '@github/hotkey'
 
 const isSafebooru = location.hostname === 'safebooru.donmai.us'
 
-const searchBoxSelector = '#tags, .one-line-form input.string'
+const searchBoxSelector = 'input#tags, .one-line-form input.string'
 // `esc` to clear search boxes
-document.querySelectorAll<HTMLInputElement>(searchBoxSelector).forEach((e) => {
+for (const e of select.all(searchBoxSelector)) {
     e.type = 'search'
-})
+}
 // `esc` to unfocus search boxes
 document.addEventListener('keydown', (e) => {
     if (
@@ -35,30 +36,26 @@ if (
         document.body.dataset.currentUserLevelString!
     )
 )
-    document
-        .querySelector('#search-box-form')
-        ?.addEventListener('submit', (e) => {
-            let value = (e.target as HTMLFormElement)
-                .querySelector('input')!
-                .value.trim()
-            if (value.split(' ').length < 3) return
+    select('form#search-box-form')?.addEventListener('submit', (e) => {
+        let value = (e.target as HTMLFormElement)
+            .querySelector('input')!
+            .value.trim()
+        if (value.split(' ').length < 3) return
 
-            e.preventDefault()
-            const safe = 'rating:safe'
-            if (isSafebooru && !value.includes(safe)) value += ` ${safe}`
-            location.href = `https://gelbooru.com/index.php?page=post&s=list&tags=${value}`
-        })
+        e.preventDefault()
+        const safe = 'rating:safe'
+        if (isSafebooru && !value.includes(safe)) value += ` ${safe}`
+        location.href = `https://gelbooru.com/index.php?page=post&s=list&tags=${value}`
+    })
 
 // Make post previews draggable
 // Revert https://github.com/danbooru/danbooru/commit/349f8e098f51b4823959a72fa721aa1fa8f2a9c6
-document
-    .querySelectorAll<HTMLImageElement>('.post-preview-image')
-    .forEach((e) => {
-        e.draggable = true
-    })
+for (const e of select.all('img.post-preview-image')) {
+    e.draggable = true
+}
 
 // Expandable tag list
-const tagList = document.querySelector('#tag-list')
+const tagList = select('#tag-list')
 if (tagList) {
     document.head.append(
         <style>
@@ -80,7 +77,7 @@ if (tagList) {
 
     // Group and count each type of tags
     let count = 0
-    document.querySelectorAll('.categorized-tag-list h3').forEach((h3) => {
+    for (const h3 of select.all('.categorized-tag-list h3')) {
         const details = <details open />
         const summary = <summary />
         const list = h3.nextElementSibling!
@@ -90,7 +87,7 @@ if (tagList) {
         details.append(summary, list)
         summary.append(h3)
         h3.append(<span className="post-count">{list.childElementCount}</span>)
-    })
+    }
 
     h2.append(<span className="post-count">{count}</span>)
 }
@@ -102,7 +99,7 @@ document.addEventListener('click', (e) => {
     if (!tag || !e.altKey) return
     e.preventDefault()
 
-    const input = document.querySelector<HTMLInputElement>('#tags')!
+    const input = select('input#tags')!
     const { value } = input
     const tagName = target.parentElement!.dataset.tagName!
     input.value = value.includes(tagName)
@@ -134,11 +131,11 @@ document.body.addEventListener('click', (e) => {
 
 if (isSafebooru) {
     // Show a different name
-    document.querySelector('#app-name')!.textContent = 'Safebooru'
+    select('#app-name')!.textContent = 'Safebooru'
 
     // Link hidden post notice to current page/post
-    const jumpLink = document.querySelector<HTMLAnchorElement>(
-        ':is(.hidden-posts-notice, .image-container:not([data-rating="s"])) [href="https://danbooru.donmai.us"]'
+    const jumpLink = select(
+        ':is(.hidden-posts-notice, .image-container:not([data-rating="s"])) a[href="https://danbooru.donmai.us"]'
     )
     if (jumpLink) jumpLink.pathname = location.pathname
 }
@@ -161,7 +158,10 @@ const renderShortcuts = (shortcuts: Record<string, string[]>) =>
     )
 
 const navShortcuts = {
-    'Jump to My account/Login': ['j m', '#nav-my-account-link, #nav-login-link'],
+    'Jump to My account/Login': [
+        'j m',
+        '#nav-my-account-link, #nav-login-link',
+    ],
     'Jump to Posts': ['j p', '#nav-posts-link'],
     'Jump to Comments': ['j c', '#nav-comments-link'],
     'Jump to Notes': ['j n', '#nav-notes-link'],
@@ -185,7 +185,7 @@ for (const [key, selector] of [
     // `q` to focus *every* search box
     ['q', '.one-line-form input.string'],
 ]) {
-    const el = document.querySelector<HTMLElement>(selector)
+    const el = select(selector)
     if (el) hotkey(el, key)
 }
 
@@ -193,13 +193,11 @@ const shortcutPage = '/static/keyboard_shortcuts'
 hotkey(<a href={shortcutPage} />, 'Shift+?')
 
 if (location.pathname === shortcutPage) {
-    document
-        .querySelector('.column ul')!
-        .append(
-            ...renderShortcuts(navShortcuts),
-            renderShortcut('Go to this page', '?')
-        )
-    document
-        .querySelector('.column:nth-of-type(2) ul:nth-of-type(2)')!
-        .append(...renderShortcuts(postShortcuts))
+    select('.column ul')!.append(
+        ...renderShortcuts(navShortcuts),
+        renderShortcut('Go to this page', '?')
+    )
+    select('.column:nth-of-type(2) ul:nth-of-type(2)')!.append(
+        ...renderShortcuts(postShortcuts)
+    )
 }

@@ -8,6 +8,7 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+import select from 'select-dom'
 import { observe } from 'selector-observer'
 
 const className = 'gcla-processed'
@@ -26,8 +27,7 @@ observe(
             const username = el.textContent
             const alt = `@${username}`
             const src =
-                document.querySelector<HTMLImageElement>(`[alt="${alt}"]`)
-                    ?.src ||
+                select(`img[alt="${alt}"]`)?.src ||
                 `https://avatars.githubusercontent.com/${username}?size=32`
 
             el.prepend(

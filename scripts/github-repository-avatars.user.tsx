@@ -8,33 +8,33 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+import select from 'select-dom'
+import * as detect from 'github-url-detection'
 
 const init = () => {
-    const icon = document.querySelector(
-        '#repository-container-header .octicon-repo'
-    )
+    // Icon for public but not template/fork/etc. repos
+    const icon = select('#repository-container-header .octicon-repo')
     if (!icon) return
 
-    const author = document.querySelector<HTMLElement>('[rel=author]')!
-    const username = author.textContent
+    const username = detect.utils.getRepositoryInfo()!.owner
     const alt = `@${username}`
+    const size = 24
     const src =
-        document.querySelector<HTMLImageElement>(`[alt="${alt}"]`)?.src ||
-        `https://avatars.githubusercontent.com/${username}?size=48`
+        select(`img[alt="${alt}"]`)?.src ||
+        `https://avatars.githubusercontent.com/${username}?size=${size * 2}`
 
     const avatar = (
         <img
             className="avatar mr-2"
             src={src}
-            width="24"
-            height="24"
+            width={size}
+            height={size}
             alt={alt}
         />
     )
-    if (author.dataset.hovercardType === 'user')
-        avatar.classList.add('avatar-user')
+    if (!detect.isOrganizationRepo()) avatar.classList.add('avatar-user')
     icon.replaceWith(avatar)
 }
 
-document.addEventListener('pjax:end', init)
+document.addEventListener('turbo:render', init)
 init()

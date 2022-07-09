@@ -9,6 +9,7 @@
 
 import React from 'dom-chef'
 import doma from 'doma'
+import select from 'select-dom'
 import * as octicons from '@primer/octicons'
 import { AppearanceFormElement } from './vendor/github-appearance-form-element.ts'
 
@@ -46,8 +47,8 @@ function addDropdown(form: Element) {
     const spinner = form.querySelector('.status-indicator-spinner')!
     spinner.classList.add('color-text-primary', 'v-align-text-bottom')
 
-    const select = form.querySelector('#color_mode_type_select')!
-    select.classList.replace('mr-2', 'my-2')
+    const selectEl = form.querySelector('#color_mode_type_select')!
+    selectEl.classList.replace('mr-2', 'my-2')
 
     const singlePanel = form.querySelector('div[data-mode-panel="single"]')!
     for (const radio of singlePanel.querySelectorAll(
@@ -68,7 +69,7 @@ function addDropdown(form: Element) {
             {label}
         </a>,
         spinner.parentElement!,
-        select,
+        selectEl,
         singlePanel,
         autoPanel
     )
@@ -108,7 +109,7 @@ function addDropdown(form: Element) {
         </div>
     )
 
-    document.querySelector('.Header-item--full')!.after(dropdown)
+    select('.Header-item--full')!.after(dropdown)
 }
 
 ;(async () => {
