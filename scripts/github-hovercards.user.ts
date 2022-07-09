@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      20
+// @version      21
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -76,6 +76,11 @@ observe(
                 link.closest('.Popover-message') // Inside hovercard
             )
                 return
+
+            if (detect.isRepoHome(link)) {
+                // GitHub only normalizes this on repo home
+                pathname = pathname.replace('.git', '')
+            }
 
             if (detect.isProfile(link)) {
                 pathname = pathname.replace(/([\w-]+).*/, '$1')
