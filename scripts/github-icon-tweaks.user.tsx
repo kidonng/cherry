@@ -9,19 +9,23 @@
 // @example      https://github.com/refined-github/refined-github/pull/4770#event-5278197585
 // ==/UserScript==
 
+import React from 'dom-chef'
 import { observe } from 'selector-observer'
-import * as octicons from '@primer/octicons'
+import {
+    GitPullRequestClosedIcon,
+    GitPullRequestIcon,
+} from '@primer/octicons-react'
 
 observe('.js-issues-results:not(#show_issue) .TimelineItem-badge', {
     add(badge) {
         if (badge.querySelector('.octicon-issue-opened')) {
-            badge.innerHTML = octicons['git-pull-request'].toSVG()
+            badge.replaceWith(<GitPullRequestIcon />)
         } else if (badge.querySelector('.octicon-issue-closed')) {
             badge.classList.replace(
                 'color-bg-done-emphasis',
                 'color-bg-danger-emphasis'
             )
-            badge.innerHTML = octicons['git-pull-request-closed'].toSVG()
+            badge.replaceWith(<GitPullRequestClosedIcon />)
         } else if (badge.querySelector('.octicon-git-pull-request-draft'))
             badge.classList.add(
                 'color-bg-canvas-inverse',

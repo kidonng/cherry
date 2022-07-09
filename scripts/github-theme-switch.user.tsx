@@ -10,7 +10,7 @@
 import React from 'dom-chef'
 import doma from 'doma'
 import select from 'select-dom'
-import * as octicons from '@primer/octicons'
+import { SyncIcon, SunIcon, MoonIcon } from '@primer/octicons-react'
 import { AppearanceFormElement } from './vendor/github-appearance-form-element.ts'
 
 declare global {
@@ -27,10 +27,6 @@ declare global {
 
 const appearance = '/settings/appearance'
 const label = 'Theme Preferences'
-const icons =
-    octicons.sync.toSVG({ class: 'd-none gts-auto' }) +
-    octicons.sun.toSVG({ class: 'd-none gts-light' }) +
-    octicons.moon.toSVG({ class: 'd-none gts-dark' })
 
 async function getForm() {
     const res = await fetch(appearance)
@@ -89,10 +85,13 @@ function addDropdown(form: Element) {
             aria-label={label}
             aria-haspopup="menu"
             role="button"
-            dangerouslySetInnerHTML={{ __html: icons }}
-        />
+        >
+            <SyncIcon className="d-none gts-auto" />
+            <SunIcon className="d-none gts-light" />
+            <MoonIcon className="d-none gts-dark" />{' '}
+            <span className="dropdown-caret" />
+        </summary>
     )
-    summary.append(' ', <span className="dropdown-caret" />)
 
     const dropdown = (
         <div className="Header-item position-relative d-none d-md-flex">
