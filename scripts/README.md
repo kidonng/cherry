@@ -250,4 +250,4 @@ Auto fix loading of `sinaimg.cn` images by using `no-referrer` referrer policy.
 -   [Wikiwand](wikiwand.user.js?raw=true): Redirect Wikipedia to Wikiwand. Can replace Wikiwand browser extension.
 -   [Origin Finder](https://cherry.xuann.wang/origin-finder.user.js): Redirect to resources' origin version, such as the original size version of images.
 -   [HTTPS Everywhere](https-everywhere.user.js?raw=true): Redirect to HTTPS version if available
--   [Google Bang](google-bang.user.js?raw=true): Add support for [!Bang Search Shortcuts](https://duckduckgo.com/bang) to Google
+-   [Google Bang](https://cherry.xuann.wang/google-bang.user.js): Add support for [!Bang Search Shortcuts](https://duckduckgo.com/bang) to Google
