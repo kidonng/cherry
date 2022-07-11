@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      21
+// @version      22
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -53,6 +53,7 @@ observe(
         '[data-pjax]', // PJAX link
         '.js-pjax-history-navigate', // PJAX link
         '.js-navigation-open', // PJAX link
+        '.UnderlineNav-item', // PJAX link
         `[data-hydro-click*='"target":"PINNED_REPO"']`, // Has meta (pinned repo)
         `[data-hydro-click*='"click_context":"REPOSITORY_CARD","click_target":"REPOSITORY"']`, // Has meta (info card)
         `[data-hydro-click*='"event_type":"search_result.click"'][data-hydro-click*='"model_name":"Repository"']`, // Has meta (search results)
