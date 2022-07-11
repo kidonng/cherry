@@ -142,7 +142,9 @@ _实现 [refined-github#4906](https://github.com/refined-github/refined-github/i
 
 ![截图](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
-## [GitHub 仓库头像](https://cherry.xuann.wang/github-repository-avatars.user.js)
+## [~~GitHub 仓库头像~~](https://cherry.xuann.wang/github-repository-avatars.user.js)
+
+> **Warning** 已弃用。请使用 [Refined GitHub](https://github.com/refined-github/refined-github) 的 `repo-avatars` 功能。
 
 _实现 [refined-github#5546](https://github.com/refined-github/refined-github/issues/5546)_
 
@@ -150,7 +152,9 @@ _实现 [refined-github#5546](https://github.com/refined-github/refined-github/i
 
 ![截图](../screenshots/github-repository-avatars.png)
 
-## [GitHub 图标调整](https://cherry.xuann.wang/github-icon-tweaks.user.js)
+## [~~GitHub 图标调整~~](https://cherry.xuann.wang/github-icon-tweaks.user.js)
+
+> **Warning** 已弃用。GitHub 已实施绝大部分改动。
 
 _实现 [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)_
 
@@ -201,9 +205,11 @@ _实现 [refined-github#3426](https://github.com/refined-github/refined-github/i
 
 使个人 README 的顶部链接指向 README 而非仓库。
 
-## [GitHub 主题切换](https://cherry.xuann.wang/github-theme-switch.user.js)
+## [~~GitHub 主题切换~~](https://cherry.xuann.wang/github-theme-switch.user.js)
 
-_移植自 [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)。你可能会更喜欢[使用 GitHub 的原生命令面板](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452)。_
+> **Warning** 已弃用。 请使用 [GitHub 的命令面板](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452)。
+
+_移植自 [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)。_
 
 ![截图](./../screenshots/github-theme-switch.png)
 

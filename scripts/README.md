@@ -142,7 +142,9 @@ Add avatars in GitHub's issue and pull request list.
 
 ![Screenshot](https://user-images.githubusercontent.com/44045911/136884098-5bc4a22b-2891-47cd-bcbf-07fdb84d8a1c.png)
 
-## [GitHub Repository Avatars](https://cherry.xuann.wang/github-repository-avatars.user.js)
+## [~~GitHub Repository Avatars~~](https://cherry.xuann.wang/github-repository-avatars.user.js)
+
+> **Warning** Deprecated. Use [Refined GitHub](https://github.com/refined-github/refined-github)'s `repo-avatars` feature.
 
 _Implement [refined-github#5546](https://github.com/refined-github/refined-github/issues/5546)_
 
@@ -152,7 +154,7 @@ Add avatars to GitHub repositories, like on official mobile app.
 
 ## [~~GitHub icon tweaks~~](https://cherry.xuann.wang/github-icon-tweaks.user.js)
 
-**⚠️ No longer maintained. GitHub has implemented most changes.**
+> **Warning** Deprecated. GitHub has implemented most changes.
 
 _Implement [refined-github#5007](https://github.com/refined-github/refined-github/issues/5007)_
 
@@ -205,7 +207,7 @@ Make profile README's header link to the README instead of the repository.
 
 ## [~~GitHub theme switch~~](https://cherry.xuann.wang/github-theme-switch.user.js)
 
-**⚠️ No longer maintained. Use [GitHub's Command palette](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452) instead.**
+> **Warning** Deprecated. Use [GitHub's Command palette](https://github.com/refined-github/refined-github/issues/3802#issuecomment-966471452) instead.
 
 _Ported from [refined-github#3804](https://github.com/refined-github/refined-github/pull/3804)._
 
