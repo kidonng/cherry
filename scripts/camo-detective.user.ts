@@ -1,0 +1,24 @@
+// ==UserScript==
+// @name         Camo Detective
+// @version      2
+// @description  Replace camo.githubusercontent.com image links on GitHub with [data-canonical-src]
+// @author       kidonng
+// @namespace    https://github.com/kidonng/cherry
+// @match        https://github.com/*
+// @example      https://github.com/anuraghazra/github-readme-stats#all-inbuilt-themes--
+// ==/UserScript==
+
+import select from 'select-dom'
+
+const init = () => {
+    for (const image of select.all(
+        'img[src^="https://camo.githubusercontent.com/"]'
+    )) {
+        const link = image.parentElement as HTMLAnchorElement
+
+        if (link.href === image.src) link.href = image.dataset.canonicalSrc!
+    }
+}
+
+document.addEventListener('turbo:render', init)
+init()

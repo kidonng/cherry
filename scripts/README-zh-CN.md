@@ -173,7 +173,7 @@ _实现 [refined-github#5007](https://github.com/refined-github/refined-github/i
 -   [Gitee Pages](https://gitee.com/help/articles/4136)
 -   [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/)
 
-## [Camo 侦探](camo-detective.user.js?raw=true)
+## [Camo 侦探](https://cherry.xuann.wang/camo-detective.user.js)
 
 _实现 [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)_
 

@@ -173,7 +173,7 @@ Display a logo in the bottom right corner linked to the source repository when v
 -   [Gitee Pages](https://gitee.com/help/articles/4136)
 -   [SourceForge Project Web](https://sourceforge.net/p/forge/documentation/Project%20Web%20Services/)
 
-## [Camo Detective](camo-detective.user.js?raw=true)
+## [Camo Detective](https://cherry.xuann.wang/camo-detective.user.js)
 
 _Implement [refined-github#4132](https://github.com/refined-github/refined-github/issues/4132#issuecomment-904022040)_
 
