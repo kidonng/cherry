@@ -23,6 +23,7 @@ type Options = (script: string) => esbuild.BuildOptions
 const base: Options = (script) => ({
     entryPoints: [`${root}/${script}`],
     bundle: true,
+    minify: true,
     plugins,
 })
 
@@ -32,6 +33,7 @@ const userscript: Options = (script) => ({
     banner: {
         js: getBanner(`${root}/${script}`),
     },
+    sourcemap: 'inline',
 })
 
 const bookmarklet: Options = (script) => ({
@@ -40,7 +42,6 @@ const bookmarklet: Options = (script) => ({
         script,
         path.extname(script)
     )}.bookmarklet.js`,
-    minify: true,
     write: false,
     legalComments: 'none',
 })
