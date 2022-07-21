@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      23
+// @version      24
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -94,12 +94,20 @@ observe(
 
             if (detect.isIssue(link) || detect.isPR(link)) {
                 if (pathname.endsWith('/linked_closing_reference'))
-                    return fetch(link.href, { method: 'HEAD' }).then(
-                        ({ url }) => {
+                    return link.addEventListener(
+                        'mouseenter',
+                        async () => {
+                            const { url } = await fetch(link.href, {
+                                method: 'HEAD',
+                            })
                             link.href = url
                             link.dataset['hovercardUrl'] = `${url}/hovercard`
                             link.parentElement!.classList.remove('tooltipped')
-                        }
+                            setTimeout(() =>
+                                link.dispatchEvent(new MouseEvent('mouseover'))
+                            )
+                        },
+                        { once: true }
                     )
 
                 // Handle if the issue has been transferred
