@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Hovercards
-// @version      22
+// @version      23
 // @description  Enable native hovercards for more GitHub links
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -48,7 +48,7 @@ const issueObserver = new MutationObserver(([mutation]) => {
 })
 
 observe(
-    `a:is([href^="/"], [href^="${location.origin}"]):not(${[
+    `main a:is([href^="/"], [href^="https://github.com/"], [href^="http://github.com/"]):not(${[
         '[data-hovercard-url]', // Has hovercard
         '[data-pjax]', // PJAX link
         '.js-pjax-history-navigate', // PJAX link
@@ -73,8 +73,7 @@ observe(
                     detect.isCommit,
                     detect.isProfile,
                 ].some((fn) => fn(link)) ||
-                pathname.toLowerCase() === getCleanPathname().toLowerCase() ||
-                link.closest('.Popover-message') // Inside hovercard
+                pathname.toLowerCase() === getCleanPathname().toLowerCase()
             )
                 return
 
