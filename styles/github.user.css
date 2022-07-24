@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      43
+@version      44
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -14,6 +14,17 @@
 ==/UserStyle== */
 @-moz-document url-prefix("https://github.com/")
 {
+    /* Restore rounded top corners of user hovercard with "Busy" status */
+    /* .Popover-message has 6px border-radius, use a slightly smaller one to fully cover it */
+    .Popover-message .f6.color-bg-attention {
+        border-radius: 5px 5px 0 0;
+    }
+    
+    /* Fix vertical align of location in user hovercard */
+    .Popover-message .flex-items-baseline[aria-label="user location"] {
+        align-items: center !important;
+    }
+
     /*
      * Fix first PR timeline item padding
      * https://t.me/kichann/1601
