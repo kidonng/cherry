@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      44
+@version      45
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -73,6 +73,13 @@
         top: 0;
         /* Same as .file-header */
         z-index: 2;
+    }
+
+    /* Sticky notification header */
+    .notifications-list > .Box-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
     }
 
     if alignPRAuthorName {
