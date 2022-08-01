@@ -8,16 +8,16 @@
 // @example      https://github.com/anuraghazra/github-readme-stats#all-inbuilt-themes--
 // ==/UserScript==
 
-import select from 'select-dom'
+import 'typed-query-selector'
 
 const init = () => {
-    for (const image of select.all(
-        'img[src^="https://camo.githubusercontent.com/"]'
-    )) {
-        const link = image.parentElement as HTMLAnchorElement
+	for (const image of document.querySelectorAll(
+		'img[src^="https://camo.githubusercontent.com/"]',
+	)) {
+		const link = image.parentElement as HTMLAnchorElement
 
-        if (link.href === image.src) link.href = image.dataset.canonicalSrc!
-    }
+		if (link.href === image.src) link.href = image.dataset.canonicalSrc!
+	}
 }
 
 document.addEventListener('turbo:render', init)

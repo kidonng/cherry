@@ -8,7 +8,7 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
-import select from 'select-dom'
+import 'typed-query-selector'
 import {SyncIcon, SunIcon, MoonIcon} from '@primer/octicons-react'
 import {AppearanceFormElement} from './vendor/github-appearance-form-element.ts'
 
@@ -107,7 +107,7 @@ function addDropdown(form: Element) {
 		</div>
 	)
 
-	select('.Header-item--full')!.after(dropdown)
+	document.querySelector('.Header-item--full')!.after(dropdown)
 }
 
 ;(async () => {
