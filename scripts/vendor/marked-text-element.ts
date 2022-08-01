@@ -16,7 +16,9 @@ function defaultPositions(query: string, text: string): number[] {
 class MarkedTextElement extends HTMLElement {
   #lastText = ''
   #lastQuery = ''
+  // @ts-expect-error
   #observer: MutationObserver
+  // @ts-expect-error
   #timer: number
   positions?: typeof defaultPositions
 

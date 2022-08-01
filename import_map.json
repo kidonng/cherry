@@ -1,17 +1,17 @@
 {
-    "imports": {
-        "@github/catalyst": "https://esm.sh/@github/catalyst@1.4.2?target=es2021",
-        "@github/hotkey": "https://esm.sh/@github/hotkey@2.0.0?target=es2021",
-        "@primer/octicons-react": "https://esm.sh/@primer/octicons-react@17.3.0?target=es2021&alias=react:dom-chef&external=dom-chef",
-        "dom-chef": "https://esm.sh/dom-chef@5.1.0?target=es2021",
-        "doma": "https://esm.sh/doma@3.0.1?target=es2021",
-        "element-ready": "https://esm.sh/element-ready@6.2.1?target=es2021",
-        "esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.5.0/mod.ts",
-        "esbuild": "https://deno.land/x/esbuild@v0.14.42/mod.js",
-        "fzf": "https://esm.sh/fzf@0.5.1?target=es2021&dts",
-        "github-url-detection": "https://esm.sh/github-url-detection@5.10.0?target=es2021",
-        "select-dom": "https://esm.sh/select-dom@7.1.1?target=es2021",
-        "selector-observer": "https://esm.sh/selector-observer@2.1.6?target=es2021",
-        "std/": "https://deno.land/std@0.140.0/"
-    }
+	"imports": {
+		"@github/catalyst": "https://esm.sh/@github/catalyst@1.4.2?target=es2021",
+		"@github/hotkey": "https://esm.sh/@github/hotkey@2.0.0?target=es2021",
+		"@primer/octicons-react": "https://esm.sh/@primer/octicons-react@17.3.0?target=es2021&alias=react:dom-chef&external=dom-chef&pin=v87",
+		"dom-chef": "https://esm.sh/dom-chef@5.1.0?target=es2021",
+		"doma": "https://esm.sh/doma@3.0.1?target=es2021",
+		"element-ready": "https://esm.sh/element-ready@6.2.1?target=es2021",
+		"esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.5.0/mod.ts",
+		"esbuild": "https://deno.land/x/esbuild@v0.14.42/mod.js",
+		"fzf": "https://esm.sh/fzf@0.5.1?target=es2021&dts",
+		"github-url-detection": "https://esm.sh/github-url-detection@5.10.0?target=es2021",
+		"select-dom": "https://esm.sh/select-dom@7.1.1?target=es2021",
+		"selector-observer": "https://esm.sh/selector-observer@2.1.6?target=es2021",
+		"std/": "https://deno.land/std@0.140.0/"
+	}
 }
