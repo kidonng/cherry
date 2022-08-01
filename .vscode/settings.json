@@ -1,8 +1,6 @@
 {
-  "search.exclude": {
-    "scripts/vendor": true,
-  },
-  "deno.enable": true,
-  "deno.lint": true,
-  "deno.unstable": false
+	"search.exclude": {
+		"scripts/vendor": true
+	},
+	"deno.enable": true
 }
