@@ -8,6 +8,7 @@
 // @example      https://github.com/anuraghazra/github-readme-stats#all-inbuilt-themes--
 // ==/UserScript==
 
+// eslint-disable-next-line import/no-unassigned-import
 import 'typed-query-selector'
 
 const init = () => {

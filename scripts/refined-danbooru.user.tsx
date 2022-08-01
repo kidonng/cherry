@@ -9,6 +9,7 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+// eslint-disable-next-line import/no-unassigned-import
 import 'typed-query-selector'
 import {install as hotkey} from '@github/hotkey'
 
@@ -16,16 +17,17 @@ const isSafebooru = location.hostname === 'safebooru.donmai.us'
 
 const searchBoxSelector = 'input#tags, .one-line-form input.string'
 // `esc` to clear search boxes
-for (const e of document.querySelectorAll(searchBoxSelector)) {
-	e.type = 'search'
+for (const element of document.querySelectorAll(searchBoxSelector)) {
+	element.type = 'search'
 }
+
 // `esc` to unfocus search boxes
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (event) => {
 	if (
-		e.key === 'Escape' &&
-		(e.target as HTMLElement).matches(searchBoxSelector) &&
+		event.key === 'Escape' &&
+		(event.target as HTMLElement).matches(searchBoxSelector) &&
 		// Preserve the default behavior of <input type="search">
-		(e.target as HTMLInputElement).value === ''
+		(event.target as HTMLInputElement).value === ''
 	)
 		(document.activeElement as HTMLInputElement).blur()
 })
@@ -38,13 +40,13 @@ if (
 )
 	document
 		.querySelector('form#search-box-form')
-		?.addEventListener('submit', (e) => {
-			let value = (e.target as HTMLFormElement)
+		?.addEventListener('submit', (event) => {
+			let value = (event.target as HTMLFormElement)
 				.querySelector('input')!
 				.value.trim()
 			if (value.split(' ').length < 3) return
 
-			e.preventDefault()
+			event.preventDefault()
 			const safe = 'rating:safe'
 			if (isSafebooru && !value.includes(safe)) value += ` ${safe}`
 			location.href = `https://gelbooru.com/index.php?page=post&s=list&tags=${value}`
@@ -52,8 +54,8 @@ if (
 
 // Make post previews draggable
 // Revert https://github.com/danbooru/danbooru/commit/349f8e098f51b4823959a72fa721aa1fa8f2a9c6
-for (const e of document.querySelectorAll('img.post-preview-image')) {
-	e.draggable = true
+for (const element of document.querySelectorAll('img.post-preview-image')) {
+	element.draggable = true
 }
 
 // Expandable tag list
@@ -95,11 +97,11 @@ if (tagList) {
 }
 
 // Alt + click to toggle tag in search box
-document.addEventListener('click', (e) => {
-	const target = e.target as HTMLElement
+document.addEventListener('click', (event) => {
+	const target = event.target as HTMLElement
 	const tag = target.closest('.search-tag-list .search-tag')
-	if (!tag || !e.altKey) return
-	e.preventDefault()
+	if (!tag || !event.altKey) return
+	event.preventDefault()
 
 	const input = document.querySelector('input#tags')!
 	const {value} = input
@@ -113,19 +115,20 @@ document.addEventListener('click', (e) => {
 // - Restore Meta/Shift click behavior of tag links
 // - Alt + click to (de)select all tags in the same type
 // Attach listener to `document.body` to receive the event earlier than Danbooru's native handler
-document.body.addEventListener('click', (e) => {
-	const tag = (e.target as HTMLElement).closest('.simple-tag-list .search-tag')
+document.body.addEventListener('click', (event) => {
+	const tag = (event.target as HTMLElement).closest(
+		'.simple-tag-list .search-tag',
+	)
 	if (!tag) return
 
-	if (e.metaKey || e.shiftKey) e.stopImmediatePropagation()
-	else if (e.altKey) {
+	if (event.metaKey || event.shiftKey) event.stopImmediatePropagation()
+	else if (event.altKey) {
 		const self = tag.previousElementSibling as HTMLInputElement
-		tag
+		for (const input of tag
 			.closest('.simple-tag-list')!
-			.querySelectorAll('input')
-			.forEach((input) => {
-				if (input !== self && input.checked === self.checked) input.click()
-			})
+			.querySelectorAll('input')) {
+			if (input !== self && input.checked === self.checked) input.click()
+		}
 	}
 })
 
@@ -182,8 +185,8 @@ for (const [key, selector] of [
 	// `q` to focus *every* search box
 	['q', '.one-line-form input.string'],
 ]) {
-	const el = document.querySelector<HTMLElement>(selector)
-	if (el) hotkey(el, key)
+	const element = document.querySelector<HTMLElement>(selector)
+	if (element) hotkey(element, key)
 }
 
 const shortcutPage = '/static/keyboard_shortcuts'

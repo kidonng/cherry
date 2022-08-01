@@ -8,6 +8,7 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+// eslint-disable-next-line import/no-unassigned-import
 import 'typed-query-selector'
 import {observe} from 'selector-observer'
 
@@ -21,16 +22,16 @@ document.head.append(
 observe(
 	`:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]:not(.${className})`,
 	{
-		add(el) {
-			el.classList.add(className)
+		add(element) {
+			element.classList.add(className)
 
-			const username = el.textContent
+			const username = element.textContent
 			const alt = `@${username}`
 			const src =
 				document.querySelector(`img[alt="${alt}"]`)?.src ||
 				`https://avatars.githubusercontent.com/${username}?size=32`
 
-			el.prepend(
+			element.prepend(
 				<img
 					className="avatar avatar-user"
 					src={src}

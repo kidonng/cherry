@@ -8,14 +8,17 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+// eslint-disable-next-line import/no-unassigned-import
 import 'typed-query-selector'
 import {SyncIcon, SunIcon, MoonIcon} from '@primer/octicons-react'
 import {AppearanceFormElement} from './vendor/github-appearance-form-element.ts'
 
 declare global {
+	// eslint-disable-next-line @typescript-eslint/no-namespace
 	namespace JSX {
 		interface IntrinsicElements {
 			// https://github.com/refined-github/refined-github/blob/90ad3b20c70681ca0ee85ef341e1818a887f9462/source/globals.d.ts#L42
+			// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 			'details-menu': IntrinsicElements['div'] & {
 				src?: string
 				preload?: boolean
@@ -28,8 +31,8 @@ const appearance = '/settings/appearance'
 const label = 'Theme Preferences'
 
 async function getForm() {
-	const res = await fetch(appearance)
-	const html = await res.text()
+	const response = await fetch(appearance)
+	const html = await response.text()
 	const dom = new DOMParser().parseFromString(html, 'text/html')
 	const form = dom.querySelector('appearance-form')!
 
@@ -42,8 +45,8 @@ function addDropdown(form: Element) {
 	const spinner = form.querySelector('.status-indicator-spinner')!
 	spinner.classList.add('color-text-primary', 'v-align-text-bottom')
 
-	const selectEl = form.querySelector('#color_mode_type_select')!
-	selectEl.classList.replace('mr-2', 'my-2')
+	const select = form.querySelector('#color_mode_type_select')!
+	select.classList.replace('mr-2', 'my-2')
 
 	const singlePanel = form.querySelector('div[data-mode-panel="single"]')!
 	for (const radio of singlePanel.querySelectorAll(
@@ -52,6 +55,7 @@ function addDropdown(form: Element) {
 		radio.classList.remove('col-md-4', 'col-6', 'mb-3')
 		radio.classList.add('col-12', 'ml-n2')
 	}
+
 	for (const toggle of singlePanel.querySelectorAll('.hx_theme-toggle'))
 		toggle.classList.add('border-0', 'text-normal')
 
@@ -64,7 +68,7 @@ function addDropdown(form: Element) {
 			{label}
 		</a>,
 		spinner.parentElement!,
-		selectEl,
+		select,
 		singlePanel,
 		autoPanel,
 	)
