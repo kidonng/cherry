@@ -4,7 +4,6 @@
 		"@github/hotkey": "https://esm.sh/@github/hotkey@2.0.1?target=es2021",
 		"@primer/octicons-react": "https://esm.sh/@primer/octicons-react@17.3.0?target=es2021&alias=react:dom-chef&external=dom-chef&pin=v87",
 		"dom-chef": "https://esm.sh/dom-chef@5.1.0?target=es2021",
-		"doma": "https://esm.sh/doma@3.0.2?target=es2021",
 		"element-ready": "https://esm.sh/element-ready@6.2.1?target=es2021",
 		"esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.5.2/mod.ts",
 		"esbuild": "https://deno.land/x/esbuild@v0.14.51/mod.js",
