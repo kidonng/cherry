@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitHub
-@version      45
+@version      46
 @description  Style optimizations for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -50,14 +50,6 @@
     /* Dim commit message for trees just like files */
     .commit-author + span .Link--primary:not(:hover) {
         color: var(--color-fg-muted) !important;
-    }
-
-    .markdown-body :is(
-        img:not([data-canonical-src^="https://img.shields.io/"]),
-        [data-type="mermaid"] .render-viewer
-    ) {
-        /* Same as `.rounded` */
-        border-radius: 6px;
     }
 
     /* Inspired by `.markdown-body .footnotes li:target::before` */
