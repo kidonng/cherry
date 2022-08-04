@@ -1,11 +1,18 @@
 {
 	"tasks": {
 		"bookmarklet": "deno run -A scripts/config/bookmarklet.ts",
-		"check": "sh -c 'deno check scripts/*.{js,ts,tsx}'",
-		"script": "deno task check && deno run -A scripts/config/script.ts",
+		"check-deno": "sh -c 'deno check deno/**.ts'",
+		"check-script": "sh -c 'deno check scripts/*.{js,ts,tsx}'",
+		"script": "deno task check-script && deno run -A scripts/config/script.ts",
 		"watch": "deno run -A scripts/config/watch.ts"
 	},
 	"importMap": "import_map.json",
+	"lint": {
+		"files": {
+			"include": ["deno", "node"],
+			"exclude": ["scripts/generated", "scripts/vendor"]
+		}
+	},
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "Deno.ns"]
 	}

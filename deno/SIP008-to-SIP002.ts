@@ -1,35 +1,37 @@
-import { encode } from 'https://deno.land/std@0.145.0/encoding/base64.ts'
-import { isIPv6 } from 'https://esm.sh/is-ip@4.0.0'
+/* eslint-disable unicorn/filename-case */
+import {encode} from 'https://deno.land/std@0.145.0/encoding/base64.ts'
+import {isIPv6} from 'https://esm.sh/is-ip@4.0.0'
 
 export interface Config {
-    version: number
-    servers: Server[]
-    [key: string]: unknown
+	[key: string]: unknown
+	version: number
+	servers: Server[]
 }
 
 export interface Server {
-    id: string
-    server: string
-    server_port: number
-    password: string
-    method: string
-    remarks?: string
-    plugin?: string
-    plugin_opts?: string
-    [key: string]: unknown
+	[key: string]: unknown
+	id: string
+	server: string
+	server_port: number
+	password: string
+	method: string
+	remarks?: string
+	plugin?: string
+	plugin_opts?: string
 }
 
 export function convertServer(entry: Server): string {
-    let { server, server_port, password, method, remarks } = entry
-    if (isIPv6(server)) server = `[${server}]`
-    return `ss://${encode(
-        `${method}:${password}`
-    )}@${server}:${server_port}#${remarks}`
+	// eslint-disable-next-line @typescript-eslint/naming-convention
+	let {server, server_port, password, method, remarks} = entry
+	if (isIPv6(server)) server = `[${server}]`
+	return `ss://${encode(
+		`${method}:${password}`,
+	)}@${server}:${server_port}#${remarks}`
 }
 
 if (import.meta.main) {
-    const [url] = Deno.args
-    const res = await fetch(url)
-    const { servers }: Config = await res.json()
-    console.log(servers.map(convertServer).join('\n'))
+	const [url] = Deno.args
+	const response = await fetch(url)
+	const {servers}: Config = await response.json()
+	console.log(servers.map((server) => convertServer(server)).join('\n'))
 }

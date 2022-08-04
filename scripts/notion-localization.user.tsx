@@ -9,6 +9,8 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+// eslint-disable-next-line import/no-unassigned-import
+import '@kidonng/typed-json'
 // eslint-disable-next-line import/newline-after-import
 ;(async () => {
 	// - `window.CONFIG.version` may not be available at this point
@@ -17,7 +19,12 @@ import React from 'dom-chef'
 	if (!info) return
 
 	// eslint-disable-next-line @typescript-eslint/naming-convention
-	const {app_version, locale, is_desktop, preferred_locale} = JSON.parse(info)
+	const {app_version, locale, is_desktop, preferred_locale} = JSON.parse<{
+		app_version: string
+		locale: string
+		is_desktop: boolean
+		preferred_locale: string
+	}>(info)
 	const metaKey = 'i10n-meta'
 	const messageKey = 'i10n-messages'
 

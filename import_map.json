@@ -2,6 +2,7 @@
 	"imports": {
 		"@github/catalyst": "https://esm.sh/@github/catalyst@1.5.0?target=es2021",
 		"@github/hotkey": "https://esm.sh/@github/hotkey@2.0.1?target=es2021",
+		"@kidonng/typed-json": "https://esm.sh/@kidonng/typed-json@1.2.0",
 		"@primer/octicons-react": "https://esm.sh/@primer/octicons-react@17.3.0?target=es2021&alias=react:dom-chef&external=dom-chef&pin=v87",
 		"dom-chef": "https://esm.sh/dom-chef@5.1.0?target=es2021",
 		"element-ready": "https://esm.sh/element-ready@6.2.1?target=es2021",
@@ -11,6 +12,7 @@
 		"github-url-detection": "https://esm.sh/github-url-detection@6.0.1?target=es2021",
 		"selector-observer": "https://esm.sh/selector-observer@2.1.6?target=es2021",
 		"std/": "https://deno.land/std@0.150.0/",
+		"type-fest/": "https://esm.sh/type-fest@2.18.0/",
 		"typed-query-selector": "https://esm.sh/typed-query-selector@2.6.1"
 	}
 }
