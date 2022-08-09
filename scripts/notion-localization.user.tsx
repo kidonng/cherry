@@ -10,7 +10,7 @@
 
 import React from 'dom-chef'
 // eslint-disable-next-line import/no-unassigned-import
-import '@kidonng/typed-json'
+import type {} from '@kidonng/typed-json'
 // eslint-disable-next-line import/newline-after-import
 ;(async () => {
 	// - `window.CONFIG.version` may not be available at this point

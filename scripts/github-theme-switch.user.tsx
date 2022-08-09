@@ -9,7 +9,7 @@
 
 import React from 'dom-chef'
 // eslint-disable-next-line import/no-unassigned-import
-import 'typed-query-selector'
+import type {} from 'typed-query-selector'
 import {SyncIcon, SunIcon, MoonIcon} from '@primer/octicons-react'
 import {AppearanceFormElement} from './vendor/github-appearance-form-element.ts'
 

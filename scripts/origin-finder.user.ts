@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 // eslint-disable-next-line import/no-unassigned-import
-import 'typed-query-selector'
+import type {} from 'typed-query-selector'
 
 const url = new URL(location.href)
 const {hostname, pathname} = url

@@ -10,7 +10,7 @@
 
 import React from 'dom-chef'
 // eslint-disable-next-line import/no-unassigned-import
-import 'typed-query-selector'
+import type {} from 'typed-query-selector'
 import {install as hotkey} from '@github/hotkey'
 
 const isSafebooru = location.hostname === 'safebooru.donmai.us'

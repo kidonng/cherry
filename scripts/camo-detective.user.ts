@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 // eslint-disable-next-line import/no-unassigned-import
-import 'typed-query-selector'
+import type {} from 'typed-query-selector'
 
 const init = () => {
 	for (const image of document.querySelectorAll(

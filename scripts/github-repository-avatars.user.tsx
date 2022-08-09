@@ -9,7 +9,7 @@
 
 import React from 'dom-chef'
 // eslint-disable-next-line import/no-unassigned-import
-import 'typed-query-selector'
+import type {} from 'typed-query-selector'
 import * as detect from 'github-url-detection'
 
 const init = () => {
