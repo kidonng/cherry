@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub conversation list avatars
-// @version      4
+// @version      5
 // @description  Add avatars in GitHub's conversation list
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -10,7 +10,7 @@
 import React from 'dom-chef'
 // eslint-disable-next-line import/no-unassigned-import
 import 'typed-query-selector'
-import {observe} from 'selector-observer'
+import {observe} from 'animation-observer'
 
 const className = 'gcla-processed'
 
@@ -20,29 +20,27 @@ document.head.append(
 )
 
 observe(
-	`:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]:not(.${className})`,
-	{
-		add(element) {
-			element.classList.add(className)
+	`:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]`,
+	(element) => {
+		element.classList.add(className)
 
-			const username = element.textContent
-			const alt = `@${username}`
-			const src =
-				document.querySelector(`img[alt="${alt}"]`)?.src ||
-				`https://avatars.githubusercontent.com/${username}?size=32`
+		const username = element.textContent
+		const alt = `@${username}`
+		const src =
+			document.querySelector(`img[alt="${alt}"]`)?.src ||
+			`https://avatars.githubusercontent.com/${username}?size=32`
 
-			element.prepend(
-				<img
-					className="avatar avatar-user"
-					src={src}
-					width="16"
-					height="16"
-					alt={alt}
-					loading="lazy"
-					decoding="async"
-				/>,
-				' ',
-			)
-		},
+		element.prepend(
+			<img
+				className="avatar avatar-user"
+				src={src}
+				width="16"
+				height="16"
+				alt={alt}
+				loading="lazy"
+				decoding="async"
+			/>,
+			' ',
+		)
 	},
 )

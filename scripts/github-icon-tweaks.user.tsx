@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub icon tweaks
-// @version      3
+// @version      4
 // @description  Tweak certain GitHub icons' color and style
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -10,35 +10,28 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
-import { observe } from 'selector-observer'
+import {observe} from 'animation-observer'
 import {
-    GitPullRequestClosedIcon,
-    GitPullRequestIcon,
+	GitPullRequestClosedIcon,
+	GitPullRequestIcon,
 } from '@primer/octicons-react'
 
-observe('.js-issues-results:not(#show_issue) .TimelineItem-badge', {
-    add(badge) {
-        if (badge.querySelector('.octicon-issue-opened')) {
-            badge.replaceWith(<GitPullRequestIcon />)
-        } else if (badge.querySelector('.octicon-issue-closed')) {
-            badge.classList.replace(
-                'color-bg-done-emphasis',
-                'color-bg-danger-emphasis'
-            )
-            badge.replaceWith(<GitPullRequestClosedIcon />)
-        } else if (badge.querySelector('.octicon-git-pull-request-draft'))
-            badge.classList.add(
-                'color-bg-canvas-inverse',
-                'color-fg-on-emphasis'
-            )
-    },
+observe('.js-issues-results:not(#show_issue) .TimelineItem-badge', (badge) => {
+	if (badge.querySelector('.octicon-issue-opened')) {
+		badge.replaceWith(<GitPullRequestIcon />)
+	} else if (badge.querySelector('.octicon-issue-closed')) {
+		badge.classList.replace(
+			'color-bg-done-emphasis',
+			'color-bg-danger-emphasis',
+		)
+		badge.replaceWith(<GitPullRequestClosedIcon />)
+	} else if (badge.querySelector('.octicon-git-pull-request-draft'))
+		badge.classList.add('color-bg-canvas-inverse', 'color-fg-on-emphasis')
 })
 
 observe(
-    '[data-octo-click="profile_timeline_toggle_rollup_created_issues"] .State--closed',
-    {
-        add(badge) {
-            badge.classList.add('color-bg-done-emphasis')
-        },
-    }
+	'[data-octo-click="profile_timeline_toggle_rollup_created_issues"] .State--closed',
+	(badge) => {
+		badge.classList.add('color-bg-done-emphasis')
+	},
 )

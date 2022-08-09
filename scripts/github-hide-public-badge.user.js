@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub hide public badge
-// @version      4
+// @version      5
 // @description  Hides "Public" repository badge or removes "Public" prefix
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -9,29 +9,27 @@
 
 // Ported from https://github.com/refined-github/refined-github/pull/4770
 
-import { observe } from 'selector-observer'
+import {observe} from 'animation-observer'
 
 function upperCaseFirst(input) {
-  return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
+	return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
 }
 
 document.head.insertAdjacentHTML(
-  'beforeend',
-  `<style>
+	'beforeend',
+	`<style>
     .rgh-ci-link .Label[hidden] + .commit-build-statuses {
       margin-left: 0;
     }
-  </style>`
+  </style>`,
 )
 
-observe('.Label.Label--secondary', {
-  add(badge) {
-    const newText = badge.textContent.trim().replace(/^Public ?/, '')
+observe('.Label.Label--secondary', (badge) => {
+	const newText = badge.textContent.trim().replace(/^Public ?/, '')
 
-    if (newText === '') {
-      badge.hidden = true
-    } else {
-      badge.textContent = upperCaseFirst(newText)
-    }
-  },
+	if (newText === '') {
+		badge.hidden = true
+	} else {
+		badge.textContent = upperCaseFirst(newText)
+	}
 })
