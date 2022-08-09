@@ -1,7 +1,7 @@
 {
 	"prettier": true,
 	"semicolon": false,
-	"ignores": ["scripts"],
+	"ignores": ["scripts/generated", "scripts/vendor", "scripts/*.js"],
 	"rules": {
 		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/no-unsafe-call": "off",
