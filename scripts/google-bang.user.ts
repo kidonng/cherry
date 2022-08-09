@@ -10,4 +10,4 @@
 
 const q = new URLSearchParams(location.search).get('q')
 if (q?.startsWith('!') || q?.startsWith('\\'))
-    location.replace(`https://duckduckgo.com/?q=${q}`)
+	location.replace(`https://duckduckgo.com/?q=${q}`)

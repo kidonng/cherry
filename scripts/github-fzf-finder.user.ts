@@ -8,10 +8,10 @@
 // ==/UserScript==
 
 import {Fzf, extendedMatch, type FzfResultItem, type Tiebreaker} from 'fzf'
+import {observe} from 'animation-observer'
 import type MarkedTextElement from './vendor/marked-text-element.ts'
 import type VirtualFilterInputElement from './vendor/virtual-filter-input-element.ts'
 import type VirtualListElement from './vendor/virtual-list-element.ts'
-import {observe} from 'animation-observer'
 
 // https://fzf.netlify.app/docs/latest#usage-making-it-behave-like-fzf-cli
 const byTrimmedLengthAsc: Tiebreaker<string> = (a, b, selector) => {
@@ -48,6 +48,7 @@ observe('.js-tree-finder', (list) => {
 				this.dispatchEvent(new CustomEvent('virtual-filter-input-filter'))
 
 				this.filtered.clear()
+				// eslint-disable-next-line unicorn/no-array-callback-reference
 				results = fzf.find(query)
 				for (const {item} of results) this.filtered.add(item)
 
