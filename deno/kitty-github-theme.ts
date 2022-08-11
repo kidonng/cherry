@@ -1,4 +1,6 @@
-/* eslint-disable capitalized-comments */
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+import stripIndent from 'https://esm.sh/strip-indent'
+
 // https://sw.kovidgoyal.net/kitty/conf/#the-color-table
 const ansi = [
 	'black',
@@ -19,48 +21,53 @@ async function convertTheme(theme: string) {
 	const colors = await response.json()
 
 	// https://github.com/primer/github-vscode-theme/blob/main/src/theme.js
-	const conf = [
-		`## name: GitHub ${theme}`,
-		`## author: GitHub`,
-		'',
-		'# Basic',
-		// editor.foreground
-		`foreground ${colors.fg.default}`,
-		// editor.background
-		`background ${colors.canvas.default}`,
-		// Do inversion ourselves because kitty do it badly
-		`selection_foreground ${colors.canvas.default}`,
-		// editor.selectionBackground, without alpha
-		`selection_background ${colors.accent.fg}`,
-		// editorCursor.foreground
-		`cursor ${colors.accent.fg}`,
-		'',
-		'# Tab',
-		// editorGroupHeader.tabsBackground
-		`tab_bar_background ${colors.canvas.inset}`,
-		// tab.activeForeground
-		`active_tab_foreground ${colors.fg.default}`,
-		// tab.activeBackground
-		`active_tab_background ${colors.canvas.default}`,
-		// tab.inactiveForeground
-		`inactive_tab_foreground ${colors.fg.muted}`,
-		// tab.inactiveBackground
-		`inactive_tab_background ${colors.canvas.inset}`,
-		'',
-		'# ANSI colors',
-	]
+	let conf = stripIndent(`
+		# vim:ft=kitty
+
+		## name: GitHub ${theme}
+		## author: GitHub
+		## license: MIT
+
+		#: The basic colors
+
+		foreground ${colors.fg.default /* editor.foreground */}
+		background ${colors.canvas.default /* editor.background */}
+		selection_foreground ${
+			colors.canvas.default /* Do inversion ourselves as kitty do it badly */
+		}
+		selection_background ${
+			colors.accent.fg /* Alpha-less editor.selectionBackground */
+		}
+
+
+		#: Cursor colors
+
+		cursor ${colors.accent.fg /* editorCursor.foreground */}
+
+
+		#: Tab bar colors
+
+		tab_bar_background ${colors.canvas.inset /* editorGroupHeader.tabsBackground */}
+		active_tab_foreground ${colors.fg.default /* tab.activeForeground */}
+		active_tab_background ${colors.canvas.default /* tab.activeBackground */}
+		inactive_tab_foreground ${colors.fg.muted /* tab.inactiveForeground */}
+		inactive_tab_background ${colors.canvas.inset /* tab.inactiveBackground */}
+
+
+		#: The basic 16 colors
+	`).trim()
+	conf += '\n'
 
 	for (const [index, color] of Object.entries(ansi)) {
-		// terminal.*
-		conf.push(
-			`# ${color}`,
-			`color${index} ${colors.ansi[color]}`,
-			`color${Number(index) + 8} ${colors.ansi[`${color}Bright`]}`,
-			'',
-		)
+		conf += stripIndent(`
+			#: ${color}
+			color${index} ${colors.ansi[color] /* terminal.<color> */}
+			color${Number(index) + 8} ${colors.ansi[`${color}Bright`]}
+		`).trimEnd()
+		conf += '\n'
 	}
 
-	return conf.join('\n')
+	return conf
 }
 
 const themes = [
