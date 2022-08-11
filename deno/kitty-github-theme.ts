@@ -20,7 +20,8 @@ async function convertTheme(theme: string) {
 	)
 	const colors = await response.json()
 
-	// https://github.com/primer/github-vscode-theme/blob/main/src/theme.js
+	// Template: https://github.com/kovidgoyal/kitty-themes/blob/master/template.conf
+	// Color references: https://github.com/primer/github-vscode-theme/blob/main/src/theme.js
 	let conf = stripIndent(`
 		# vim:ft=kitty
 
