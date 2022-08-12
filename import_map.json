@@ -12,6 +12,7 @@
 		"fzf": "https://esm.sh/fzf@0.5.1?target=es2021",
 		"github-url-detection": "https://esm.sh/github-url-detection@6.0.1?target=es2021",
 		"https://esm.sh/v90/typed-query-selector@2.6.1/parser.js/shim.d.ts": "https://esm.sh/v90/typed-query-selector@2.6.1/parser.d.ts",
+		"medium-zoom": "https://esm.sh/medium-zoom@1.0.6?target=es2021",
 		"std/": "https://deno.land/std@0.150.0/",
 		"type-fest/": "https://esm.sh/type-fest@2.18.0/",
 		"typed-query-selector": "https://esm.sh/typed-query-selector@2.6.1"

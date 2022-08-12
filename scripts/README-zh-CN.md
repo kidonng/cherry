@@ -36,7 +36,25 @@
 
 ## Notion
 
+### [Notion Medium 缩放](https://cherry.xuann.wang/notion-medium-zoom.user.js)
+
+> **注**: [兼容桌面应用](#注入-notion-桌面应用)
+
+使用 [Medium 风格的缩放方式](https://github.com/francoischalifour/medium-zoom#features)查看 Notion 图片。
+
+https://user-images.githubusercontent.com/44045911/184354370-cb2d671b-94b5-45ee-bd8f-50b49fb85dd6.mov
+
+对比原生缩放：
+
+- 单击放大
+- 滚动页面还原
+- 点击任意位置还原
+
+同样适用于 <kbd>空格</kbd>键。原生缩放仍可通过块菜单访问。
+
 ### [拦截 Notion 统计](https://cherry.xuann.wang/block-notion-analytics.user.js)
+
+> **注**: [兼容桌面应用](#注入-notion-桌面应用)
 
 拦截下列 Notion 使用的统计服务：
 
@@ -46,17 +64,9 @@
 - Sentry
 - Statsig
 
----
-
-**本脚本兼容 Notion 桌面端应用。**
-
-macOS 用法示例：在终端执行以下命令。每次应用升级都需进行此操作。
-
-```sh
-curl https://cherry.xuann.wang/block-notion-analytics.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
-```
-
 ### [Notion 本地化](https://cherry.xuann.wang/notion-localization.user.js)
+
+> **注**: [兼容桌面应用](#注入-notion-桌面应用)
 
 启用更多语言的 Notion 原生本地化翻译。
 
@@ -67,14 +77,14 @@ curl https://cherry.xuann.wang/block-notion-analytics.user.js >> /Applications/N
 
 ![截图](../screenshots/notion-localization.png)
 
----
+### 注入 Notion 桌面应用
 
-**本脚本兼容 Notion 桌面端应用。**
+部分脚本可以通过注入 `preload.js` 的方法在 Notion 桌面端应用中使用。每次应用升级后都需执行此操作。
 
-macOS 用法示例：在终端执行以下命令。每次应用升级都需进行此操作。
+例如，在 macOS Notion 应用中安装 [Notion Medium 缩放](#notion-medium-缩放):
 
 ```sh
-curl https://cherry.xuann.wang/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+curl https://cherry.xuann.wang/notion-medium-zoom.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
 ```
 
 ## [Refined Danbooru](https://cherry.xuann.wang/refined-danbooru.user.js)

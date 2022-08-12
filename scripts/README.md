@@ -36,7 +36,25 @@ Floating YouTube mini player like Bilibili, for conveniently reading comments an
 
 ## Notion
 
+### [Notion Medium Zoom](https://cherry.xuann.wang/notion-medium-zoom.user.js)
+
+> **Note**: [compatible with desktop app](#inject-into-notion-desktop-app)
+
+View images in Notion with [Medium-style zoom](https://github.com/francoischalifour/medium-zoom#features).
+
+https://user-images.githubusercontent.com/44045911/184354370-cb2d671b-94b5-45ee-bd8f-50b49fb85dd6.mov
+
+Compared to native zoom:
+
+- One-click to zoom-in
+- Scroll away to zoom-out
+- Click anywhere to zoom-out
+
+Works with <kbd>Space</kbd> key too. Native zoom is still accessible via block menu.
+
 ### [Block Notion Analytics](https://cherry.xuann.wang/block-notion-analytics.user.js)
+
+> **Note**: [compatible with desktop app](#inject-into-notion-desktop-app)
 
 Block following analytics services Notion uses:
 
@@ -46,17 +64,9 @@ Block following analytics services Notion uses:
 - Sentry
 - Statsig
 
----
-
-**This script is compatible with Notion desktop app.**
-
-Example usage for macOS: run the following command in your terminal. This need to be done every time the app updates.
-
-```sh
-curl https://cherry.xuann.wang/block-notion-analytics.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
-```
-
 ### [Notion Localization](https://cherry.xuann.wang/notion-localization.user.js)
+
+> **Note**: [compatible with desktop app](#inject-into-notion-desktop-app)
 
 Enable Notion's native localization for more languages.
 
@@ -67,14 +77,14 @@ Notes:
 
 ![Screenshot](../screenshots/notion-localization.png)
 
----
+### Inject into Notion desktop app
 
-**This script is compatible with Notion desktop app.**
+Some of the scripts can be used in Notion desktop app by injecting them into `preload.js`. This need to be done every time the app updates.
 
-Example usage for macOS: run the following command in your terminal. This need to be done every time the app updates.
+For example, to install [Notion Medium Zoom](#notion-medium-zoom) into macOS Notion app:
 
 ```sh
-curl https://cherry.xuann.wang/notion-localization.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
+curl https://cherry.xuann.wang/notion-medium-zoom.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
 ```
 
 ## [Refined Danbooru](https://cherry.xuann.wang/refined-danbooru.user.js)

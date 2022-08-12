@@ -1,11 +1,23 @@
 {
-    "redirects": [
-        {
-            "source": "/",
-            "destination": "https://github.com/kidonng/cherry/blob/master/scripts/README.md"
-        }
-    ],
-    "github": {
-        "silent": true
-    }
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"redirects": [
+		{
+			"source": "/",
+			"destination": "https://github.com/kidonng/cherry/blob/master/scripts/README.md"
+		}
+	],
+	"headers": [
+		{
+			"source": "/*.user.js",
+			"headers": [
+				{
+					"key": "cache-control",
+					"value": "s-maxage=86400"
+				}
+			]
+		}
+	],
+	"github": {
+		"silent": true
+	}
 }
