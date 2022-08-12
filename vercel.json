@@ -8,7 +8,7 @@
 	],
 	"headers": [
 		{
-			"source": "/*.user.js",
+			"source": "/.+.user.js",
 			"headers": [
 				{
 					"key": "cache-control",
