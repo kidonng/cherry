@@ -50,7 +50,7 @@ https://user-images.githubusercontent.com/44045911/184354370-cb2d671b-94b5-45ee-
 - 滚动页面还原
 - 点击任意位置还原
 
-同样适用于 <kbd>空格</kbd>键。原生缩放仍可通过块菜单访问。
+同样适用于 <kbd>空格</kbd> 键。原生缩放仍可通过块菜单访问。
 
 ### [拦截 Notion 统计](https://cherry.xuann.wang/block-notion-analytics.user.js)
 

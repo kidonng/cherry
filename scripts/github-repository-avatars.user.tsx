@@ -39,5 +39,5 @@ const init = () => {
 	icon.replaceWith(avatar)
 }
 
-document.addEventListener('turbo:render', init)
+addEventListener('turbo:render', init)
 init()

@@ -44,6 +44,7 @@ const open = (target: HTMLElement) => {
 	zoom.open({target})
 }
 
+// Notion's click listener is global when logged in, document when logged out
 document.addEventListener('click', (event) => {
 	const target = event.target as HTMLElement
 	if (!target.matches(imageSelector)) return
@@ -52,7 +53,7 @@ document.addEventListener('click', (event) => {
 	open(target)
 })
 
-// Notion's listener is global, so listen to document
+// Notion's key listener is global
 document.addEventListener('keydown', (event) => {
 	if (event.code !== 'Space') return
 
