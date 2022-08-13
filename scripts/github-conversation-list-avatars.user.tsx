@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub conversation list avatars
-// @version      6
+// @version      7
 // @description  Add avatars in GitHub's conversation list
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -23,7 +23,7 @@ function init() {
 	if (!isIssueOrPRList) return
 
 	for (const element of document.querySelectorAll(
-		`:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]`,
+		`:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]:not(.${className})`,
 	)) {
 		element.classList.add(className)
 
