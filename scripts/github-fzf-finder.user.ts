@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub fzf Finder
-// @version      2
+// @version      3
 // @description  Power GitHub's "Go to file" feature with fzf
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -8,7 +8,7 @@
 // ==/UserScript==
 
 import {Fzf, extendedMatch, type FzfResultItem, type Tiebreaker} from 'fzf'
-import {observe} from 'animation-observer'
+import {isFileFinder} from 'github-url-detection'
 import type MarkedTextElement from './vendor/marked-text-element.ts'
 import type VirtualFilterInputElement from './vendor/virtual-filter-input-element.ts'
 import type VirtualListElement from './vendor/virtual-list-element.ts'
@@ -18,7 +18,10 @@ const byTrimmedLengthAsc: Tiebreaker<string> = (a, b, selector) => {
 	return selector(a.item).trim().length - selector(b.item).trim().length
 }
 
-observe('.js-tree-finder', (list) => {
+function init() {
+	if (!isFileFinder) return
+
+	const list = document.querySelector('.js-tree-finder')!
 	const virtualFilter = list.querySelector<VirtualFilterInputElement<string>>(
 		'.js-tree-finder-virtual-filter',
 	)!
@@ -101,4 +104,7 @@ observe('.js-tree-finder', (list) => {
 			this.replaceChildren(frag)
 		}
 	})
-})
+}
+
+init()
+addEventListener('turbo:render', init)
