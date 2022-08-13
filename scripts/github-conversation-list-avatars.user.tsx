@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub conversation list avatars
-// @version      5
+// @version      6
 // @description  Add avatars in GitHub's conversation list
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -8,9 +8,9 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+import {isIssueOrPRList} from 'github-url-detection'
 // eslint-disable-next-line import/no-unassigned-import
 import type {} from 'typed-query-selector'
-import {observe} from 'animation-observer'
 
 const className = 'gcla-processed'
 
@@ -19,9 +19,12 @@ document.head.append(
 	<style>{`.${className}.rgh-collaborator { padding: 2px 5px 4px; }`}</style>,
 )
 
-observe(
-	`:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]`,
-	(element) => {
+function init() {
+	if (!isIssueOrPRList) return
+
+	for (const element of document.querySelectorAll(
+		`:is(.js-issue-row, .js-pinned-issue-list-item) [data-hovercard-type="user"]`,
+	)) {
 		element.classList.add(className)
 
 		const username = element.textContent
@@ -42,5 +45,8 @@ observe(
 			/>,
 			' ',
 		)
-	},
-)
+	}
+}
+
+init()
+addEventListener('turbo:render', init)
