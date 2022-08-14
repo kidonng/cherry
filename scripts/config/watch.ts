@@ -1,19 +1,17 @@
-import * as colors from 'std/fmt/colors.ts'
-import * as esbuild from 'esbuild'
+import {bold} from 'std/fmt/colors.ts'
+import {build} from 'esbuild'
 import {config} from './esbuild.ts'
 
 console.log('Started watching')
 
 for (const options of config) {
 	const [script] = options.entryPoints as string[]
-	esbuild.build({
+	build({
 		...options,
 		watch: {
 			onRebuild() {
 				console.log(
-					`[${new Date().toLocaleTimeString()}] Building ${colors.bold(
-						script,
-					)}`,
+					`[${new Date().toLocaleTimeString()}] Building ${bold(script)}`,
 				)
 			},
 		},
