@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub fzf Finder
-// @version      3
+// @version      4
 // @description  Power GitHub's "Go to file" feature with fzf
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -19,7 +19,7 @@ const byTrimmedLengthAsc: Tiebreaker<string> = (a, b, selector) => {
 }
 
 function init() {
-	if (!isFileFinder) return
+	if (!isFileFinder()) return
 
 	const list = document.querySelector('.js-tree-finder')!
 	const virtualFilter = list.querySelector<VirtualFilterInputElement<string>>(
