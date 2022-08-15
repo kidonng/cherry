@@ -8,6 +8,7 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+import {css} from 'code-tag'
 // eslint-disable-next-line import/no-unassigned-import
 import type {} from 'typed-query-selector'
 import {SyncIcon, SunIcon, MoonIcon} from '@primer/octicons-react'
@@ -77,7 +78,11 @@ function addDropdown(form: Element) {
 		<style>
 			{['auto', 'light', 'dark'].map(
 				(mode) =>
-					`[data-color-mode="${mode}"] .gts-${mode} { display: inline-block !important; }`,
+					css`
+						[data-color-mode='${mode}'] .gts-${mode} {
+							display: inline-block !important;
+						}
+					`,
 			)}
 		</style>,
 	)

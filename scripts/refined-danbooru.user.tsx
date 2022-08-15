@@ -9,6 +9,7 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+import {css} from 'code-tag'
 // eslint-disable-next-line import/no-unassigned-import
 import type {} from 'typed-query-selector'
 import {install as hotkey} from '@github/hotkey'
@@ -63,11 +64,11 @@ const tagList = document.querySelector('#tag-list')
 if (tagList) {
 	document.head.append(
 		<style>
-			{`
-            #sidebar summary :is(h2, h3) {
-                display: inline-block;
-            }
-            `}
+			{css`
+				#sidebar summary :is(h2, h3) {
+					display: inline-block;
+				}
+			`}
 		</style>,
 	)
 

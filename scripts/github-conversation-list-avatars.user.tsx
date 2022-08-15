@@ -9,6 +9,7 @@
 
 import React from 'dom-chef'
 import {isIssueOrPRList} from 'github-url-detection'
+import {css} from 'code-tag'
 // eslint-disable-next-line import/no-unassigned-import
 import type {} from 'typed-query-selector'
 
@@ -16,7 +17,11 @@ const className = 'gcla-processed'
 
 // https://github.com/refined-github/refined-github/blob/82fb3d62f11838ad4120f510bd90520c57bb12da/source/features/highlight-collaborators-and-own-conversations.css#L4
 document.head.append(
-	<style>{`.${className}.rgh-collaborator { padding: 2px 5px 4px; }`}</style>,
+	<style>{css`
+		.${className}.rgh-collaborator {
+			padding: 2px 5px 4px;
+		}
+	`}</style>,
 )
 
 function init() {

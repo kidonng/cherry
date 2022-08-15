@@ -11,6 +11,7 @@
 
 import React from 'dom-chef'
 import {observe} from 'animation-observer'
+import {css} from 'code-tag'
 
 const parseUrl = (source: HTMLElement) =>
 	source.style.backgroundImage.replace(/^url\("(.+)"\)$/, '$1')
@@ -19,17 +20,17 @@ const thumbPreview =
 const preview = `.link_preview_image, ${thumbPreview}`
 
 document.head.append(
-	<style>{`
-        /* Remove the cover on videos */
-        .link_preview_video_player:after {
-            display: none;
-        }
+	<style>{css`
+		/* Remove the cover on videos */
+		.link_preview_video_player:after {
+			display: none;
+		}
 
-        /* Fix thumb size */
-        ${thumbPreview} {
-            object-fit: cover;
-        }
-    `}</style>,
+		/* Fix thumb size */
+		${thumbPreview} {
+			object-fit: cover;
+		}
+	`}</style>,
 )
 
 observe(`.tgme_widget_message_photo, ${preview}`, (target) => {
