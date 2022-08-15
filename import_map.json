@@ -5,6 +5,7 @@
 		"@kidonng/typed-json": "https://esm.sh/@kidonng/typed-json@1.2.0",
 		"@primer/octicons-react": "https://esm.sh/@primer/octicons-react@17.3.0?target=es2021&alias=react:dom-chef&external=dom-chef&pin=v87",
 		"animation-observer": "https://esm.sh/animation-observer@2.1.1?target=es2021&pin=v90",
+		"code-tag": "https://esm.sh/code-tag@1.1.0?target=es2021",
 		"dom-chef": "https://esm.sh/dom-chef@5.1.0?target=es2021",
 		"element-ready": "https://esm.sh/element-ready@6.2.1?target=es2021",
 		"esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.5.2/mod.ts",

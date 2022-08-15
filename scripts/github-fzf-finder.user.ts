@@ -37,7 +37,7 @@ function init() {
 		() => {
 			// Only until first `virtual-filter-input-filtered` event fires
 			// Would `virtualList` has values
-			fzf = new Fzf([...virtualList.values()], {
+			fzf = new Fzf(Array.from(virtualList.values()), {
 				match: extendedMatch,
 				tiebreakers: [byTrimmedLengthAsc],
 			})

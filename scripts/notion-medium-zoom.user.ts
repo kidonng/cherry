@@ -10,6 +10,7 @@
 
 import mediumZoom from 'medium-zoom'
 import elementReady from 'element-ready'
+import {css} from 'code-tag'
 // eslint-disable-next-line import/no-unassigned-import
 import type {} from 'typed-query-selector'
 
@@ -21,7 +22,7 @@ const overlaySelector = '.medium-zoom-overlay'
 const scrollerSelector = 'div.notion-scroller'
 
 const style = document.createElement('style')
-style.append(/* css */ `
+style.append(css`
 	${overlaySelector},
 	${openImageSelector} {
 		/* Same as .notion-overlay-container to work with center peek */

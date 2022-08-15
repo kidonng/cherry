@@ -22,33 +22,30 @@
 // ==/UserScript==
 
 import React from 'dom-chef'
+import {css} from 'code-tag'
 
 const id = 'cherry-pages-source'
 const style = (
 	<style>
-		{
-			// Eslint-disable-next-line capitalized-comments
-			/* css */
-			`
-            #${id} {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                margin: .5rem;
-                opacity: 0.5;
-                transition: opacity .25s;
-                /* Avoid unnecessary styling */
-                text-decoration: none;
-                text-shadow: none;
-                background: none;
-                border: none;
-            }
+		{css`
+			#${id} {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				margin: 0.5rem;
+				opacity: 0.5;
+				transition: opacity 0.25s;
+				/* Avoid unnecessary styling */
+				text-decoration: none;
+				text-shadow: none;
+				background: none;
+				border: none;
+			}
 
-            #${id}:hover {
+			#${id}:hover {
 				opacity: 1 !important;
 			}
-        `
-		}
+		`}
 	</style>
 )
 
@@ -91,7 +88,7 @@ switch (host[host.length - 2]) {
 		title = 'Go to source repository'
 		icon.src =
 			'https://api.iconify.design/simple-icons/gitee.svg?color=%23c71d23'
-		style.append(/* css */ `
+		style.append(css`
 			#${id} {
 				/* Fill center "G" */
 				background: white;
@@ -99,7 +96,7 @@ switch (host[host.length - 2]) {
 				/* Hide round crop artifact */
 				border: 1px solid white;
 			}
-        `)
+		`)
 		break
 	case 'sourceforge':
 		href = `https://sourceforge.net/projects/${username}/`
