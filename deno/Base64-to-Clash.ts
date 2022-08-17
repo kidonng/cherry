@@ -2,7 +2,7 @@
 import {decode} from 'https://deno.land/std@0.145.0/encoding/base64.ts'
 // eslint-disable-next-line import/no-unassigned-import
 import type {} from 'https://esm.sh/@kidonng/typed-json@1.2.0'
-import type {JsonObject} from 'type-fest/source/basic.d.ts'
+import type {JsonObject} from 'https://esm.sh/type-fest@2.18.0/source/basic.d.ts'
 import {generateConfig} from './utils/clash.ts'
 
 const vmess = (url: URL) => {
