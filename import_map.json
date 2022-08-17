@@ -8,7 +8,7 @@
 		"code-tag": "https://esm.sh/code-tag@1.1.0?target=es2021",
 		"dom-chef": "https://esm.sh/dom-chef@5.1.0?target=es2021",
 		"element-ready": "https://esm.sh/element-ready@6.2.1?target=es2021",
-		"esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.5.2/mod.ts",
+		"esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.5.2/mod.ts?external=esbuild",
 		"esbuild": "https://deno.land/x/esbuild@v0.14.51/mod.js",
 		"fzf": "https://esm.sh/fzf@0.5.1?target=es2021",
 		"github-url-detection": "https://esm.sh/github-url-detection@6.0.1?target=es2021",

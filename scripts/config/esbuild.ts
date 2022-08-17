@@ -1,6 +1,5 @@
 import {expandGlobSync} from 'std/fs/mod.ts'
-import {basename, extname} from 'std/path/mod.ts'
-import {BuildOptions, Plugin} from 'esbuild'
+import type {BuildOptions, Plugin} from 'esbuild'
 import {denoPlugin} from 'esbuild_deno_loader'
 
 const delimiter = '// ==/UserScript=='
@@ -18,12 +17,12 @@ const plugins: Plugin[] = [
 	}),
 ]
 
-const root = 'scripts'
-const outdir = `${root}/generated`
+const root = (path: string) => `scripts/${path}`
+const outdir = root('generated')
 type Options = (script: string) => BuildOptions
 
 const base: Options = (script) => ({
-	entryPoints: [`${root}/${script}`],
+	entryPoints: [root(script)],
 	bundle: true,
 	minify: true,
 	plugins,
@@ -33,14 +32,14 @@ const userscript: Options = (script) => ({
 	...base(script),
 	outdir,
 	banner: {
-		js: getBanner(`${root}/${script}`),
+		js: getBanner(root(script)),
 	},
 	sourcemap: 'inline',
 })
 
 const bookmarklet: Options = (script) => ({
 	...base(script),
-	outfile: `${outdir}/${basename(script, extname(script))}.bookmarklet.js`,
+	outdir,
 	write: false,
 	legalComments: 'none',
 })
@@ -57,11 +56,11 @@ const scriptsWithConfig = new Set(
 )
 config.push(
 	...[
-		...expandGlobSync(`${root}/*.ts{,x}`),
+		...expandGlobSync(root('*.ts{,x}')),
 		{name: 'github-hide-public-badge.user.js'},
 		{name: 'reposition-octotree-bookmark-icon.user.js'},
 	]
-		.filter((i) => !scriptsWithConfig.has(`${root}/${i.name}`))
+		.filter((i) => !scriptsWithConfig.has(root(i.name)))
 		.map((i) => userscript(i.name)),
 )
 
