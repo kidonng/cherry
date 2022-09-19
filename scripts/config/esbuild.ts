@@ -13,7 +13,7 @@ function getBanner(path: string) {
 const plugins: Plugin[] = [
 	denoPlugin({
 		// eslint-disable-next-line @typescript-eslint/naming-convention
-		importMapURL: new URL('../../import_map.json', import.meta.url),
+		importMapURL: new URL('../../deno.json', import.meta.url),
 	}),
 ]
 
