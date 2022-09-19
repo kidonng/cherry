@@ -9,5 +9,6 @@
 // ==/UserScript==
 
 const q = new URLSearchParams(location.search).get('q')
+// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
 if (q?.startsWith('!') || q?.startsWith('\\'))
 	location.replace(`https://duckduckgo.com/?q=${q}`)

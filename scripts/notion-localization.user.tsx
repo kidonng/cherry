@@ -56,7 +56,13 @@ import type {} from '@kidonng/typed-json'
 			},
 			body: JSON.stringify({hash: ''}),
 		})
-		const {localeHtml, version} = await assetsResponse.json()
+		const {
+			localeHtml,
+			version,
+		}: {
+			localeHtml: Record<string, string>
+			version: string
+		} = await assetsResponse.json()
 		if (!(locale in localeHtml)) return
 		const htmlUrl = localeHtml[locale]
 

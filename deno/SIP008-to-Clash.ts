@@ -1,5 +1,5 @@
 /* eslint-disable unicorn/filename-case */
-import {Config, Server} from './SIP008-to-SIP002.ts'
+import type {Config, Server} from './SIP008-to-SIP002.ts'
 import {generateConfig} from './utils/clash.ts'
 
 export function convertServers(servers: Server[]) {

@@ -91,8 +91,8 @@ observe(
 		}
 
 		if (detect.isIssue(link) || detect.isPR(link)) {
-			if (pathname.endsWith('/linked_closing_reference'))
-				return link.addEventListener(
+			if (pathname.endsWith('/linked_closing_reference')) {
+				link.addEventListener(
 					'mouseenter',
 					async () => {
 						const {url} = await fetch(link.href, {
@@ -105,6 +105,8 @@ observe(
 					},
 					{once: true},
 				)
+				return
+			}
 
 			// Handle if the issue has been transferred
 			if (detect.isIssue(link)) issueObserver.observe(link, {attributes: true})

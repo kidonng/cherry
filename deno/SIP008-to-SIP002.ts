@@ -2,13 +2,13 @@
 import {encode} from 'https://deno.land/std@0.145.0/encoding/base64.ts'
 import {isIPv6} from 'https://esm.sh/is-ip@4.0.0'
 
-export interface Config {
+export type Config = {
 	[key: string]: unknown
 	version: number
 	servers: Server[]
 }
 
-export interface Server {
+export type Server = {
 	[key: string]: unknown
 	id: string
 	server: string
