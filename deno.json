@@ -1,15 +1,14 @@
 {
 	"tasks": {
 		"bookmarklet": "deno run -A scripts/config/bookmarklet.ts",
-		"check-deno": "sh -c 'deno check deno/**.ts'",
-		"check-script": "sh -c 'deno check scripts/*.{js,ts,tsx}'",
-		"script": "deno task check-script && deno run -A scripts/config/script.ts",
+		"check": "sh -c 'deno check scripts/*.{js,ts,tsx}'",
+		"script": "deno task check && deno run -A scripts/config/script.ts",
 		"watch": "deno run -A scripts/config/watch.ts"
 	},
 	"lint": {
 		"files": {
-			"include": ["deno", "node"],
-			"exclude": ["scripts/generated", "scripts/vendor"]
+			"include": ["scripts/config"],
+			"exclude": ["scripts/generated", "scripts/vendor", "node_modules"]
 		}
 	},
 	"compilerOptions": {

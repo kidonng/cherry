@@ -3,12 +3,6 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  check-deno:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: denoland/setup-deno@v1
-      - run: deno task check-deno
   deno-lint:
     runs-on: ubuntu-latest
     steps:
