@@ -44,15 +44,11 @@ Restore “All” and “Following” updates tab in Notion.
 
 ### [Notion Medium Zoom](https://cherry.xuann.wang/notion-medium-zoom.user.js)
 
-> **Note**: [compatible with desktop app](#inject-into-notion-desktop-app)
-
 View images in Notion with [Medium-style zoom](https://github.com/francoischalifour/medium-zoom).
 
 [Learn more in this post](https://kidonng.notion.site/Notion-Medium-Zoom-8207e57609ea469f8dfdfe91010f8f46).
 
 ### [Block Notion Analytics](https://cherry.xuann.wang/block-notion-analytics.user.js)
-
-> **Note**: [compatible with desktop app](#inject-into-notion-desktop-app)
 
 Block following analytics services Notion uses:
 
@@ -64,20 +60,18 @@ Block following analytics services Notion uses:
 
 ### [Notion Localization](https://cherry.xuann.wang/notion-localization.user.js)
 
-> **Note**: [compatible with desktop app](#inject-into-notion-desktop-app)
-
 Enable Notion's native localization for more languages.
 
 Notes:
 
 - You must be logged in for it to work
-- The script may not work if Notion's code happen to run before it. Open Notion with [`https://www.notion.so`](https://www.notion.so) or keep refreshing if the issue happens.
+- The script may not work if Notion's code happen to run before it. Open [`https://www.notion.so`](https://www.notion.so) or keep refreshing if the issue happens.
 
 ![Screenshot](../screenshots/notion-localization.png)
 
 ### Inject into Notion desktop app
 
-Some of the scripts can be used in Notion desktop app by injecting them into `preload.js`. This need to be done every time the app updates.
+Scripts can be used in Notion desktop app by injecting them into `preload.js`. This need to be done every time the app updates.
 
 For example, to install [Notion Medium Zoom](#notion-medium-zoom) into macOS Notion app:
 

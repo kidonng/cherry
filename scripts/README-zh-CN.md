@@ -44,15 +44,11 @@
 
 ### [Notion Medium 缩放](https://cherry.xuann.wang/notion-medium-zoom.user.js)
 
-> **注**: [兼容桌面应用](#注入-notion-桌面应用)
-
 使用 [Medium 风格的缩放方式](https://github.com/francoischalifour/medium-zoom)查看 Notion 图片。
 
 [详情见此文](https://kidonng.notion.site/Notion-Medium-Zoom-8207e57609ea469f8dfdfe91010f8f46)。
 
 ### [拦截 Notion 统计](https://cherry.xuann.wang/block-notion-analytics.user.js)
-
-> **注**: [兼容桌面应用](#注入-notion-桌面应用)
 
 拦截下列 Notion 使用的统计服务：
 
@@ -64,20 +60,18 @@
 
 ### [Notion 本地化](https://cherry.xuann.wang/notion-localization.user.js)
 
-> **注**: [兼容桌面应用](#注入-notion-桌面应用)
-
 启用更多语言的 Notion 原生本地化翻译。
 
 注：
 
 - 必须登录方可生效
-- 如果 Notion 的代码比脚本先运行后者就可能失效。碰到这种情况请通过 [`https://www.notion.so`](https://www.notion.so) 打开 Notion 或一直刷新。
+- 如果 Notion 的代码比脚本先运行后者就可能失效。碰到这种情况请打开 [`https://www.notion.so`](https://www.notion.so) 或一直刷新。
 
 ![截图](../screenshots/notion-localization.png)
 
 ### 注入 Notion 桌面应用
 
-部分脚本可以通过注入 `preload.js` 的方法在 Notion 桌面端应用中使用。每次应用升级后都需执行此操作。
+可以通过注入 `preload.js` 的方法在 Notion 桌面端应用中使用脚本。每次应用升级后都需执行此操作。
 
 例如，在 macOS Notion 应用中安装 [Notion Medium 缩放](#notion-medium-缩放):
 
