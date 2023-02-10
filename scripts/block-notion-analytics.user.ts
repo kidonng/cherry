@@ -17,7 +17,7 @@ const rawFetch = globalThis.fetch
 globalThis.fetch = async (url, ...args) => {
 	if (
 		[
-			'/api/v3/getUserAnalyticsSettings', // Segment (mostly)
+			'/api/v3/getUserAnalyticsSettings', // Segment & Intercom (contact support)
 			'https://exp.notion.so/v1/rgstr', // Statsig
 			'https://http-inputs-notion.splunkcloud.com/services/collector/raw', // Splunk
 		].includes(url as string)

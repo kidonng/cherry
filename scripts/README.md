@@ -36,21 +36,19 @@ Floating YouTube mini player like Bilibili, for conveniently reading comments an
 
 ## Notion
 
+### [Restore Notion Updates tabs](https://cherry.xuann.wang/restore-notion-updates-tabs.user.js)
+
+Restore “All” and “Following” updates tab in Notion.
+
+[Learn more in this post](https://kidonng.notion.site/Bring-back-All-and-Following-updates-tab-in-Notion-495993c53ecd4a4eacd904a40e9bbb6e).
+
 ### [Notion Medium Zoom](https://cherry.xuann.wang/notion-medium-zoom.user.js)
 
 > **Note**: [compatible with desktop app](#inject-into-notion-desktop-app)
 
-View images in Notion with [Medium-style zoom](https://github.com/francoischalifour/medium-zoom#features).
+View images in Notion with [Medium-style zoom](https://github.com/francoischalifour/medium-zoom).
 
-https://user-images.githubusercontent.com/44045911/184354370-cb2d671b-94b5-45ee-bd8f-50b49fb85dd6.mov
-
-Compared to native zoom:
-
-- One-click to zoom-in
-- Scroll away to zoom-out
-- Click anywhere to zoom-out
-
-Works with <kbd>Space</kbd> key too. Native zoom is still accessible via block menu.
+[Learn more in this post](https://kidonng.notion.site/Notion-Medium-Zoom-8207e57609ea469f8dfdfe91010f8f46).
 
 ### [Block Notion Analytics](https://cherry.xuann.wang/block-notion-analytics.user.js)
 
@@ -58,10 +56,10 @@ Works with <kbd>Space</kbd> key too. Native zoom is still accessible via block m
 
 Block following analytics services Notion uses:
 
-- Amplitude
-- Intercom (note: this also disables the support chat)
+- Intercom (note: this also disables contact support)
 - Segment
 - Sentry
+- Splunk
 - Statsig
 
 ### [Notion Localization](https://cherry.xuann.wang/notion-localization.user.js)
@@ -86,6 +84,8 @@ For example, to install [Notion Medium Zoom](#notion-medium-zoom) into macOS Not
 ```sh
 curl https://cherry.xuann.wang/notion-medium-zoom.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
 ```
+
+For Windows Notion app, `preload.js` is located at `%LocalAppData%\Programs\Notion\resources\app\renderer\preload.js`.
 
 ## [Refined Danbooru](https://cherry.xuann.wang/refined-danbooru.user.js)
 

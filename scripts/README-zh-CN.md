@@ -36,21 +36,19 @@
 
 ## Notion
 
+### [恢复 Notion 更新标签页](https://cherry.xuann.wang/restore-notion-updates-tabs.user.js)
+
+恢复 Notion 更新 (Updates) 页面中的 “全部” (All) 和 “关注中” (Following) 标签页。
+
+[详情见此文](https://kidonng.notion.site/Bring-back-All-and-Following-updates-tab-in-Notion-495993c53ecd4a4eacd904a40e9bbb6e)。
+
 ### [Notion Medium 缩放](https://cherry.xuann.wang/notion-medium-zoom.user.js)
 
 > **注**: [兼容桌面应用](#注入-notion-桌面应用)
 
-使用 [Medium 风格的缩放方式](https://github.com/francoischalifour/medium-zoom#features)查看 Notion 图片。
+使用 [Medium 风格的缩放方式](https://github.com/francoischalifour/medium-zoom)查看 Notion 图片。
 
-https://user-images.githubusercontent.com/44045911/184354370-cb2d671b-94b5-45ee-bd8f-50b49fb85dd6.mov
-
-对比原生缩放：
-
-- 单击放大
-- 滚动页面还原
-- 点击任意位置还原
-
-同样适用于 <kbd>空格</kbd> 键。原生缩放仍可通过块菜单访问。
+[详情见此文](https://kidonng.notion.site/Notion-Medium-Zoom-8207e57609ea469f8dfdfe91010f8f46)。
 
 ### [拦截 Notion 统计](https://cherry.xuann.wang/block-notion-analytics.user.js)
 
@@ -58,10 +56,10 @@ https://user-images.githubusercontent.com/44045911/184354370-cb2d671b-94b5-45ee-
 
 拦截下列 Notion 使用的统计服务：
 
-- Amplitude
-- Intercom（注：客户支持聊天也会不可用）
+- Intercom（注：同时会禁用联系客服支持）
 - Segment
 - Sentry
+- Splunk
 - Statsig
 
 ### [Notion 本地化](https://cherry.xuann.wang/notion-localization.user.js)
@@ -86,6 +84,8 @@ https://user-images.githubusercontent.com/44045911/184354370-cb2d671b-94b5-45ee-
 ```sh
 curl https://cherry.xuann.wang/notion-medium-zoom.user.js >> /Applications/Notion.app/Contents/Resources/app/renderer/preload.js
 ```
+
+Windows Notion 应用的 `preload.js` 位于 `%LocalAppData%\Programs\Notion\resources\app\renderer\preload.js`。
 
 ## [Refined Danbooru](https://cherry.xuann.wang/refined-danbooru.user.js)
 
