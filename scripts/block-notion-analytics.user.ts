@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Block Notion Analytics
-// @version      1
+// @version      2
 // @description
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -9,51 +9,28 @@
 // @run-at       document-start
 // ==/UserScript==
 
-const json = (data: unknown) => new Response(JSON.stringify(data))
-// `window.CONFIG.api.http`
-const api = '/api/v3'
-
+const json = (data = {}) => new Response(JSON.stringify(data))
 const rawFetch = globalThis.fetch
+
 // Eslint-disable-next-line capitalized-comments
 // deno-lint-ignore require-await
-globalThis.fetch = async (...args) => {
-	const url = args[0] as string
-
-	if (url === `${api}/getUserAnalyticsSettings`) {
-		return json({
-			isAmplitudeEnabled: false,
-			isIntercomEnabled: false,
-			isSegmentEnabled: false,
-		})
-	}
-
+globalThis.fetch = async (url, ...args) => {
 	if (
-		[`${api}/identifySegmentWorkspace`, `${api}/trackSegmentEvent`].includes(
-			url,
-		)
+		[
+			'/api/v3/getUserAnalyticsSettings', // Segment (mostly)
+			'https://exp.notion.so/v1/rgstr', // Statsig
+			'https://http-inputs-notion.splunkcloud.com/services/collector/raw', // Splunk
+		].includes(url as string)
 	) {
-		return json({})
+		return json()
 	}
 
-	if (url === 'https://api.statsig.com/v1/rgstr') {
-		return json({success: true})
-	}
-
-	return rawFetch(...args)
+	return rawFetch(url, ...args)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = () => {}
-Object.defineProperty(window, '__SENTRY__', {
-	get() {
-		return {
-			hub: {
-				isOlderThan: noop,
-				getScope: noop,
-				bindClient: noop,
-				configureScope: noop,
-			},
-		}
-	},
-	set: noop,
-})
+declare global {
+	// eslint-disable-next-line no-var, @typescript-eslint/naming-convention
+	var __SENTRY__: unknown
+}
+
+globalThis.__SENTRY__ = {}
