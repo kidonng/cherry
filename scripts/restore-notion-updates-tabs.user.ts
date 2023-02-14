@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Restore Notion Updates tabs
-// @version      3
+// @version      4
 // @description  Restore “All” and “Following” updates tab in Notion
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
@@ -10,7 +10,8 @@
 
 const rawFetch = globalThis.fetch
 // Differentiate from page updates
-const isUpdatesOpen = () => document.querySelector('.notion-updates-menu')
+const isUpdatesOpen = () =>
+	document.querySelector('.notion-updates-menu[style*="max-height: 80vh"]')
 
 globalThis.fetch = async (url, options) => {
 	if (url === '/api/v3/getActivityLog') {
