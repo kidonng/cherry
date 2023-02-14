@@ -13,7 +13,9 @@ const rawFetch = globalThis.fetch
 
 globalThis.fetch = async (url, options) => {
 	if (url === '/api/v3/getActivityLog') {
-		const body = JSON.parse(options!.body as string)
+		const body = JSON.parse(options!.body as string) as {
+			navigableBlock: unknown
+		}
 		delete body.navigableBlock
 		options!.body = JSON.stringify(body)
 	}
