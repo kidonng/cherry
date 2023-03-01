@@ -9,9 +9,9 @@
 
 import {Fzf, extendedMatch, type FzfResultItem, type Tiebreaker} from 'fzf'
 import {isFileFinder} from 'github-url-detection'
-import type MarkedTextElement from './vendor/marked-text-element.ts'
-import type VirtualFilterInputElement from './vendor/virtual-filter-input-element.ts'
-import type VirtualListElement from './vendor/virtual-list-element.ts'
+import type MarkedTextElement from './vendor/marked-text-element.js'
+import type VirtualFilterInputElement from './vendor/virtual-filter-input-element.js'
+import type VirtualListElement from './vendor/virtual-list-element.js'
 
 // https://fzf.netlify.app/docs/latest#usage-making-it-behave-like-fzf-cli
 const byTrimmedLengthAsc: Tiebreaker<string> = (a, b, selector) => {

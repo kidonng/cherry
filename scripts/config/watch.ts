@@ -1,21 +1,28 @@
-import {bold} from 'std/fmt/colors.ts'
-import {build} from 'esbuild'
-import {config} from './esbuild.ts'
+import chalk from 'chalk'
+import {context} from 'esbuild'
+import {config} from './esbuild.js'
 
 console.log('Started watching')
 
 for (const options of config) {
 	const [script] = options.entryPoints as string[]
-	build({
+	// eslint-disable-next-line no-await-in-loop
+	const ctx = await context({
 		...options,
-		watch: {
-			onRebuild() {
-				console.log(
-					`[${new Date().toLocaleTimeString()}] Building ${bold(script)}`,
-				)
+		plugins: [
+			{
+				name: 'onRebuild',
+				setup(build) {
+					build.onEnd(() => {
+						console.log(
+							`[${new Date().toLocaleTimeString()}] Building ${chalk.bold(
+								script,
+							)}`,
+						)
+					})
+				},
 			},
-		},
+		],
 	})
+	void ctx.watch()
 }
-
-// No `esbuild.stop()` here since we have to Ctrl-C anyway

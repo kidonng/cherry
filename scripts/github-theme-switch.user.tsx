@@ -12,7 +12,7 @@ import {css} from 'code-tag'
 // eslint-disable-next-line import/no-unassigned-import
 import type {} from 'typed-query-selector'
 import {SyncIcon, SunIcon, MoonIcon} from '@primer/octicons-react'
-import {AppearanceFormElement} from './vendor/github-appearance-form-element.ts'
+import {AppearanceFormElement} from './vendor/github-appearance-form-element.js'
 
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace

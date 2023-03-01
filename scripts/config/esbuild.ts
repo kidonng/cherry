@@ -1,21 +1,14 @@
-import {expandGlobSync} from 'std/fs/mod.ts'
-import type {BuildOptions, Plugin} from 'esbuild'
-import {denoPlugin} from 'esbuild_deno_loader'
+import {basename} from 'node:path'
+import {readFileSync} from 'node:fs'
+import {globbySync} from 'globby'
+import type {BuildOptions} from 'esbuild'
 
 const delimiter = '// ==/UserScript=='
 function getBanner(path: string) {
-	const file = Deno.readTextFileSync(path)
-	// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+	const file = readFileSync(path, 'utf8')
 	const header = file.slice(0, file.indexOf(delimiter) + delimiter.length)
 	return header
 }
-
-const plugins: Plugin[] = [
-	denoPlugin({
-		// eslint-disable-next-line @typescript-eslint/naming-convention
-		importMapURL: new URL('../../deno.json', import.meta.url),
-	}),
-]
 
 const root = (path: string) => `scripts/${path}`
 const outdir = root('generated')
@@ -25,7 +18,9 @@ const base: Options = (script) => ({
 	entryPoints: [root(script)],
 	bundle: true,
 	minify: true,
-	plugins,
+	alias: {
+		react: 'dom-chef',
+	},
 })
 
 const userscript: Options = (script) => ({
@@ -56,7 +51,9 @@ const scriptsWithConfig = new Set(
 )
 config.push(
 	...[
-		...expandGlobSync(root('*.ts{,x}')),
+		...globbySync(root('*.ts{,x}')).map((file) => ({
+			name: basename(file),
+		})),
 		{name: 'github-hide-public-badge.user.js'},
 		{name: 'reposition-octotree-bookmark-icon.user.js'},
 	]
