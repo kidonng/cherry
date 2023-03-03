@@ -20,7 +20,6 @@ declare global {
 		// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 		interface IntrinsicElements {
 			// https://github.com/refined-github/refined-github/blob/90ad3b20c70681ca0ee85ef341e1818a887f9462/source/globals.d.ts#L42
-			// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 			'details-menu': IntrinsicElements['div'] & {
 				src?: string
 				preload?: boolean

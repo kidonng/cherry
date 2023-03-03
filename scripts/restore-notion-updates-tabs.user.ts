@@ -33,9 +33,11 @@ globalThis.fetch = async (url, options) => {
 
 	if (url === 'https://exp.notion.so/v1/initialize') {
 		const response = await rawFetch(url, options)
-		const data = await response.json()
+		const data = (await response.json()) as {
+			feature_gates: Record<string, {value: boolean}>
+		}
 		// Hashed "notifs_remove_following_tab"
-		data.feature_gates['kV1Z+fxPuB3RU8MBmr/wnXKofEMdxXmXkWw07RJe6L4='].value =
+		data.feature_gates['kV1Z+fxPuB3RU8MBmr/wnXKofEMdxXmXkWw07RJe6L4=']!.value =
 			false
 		return new Response(JSON.stringify(data))
 	}

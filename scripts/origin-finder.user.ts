@@ -76,6 +76,8 @@ const redirects: Array<
 						}
 				} catch {}
 			}
+
+			return {}
 		},
 	],
 	/*

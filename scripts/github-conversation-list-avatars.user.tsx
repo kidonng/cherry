@@ -32,10 +32,10 @@ function init() {
 	)) {
 		element.classList.add(className)
 
-		const username = element.textContent
+		const username = element.textContent!
 		const alt = `@${username}`
 		const src =
-			document.querySelector(`img[alt="${alt}"]`)?.src ||
+			document.querySelector(`img[alt="${alt}"]`)?.src ??
 			`https://avatars.githubusercontent.com/${username}?size=32`
 
 		element.prepend(

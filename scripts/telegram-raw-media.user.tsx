@@ -39,9 +39,7 @@ observe(`.tgme_widget_message_photo, ${preview}`, (target) => {
 		: target.closest('.tgme_widget_message_photo_wrap') // Handle both single and multiple images
 	if (!source) return
 
-	const img = (
-		<img className={target.className} src={parseUrl(source as HTMLElement)} />
-	)
+	const img = <img className={target.className} src={parseUrl(source)} />
 	if (!target.matches(thumbPreview)) img.style.width = '100%'
 
 	target.replaceWith(img)

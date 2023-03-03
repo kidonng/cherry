@@ -23,7 +23,7 @@ const init = () => {
 	const alt = `@${username}`
 	const size = 24
 	const src =
-		document.querySelector(`img[alt="${alt}"]`)?.src ||
+		document.querySelector(`img[alt="${alt}"]`)?.src ??
 		`https://avatars.githubusercontent.com/${username}?size=${size * 2}`
 
 	const avatar = (

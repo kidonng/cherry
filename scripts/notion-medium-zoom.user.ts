@@ -39,10 +39,10 @@ style.append(css`
 `)
 document.head.append(style)
 
-const zoom = mediumZoom()
+const zoom = mediumZoom.default()
 const open = (target: HTMLElement) => {
 	if (!target.matches(zoomImageSelector)) zoom.attach(target)
-	zoom.open({target})
+	void zoom.open({target})
 }
 
 // Notion's click listener is global when logged in, document when logged out
@@ -71,9 +71,10 @@ document.addEventListener('keydown', (event) => {
 
 // Passthrough scroll
 zoom.on('open', async () => {
+	// eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
 	const image = (await elementReady(openImageSelector, {
 		stopOnDomReady: false,
-	}))!
+	})) as HTMLElement
 	const scroller =
 		document.querySelector(`.notion-peek-renderer ${scrollerSelector}`) ??
 		document.querySelector(`.notion-frame ${scrollerSelector}`)!
@@ -93,7 +94,6 @@ zoom.on('open', async () => {
 			// Scroll up at the top
 			(scroller.scrollTop === 0 && deltaY < 0) ||
 			// Scroll down at the bottom
-			// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
 			(scroller.scrollTop + scroller.offsetHeight === scroller.scrollHeight &&
 				deltaY > 0)
 		)

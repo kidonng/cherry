@@ -36,7 +36,7 @@ document.addEventListener('keydown', (event) => {
 // Use Gelbooru to search for more than 2 tags when Danbooru doesn't allow it
 if (
 	['Member', 'Anonymous'].includes(
-		document.body.dataset.currentUserLevelString!,
+		document.body.dataset['currentUserLevelString']!,
 	)
 )
 	document
@@ -106,7 +106,7 @@ document.addEventListener('click', (event) => {
 
 	const input = document.querySelector('input#tags')!
 	const {value} = input
-	const tagName = target.parentElement!.dataset.tagName!
+	const tagName = target.parentElement!.dataset['tagName']!
 	input.value = value.includes(tagName)
 		? value.replace(tagName, '').trim()
 		: `${value.trim()} ${tagName}`
@@ -146,6 +146,9 @@ if (isSafebooru) {
 
 // More keyboard shortcuts
 // https://github.com/danbooru/danbooru/issues/5175
+type Shortcut = [string, string]
+type Shortcuts = Record<string, Shortcut>
+
 const renderShortcut = (name: string, shortcut: string) => (
 	<li>
 		{shortcut.split(' ').map((key) => (
@@ -156,12 +159,12 @@ const renderShortcut = (name: string, shortcut: string) => (
 		{name}
 	</li>
 )
-const renderShortcuts = (shortcuts: Record<string, string[]>) =>
+const renderShortcuts = (shortcuts: Shortcuts) =>
 	Object.entries(shortcuts).map(([name, [shortcut]]) =>
 		renderShortcut(name, shortcut),
 	)
 
-const navShortcuts = {
+const navShortcuts: Shortcuts = {
 	'Jump to My account/Login': ['j m', '#nav-my-account-link, #nav-login-link'],
 	'Jump to Posts': ['j p', '#nav-posts-link'],
 	'Jump to Comments': ['j c', '#nav-comments-link'],
@@ -172,7 +175,7 @@ const navShortcuts = {
 	'Jump to Wiki': ['j w', '#nav-wiki-link'],
 	'Jump to Forum': ['j f', '#nav-forum-link'],
 }
-const postShortcuts = {
+const postShortcuts: Shortcuts = {
 	'Add post to pool': ['p', '#pool'],
 	'Edit commentary': ['c', '#add-commentary'],
 	'Show comments': ['esc', '#post-sections [href="#comments"]'],
@@ -184,9 +187,9 @@ for (const [key, selector] of [
 		...postShortcuts,
 	}),
 	// `q` to focus *every* search box
-	['q', '.one-line-form input.string'],
+	['q', '.one-line-form input.string'] as Shortcut,
 ]) {
-	const element = document.querySelector<HTMLElement>(selector)
+	const element = document.querySelector(selector)
 	if (element) hotkey(element, key)
 }
 

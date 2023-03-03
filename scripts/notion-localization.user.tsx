@@ -56,15 +56,12 @@ import type {} from '@kidonng/typed-json'
 			},
 			body: JSON.stringify({hash: ''}),
 		})
-		const {
-			localeHtml,
-			version,
-		}: {
+		const {localeHtml, version} = (await assetsResponse.json()) as {
 			localeHtml: Record<string, string>
 			version: string
-		} = await assetsResponse.json()
+		}
 		if (!(locale in localeHtml)) return
-		const htmlUrl = localeHtml[locale]
+		const htmlUrl = localeHtml[locale]!
 
 		const htmlResponse = await fetch(htmlUrl)
 		const html = await htmlResponse.text()
@@ -83,6 +80,6 @@ import type {} from '@kidonng/typed-json'
 			location.pathname = '/'
 	} catch (error: unknown) {
 		// eslint-disable-next-line no-alert
-		alert(`Notion Localization data failed to update 😢\n\n${error}`)
+		alert(`Notion Localization data failed to update 😢\n\n${String(error)}`)
 	}
 })()

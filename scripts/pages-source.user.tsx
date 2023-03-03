@@ -55,7 +55,7 @@ const size = 32
 
 // Use negative index because GitLab allows usernames to contain a dot
 // https://docs.gitlab.com/ee/user/project/pages/#security-for-gitlab-pages
-const username = host[host.length - 3]
+const username = host[host.length - 3]!
 let href = ''
 let title = ''
 const icon = (<img width={size} height={size} />) as unknown as HTMLImageElement
@@ -77,14 +77,14 @@ switch (host[host.length - 2]) {
 		title = 'Go to source repository'
 		break
 	case 'gitlab':
-		href = `https://gitlab.com/${username}/${path || `${username}.gitlab.io`}`
+		href = `https://gitlab.com/${username}/${path ?? `${username}.gitlab.io`}`
 		title = 'Go to source repository'
 		icon.src = 'https://api.iconify.design/logos/gitlab.svg'
 		break
 	case 'gitee':
 		if (document.title === '404 Not Found') break
 
-		href = `https://gitee.com/${username}/${path || username}`
+		href = `https://gitee.com/${username}/${path ?? username}`
 		title = 'Go to source repository'
 		icon.src =
 			'https://api.iconify.design/simple-icons/gitee.svg?color=%23c71d23'

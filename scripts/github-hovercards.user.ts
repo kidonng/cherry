@@ -14,12 +14,12 @@ import * as detect from 'github-url-detection'
 const {getUsername, getCleanPathname} = detect.utils
 
 const userObserver = new MutationObserver(([mutation]) => {
-	const target = mutation.target as HTMLAnchorElement
+	const target = mutation!.target as HTMLAnchorElement
 	if (target.getAttribute('aria-label') !== 'Hovercard is unavailable') return
 
 	target.removeAttribute('aria-label')
 	target.classList.remove('tooltipped')
-	target.dataset.hovercardUrl = target.dataset.hovercardUrl!.replace(
+	target.dataset['hovercardUrl'] = target.dataset['hovercardUrl']!.replace(
 		'/users',
 		'/orgs',
 	)
@@ -31,7 +31,7 @@ const userObserver = new MutationObserver(([mutation]) => {
 })
 
 const issueObserver = new MutationObserver(([mutation]) => {
-	const target = mutation.target as HTMLAnchorElement
+	const target = mutation!.target as HTMLAnchorElement
 	if (target.getAttribute('aria-label') !== 'Hovercard is unavailable') return
 
 	target.setAttribute('aria-label', 'Loading...')
@@ -40,7 +40,7 @@ const issueObserver = new MutationObserver(([mutation]) => {
 	)
 	void fetch(target.href, {method: 'HEAD'}).then(({url}) => {
 		target.href = url
-		target.dataset.hovercardUrl = `${url}/hovercard`
+		target.dataset['hovercardUrl'] = `${url}/hovercard`
 		target.removeAttribute('aria-label')
 		target.classList.remove('tooltipped')
 		setTimeout(() => target.dispatchEvent(new MouseEvent('mouseover')), 100)
@@ -99,7 +99,7 @@ observe(
 							method: 'HEAD',
 						})
 						link.href = url
-						link.dataset.hovercardUrl = `${url}/hovercard`
+						link.dataset['hovercardUrl'] = `${url}/hovercard`
 						link.parentElement!.classList.remove('tooltipped')
 						setTimeout(() => link.dispatchEvent(new MouseEvent('mouseover')))
 					},
@@ -116,6 +116,6 @@ observe(
 					: pathname.replace(/(\/pull\/\d+).*/, '$1')
 		}
 
-		link.dataset.hovercardUrl = `/${pathname}/hovercard`
+		link.dataset['hovercardUrl'] = `/${pathname}/hovercard`
 	},
 )

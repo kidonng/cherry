@@ -17,7 +17,7 @@ const init = () => {
 	)) {
 		const link = image.parentElement as HTMLAnchorElement
 
-		if (link.href === image.src) link.href = image.dataset.canonicalSrc!
+		if (link.href === image.src) link.href = image.dataset['canonicalSrc']!
 	}
 }
 
