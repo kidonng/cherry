@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Typeface
-@version      9
+@version      10
 @description  Typeface improvements for various sites
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
@@ -12,12 +12,6 @@
     .blob-code-inner,
     .CodeMirror-lines /* `!important` is for this selector */ {
         font-size: 13px !important;
-    }
-}
-
-@-moz-document domain("interactive-examples.mdn.mozilla.net") {
-    code[class*='language-'] {
-        font-family: monospace;
     }
 }
 
