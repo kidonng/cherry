@@ -1,13 +1,12 @@
 /* ==UserStyle==
 @name         GitHub
-@version      46
+@version      47
 @description  Style improvements for GitHub
 @author       kidonng
 @namespace    https://github.com/kidonng/cherry
 @homepageURL  https://github.com/kidonng/cherry
 @preprocessor stylus
 
-@var checkbox colorBender "Blue open issues/pull requests and green closed issues/merge pull requests" 0
 @var checkbox lightHeader "Light theme header" 0
 @var checkbox repositionOctotreeBookmark "Reposition Octotree bookmark icon" 0
 @var checkbox alignPRAuthorName "Align author name on PR sticky header (for Chinese locale users)" 0
@@ -139,30 +138,6 @@
         .gh-header-title .octotree-btn {
             margin-left: -22px;
             order: -1;
-        }
-    }
-
-    if colorBender {
-        :is(.octicon-issue-opened, .octicon-git-pull-request):is(.open, .color-text-success) {
-            color: var(--color-accent-fg) !important;
-        }
-
-        .State--open,
-        .js-targetable-element > .TimelineItem-badge.color-bg-success-inverse,
-        .branch-action-state-clean .branch-action-icon {
-            background-color: var(--color-accent-emphasis) !important;
-        }
-
-        .octicon-issue-closed:is(.closed, .color-text-danger),
-        .issue-closed-done .octicon-issue-closed.color-text-danger,
-        .octicon-git-merge:is(.merged, .color-fg-done) {
-            color: var(--color-success-fg) !important;
-        }
-
-        :is(.State--closed, .TimelineItem-badge).color-bg-done-emphasis,
-        .State--merged,
-        .branch-action-state-merged .branch-action-icon {
-            background-color: var(--color-success-emphasis) !important;
         }
     }
 }
