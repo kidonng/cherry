@@ -222,7 +222,7 @@ _移植自 [refined-github#3804](https://github.com/refined-github/refined-githu
 
 _实现 [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)_
 
-在 Stargazers 页面添加一个按钮以在 https://star-history.t9t.io/ 查看 star 历史。
+在 Stargazers 页面添加一个按钮以在 https://star-history.com/ 查看 star 历史。
 
 ### [重新放置 Octotree 书签图标](https://cherry.xuann.wang/reposition-octotree-bookmark-icon.user.js)
 

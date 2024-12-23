@@ -222,7 +222,7 @@ Also available as a [bookmarklet](https://cherry.xuann.wang/github-theme-switch.
 
 _Implement [refined-github#4097](https://github.com/refined-github/refined-github/issues/4097)_
 
-Adds a button to Stargazers page to view star history on https://star-history.t9t.io/.
+Adds a button to Stargazers page to view star history on https://star-history.com/.
 
 ### [Reposition Octotree bookmark icon](https://cherry.xuann.wang/reposition-octotree-bookmark-icon.user.js)
 

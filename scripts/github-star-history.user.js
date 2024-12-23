@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Star history
 // @version      1.0.0
-// @description  Adds a button to Stargazers page to view star history on https://star-history.t9t.io/
+// @description  Adds a button to Stargazers page to view star history on https://star-history.com/
 // @author       kidonng
 // @namespace    https://github.com/kidonng/cherry
 // @match        https://github.com/*/*/stargazers
@@ -10,7 +10,7 @@
 ;(() => {
   const a = document.createElement('a')
   a.classList.add('btn', 'float-right', 'mt-n1')
-  a.href = `https://star-history.t9t.io/#${location.pathname
+  a.href = `https://star-history.com/#${location.pathname
     .split('/')
     .slice(1, 3)
     .join('/')}`
